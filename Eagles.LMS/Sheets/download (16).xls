@@ -1,0 +1,9 @@
+<table border='2px'><tr bgcolor='#87AFC6'>
+              
+                            <th>Id</th>
+                            <th>FullName</th>
+                            <th>Mobile</th>
+                            <th>Degree</th>
+
+
+                        </tr></table>

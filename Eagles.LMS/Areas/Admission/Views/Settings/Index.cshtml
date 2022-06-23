@@ -1,0 +1,320 @@
+﻿@model Setting
+@{
+    ViewBag.Title = "Setting";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var requestStatus = TempData.Peek("RequestStatus") as RequestStatus;
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+
+
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Update Setting</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission/Settings">Home</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        @using (Html.BeginForm("Index", "Settings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(s => s.Id)
+
+
+
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+                                    @try
+                                    {
+                                        <div>
+                                            <div>
+                                                <h1>Last User Edited : </h1>   <p>@ctx.UserManager.GetBy(Model.UserEditId).FullName</p>
+                                                <h1>Last Edited Time : </h1>    <p>@Model.EditeTime</p>
+                                            </div>
+                                        </div>
+                                    }
+                                    catch { }
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show AboutUs</label>
+                                            @Html.CheckBoxFor(s => s.ShowAboutUs, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show About Us"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowAboutUs)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Agenda</label>
+                                            @Html.CheckBoxFor(s => s.ShowAgenda, new
+                                       {
+                                           @class = "",
+                                           placeholder = "ShowAgenda"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowAgenda)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Citizen</label>
+                                            @Html.CheckBoxFor(s => s.ShowCitizen, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Citizen"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowCitizen)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Contact Us</label>
+                                            @Html.CheckBoxFor(s => s.ShowContactUs, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Contact Us"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowContactUs)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Galary Photos</label>
+                                            @Html.CheckBoxFor(s => s.ShowGalaryPhotos, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Galary Photos"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowGalaryPhotos)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Galar Videos</label>
+                                            @Html.CheckBoxFor(s => s.ShowGalarVideos, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Galar Videos"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowGalarVideos)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Locations</label>
+                                            @Html.CheckBoxFor(s => s.ShowLocations, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Locations"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowLocations)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show News</label>
+                                            @Html.CheckBoxFor(s => s.ShowNews, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show News"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowNews)
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Related Web Sites</label>
+                                            @Html.CheckBoxFor(s => s.ShowRelatedWebSites, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Related Web Sites"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowRelatedWebSites)
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Services</label>
+                                            @Html.CheckBoxFor(s => s.ShowServices, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Services"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowServices)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Sliders</label>
+                                            @Html.CheckBoxFor(s => s.ShowSliders, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Sliders"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowSliders)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Social Medias</label>
+                                            @Html.CheckBoxFor(s => s.ShowSocialMedias, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Social Medias"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowSocialMedias)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Show Teams</label>
+                                            @Html.CheckBoxFor(s => s.ShowTeams, new
+                                       {
+                                           @class = "",
+                                           placeholder = "Show Teams"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.ShowTeams)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Mega-Tags</label>
+                                            @Html.TextAreaFor(s => s.MegaTags, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Mega-Tags"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.MegaTags)
+                                        </div>
+
+
+                                       
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> <!-- end col -->
+
+
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="foooterbuttons">
+
+                            <button type="submit" class="btn btn-success waves-effect waves-light">
+                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> @Resources.Global.Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+
+</div>
+
+
+@section EndBody{
+    <!-- WYSIWYG Editor js -->
+    <script>
+        $(function (e) {
+            $('.TextEditor1').richText();
+            $('.TextEditor2').richText();
+            $('.TextEditor3').richText();
+            $('.TextEditor4').richText();
+            $('.TextEditor5').richText();
+            $('.TextEditor6').richText();
+            $('.TextEditor7').richText();
+            $('.TextEditor8').richText();
+            $('.TextEditor9').richText();
+        });
+    </script>
+
+
+
+    @if (requestStatus != null)
+    {
+
+        <script>
+
+              notify = $.notify({
+                  message: '@requestStatus.Message',
+
+              }, {
+
+                  type: '@requestStatus.Status' == 'Edited' ? "success" :"danger",
+                      animate: {
+                          enter: 'animated flipInY',
+                          exit: 'animated flipOutX',
+                      }
+                  });
+        </script>
+
+        @*<script>
+                $(function (e) {
+                    $('.YouTubeFrame').richText();
+                    $('.YouTubeFrame').richText();
+                });
+            </script>*@
+
+        TempData.Remove("RequestStatus");
+    }
+}

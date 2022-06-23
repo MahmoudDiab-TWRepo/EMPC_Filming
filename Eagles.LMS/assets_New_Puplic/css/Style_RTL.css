@@ -1,0 +1,49 @@
+﻿body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cairo', sans-serif;
+}
+
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a {
+        font-family: 'Cairo', sans-serif;
+    }
+p {
+    font-family: 'Cairo', sans-serif;
+}
+.slider-area{
+    direction:ltr;
+}
+.main-menu nav > ul > li {
+    display: inline-block;
+    position: relative;
+    margin-left:0;
+    margin-right: 24px;
+}
+.slider-content h1 p {
+    font-family: 'Cairo', sans-serif;
+}
+
+.LocationTwo .LocationTwo-Caurosel {
+    direction: ltr;
+}
+.btn i {
+    font-size: 14px;
+    margin-left: 0;
+    transform: rotate(180deg);
+    position: relative;
+    top: 1px;
+    right: 5px;
+}

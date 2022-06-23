@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "Albums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    UnitOfWork ctx = new UnitOfWork();
+    var allPictures = ctx.GalaryManager.GetAll().Where(s => s.IsImage).Select(s => s.AlbumId).Distinct();
+
+
+    var albums_img = ctx.AlbumManager.GetAll().OrderBy(s => s.Order).Where(s => allPictures.Contains(s.Id)).ToList();
+
+    //var allvideos = ctx.GalaryManager.GetAll().Where(s => !s.IsImage).Select(s => s.AlbumId).Distinct();
+
+    //var albums_videos = ctx.AlbumManager.GetAll().OrderBy(s => s.Order).Where(s => allvideos.Contains(s.Id)).ToList();
+
+    //var vidoes = ctx.GalaryManager.GetAll().Where(s =>! s.IsImage).OrderBy(s => s.Order).ToList();
+
+    Galary active_galary;
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    var albums = new List<Album>();
+
+    if (en == true)
+    {
+        albums = ctx.AlbumManager.GetAll().Where(s => s.TitleEnglish != null).OrderByDescending(s => s.Order).ToList();
+    }
+    else
+    {
+        albums = ctx.AlbumManager.GetAll().Where(s => s.TitleArabic != null).OrderByDescending(s => s.Order).ToList();
+    }
+    var Id = ViewBag.Id;
+}
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, Albumnews, album, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@section EndHeader {
+
+    <style>
+        .menu li a.active-a6 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+
+
+    @*<link href="~/assets_NewPublic/css/lightgallery.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="~/assets_NewPublic/libs/magnific-popup/magnific-popup.css">
+}
+
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewGallaryBGIN.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="title-header">
+
+                        <h3>@Resources.Global.Picture</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">Home</a> > </li>
+                                <li><a>@Resources.Global.Gallery</a> > </li>
+                                <li>@Resources.Global.Picture</li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+
+                    </div>
+                    <!--end title-header-->
+
+                </div>
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+
+
+
+
+
+<div class="news">
+    <div class="container">
+        <Div class="row">
+
+
+            <div class="cleaner-h3 visible-xs"></div>
+
+
+            @foreach (var picture in albums_img)
+            {
+                <div class="col-md-4">
+                    <a class="new new-small small-location location-new" href="/Home/Picture/@picture.Id">
+                        @*<a href="/Home/Picture/@picture.Id">*@
+
+
+                        @if (en)
+                        {
+                            @*<img src="@picture.Image" class="img-responsive img-services" />*@
+                            <div class="AlbumImgItem">
+                                <div class=" imagsBG" style="background-image: url(@picture.Image)"></div>
+                            </div>
+                            <h3>
+
+                                <span>
+                                    @picture.TitleEnglish
+                                </span>
+                            </h3>
+
+                        }
+
+                        else
+                        {
+                            <div class="AlbumImgItem">
+                                <div class=" imagsBG" style="background-image: url(@picture.Image)"></div>
+                            </div>
+                            <h3>
+
+                                <span>
+                                    @picture.TitleArabic
+                                </span>
+                            </h3>
+                        }
+
+                    </a>
+                </div>
+            }
+            <!--end col-4-->
+            <!--end col-4-->
+
+            <div class="cleaner-h3"></div>
+
+
+
+
+
+
+
+
+
+        </Div>
+        <!--end row-->
+    </div>
+    <!--end continer-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section EndBody{
+
+
+    <script src="~/assets_NewPublic/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets_NewPublic/libs/magnific-popup/lightbox.init.js"></script>
+}

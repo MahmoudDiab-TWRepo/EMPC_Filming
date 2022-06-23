@@ -1,0 +1,36 @@
+﻿
+
+@{
+    ViewBag.Title = "Unauthorized";
+    Layout = null;
+}
+
+<html>
+<head>
+    <script src="~/assets_2/default/base/jquery.min.js"></script>
+</head>
+<body>
+    <a href="#" id="btn_backButton" class="hombutton">@Resources.Global.Return</a>
+    <h1>Unauthorized</h1>
+    <script>
+        $(() => {
+
+            $("#btn_backButton").click(s => {
+       
+                s.preventDefault();
+                if (window.history.length > 2) {
+                
+                    window.history.back();
+                }
+                else {
+              
+                    window.open("/Admission", "_self");
+                }
+
+            });
+        })
+    </script>
+
+</body>
+</html>
+

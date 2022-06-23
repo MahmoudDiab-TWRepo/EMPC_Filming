@@ -1,0 +1,676 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    UnitOfWork ctx = new UnitOfWork();
+
+    var _contactUs = ctx.ContactUsManager.GetAll().FirstOrDefault();
+}
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, contactus, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+@section EndHeader{
+
+
+    <style>
+    </style>
+
+    <link href="~/assets_2/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />
+}
+
+@*<div class="header-bc" style="background-image:url('/assets_NewPublic/images/bg/CONTACT US .jpg')">*@
+
+
+<!-- Page Tile -->
+<div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <div class="gen-breadcrumb-title">
+                        <h1>
+                            @Resources.Global.ContactUs
+                        </h1>
+                    </div>
+                    <div class="gen-breadcrumb-container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/Home"><i class="fas fa-home mr-2"></i>@Resources.Global.Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">@Resources.Global.ContactUs</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Title -->
+
+
+<div class="ContactNewStyle">
+    <div class="overlay">
+        <div class="container">
+            <div class="CoNeCont">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="COntactForm">
+                            <div class="Title">
+                                <h2>Get In Touch</h2>
+                            </div>
+
+                            <div class="formm">
+                                <form action="#" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Title</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+
+                                                        <select class="form-control">
+                                                            <option>Nothing selected</option>
+                                                            <option>Mr.</option>
+                                                            <option>Ms.</option>
+                                                            <option>Mrs.</option>
+                                                            <option>Miss.</option>
+                                                            <option>Dr.</option>
+                                                            <option>Prof.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>First Name *</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Last Name *</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Job Title</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Organisation</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Email *</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="email" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Phone/Mobile</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Address</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <textarea class="form-control form-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>City</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Country</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+
+                                                        <select class="form-control">
+                                                            <option>Nothing selected</option>
+                                                            <option>Mr.</option>
+                                                            <option>Ms.</option>
+                                                            <option>Mrs.</option>
+                                                            <option>Miss.</option>
+                                                            <option>Dr.</option>
+                                                            <option>Prof.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Subject *</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+
+                                                        <select class="form-control">
+                                                            <option>Nothing selected</option>
+                                                            <option>Mr.</option>
+                                                            <option>Ms.</option>
+                                                            <option>Mrs.</option>
+                                                            <option>Miss.</option>
+                                                            <option>Dr.</option>
+                                                            <option>Prof.</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                        <div class="lalable">
+                                                            <label>Message *</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <textarea class="form-control form-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group mb-0">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                        <button type="submit" class="btn btn-info">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="LocMapDet">
+                            <div class="tititle">
+                                <h2>@Resources.Global.LocationMap</h2>
+                            </div>
+                            <div class="maploc">
+                                <div class="contact-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1726.7709238441291!2d31.21595155872192!3d30.049999200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841fe81fb8d79%3A0x7292c22730b866c5!2sMedia%20Services%20Center%20EMPC!5e0!3m2!1sen!2seg!4v1647522850851!5m2!1sen!2seg"
+                                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="LocMapDet">
+                            <div class="tititle">
+                                <h2>@Resources.Global.address</h2>
+                            </div>
+                            <div class="maploc">
+                                <div class="AdressDet">
+                                    <ul>
+                                        <li>
+                                            <h2>
+                                                <a href="#" class="EgfilCOmm"> Egypt Film Commission</a>
+                                            </h2>
+                                        </li>
+                                        <li>
+                                            @if (en)
+                                            {
+                                                <p>
+                                                    <a href="#">@_contactUs.AddressEnglish</a>
+                                                </p>
+                                            }
+                                            else
+                                            {
+                                                <a href="#">
+                                                    <p>@_contactUs.AddressArabic</p>
+                                                </a>
+
+                                            }
+                                                  
+                                        </li>
+                                        
+                                        <li>
+                                            <p>
+                                                <a href="#">@_contactUs.Email</a>
+                                            </p>
+                                        </li>
+                                       
+                                        <li class="mt-3">
+                                            <span><i class="fas fa-phone"></i> Tel:</span>
+                                            <span>
+                                                
+                                                <a style="direction:ltr" href="tel:@_contactUs.Phone">
+                                                    @_contactUs.Phone
+                                                </a>
+                                            </span>
+                                        </li>
+                                        <li class="">
+                                            <span><i class="fas fa-fax"></i> Fax:</span>
+                                            <span>
+                                                <a style="direction:ltr" href="tel:@_contactUs.Phone">
+                                                    @_contactUs.Phone
+                                                </a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="news" style="display:none">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="address">
+
+                    <h3><i class="fa fa-map-marker"></i></h3>
+                    <h4>@Resources.Global.address</h4>
+                    @if (en)
+                    {
+                        <p>@_contactUs.AddressEnglish</p>
+                    }
+                    else
+                    {
+                        <p>@_contactUs.AddressArabic</p>
+
+                    }
+
+
+                </div>
+                <!--end adress-->
+            </div>
+            <!--end col-4-->
+
+
+            <Div class="cleaner-h2 visible-xs"></Div>
+
+
+            <div class="col-md-4">
+                <div class="address">
+
+                    <h3><i class="fa fa-phone"></i></h3>
+                    <h4>@Resources.Global.HatefPhone</h4>
+                    <p style="direction:ltr">@_contactUs.Phone</p>
+
+
+
+                </div>
+                <!--end adress-->
+            </div>
+            <!--end col-4-->
+
+            <Div class="cleaner-h2 visible-xs"></Div>
+
+
+
+            <div class="col-md-4">
+                <div class="address">
+
+                    <h3><i class="fa fa-envelope"></i></h3>
+                    <h4>@Resources.Global.Email</h4>
+                    <p>@_contactUs.Email</p>
+
+
+                </div>
+                <!--end adress-->
+            </div>
+            <!--end col-4-->
+
+
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</div>
+<!--end news-->
+
+<div class="container sendmessage">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h3>@Resources.Global.SendYourmessage</h3>
+        </div>
+
+        <div class="cleaner-h2"></div>
+
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" id="Text_FirstName" placeholder='@Resources.Global.FirstName' />
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="Text_LastName" placeholder='@Resources.Global.LastName' />
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="Text_Email" placeholder='@Resources.Global.Email' />
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="Text_Phone" placeholder='@Resources.Global.phone' />
+                </div>
+                <div class="col-md-12">
+                    <textarea id="Text_Message" placeholder='@Resources.Global.YourMessage'></textarea>
+                </div>
+                <div class="col-lg-12">
+                    <a id="BTN_SendMessage" class="btn btn-black " style="color:#fff">@Resources.Global.Send</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!--end row-->
+</div>
+<!--end container-->
+
+
+<Div class="cleaner-h3 hidden-xs"></Div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13822.334720113951!2d31.43418945!3d29.9913924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1635321981691!5m2!1sar!2seg" width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+
+
+
+
+
+
+@section EndBody {
+
+
+
+
+    <script src="~/assets_2/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/default/base/Scripts.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/plugins/extended/bootstrap-notify.js" type="text/javascript"></script>
+
+
+    <script>
+        $(() => {
+
+            //$("input[name='options']").change(s => {
+            //    s.preventDefault();
+            //    let _val = $(s.currentTarget).val();
+            //    if (_val != 'student') {
+            //        $(".box_student").slideUp();
+            //    } else {
+            //        $(".box_student").slideDown();
+
+            //    }
+            //});
+            //let ddl_grades = $("#ddl_grades"),
+            //    ddl_groups = $("#ddl_groups");
+            //    getAllGroup(ddl_grades.val());
+
+            //function getAllGroup(gradeid) {
+            //    $.ajax({
+            //        type: "GET",
+            //        url: "/api/web/Grade/" + gradeid + "/GetGroups/en",
+            //        success: function (response) {
+
+            //            let option = ``;
+            //            for (var i = 0; i < response.length; i++) {
+            //                option += `<option value=${response[i].Id}>${response[i].Name}</option>`;
+            //            }
+            //            ddl_groups.html(option);
+            //        }
+            //    });
+            //}
+
+
+            //$("#ddl_grades").change(s => {
+
+            //    ddl_groups.children("option").eq(0).nextAll().remove();
+            //    ddl_groups.empty();
+            //    getAllGroup($(s.currentTarget).val());
+
+
+            //});
+
+            function errorMessage(error) {
+                $.notifyClose();
+                $.notify({
+                    title: "Error:",
+                    message: error,
+
+                }, {
+                    allow_dismiss: true,
+                    showProgressbar: false,
+                    type: "danger",
+                    mouse_over: null,
+                    animate: {
+                        enter: 'animated flipInY',
+                        exit: 'animated flipOutX',
+
+                    }
+                });
+
+            }
+
+            $("#BTN_SendMessage").click(s => {
+                s.preventDefault();
+                let obj = {};
+                if (validateForm(obj)) {
+                    //$.ajax({
+                    //    type: "POST",
+                    //    url: "/mob/api/Studnets/Create",
+                    //    contentType: "application/json",
+                    //    data: JSON.stringify(obj.Data),
+                    //    success(resonse) {
+                    //        if (obj.Data.IsParent == true) {
+                    //            window.open("/Account/login", "_self");
+
+                    //        } else {
+                    //            window.open("/Account/Pending", "_self");
+                    //        }
+                    //    }, error(error) {
+                    //        errorMessage(error.responseJSON.Message);
+
+                    //    }
+                    //})
+                }
+
+
+
+            });
+            function validateEmail(email) {
+                var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+                return re.test(email);
+            }
+            function validateForm(obj) {
+
+                let flag = false,
+                    FirstName = $("#Text_FirstName").val(),
+                    LastName = $("#Text_LastName").val(),
+                    Email = $("#Text_Email").val(),
+                    Phone = $("#Text_Phone").val(),
+                    Message = $("#Text_Message").val();
+
+
+
+                if (FirstName == "" || typeof (FirstName) == 'undefined') {
+                    errorMessage("Please Enter Your First Name");
+                    return false;
+                }
+                if (LastName == "" || typeof (LastName) == 'undefined') {
+                    errorMessage("Please Enter Your Last Name");
+                    return false;
+                }
+                if (Email == "" || typeof (Email) == 'undefined') {
+                    errorMessage("Please Enter Your Email");
+                    return false;
+                }
+                if (!validateEmail(Email)) {
+                    errorMessage("Please Enter An Valid Email Address");
+                    return false;
+                }
+                if (Phone == "" || typeof (Phone) == 'undefined') {
+                    errorMessage("Please Enter Your Phone");
+                    return false;
+                }
+
+                if (Message == "" || typeof (Message) == 'undefined') {
+                    errorMessage("Please Write Your Message");
+                    return false;
+                }
+
+                obj.Data = {
+                    FirstName: FirstName,
+                    LastName: LastName,
+                    Email: Email,
+                    Phone: Phone,
+                    Message: Message,
+                }
+                return true;
+            }
+        })
+    </script>
+
+}

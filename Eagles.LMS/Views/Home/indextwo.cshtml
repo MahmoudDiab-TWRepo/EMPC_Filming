@@ -1,0 +1,1066 @@
+﻿
+@{
+    ViewBag.Title = "indextwo";
+}
+
+
+
+@using Eagles.LMS.App_GlobalResources
+
+@{
+    ViewBag.Title = "Eaglez-academy";
+    bool en = true;
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+}
+
+
+@using Eagles.LMS.BLL
+
+
+@using Eagles.LMS.App_GlobalResources
+
+@{
+    UnitOfWork ctx = new UnitOfWork();
+
+    var social = ctx.SocialRefernceManager.GetAll().FirstOrDefault();
+}
+
+<style>
+    .seccontent {
+        min-height: 280px
+    }
+</style>
+
+<div class="modal fade" id="commingSoon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color:transparent; z-index:999999">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="">
+
+            </div>
+            <div class="modal-body">
+                <div id='' style="text-align:center">
+
+                    <div class="container-loading ">
+                        <div class="row">
+                            <div id="loader">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="lading"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <h2 class="alamloading">Eaglez-academy 4 Edu</h2>
+                    <span class="plreaas">
+                        @Resources.Global.CommingSoon
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<link href="~/StaticFiles/toastr.css" rel="stylesheet" />
+
+<!-- Start carosel -->
+<!-- Start carosel -->
+
+
+<div class="slidernew">
+    <div class="overlay">
+        
+            <div class="content">
+                
+                <img src="~/StaticFiles/images/cover.png" />
+            </div>
+       
+    </div>
+</div>
+<div class="buttonsharee">
+    <div class="container">
+        <div class="content">
+            <a href="#" class="active">اشتر نسختك الان</a>
+            <a href="#" class="order">اطلب تجربه مجانيه</a>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="servecess">
+    <div class="overlay">
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <h2>ماذا يقدم التطبيق لطلابك</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="sercontdis">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="seritem">
+                                <div class="imagee">
+                                    <img src="~/StaticFiles/images/study.png" />
+                                </div>
+                                <div class="discriptions">
+                                    <h2>اختبارات اونلاين</h2>
+                                    <p>يمكنك عمل حصه مباشر مع طلابك من خلال المنزل لعدد لانهائى من الطلابه فى وقت واحد</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="seritem">
+                                <div class="imagee">
+                                    <img src="~/StaticFiles/images/quiz (1).png" />
+                                </div>
+                                <div class="discriptions">
+                                    <h2>اختبارات اونلاين</h2>
+                                    <p>يمكنك عمل حصه مباشر مع طلابك من خلال المنزل لعدد لانهائى من الطلابه فى وقت واحد</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="seritem">
+                                <div class="imagee">
+                                    <img src="~/StaticFiles/images/study.png" />
+                                </div>
+                                <div class="discriptions">
+                                    <h2>اختبارات اونلاين</h2>
+                                    <p>يمكنك عمل حصه مباشر مع طلابك من خلال المنزل لعدد لانهائى من الطلابه فى وقت واحد</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="servessec">
+        <div class="container">
+            <div class="sercon">
+                <div class="seritem itemdark">
+                    <i class="fa fa-user font-64"></i>
+                    <h4 class="text-uppercase mt-20"><a onclick="return false;" href="#">@Resources.Global._24HOURSSERVICE</a></h4>
+                </div>
+            </div>
+            <div class="sercon">
+                <div class="seritem">
+                    <i class="far fa-comments"></i>
+                    <h4 class="text-uppercase mt-20"><a  onclick="return false;" href="#">@Resources.Global.OnlineHelp</a></h4>
+                </div>
+            </div>
+            <div class="sercon">
+                <div class="seritem itemdark">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h4 class="text-uppercase mt-20"><a onclick="return false;" href="#">@Resources.Global.OnlinePaymentService </a></h4>
+                </div>
+            </div>
+            <div class="sercon">
+                <div class="seritem">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4 class="text-uppercase mt-20"><a  onclick="return false;" href="#">@Resources.Global.Call +(010)99414609 </a></h4>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+<div class="aboutus" style="display:none">
+    @*<div class="imgtop">
+        <img src="~/StaticFiles/images/bottom-shape-e081b689b7b412a49f2c4974db2db0fe.png" />
+    </div>*@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="titel">
+
+                    <h3 class="welcom">@Resources.Global.Welcome <span style="color:#8d79f1">Eaglez Acadimy</span></h3>
+
+                    <p class="">
+                        @Resources.Global.struggled
+                    </p>
+                    @*<a href="/Home/AboutUs" class="btn button-style">@Resources.Global.ReadMore</a>*@
+                </div>
+
+            </div>
+            <div class="col-lg-7 welcome-right text-center mt-lg-0 mt-5">
+                <div class="image">
+                    <img src="/StaticFiles/images/about.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="aboutus" style="display:">
+    <div class="imgtop">
+    
+        <img src="~/StaticFiles/images/end.png" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="aboutcontent">
+                    <div class="titel">
+                        <h3 class="welcom">@Resources.Global.Welcome <span style="color:#8d79f1">Eaglez Acadimy <i class="fa fa-question"></i></span></h3>
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li>
+                                <p>
+                                    <img src="~/StaticFiles/images/study.png" />
+                                    <span>سهولة الاستخدام من الكمبيوتر والموبيل</span>
+                                    
+                                </p>
+                            </li>
+                            <li>
+                                <p><img src="~/StaticFiles/images/study.png" /> سهولة الاستخدام من الكمبيوتر والموبيل</p>
+                            </li>
+                            <li>
+                                <p><img src="~/StaticFiles/images/study.png" />
+                                   <span>توفير الوقت والجهد , حيث تستقبل الخدمه عبر الانتر نت وات فى بيتك </span></p>
+                            </li>
+                            <li>
+                                <p><img src="~/StaticFiles/images/study.png" /> سهولة الاستخدام من الكمبيوتر والموبيل</p>
+                            </li>
+                            @*<li>
+                                <p><i class="fa fa-check"></i> توفير الوقت والجهد , حيث تستقبل الخدمه عبر الانتر نت وات فى بيتك </p>
+                            </li>*@
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 welcome-right text-center mt-lg-0 mt-5">
+                <div class="image">
+
+                    <img src="~/StaticFiles/images/mobile-mockup.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<div class="section-adds" style="display:none">
+    <div class="imgtop">
+        <img src="~/StaticFiles/images/DropLinkshort2.png" />
+    </div>
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent">
+                        <div class="images">
+                            <img src="~/StaticFiles/images/distance-learning.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.ONLINELEARNING</a></h4>
+                        <p class="">@Resources.Global.OnlineLearning_content</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent">
+                        <div class="images">
+
+                            <img src="~/StaticFiles/images/quiz.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.DailyQuizzes</a></h4>
+                        <p class="">@Resources.Global.DailyQuizzes_content</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent">
+                        <div class="images">
+
+                            <img src="~/StaticFiles/images/family.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.InformingParents</a></h4>
+                        <p class="">@Resources.Global.InformingParents_content</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent">
+                        <div class="images">
+
+                            <img src="~/StaticFiles/images/student.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.MakingPhysicsEasier</a></h4>
+                        <p class="">@Resources.Global.MakingPhysicsEasier_content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="subort" style="display:none">
+    <div class="imagetop">
+        <img src="~/StaticFiles/images/DropLinkshort.png" />
+    </div>
+    <div class="overlay">
+
+        <div class="container">
+            <div class="tititlees">
+                <h2>ماذا تقدم لك <span>eaglez acadmiy</span></h2>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="subortitem">
+                            <div class="imagess">
+                                <img src="~/StaticFiles/images/home-office-1207834_960_720.jpg" />
+                            </div>
+                            <div class="details">
+                                <h1 class="itemtitle"> طالب  </h1>
+                                <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/live-streaming.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>تواصل مباشر عبر الانتر نت مع مدرسين متخصصين فى المواد الدراسيه </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/time.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>نوفر وقتك وجهدك وذاكر وراجع دروسك مباشر مع مدرسك </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/marketing.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>هدف المدرس الاساسى هو مساعدتك وتحسين مستواك الدراسى </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="subortitem">
+                            <div class="imagess">
+                                <img src="~/StaticFiles/images/home-office-1207834_960_720.jpg" />
+                            </div>
+                            <div class="details">
+                                <h1 class="itemtitle"> طالب  </h1>
+                                <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/live-streaming.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>تواصل مباشر عبر الانتر نت مع مدرسين متخصصين فى المواد الدراسيه </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/time.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>نوفر وقتك وجهدك وذاكر وراجع دروسك مباشر مع مدرسك </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/marketing.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>هدف المدرس الاساسى هو مساعدتك وتحسين مستواك الدراسى </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="subortitem">
+                            <div class="imagess">
+                                <img src="~/StaticFiles/images/home-office-1207834_960_720.jpg" />
+                            </div>
+                            <div class="details">
+                                <h1 class="itemtitle"> طالب  </h1>
+                                <ul>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/live-streaming.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>تواصل مباشر عبر الانتر نت مع مدرسين متخصصين فى المواد الدراسيه </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/time.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>نوفر وقتك وجهدك وذاكر وراجع دروسك مباشر مع مدرسك </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="padding:0">
+                                                <div class="imagess">
+
+                                                    <img src="~/StaticFiles/images/marketing.png" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding:0">
+                                                <div class="infooo">
+                                                    <p>هدف المدرس الاساسى هو مساعدتك وتحسين مستواك الدراسى </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="pricetable">
+    <div class="imgtop">
+        <img src="~/StaticFiles/images/DropLinkshort.png" />
+    </div>
+    <div class="overlay">
+        <div class="container">
+            <div class="maincontent">
+                <div class="title">
+                    <h2>الباقات</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="pricecontent">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="priceitem">
+                                <div class="cooicon">
+
+                                    <img src="~/StaticFiles/images/hand-shake.png" />
+                                </div>
+                                <div class="titltprice">
+                                    <h1 class="pakegname">name packeg</h1>
+                                    <h2 style="    background: #4CAF50;"><span><i class="fa fa-dollar-sign"></i></span>1.500</h2>
+                                </div>
+                                <div class="priceinfo">
+                                    <ul>
+                                        <li class="active">
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="buttons">
+                                    <button class="btn btn-info btnpurechase">purchase</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="priceitem">
+                                <div class="cooicon">
+
+                                    <img src="~/StaticFiles/images/hand-shake.png" />
+                                </div>
+                                <div class="titltprice">
+                                    <h1 class="pakegname">name packeg</h1>
+                                    <h2 style="background: #F44336;"><span><i class="fa fa-dollar-sign"></i></span>1.500</h2>
+                                </div>
+                                <div class="priceinfo">
+                                    <ul>
+                                        <li class="active">
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="buttons">
+                                    <button class="btn btn-info btnpurechase">purchase</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="priceitem">
+                                <div class="cooicon">
+
+                                    <img src="~/StaticFiles/images/hand-shake.png" />
+                                </div>
+                                <div class="titltprice">
+                                    <h1 class="pakegname">name packeg</h1>
+                                    <h2 style="background: #00b3df;"><span><i class="fa fa-dollar-sign"></i></span>1.500</h2>
+                                </div>
+                                <div class="priceinfo">
+                                    <ul>
+                                        <li class="active">
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="buttons">
+                                    <button class="btn btn-info btnpurechase">purchase</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="priceitem">
+                                <div class="cooicon">
+
+                                    <img src="~/StaticFiles/images/hand-shake.png" />
+                                </div>
+                                <div class="titltprice">
+                                    <h1 class="pakegname">name packeg</h1>
+                                    <h2 style="background: #010c37;"><span><i class="fa fa-dollar-sign"></i></span>1.500</h2>
+                                </div>
+                                <div class="priceinfo">
+                                    <ul>
+                                        <li class="active">
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fa fa-check"></i> Live Course</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="buttons">
+                                    <button class="btn btn-info btnpurechase">purchase</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="imgbootm">
+  
+        <img src="~/StaticFiles/images/DropLinkshort2.png" />
+    </div>
+</div>
+
+
+
+<div class="tapleprice" style="display:none">
+    <div class="overlay">
+        <div class="container">
+            <div class="title">
+                <h2>الباقات</h2>
+                <div class="line"></div>
+            </div>
+            <div class="pricecontent">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3col-sm-6 col-xs-12">
+                        <div class="priceitem">
+                            <h2>Pachage Name</h2>
+                            <div class="imgeicon">
+                                <img src="~/StaticFiles/images/live-streaming.png" />
+                            </div>
+                            <div class="pric">
+                                <h2>1.500<i class="fa fa-dollar-sign"></i></h2>
+                            </div>
+                            <div class="details">
+                                <ul>
+                                    <li>
+                                        <p>بث مباشر للدروس <span><i class="fa fa-camera"></i></span></p>
+                                    </li>
+                                    <li>
+                                        <p>بث مباشر للدروس <span><img src="~/StaticFiles/images/like.png" /></span></p>
+                                    </li>
+                                    <li>
+                                        <p>بث مباشر للدروس <span><i class="fa fa-camera"></i></span></p>
+                                    </li>
+                                    <li>
+                                        <p>بث مباشر للدروس <span><img src="~/StaticFiles/images/like.png" /></span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="button">
+                                <button class="btn btn-info btnprice">Pur chase</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="webanalises" style="display:none">
+    <div class="container">
+        <div class="webcont">
+            <h2 class="webtitle">@Resources.Global.explained<span> @Resources.Global.applicationapp</span> </h2>
+            <p class="text-center">@Resources.Global.webexplained</p>
+
+            <div class="vediosss">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GcrAZKBqUo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---------------->
+<div class="apps_dawenload" style="display:none">
+    <div class="imge-top">
+        <img src="~/StaticFiles/images/DropLinkshort2.png">
+    </div>
+    <div class="container">
+        <h3 class="title">@Resources.Global.DownloadThe<span>@Resources.Global.Application</span></h3>
+        <p class="text-center">@Resources.Global.learningmanigmentsystem</p>
+        <ul class="list-unstyled apps-lists text-center">
+            <li>
+                <a class="soonProvider" href="#"><i class="fab fa-apple"></i>App Store</a>
+            </li>
+            <li>
+                <a class="soonProvider active" href="#"><i class="fab fa-windows"></i>Logo</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.sadek.lms%26fbclid%3DIwAR2lSrQpiEqnlxAvugmW81Xn_YoghZPX0qowzNi5WE9XQGOrinwQ3lIJ9I4&h=AT1Sp_ti0TCU8pS1TobwHdbvwUQ3V2DhPoekuG0G-NmW0q6-nAyIiX0H8FS_cFqlo4p4Lqs-K8w90Hc5RNqPgeWN23rhDcKTmFoj_HXUNwJF_O8DH5YkSph-Ms4UB8u_Scl_XA"><i class="fab fa-android"></i>Android</a>
+            </li>
+        </ul>
+    </div>
+    <div class="imge-bottom">
+        <img src="/StaticFiles/images/DropLinkshort.png">
+    </div>
+</div>
+
+<!---sscs--->
+<div class="bg-li subscript" style="display:block">
+
+    <div class="overlay">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- subscribe -->
+            <div class="subscribe mx-auto">
+                <div class="icon-effect-w3">
+                    <span class="fa fa-envelope"></span>
+                </div>
+                <h2 class="tittle text-center font-weight-bold">@Resources.Global.StayUpdated</h2>
+                <p class="sub-tittle text-center mt-3 mb-sm-5 mb-4">
+                    @Resources.Global.Beinvolved
+                </p>
+                <form action="#" method="post" class="subscribe-wthree pt-2">
+                    <div class="d-flex subscribe-wthree-field">
+                        <input class="form-control" type="email" id="SusecribeEmail" placeholder="@Resources.Global.Email" name="email" required="">
+                        <button class="btn form-control w-50" type="button" id="btn_subscribe">@Resources.Global.Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //subscribe -->
+        </div>
+    </div>
+
+</div>
+
+@if (social != null)
+{
+<div class="sochialicon" style="display:block">
+    <div class="container">
+        <div class="contenetete">
+            <a target="_blank" href="@social.FaceBookUrl" class="facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a target="_blank" href="@social.GoogleUrl" class="google">
+                <i class="fab fa-google-plus-g"></i>
+            </a>
+            <a target="_blank" href="@social.TwitterUrl" class="twiter">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+            <a target="_blank" href="@social.InstagramUrl" class="insta">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="imgbootm">
+        <img src="~/StaticFiles/images/DropLinkshort.png" />
+    </div>
+
+</div>
+}
+
+
+
+
+
+
+
+
+<div style="display:none" class="stats jarallax">
+    <div class="darckback">
+        <div class="container">
+            <div class="col-md-3 col-sm-6 col-xs-12 w3_counter_grid">
+                <div class="icon">
+                    <img src="/StaticFiles/images/smile.png">
+                </div>
+                <p class="counter">1,965</p>
+                <h3>HAPPY STUDENTS</h3>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 w3_counter_grid">
+                <div class="icon">
+                    <img src="/StaticFiles/images/script.png">
+                </div>
+                <p class="counter">432</p>
+                <h3>OUR COURSES</h3>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 w3_counter_grid">
+                <div class="icon">
+                    <img src="/StaticFiles/images/like.png">
+                </div>
+                <p class="counter">690</p>
+                <h3>Like</h3>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 w3_counter_grid">
+                <div class="icon">
+                    <img src="/StaticFiles/images/medal.png">
+                </div>
+                <p class="counter">124</p>
+                <h3>Certifications</h3>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!---------Contact Us----->
+<div class="contactus" style="display:block">
+    <div class="container">
+        <div class="formcontact">
+            <h3 class="text-capitalize  text-center">@Resources.Global.GetIntouch</h3>
+            <form action="#" method="post">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="input-group mt-3">
+                            <input type="text" class="margin2 form-control" id="ContactFullName" name="name" placeholder="@Resources.Global.FullName" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="input-group mt-3">
+                            <input type="text" name="name" class="form-control" id="Contactsubject" placeholder="@Resources.Global.subject" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="input-group mt-3">
+                            <input type="email" class="margin2 form-control" id="Contactemail" name="email" placeholder="@Resources.Global.Email" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="input-group mt-3">
+                            <input type="number" name="number" class="form-control" id="Contactphone" placeholder="@Resources.Global.phone" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="input-group mt-3">
+                            <textarea rows="4" cols="50" class="form-control" id="Contactmessage" placeholder="@Resources.Global.message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="input-group mt-3">
+                            <button class="submit btn " id="btn_contactUs">@Resources.Global.Send </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div  style="display:none" class="modal fade" id="watting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color:transparent">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="">
+
+            </div>
+            <div class="modal-body">
+                <div id='' style="text-align:center">
+
+                    <img src="~/StaticFiles/images/giphy.gif" style="width:100px; height:100px" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Image watting -->
+<!-- Image watting -->
+
+<script src="/StaticFiles/js/jquery-3.3.1.min.js"></script>
+
+<script src="~/StaticFiles/toastr.js"></script>
+
+
+
+<script>
+
+
+    $("#btn_subscribe").click(function (e) {
+        e.preventDefault();
+        let Email = $('#SusecribeEmail').val();
+        if (Email == null || typeof (Email) == "undefined" || Email === "") {
+            pushNotification("danger", '@Resources.Global.EmailisRequired');
+            return;
+        }
+
+        if (!validateEmail(Email)) {
+            pushNotification("danger", '@Resources.Global.entervalidemailaddress!');
+            return;
+        }
+
+        $.ajax({
+            url: "/Home/SubScribe?Email=" + Email + "",
+            type: "POST",
+            contenType: "application/json",
+            success: function (res) {
+                $('#SusecribeEmail').val('');
+                pushNotification("success", `@Resources.Global.operationaccomplishedsuccessfully`);
+            },
+            error: function () {
+                pushNotification("danger", '@Resources.Global.ServerError');
+            },
+
+        });
+
+
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    //ContactUs
+    $("#btn_contactUs").click(function (e) {
+
+        e.preventDefault();
+        let fullName = $('#ContactFullName').val();
+        if (fullName == null || typeof (fullName) == "undefined" || fullName === "") {
+            pushNotification("danger", '@Resources.Global.fullNameisRequired');
+            return;
+        }
+        let subject = $('#Contactsubject').val();
+        if (subject === "") {
+
+
+            // toastr.error('subject  is Required')
+            pushNotification("danger", '@Resources.Global.subjectisRequired');
+            return;
+
+        }
+
+        let email = $('#Contactemail').val();
+        if (email == null || typeof (email) == "undefined" || email === "") {
+            pushNotification("danger", '@Resources.Global.EmailisRequired');
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            pushNotification("danger", '@Resources.Global.entervalidemailaddress!');
+            return;
+        }
+
+
+
+        let phone = $('#Contactphone').val();
+        if (phone === "") {
+
+            //  toastr.error('Phone  is Required')
+            pushNotification("danger", '@Resources.Global.PhoneisRequired');
+            return;
+
+        }
+        if (phone.length != 11) {
+            pushNotification("danger", '@Resources.Global.entervalidphone !');
+            return;
+        }
+        let message = $('#Contactmessage').val();
+        if (message === "") {
+
+            //  toastr.error('Message  is Required')
+            pushNotification("danger", '@Resources.Global.MessageisRequired');
+
+            return;
+
+        }
+
+
+        $.ajax({
+            url: "/Home/ContactUs",
+            type: "Get",
+            data: { "Email": email, "Message": message, "Subject": subject, "PhoneNumber": phone, "FullName": fullName },
+            cache: false,
+            datatype: "application/json",
+            success: function (res) {
+                pushNotification("success", `@Resources.Global.operationaccomplishedsuccessfully`);
+                $('#Contactemail').val('');
+                $('#Contactsubject').val('');
+                $('#Contactphone').val('');
+                $('#Contactmessage').val('');
+                $('#ContactFullName').val('');
+            },
+            error: function () {
+                toastr.error('error')
+
+            },
+        });
+
+
+    });
+
+    $(document).ready(function () {
+
+        $(document).ajaxStart(function () {
+            $("#loading").show();
+        }).ajaxStop(function () {
+            $("#loading").hide();
+        });
+    });
+</script>
+
+@section EndBody{
+    <script>
+        $(document).ready(function () {
+            $(".soonProvider").click(s => {
+                s.preventDefault();
+                //bootbox.alert('')
+
+                $('#commingSoon').modal('show');
+            })
+        });
+
+
+
+
+    </script>
+}
+

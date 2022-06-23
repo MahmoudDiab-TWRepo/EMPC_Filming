@@ -1,0 +1,583 @@
+﻿@model Eagles.LMS.Models.New
+@{
+    ViewBag.Title = "NewsDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+}
+
+@*@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}*@
+
+@section EndHeader{
+
+
+    <script src="https://kit.fontawesome.com/7ecf8dac4e.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="~/assets_NewPublic/libs/magnific-popup/magnific-popup.css" rel="stylesheet" />
+
+    <style>
+        .menu li a.active-a5 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+    <style>
+
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+            .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+
+        .swiper {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mySwiper2 {
+            height: 80%;
+            width: 100%;
+        }
+
+        .mySwiper {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+            .mySwiper .swiper-slide {
+                width: 25%;
+                height: 100%;
+                opacity: 0.4;
+            }
+
+            .mySwiper .swiper-slide-thumb-active {
+                opacity: 1;
+            }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+
+
+    <link href="~/assets_NewPublic/libs/magnific-popup/magnific-popup.css" rel="stylesheet" />
+}
+
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewNewsGBIN.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="title-header">
+
+                        @if (en)
+                        {
+                            <h3>@Model.TitleEnglish</h3>
+
+
+                        }
+                        else
+                        {
+                            <h3>@Model.TitleArabic</h3>
+                        }
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">@Resources.Global.Home</a> > </li>
+                                <li>
+                                    <A href="/Home/News">@Resources.Global.News</A>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+
+                    </div>
+                    <!--end title-header-->
+
+                </div>
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+
+<div class="news">
+    <div class="container">
+        <div class="row">
+
+            <div class="new-description">
+
+                <div class="mainImagenews" style="">
+                    <a href="@Model.MainImage">
+                        <div class=" imagsBG" style="background-image: url(@Model.MainImage)"></div>
+                    </a>
+                </div>
+
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="display:none">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        @if (Model.NewImages != null && Model.NewImages.Any())
+                        {
+                            foreach (var item in Model.NewImages)
+                            {
+                                <li></li>
+                            }
+                        }
+
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner popup-gallery" role="listbox">
+                        <div class="item active">
+                            @*<img src="@Model.MainImage" alt="...">*@
+                            <div class="CauroselItemImg">
+
+                                @if (!string.IsNullOrEmpty(Model.MainImage))
+                                {
+
+                                    <a href="@Model.MainImage">
+                                        <div class=" imagsBG" style="background-image: url(@Model.MainImage)"></div>
+                                    </a>
+                                }
+                                else
+                                {
+
+                                    <a href="~/assets_NewPublic/images/f14.jpeg">
+                                        <div class=" imagsBG" style="background-image: url(/assets_NewPublic/images/f14.jpeg)"></div>
+                                    </a>
+
+                                }
+
+
+
+                            </div>
+                        </div>
+
+                        @if (Model.NewImages != null && Model.NewImages.Any())
+                        {
+                            foreach (var item in Model.NewImages)
+                            {
+                                <div class="item">
+                                    @*<img src="@item.Path" alt="...">*@
+                                    <div class="CauroselItemImg">
+                                        <a href="@item.Path">
+                                            <div class=" imagsBG" style="background-image: url(@item.Path)"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+
+                <div class="data-new">
+                    @if (en)
+                    {
+                        <h3>@Model.TitleEnglish</h3>
+                        if (Model.CreatedTime != null)
+                        {
+                            <h1 class="Date"><span><i class="far fa-calendar-alt"></i></span>@Model.NewsDate.ToShortDateString()</h1>
+
+                        }
+                        <p>@Html.Raw(@Model.DescriptionEnglish)</p>
+
+                    }
+                    else
+                    {
+                        <h3>@Model.TitleArabic</h3>
+                        if (Model.CreatedTime != null)
+                        {
+                            <h1 class="Date"><span><i class="far fa-calendar-alt"></i></span>@Model.NewsDate.ToShortDateString()</h1>
+
+                        }
+                        <p>@Html.Raw(@Model.DescriptionArabic)</p>
+                    }
+
+
+                    <!--<div class="share-face">
+                        <p> Share</p>
+
+                        <a href="https://facebook.com/sharer/sharer.php?u=" target="_blank" rel="nofollow" class="fa fa-facebook"></a>
+                        <a href="https://twitter.com/intent/tweet/?text=&amp;url=" target="_blank" rel="nofollow" class="fa fa-twitter"></a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=&amp;summary=&amp;source=" target="_blank" rel="nofollow" class="fa fa-linkedin"></a>
+                        <a href="https://pinterest.com/pin/create/button/?url=&amp;media=&amp;description=" target="_blank" rel="nofollow" class="fa fa-pinterest"></a>
+                        <a href="https://reddit.com/submit/?url=&amp;resubmit=true&amp;title=" target="_blank" rel="nofollow" class="fa fa-reddit"></a>
+                    </div>-->
+                    <!--end share-->
+
+
+                </div>
+                <!--end data-new-->
+
+
+                @if (Model.NewImages != null && Model.NewImages.Any())
+                {
+                    <div class="mainImgGallary">
+                        <div class="imageGalalallala">
+                            <div class="images">
+
+                                @if (Model.NewImages.FirstOrDefault() != null)
+                                {
+                                    var firstItem = Model.NewImages.FirstOrDefault();
+                                    <div class=" imagsBG" style="background-image: url(@firstItem.Path)"></div>
+                                }
+
+                            </div>
+
+                            <div class="OVERLAYBUTTON">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><span><i class="fa fa-camera"></i></span> Show images </button>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+            <!--end new-description-->
+
+
+            <div style="display:none">
+                <div class="cleaner-h3"></div>
+
+
+                <div class="col-md-6">
+                    <h3>More News</h3>
+                </div>
+
+
+                <div class="col-md-6 hidden-xs seeall">
+                    <h5 class="pull-right"><a href="#">See ALl </a></h5>
+                </div>
+
+                <div class="cleaner-h2"></div>
+
+                <div class="col-md-4">
+
+                    <div class="new-des">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                        </a>
+
+
+                        <div class="share">
+
+                            <div class="lef">
+                                <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                            </div>
+
+                            <div class="righ">
+                                <a href="#">
+                                    <p><i class="fa fa-share-alt"></i> Share</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!--end share-->
+
+                        <div class="description">
+                            <a class="but-new" href="/Home/NewsDetails">
+                                <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                                <p>
+                                    H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                    in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                    the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                    Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                                </p>
+
+                            </a>
+                        </div>
+                        <!--end description-->
+
+
+                    </div>
+                    <!--end new-desc-->
+
+                </div>
+                <!--end col-4-->
+
+
+
+                <div class="col-md-4">
+
+                    <div class="new-des">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                        </a>
+
+
+                        <div class="share">
+
+                            <div class="lef">
+                                <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                            </div>
+
+                            <div class="righ">
+                                <a href="#">
+                                    <p><i class="fa fa-share-alt"></i> Share</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!--end share-->
+
+                        <div class="description">
+                            <a class="but-new" href="/Home/NewsDetails">
+                                <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                                <p>
+                                    H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                    in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                    the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                    Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                                </p>
+
+                            </a>
+                        </div>
+                        <!--end description-->
+
+
+                    </div>
+                    <!--end new-desc-->
+
+                </div>
+                <!--end col-4-->
+
+
+                <div class="col-md-4">
+
+                    <div class="new-des">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                        </a>
+
+
+                        <div class="share">
+
+                            <div class="lef">
+                                <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                            </div>
+
+                            <div class="righ">
+                                <a href="#">
+                                    <p><i class="fa fa-share-alt"></i> Share</p>
+                                </a>
+                            </div>
+
+                        </div>
+                        <!--end share-->
+
+                        <div class="description">
+                            <a class="but-new" href="/Home/NewsDetails">
+                                <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                                <p>
+                                    H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                    in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                    the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                    Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                                </p>
+
+                            </a>
+                        </div>
+                        <!--end description-->
+
+
+                    </div>
+                    <!--end new-desc-->
+
+                </div>
+            </div>
+            <!--end col-4-->
+
+
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</div>
+<!--end news-->
+
+
+<div class="modal fade bd-example-modal-lg showEwsModael" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="sliderswiberimages">
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                         class="swiper mySwiper2 bigSlider">
+                        <div class="swiper-wrapper">
+
+                            @if (Model.NewImages != null && Model.NewImages.Any())
+                            {
+                                foreach (var item in Model.NewImages)
+                                {
+
+                                    <div class="swiper-slide">
+                                        <div class="imagesss">
+
+                                            <img src="@item.Path" />
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div thumbsSlider="" class="swiper mySwiper smallSlider">
+                        <div class="swiper-wrapper">
+
+
+                            @if (Model.NewImages != null && Model.NewImages.Any())
+                            {
+                                foreach (var item in Model.NewImages)
+                                {
+
+                                    <div class="swiper-slide">
+                                        <div class="imagesss">
+
+                                            <img src="@item.Path" />
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section EndBody{
+
+    <script>
+        $('.carousel').carousel()
+    </script>
+    <script src="~/assets_NewPublic/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets_NewPublic/libs/magnific-popup/lightbox.init.js"></script>
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 12,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
+}

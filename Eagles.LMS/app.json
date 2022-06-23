@@ -1,0 +1,26 @@
+{
+  
+    "FireBaseTokens": {
+      "ServiceKey": "AAAAN4f_Ds8:APA91bHCRJbp-tJd7eKCC0g3dE5D7cJBEqAkPx6rEHbZ17IMGMQnRaoaVbdFkjNiG54IXNRgcKdBxqteS5JmSkEqipmiM6roM9jdvM6BLrM6WCf-wb9LPQodWWrstzpa1FvIiUIaUgXe",
+      "SenderId": "238504840911",
+      "Key": "AIzaSyBs8THw8VAX217stCyQ2iUFS2oM7LI5q04",
+      "AuthSecret": "AsqDBFO1KOUl0nbD8AMux1RzVoc5ItNv5U5nsq9t",
+      "BasePath": "https://smart-academy-31a28.firebaseio.com/"
+    }
+  
+  //"FireBaseTokens": {
+  //  "ServiceKey": "AAAAH17mImY:APA91bGdeWn-rjGdJpA3LgZIwADLEtyv3TnM2y3-4iKtp0FhuVqt2m25pKGmGb30DcbKbdsKTmTcPwNQ93N_tzT4tF0ETwfftsiB4m3MuGzKQ0w60qKXxchPzTm_-wNTR_nc2Jgs9nKS",
+  //  "SenderId": "134736126566",
+  //  "Key": "AIzaSyCbpVx5KPEE2TfcstBpFydAADm7eIqCn_M",
+  //  "AuthSecret": "Is6gOejGcdBK4f4ezE1xNbTLsosN2bFv2O633Ffa",
+  //  "BasePath": "https://eagelz-academy.firebaseio.com/"
+  //}
+
+  //"FireBaseTokens": {
+  //  "ServiceKey": "AAAAdvemmYc:APA91bHWPZYCe0R-3BtvOCXdMJf_pKRbkasDXfMxc92ShFfo0HMjqULycdE1eS9DIsUe2fwQBa9LbaxVUSf7WHiTs4Meevci4dKqiOrbH3xI6oHcEvXVnoTFSbUDQ4KReu3gKFT3tGws",
+  //  "SenderId": "510961031559",
+  //  "Key": "AIzaSyCQwyL6t4Dz_r9i9b3Bysz1eLhj0mzjPIs",
+  //  "AuthSecret": "p01qJPbZ4rruumvE8qeWIyS9hP1k3ndtFBuHlz6X",
+  //  "BasePath": "https://hesham-allam-4edu.firebaseio.com/"
+  //}
+}

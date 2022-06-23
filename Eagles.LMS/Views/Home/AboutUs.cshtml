@@ -1,0 +1,669 @@
+﻿@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="About empcnews, Who We Are, Empc Facility, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@using Eagles.LMS.BLL
+@using Eagles.LMS.App_GlobalResources
+
+@{
+    ViewBag.Title = "AboutUs";
+    UnitOfWork ctx = new UnitOfWork();
+    var teams = new List<Team>();
+    var _Clients = new List<Client>();
+    var setting = ctx.SettingsManager.GetAll().FirstOrDefault();
+    var aboutUs = ctx.AboutUsManager.GetAll().FirstOrDefault();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    if (en == true)
+    {
+        teams = ctx.TeamManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.NameEnglish != null).ToList();
+        _Clients = ctx.ClientsManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.NameEnglish != null).ToList();
+
+    }
+    else
+    {
+        teams = ctx.TeamManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.NameArabic != null).ToList();
+        _Clients = ctx.ClientsManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.NameArabic != null).ToList();
+
+    }
+
+
+
+}
+
+@section EndHeader{
+
+}
+
+<!-- Page Tile -->
+<div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <div class="gen-breadcrumb-title">
+                        <h1>
+                            @Resources.Global.Aboutus
+                        </h1>
+                    </div>
+                    <div class="gen-breadcrumb-container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html"><i class="fas fa-home mr-2"></i>@Resources.Global.Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">@Resources.Global.Aboutus</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Title -->
+
+<div class="whoweArePage">
+    <div class="overlay">
+        <div class="container">
+            <div class="whoweAreCont">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="WhoWECont">
+                            <div class="ForFlex">
+                                <div class="titile">
+                                    <h2> WHAT WE SEE IN THE DARK WHAT WE SEE IN THE DARK WHAT WE SEE IN THE DARK</h2>
+                                </div>
+
+                                <div class="otherdisc">
+                                    <p>Pictures are often taken only to stop some moments, to preserve the memory of events or places where a person has been – we call this genre “Me and the Palm”. But sometimes you want to remove something that will awaken emotions regardless of memories, you want to take a picture that will hang on the wall as if it opens a window to some other world </p>
+                                </div>
+                                <div class="ImgGroup">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="imageItem">
+                                                <img src="~/assets_New_Puplic/img/NewImg/f1c.jpeg">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="imageItem">
+                                                <img src="~/assets_New_Puplic/img/NewImg/f3c.jpeg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="manDisc">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eius mod tempor incididunt ut labore et dolore.</p>
+                                </div>
+
+                                <div class="ReadmoreLink" style="display: none">
+                                    <!-- Add When Found Link pls -->
+                                    <a href="#">Read More </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="images">
+                            <div class="img">
+                                <img src="~/assets_New_Puplic/img/NewImg/Mask_Group_18.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- team-area-start -->
+@if (setting.ShowTeams)
+{
+
+    <div class="team-area pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
+                    <div class="section-title text-center mb-50 pr-80 pl-80 pos-relative">
+                        <div class="section-icon">
+                            <img src="~/assets_New_Puplic/img/NewImg/section.png" alt="">
+                        </div>
+                        <span>EMPC Filming</span>
+                        <h1>@Resources.Global.MeetOurTeam</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="TeamNewTwo_caurosel owl-carousel">
+
+                    @foreach (var team in teams)
+                    {
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="team-wrapper">
+                                <div class="team-img">
+                                    <img src="@team.Image" alt="">
+                                </div>
+                                <div class="team-content text-center">
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                    <div class="team-text pos-relative">
+                                        @if (en)
+                                        {
+                                            <h4>@team.NameEnglish</h4>
+                                            <span>@team.JobTitleEnglish</span>
+                                        }
+                                        else
+                                        {
+                                            <h4>@team.NameArabic</h4>
+                                            <span>@team.JobTitleArabic</span>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+
+
+
+
+
+
+
+                    @*<div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="team-wrapper">
+                                <div class="team-img">
+                                    <img src="~/assets_New_Puplic/img/NewImg/team/team-02.jpg" alt="">
+                                </div>
+                                <div class="team-content text-center">
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                    <div class="team-text pos-relative">
+
+                                        <h4>Michel JK. Farina</h4>
+                                        <span>Awards Actors</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="team-wrapper">
+                                <div class="team-img">
+                                    <img src="~/assets_New_Puplic/img/NewImg/team/team-03.jpg" alt="">
+                                </div>
+                                <div class="team-content text-center">
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                    <div class="team-text pos-relative">
+
+                                        <h4>Shek David Max</h4>
+                                        <span>Flim Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="team-wrapper">
+                                <div class="team-img">
+                                    <img src="~/assets_New_Puplic/img/NewImg/team/team-03.jpg" alt="">
+                                </div>
+                                <div class="team-content text-center">
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                    <div class="team-text pos-relative">
+
+                                        <h4>Shek David Max</h4>
+                                        <span>Flim Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="team-wrapper">
+                                <div class="team-img">
+                                    <img src="~/assets_New_Puplic/img/NewImg/team/team-03.jpg" alt="">
+                                </div>
+                                <div class="team-content text-center">
+                                    <div class="team-icon">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                    <div class="team-text pos-relative">
+
+                                        <h4>Shek David Max</h4>
+                                        <span>Flim Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+<!-- team-area-end -->
+
+<div class="latest-video-area latest-2-video latest-3-video pt-150 pb-150" style="background-image: url(/assets_New_Puplic/img/NewImg/bg-14.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                <div class="latest-video-wrapper text-center">
+                    <div class="latest-video">
+                        <a class="popup-video" href="@aboutUs.YouTubeFrame"><i class="far fa-play"></i></a>
+                    </div>
+                    <div class="latest-text">
+                        <h1>@Resources.Global.DesignAbout</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- certificate-area-start -->
+<div class="certificate-area clientssection" style="">
+    <div class="overlaiClients pt-50 pb-100">
+        <div class="">
+            <div class="row   justify-content-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="section-title text-center mb-60  pos-relative">
+                        <div class="section-icon wow fadeInUp">
+                            <img src="~/assets_New_Puplic/img/NewImg/section.png" alt="">
+                        </div>
+                        <span>EMPC Filming</span>
+                        <a href="#"><h1 class=" wow fadeInUp">@Resources.Global.OurClients</h1></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="certificate-active owl-carousel">
+                    @foreach (var Client in _Clients)
+                    {
+                        <div class="col-xl-12 p-0">
+                            <div class="certificate-img">
+                                <img src="@Client.Image" alt="">
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="certificateRTL-active owl-carousel">
+                    @foreach (var Client in _Clients)
+                    {
+                        <div class="col-xl-12 p-0">
+                            <div class="certificate-img">
+                                <img src="@Client.Image" alt="">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- certificate-area-end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="news"  style="display:none">
+    <div class="container">
+        <Div class="row">
+
+            <!--
+                            <div class="col-md-6">
+                                <img src="images/bg_2.jpg" class="img-responsive img-about" />
+                            </div>
+            -->
+            <!--end col-6-->
+            <!--
+                            <div class="col-md-6">
+                                <img src="images/bg_2.jpg" class="img-responsive img-about" />
+                            </div>
+            -->
+            <!--end col-6-->
+
+
+            <div class="col-md-2 hidden-xs">
+            </div>
+            <!--end col-2-->
+
+
+            <div class="col-md-8 col-xs-12">
+                <Div class="data-about">
+                    <h2>@Resources.Global.AboutCreate</h2>
+                    @if (en)
+                    {
+                        @*<h2>
+                                @aboutUs.TitleEnglish
+                            </h2>*@
+
+
+                        <p>
+                            @Html.Raw(@aboutUs.DescriptionEnglish)
+                        </p>
+                    }
+                    else
+                    {
+                        @*<h2>
+                                @aboutUs.TitleArabic
+                            </h2>*@
+
+
+                        <p>
+                            @Html.Raw(@aboutUs.DescriptionArabic)
+                        </p>
+                    }
+
+
+
+
+                </Div>
+                <!--end data-about-->
+            </div>
+            <!--end col-12-->
+
+            <div class="col-md-2 hidden-xs">
+            </div>
+            <!--end col-2-->
+
+        </Div>
+        <!--end row-->
+    </div>
+    <!--end continer-->
+</div>
+
+
+
+<Div class="about-bk" style="display:none">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-2">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active first-li">
+                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+
+                            @Resources.Global.MISSION
+                        </a>
+                    </li>
+                    <li class="second-li" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">@Resources.Global.VISSION</a></li>
+                    <li class="third-li" role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">@Resources.Global.Value</a></li>
+                </ul>
+
+
+            </div>
+            <!--end col-2-->
+
+
+            <Div class="col-md-10">
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    @if (en)
+                    {
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <p>
+                                @Html.Raw(@aboutUs.HomeTapDescriptionEnglish)
+                            </p>
+                        </div>
+                        <!--end tab1--->
+
+
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <p>
+                                @Html.Raw(@aboutUs.ProfileDescriptionEnglish)
+                            </p>
+                        </div>
+                        <!--end tab2-->
+
+
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <p>
+                                @Html.Raw(@aboutUs.MessageTapDescriptionEnglish)
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <p>
+                                @Html.Raw(@aboutUs.HomeTapDescriptionArabic)
+                            </p>
+                        </div>
+                        <!--end tab1--->
+
+
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <p>
+                                @Html.Raw(@aboutUs.ProfileDescriptionArabic)
+                            </p>
+                        </div>
+                        <!--end tab2-->
+
+
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <p>
+                                @Html.Raw(@aboutUs.MessageTapDescriptionArabic)
+                            </p>
+                        </div>
+                    }
+                    <!--end tab-3-->
+
+
+                </div>
+
+
+            </Div>
+            <!--end col10--->
+
+
+
+            <Div class="cleaner-h4"></Div>
+
+
+
+            <!--end col-12-->
+
+
+
+
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</Div>
+<!--end about-bk-->
+
+
+
+
+<div class="ServicesPage" style="display:none">
+    <div class="overlay">
+        <div class="container">
+            <div class="ServipageContent">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 ol-md-4 col-sm-4 col-xs-12 ">
+                        <div class="ServiceItem">
+                            <div class="imagesIcon">
+                                <img src="~/assets_NewPublic/images/icons/NewsIcons/icon-about-1.png">
+                            </div>
+                            <div class="Title">
+                                <h2>@Resources.Global.MISSION</h2>
+                            </div>
+                            <div class="Discription">
+                                @if (en)
+                                {
+                                    <p>
+                                        @Html.Raw(@aboutUs.HomeTapDescriptionEnglish)
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p>
+                                        @Html.Raw(@aboutUs.HomeTapDescriptionArabic)
+                                    </p>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-lg-4 ol-md-4 col-sm-4 col-xs-12 ">
+                        <div class="ServiceItem">
+                            <div class="imagesIcon">
+                                <img src="~/assets_NewPublic/images/icons/NewsIcons/vision.png">
+                            </div>
+                            <div class="Title">
+                                <h2>@Resources.Global.VISSION</h2>
+                            </div>
+                            <div class="Discription">
+                                @if (en)
+                                {
+                                    <p>
+                                        @Html.Raw(@aboutUs.ProfileDescriptionEnglish)
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p>
+                                        @Html.Raw(@aboutUs.ProfileDescriptionArabic)
+                                    </p>
+                                }
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="col-lg-4 ol-md-4 col-sm-4 col-xs-12 ">
+                        <div class="ServiceItem">
+                            <div class="imagesIcon">
+                                <img src="~/assets_NewPublic/images/icons/NewsIcons/03.png">
+                            </div>
+                            <div class="Title">
+                                <h2>@Resources.Global.Value</h2>
+                            </div>
+                            <div class="Discription">
+                                @if (en)
+                                {
+                                    <p>
+                                        @Html.Raw(@aboutUs.MessageTapDescriptionEnglish)
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p>
+                                        @Html.Raw(@aboutUs.MessageTapDescriptionArabic)
+                                    </p>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section EndBody{
+
+}

@@ -1,0 +1,82 @@
+﻿
+
+
+@model List<log>
+@{
+    ViewBag.Title = "Logs";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<div class="container-fluid">
+
+
+    <!-- end page title -->
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_Slider" class=" table table-bordered tableOtherdite">
+                            <thead class="DarkThead">
+                                <tr>
+
+                                    <th> <p>User</p> </th>
+                                    <th> <p>Email</p> </th>
+                                    <th> <p>Phone</p> </th>
+
+                                    <th> <p>Time</p> </th>
+                                    <th> <p>Action</p> </th>
+                                    <th> <p>Login Date</p> </th>
+                                    <th> <p>Last Logout Date</p> </th>
+                                    <th> <p>Action Title</p> </th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td><p>@item.User.FullName</p></td>
+                                        <td><p>@item.User.EmailAddress</p></td>
+                                        <td><p>@item.User.Mobile</p></td>
+                                        <td><p>@item.ActionTime</p></td>
+                                        <td><p>@item.Action</p></td>
+                                        <td><p>@item.LoginDate</p></td>
+                                        <td><p>@item.LogoutDate</p></td>
+                                        <td><p>@item.ActionTitle</p></td>
+
+
+
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+
+
+
+
+
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,1119 @@
+﻿@using System.Resources;
+@using Eagles.LMS.BLL
+@using Eagles.LMS.Extensions;
+@{ var resourceManager = new ResourceManager(typeof(Resources.Global));
+    UnitOfWork ctx = new UnitOfWork();
+
+    var setting = ctx.SettingsManager.GetAll().FirstOrDefault();
+    string UserID;
+    User user = null;
+    if (Session["User_Key"] != null)
+    {
+        UserID = Session["User_Key"].ToString();
+        user = ctx.UserManager.GetBy(int.Parse(UserID));
+
+    }
+
+
+
+
+
+    int UserId = Convert.ToInt32(Session["User_Key"]);
+    user = ctx.UserManager.GetBy(int.Parse(UserId.ToString()));
+    bool en = true;
+    var url = Context.Request.CurrentExecutionFilePath;
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    bool darkthems = false;
+    if (Request.Cookies["thems"] != null)
+    {
+        darkthems = (Request.Cookies["thems"].Value.ToString() == "dark") ? true : false;
+
+    }
+    
+    
+    }
+<!DOCTYPE html>
+<html ng-app="LmsApp">
+<head>
+    <title> Admission - @ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Phoenixcoded">
+    @if (!string.IsNullOrEmpty(setting.MegaTags))
+    {
+        <meta name="viewport" content="@setting.MegaTags">
+    }
+    <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="Phoenixcoded">
+    <link rel="icon" href="~/assets_NewDash/images/NewImg/logoIcon.png">
+    @*<link href="~/assets_2/plugins/calendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets_2/plugins/amcharts/export.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/assets_NewDash/libs/extended/jstree.bundle.css" rel="stylesheet" type="text/css">
+    <link href="~/assets_2/app/bundle/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets_2/plugins/widgets/datedropper.min.css" rel="stylesheet" />
+    <link href="~/assets_2/plugins/widgets/ui-toggle.css" rel="stylesheet" />
+    <link href="~/assets_2/plugins/widgets/jquery.scrollbar.css" rel="stylesheet" />
+    <link href="~/assets_2/plugins/widgets/roundslider.min.css" rel="stylesheet" />
+
+
+    <!-- DataTables -->
+    @*<link href="~/assets_NewDash/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />*@
+    @*<link href="~/assets_NewDash/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />*@
+
+
+
+
+
+
+    @*<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">*@
+
+
+    <!-- Responsive datatable examples -->
+    @*<link href="~/assets_NewDash/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />*@
+
+
+    <link href="~/assets_NewDash/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets_NewDash/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets_NewDash/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets_NewDash/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets_NewDash/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets_NewDash/libs/%40chenfengyuan/datepicker/datepicker.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Css -->
+    <link href="~/assets_NewDash/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/assets_NewDash/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/assets_NewDash/libs/wysiwyag/richtext.css" rel="stylesheet" />
+
+    <link href="~/assets_NewDash/libs/VideoPopUp/css/jquery.fancybox.css" rel="stylesheet" />
+
+    <link href="~/assets_NewDash/libs/summernote/summernote.min.css" rel="stylesheet" />
+
+    <link href="~/assets_2/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/assets_2/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />*@
+    @*<link href="~/assets_NewDash/css/app.css" id="app-style" rel="stylesheet" type="text/css" />*@
+    <link href="~/assets_NewDash/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,700,900" rel="stylesheet">
+    @if (!en)
+    {
+        // arabic mode
+
+
+
+    }
+
+    else
+    {
+        // eng mode
+
+        @*<link href="~/assets_NewDash/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />*@
+    }
+
+
+    @*<link href="~/assets_2/default/skins/header/base/light.rtl.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets_2/default/skins/header/menu/light.rtl.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets_2/default/skins/brand/light.rtl.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets_2/default/skins/aside/light.rtl.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets_2/plugins/widgets/chosen.css" rel="stylesheet" />*@
+
+
+
+
+    @*<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link href="~/assets/demo/demo8/base/imagepreview/jpreview.css" rel="stylesheet" />*@
+
+    <!-- end style -->
+    @*<link rel="icon" href="~/StaticFiles/img/ez2.png">*@
+
+
+
+    @*<link href="~/assets_2/staticFiles/NewFiles/libs/select2/css/select2.min.css" rel="stylesheet" />
+        <link href="~/assets_2/staticFiles/NewFiles/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+        <link href="~/assets_2/staticFiles/NewFiles/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" />
+        <link href="~/assets_2/staticFiles/NewFiles/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+        <script src="~/assets_2/staticFiles/NewFiles/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+        <link href="~/assets_2/staticFiles/NewFiles/libs/chenfengyuan/datepicker/datepicker.min.css" rel="stylesheet" />
+        <link href="~/assets_2/staticFiles/NewFiles/css/icons.min.css" rel="stylesheet" />
+        <link href="~/assets_2/staticFiles/NewFiles/css/app.min.css" rel="stylesheet" />*@
+
+    @*@if (darkthems)
+        {
+            <link href="~/assets_2/default/base/Darktheme.css" rel="stylesheet" />
+        }
+
+        <style>
+            .field-validation-error {
+                color: red;
+            }
+
+            .dropdown-item {
+                cursor: pointer
+            }
+        </style>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+
+        .dropdown-item {
+            cursor: pointer
+        }
+    </style>
+    @*<script src="https://cdn.tiny.cloud/1/atq73pqlxm6o48zz52pwgoigtuw4hp81nyvfeahu1b8xtl4i/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '.textarea',
+            height: 500,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor  advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable ',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste imagetools wordcount',
+                'image code',
+            ],
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |  code',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        });
+
+    </script>*@
+
+
+    @*<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>*@
+
+
+
+    @RenderSection("EndHeader", required: false)
+    <link href="~/assets_NewDash/libs/summernote/summernote.min.css" rel="stylesheet" />
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body data-sidebar="dark" class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-footer--fixed">
+
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+
+
+                        <a href="/" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="~/assets_NewDash/images/NewImg/logoIcon.png" alt="" height="35">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="~/assets_NewDash/images/NewImg/gold-logo-small.png" alt="" height="60">
+                            </span>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+
+                    <!-- App Search-->
+
+
+
+                </div>
+
+                <div class="d-flex">
+
+
+
+
+
+
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="~/assets_NewDash/images/users/avatar-1.jpg"
+                                 alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">@user.FullName</span>
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            @*<a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
+                                <div class="dropdown-divider"></div>*@
+                            <a class="dropdown-item text-danger" href="/Account/LogOut"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@Resources.Global.LogOut</span></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+
+
+
+
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <!--<ul class="metismenu list-unstyled" id="side-menu">
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-layer"></i>
+                                <span>Home Page </span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="/Admission/Slider" key="t-products"> Slider</a></li>
+                                <li><a href="/Admission/AboutUS" key="t-products"> AboutUs</a></li>
+                                <li><a href="/Admission/Services" key="t-products"> Services</a></li>-->
+                    @*<li><a href="/Admission/Slider/AddSlider" key="t-product-detail"> Create New</a></li>*@
+                    <!--</ul>
+                        </li>
+
+                        <li>
+                            <a href="/Admission" class="waves-effect">
+                                <i class="bx bx-calendar"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-layer"></i>
+                                <span>Users Permissions </span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="/Admission/Groups" key="t-products"> Home</a></li>
+                                <li><a href="/Admission/Groups/Create" key="t-product-detail"> Create New</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-layer"></i>
+                                <span>Users </span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="/Admission/Users/Index"> Home</a></li>
+                                <li><a href="/Admission/Users/Create"> Create New</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="bx bx-share-alt"></i>
+                                <span>Multi Level</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="javascript: void(0);">Level 1.1</a></li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Level 1.2</a>
+                                    <ul class="sub-menu" aria-expanded="true">
+                                        <li><a href="javascript: void(0);">Level 2.1</a></li>
+                                        <li><a href="javascript: void(0);">Level 2.2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>-->
+
+
+                    @Html.BindMenue(UserId)
+                    <!-- Left Menu Start -->
+
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                @RenderBody()
+
+
+
+
+                <!--<div class="container-fluid">-->
+                <!-- start page title -->
+                <!--<div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">Starter Page</h4>
+
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Utility</a></li>
+                                    <li class="breadcrumb-item active">Starter Page</li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>-->
+                <!-- end page title -->
+                <!--<div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-3 row">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>-->
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © EMPC News.
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+    <!--<div id="loadingDiv" class="newloadingpage2">
+        <div class="pace">
+            <div class="pace-progress">
+                <div class="pace-progress-inner">Loading</div>
+            </div>
+            <div class="pace-activity"></div>
+        </div>
+    </div>
+    <!-- begin:: Header Mobile -->
+    <!--<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+        <div class="kt-header-mobile__toolbar">
+            <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
+        </div>
+    </div>-->
+    <!-- end:: Header Mobile -->
+    <!--<div class="kt-grid kt-grid--hor kt-grid--root">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">-->
+    <!-- begin:: Aside -->
+    <!--<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+    <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">-->
+    <!-- begin:: Aside Menu -->
+    <!--<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+
+        <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">-->
+    @*@Html.BindMenue(ref resourceManager, UserId)*@
+
+
+    <!--</div>
+    </div>-->
+    <!-- end:: Aside Menu -->
+    <!--</div>-->
+    <!-- end:: Aside -->
+    <!--<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">-->
+    <!-- begin:: Header -->
+    <!--<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">-->
+    <!-- begin:: Header Menu -->
+    <!--<div class="kt-header-mobile__toolbar2">
+        <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler2"><span></span></button>
+    </div>
+    <div class="img-logo">
+        <a href="/Admission/Home">-->
+    @*<img src="~/assets_2/media/logo/logo.png" />*@
+    @*<img src="~/StaticFiles/images/unnamed.jpg" />*@
+
+    @*<img src="~/StaticFiles/images/logo.png" />*@
+    <!--<img class="lighttheme" src="~/SiteInfo.Logo" />
+            <img class="darkthemeeee" src="~/SiteInfo.Logo" />
+        </a>
+    </div>
+    <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+    <div class="kt-header__topbar topbar-top">-->
+    <!--begin: Notifications -->
+    <!--<div class="kt-header__topbar-item dropdown" style="display:none">
+        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px" aria-expanded="true">
+            <span class="kt-header__topbar-icon kt-pulse kt-pulse--brand">
+                <i class="flaticon2-bell-alarm-symbol"></i>
+                <span class="kt-pulse__ring"></span>
+            </span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+            <form>
+                <div class="kt-head kt-head--skin-dark kt-head--fit-x kt-head--fit-b bg-notification">
+                    <h3 class="kt-head__title">
+                        اشعارات المستخدم
+                        &nbsp;
+                        <span class="btn btn-success btn-sm btn-bold btn-font-md">23 جديد</span>
+                    </h3>
+                    <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-success kt-notification-item-padding-x" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true">التنبيهات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#topbar_notifications_events" role="tab" aria-selected="false">التجمعات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#topbar_notifications_logs" role="tab" aria-selected="false">السجلات</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="topbar_notifications_notifications" role="tabpanel">
+                        <div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+                            <a href="#" class="kt-notification__item">
+                                <div class="kt-notification__item-icon">
+                                    <i class="flaticon2-line-chart kt-font-success"></i>
+                                </div>
+                                <div class="kt-notification__item-details">
+                                    <div class="kt-notification__item-title">
+                                        New order has been received
+                                    </div>
+                                    <div class="kt-notification__item-time">
+                                        2 hrs ago
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="topbar_notifications_events" role="tabpanel">
+                        <div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+                            <a href="#" class="kt-notification__item">
+                                <div class="kt-notification__item-icon">
+                                    <i class="flaticon2-psd kt-font-success"></i>
+                                </div>
+                                <div class="kt-notification__item-details">
+                                    <div class="kt-notification__item-title">
+                                        New report has been received
+                                    </div>
+                                    <div class="kt-notification__item-time">
+                                        23 hrs ago
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
+                        <div class="kt-grid kt-grid--ver" style="min-height: 200px;">
+                            <div class="kt-grid kt-grid--hor kt-grid__item kt-grid__item--fluid kt-grid__item--middle">
+                                <div class="kt-grid__item kt-grid__item--middle kt-align-center">
+                                    All caught up!
+                                    <br>No new notifications.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>-->
+    <!--begin: Language bar -->
+    <!--<div class="kt-header__topbar-item kt-header__topbar-item--langs">
+        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+            <span class="kt-header__topbar-icon bold">
+                @Resources.Global.Language
+            </span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
+            <ul class="kt-nav kt-margin-t- 10 kt-margin-b-10">
+
+
+
+
+                <li class="kt-nav__item">
+                    <a href="/Home/ChangeLanguage?SelectedLanguage=en&redirect=@url" class="kt-nav__link dir-l">
+                        <span class="kt-nav__link-icon">ENG</span>
+                        <span class="kt-nav__link-text">English</span>
+                    </a>
+                </li>
+
+                <li class="kt-nav__item">
+                    <a href="/Home/ChangeLanguage?SelectedLanguage=ar-EG&redirect=@url" class="kt-nav__link dir-l">
+                        <span class="kt-nav__link-icon">Ar</span>
+                        <span class="kt-nav__link-text">Arabic</span>
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </div>-->
+    <!--begin: User Bar -->
+    <!--<div class="kt-header__topbar-item kt-header__topbar-item--user">
+        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+            <div class="kt-header__topbar-user">
+                <span class="kt-header__topbar-welcome kt-hidden-mobile">@Resources.Global.Welcome,</span>
+                <span class="kt-header__topbar-username kt-hidden-mobile">@user.FullName</span>
+                <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">
+
+                    <img src="~/StaticFiles/user.png" />
+                </span>
+            </div>
+        </div>
+
+        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-md">
+            <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x bg-notification">
+                <div class="kt-user-card__avatar">
+                    <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">
+                        <img alt="Pic" src="~/StaticFiles/user.png" />
+
+                    </span>
+                </div>
+                <div class="kt-user-card__name">
+                    @user.FullName
+                </div>-->
+    @*<div class="kt-user-card__badge">
+            <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
+        </div>*@
+    <!--</div>
+    <div class="kt-notification themessss">-->
+    @*<div class="row">
+            <div class="col-lg-4">
+                <p class="tememode">Dark </p>
+            </div>
+            <div class="col-lg-4">
+                <label class="switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <div class="col-lg-4">
+                <p class="tememode">Light </p>
+            </div>
+        </div>*@
+
+    <!--<div class="kt-notification__custom">
+                        <a href="/Account/LogOut" target="_self" class="btn btn-danger btn-sm btn-bold">@Resources.Global.LogOut</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- end:: Header Menu -->
+    <!-- begin:: Header Topbar -->
+    <!--</div>-->
+    <!-- end:: Header -->
+    <!--<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor ">-->
+    <!-- begin:: Subheader -->
+    <!--@RenderSection("addNewButton", required: false)-->
+    @*<div class="background">
+            <span style="background:#2A1B3C;"></span>
+            <span style="background:#D93F87;"></span>
+            <span style="background:#8265A7;"></span>
+            <span style="background:#A4B3B6;"></span>
+            <span style="background:#44318D;"></span>
+            <span style="background:#1064ad;"></span>
+        </div>*@
+
+
+    <!--<div class="loadingpage" style="display:none">
+
+        <div class="sk-chase" style="display:none">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        <h1 class="ml8">
+            <span class="letters-container">
+                <span class="letters letters-left">Hi</span>
+                <span class="letters bang">!</span>
+            </span>
+            <span class="circle circle-white"></span>
+            <span class="circle circle-dark"></span>
+            <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
+        </h1>
+
+    </div>-->
+    @*@RenderBody()*@-->
+    <!-- end:: Content -->
+    <!--</div>
+            </div>
+        </div>
+    </div>
+
+    <a class="glax_tm_totop totop" href="#">
+        <span class="shape"></span>
+    </a>
+
+    <a class="glax_tm_totop tobottom" href="#">
+        <span class="shape"></span>
+    </a>-->
+    <!-- JAVASCRIPT -->
+    <script src="~/assets_NewDash/libs/jquery/jquery.min.js"></script>
+    <script src="~/assets_NewDash/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets_NewDash/libs/metismenu/metisMenu.min.js"></script>
+    <script src="~/assets_NewDash/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/assets_NewDash/libs/node-waves/waves.min.js"></script>
+    <!--<!-- Required datatable js -->
+    <!--<script src="~/assets_NewDash/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>-->
+    <!-- Buttons examples -->
+    <!--<script src="~/assets_NewDash/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets_NewDash/libs/jszip/jszip.min.js"></script>
+    <script src="~/assets_NewDash/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/assets_NewDash/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>-->
+    <!-- Responsive examples -->
+    <!--@*<script src="~/assets_NewDash/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="~/assets_NewDash/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>*@-->
+    <!-- Datatable init js -->
+    <!--<script src="~/assets_NewDash/js/pages/datatables.init.js"></script>-->
+
+
+
+
+
+
+
+    <script src="~/assets_NewDash/libs/select2/js/select2.min.js"></script>
+    <script src="~/assets_NewDash/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/assets_NewDash/libs/spectrum-colorpicker2/spectrum.min.js"></script>
+    <script src="~/assets_NewDash/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="~/assets_NewDash/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/assets_NewDash/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="~/assets_NewDash/libs/%40chenfengyuan/datepicker/datepicker.min.js"></script>
+
+    <!-- form advanced init -->
+    <script src="~/assets_NewDash/libs/summernote/summernote.min.js"></script>
+    <!-- this -->
+    <script src="~/assets_NewDash/js/pages/form-advanced.init.js"></script>
+    <script src="~/assets_NewDash/js/app.js"></script>
+
+
+
+
+
+
+
+
+
+    @*<div class="overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
+        <script src="~/assets_2/plugins/datatables new/datatables.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/datatables.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/datatables.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+        <script src="~/assets_2/plugins/datatables new/datatables-init.js"></script>*@
+
+    @*<script>
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml8 .circle-white',
+                scale: [0, 3],
+                opacity: [1, 0],
+                easing: "easeInOutExpo",
+                rotateZ: 360,
+                duration: 1100
+            }).add({
+                targets: '.ml8 .circle-container',
+                scale: [0, 1],
+                duration: 1100,
+                easing: "easeInOutExpo",
+                offset: '-=1000'
+            }).add({
+                targets: '.ml8 .circle-dark',
+                scale: [0, 1],
+                duration: 1100,
+                easing: "easeOutExpo",
+                offset: '-=600'
+            }).add({
+                targets: '.ml8 .letters-left',
+                scale: [0, 1],
+                duration: 1200,
+                offset: '-=550'
+            }).add({
+                targets: '.ml8 .bang',
+                scale: [0, 1],
+                rotateZ: [45, 15],
+                duration: 1200,
+                offset: '-=1000'
+            }).add({
+                targets: '.ml8',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1400
+            });
+
+        anime({
+            targets: '.ml8 .circle-dark-dashed',
+            rotateZ: 360,
+            duration: 8000,
+            easing: "linear",
+            loop: true
+        });
+    </script>*@
+
+    <script src="/angular.min.js"></script>
+
+    <script src="/angular-sanitize.js"></script>
+    <script src="/appconfig.js"></script>
+
+    <script src="~/Componnets/Shared/Services/GenaricServices.js"></script>
+    <script src="~/Componnets/Shared/Services/Notification.js"></script>
+
+    <script src="~/Componnets/Shared/Services/DataTable.js"></script>
+    <script src="~/Componnets/Shared/Services/Culutre.js"></script>
+
+    <script src="~/assets_2/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/default/base/Scripts.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/plugins/extended/bootstrap-notify.js" type="text/javascript"></script>
+    @*
+        <script src="~/assets_2/plugins/widgets/jquery.scrollbar.min.js"></script>
+        <script src="~/assets_2/plugins/widgets/roundslider.min.js"></script>
+        <script src="~/assets_2/plugins/widgets/sticky.js"></script>
+
+        <script src="~/assets_2/plugins/extended/jquery.playSound.js" type="text/javascript"></script>
+        <script src="~/assets_2/plugins/widgets/datedropper.min.js"></script>
+        <script src="~/assets_2/plugins/widgets/jquery.nicescroll.min.js"></script>
+        <script src="~/assets_2/plugins/widgets/chosen.jquery.js"></script>
+        <script src="~/assets_2/plugins/widgets/glDatePicker.js"></script>
+        <script src="~/assets_2/plugins/widgets/angular-chosen.js"></script>*@
+
+
+    <script src="~/assets/demo/demo8/base/imagepreview/jpreview.js"></script>
+    <script src="~/assets/demo/demo8/base/imagepreview/bootstrap-prettyfile.js"></script>
+    <script>
+        $('input[type="file"]').prettyFile();
+        $('.demo').jPreview();
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <script>
+
+        $('.totop').on("click", function (e) {
+            e.preventDefault();
+            $("html, body").animate({ scrollTop: 0 });
+            return false;
+        });
+
+    </script>
+
+    @*<script>
+
+        $('.tobottom').on("click", function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $(document).height() }, 500);
+            return false;
+        });
+    </script>
+    <script>
+        $(".kt-aside,#kt_quick-nav").niceScroll({
+            zindex: "-1",
+            cursorwidth: 8,
+            cursorcolor: '#fff',
+            cursorborder: 'none',
+            cursorborderradius: 2
+        });
+
+    </script>
+
+    <script>
+        $("#example-sticky-notes-1").niceScroll({
+            zindex: "9999999999999",
+            cursorwidth: 8,
+            cursorcolor: '#fff',
+            cursorborder: 'none',
+            cursorborderradius: 2
+        });
+
+    </script>
+
+    <script>
+        $(".kt-widget--users-scroll").niceScroll({
+            cursorcolor: "#7295a7",
+            cursorwidth: "5px"
+        });
+    </script>
+
+    <script>
+        $(".scroll2").niceScroll({
+            cursorcolor: "#7295a7",
+            cursorwidth: "5px"
+        });
+    </script>*@
+
+    @*<script>
+        $(function () {
+            $("input").attr("autocomplete", "off");
+        });
+        // manage lodaing
+        var $loading = $('#loadingDiv').hide();
+        $(document)
+            .ajaxStart(function () {
+                $loading.show();
+                //$loading.fadeIn(1000);
+            })
+            .ajaxStop(function () {
+                //$loading.fadeOut(1000);
+                $loading.hide();
+
+            });
+    </script>*@
+
+    <script>
+        function calC(c) {
+            form.panel.value = form.panel.value + c;
+        }
+        function CE() {
+            form.panel.value = "";
+        }
+    </script>
+
+    <script src="~/assets_2/plugins/widgets/bootstrap-datepicker.js"></script>
+    <script>
+        $("#datepicker-nav").datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>
+
+    <script src="~/Scripts_2/sweetalert.min.js"></script>
+    <script src="~/Scripts_2/jquery.validate.min.js"></script>
+    <script src="~/Scripts_2/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/assets_2/plugins/widgets/bootstrap-select.js"></script>
+    <script src="~/assets_2/plugins/widgets/jquery.toggler.js"></script>
+
+
+
+
+
+
+    @*<script src="~/assets_2/staticFiles/NewFiles/libs/select2/js/select2.min.js"></script>
+
+        <script src="~/assets_2/staticFiles/NewFiles/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/spectrum-colorpicker2/spectrum.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/%40chenfengyuan/datepicker/datepicker.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/chenfengyuan/datepicker/datepicker.min.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/select2/form-advanced.init.js"></script>
+        <script src="~/assets_2/staticFiles/NewFiles/libs/app.js"></script>*@
+
+    <script>
+        $('.quick-nav').click(function () {
+            $("#kt_quick-nav").addClass("kt-quick-panel--on");
+            $(".overlay").addClass("kt-quick-panel-overlay");
+        })
+
+        $('#kt_quick_panel_close_btn').click(function (e) {
+            e.preventDefault();
+            $("#kt_quick-nav").removeClass("kt-quick-panel--on");
+            $(".overlay").removeClass("kt-quick-panel-overlay");
+        })
+
+        $(document).mouseup(function (e) {
+            var quicknav = $("#kt_quick-nav");
+            if (!$('#kt_quick-nav').is(e.target) && !quicknav.is(e.target) && quicknav.has(e.target).length == 0) {
+                quicknav.removeClass("kt-quick-panel--on");
+                $(".overlay").removeClass("kt-quick-panel-overlay");
+            }
+        });
+    </script>
+
+    <script>
+
+        $("#kt_aside_mobile_toggler2").click(function () {
+            $("body").toggleClass("kt-aside--minimize")
+        });
+    </script>
+
+
+
+    <script>
+        $(() => {
+
+            let _url = location.pathname.split('?')[0];
+            let link = $(".clickableLink[href='" + _url + "']");
+
+
+
+            let parent = link.parent('li').parent('ul').parent('div').parent('li');
+
+            if (parent != null && parent != "" && parent.length > 0) {
+                parent.addClass("kt-menu__item--open acive");
+                link.addClass(" acivetwo");
+            }
+        })
+    </script>
+
+
+    @RenderSection("CustomfeScripts_2", required: false)
+    <script src="~/assets_2/app/bundle/datatables.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/plugins/datatables/extensions/buttons.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.10/js/dataTables.checkboxes.min.js"></script>
+    <script src="~/assets_2/app/bundle/app.bundle.js" type="text/javascript"></script>
+    <script src="~/Scripts_2/bootbox.min.js"></script>
+    <script src="~/Scripts_2/datatables.js"></script>
+    <script src="~/assets_NewDash/libs/summernote/summernote.min.js"></script>
+    <script>
+        $('.textarea').summernote();
+    </script>
+    @RenderSection("EndBody", required: false)
+
+    <script src="~/assets_NewDash/libs/VideoPopUp/js/jquery-plugin-collection.js"></script>
+    <script src="~/assets_NewDash/libs/VideoPopUp/js/script.js"></script>
+    <!-- WYSIWYG Editor js -->
+    <script src="~/assets_NewDash/libs/wysiwyag/jquery.richtext.js"></script>
+    <link href="~/assets_NewDash/libs/wysiwyag/richtext.css" rel="stylesheet" />
+
+
+    <script>
+        $(() => {
+            $("#table_Slider").DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'print'
+                ]
+            });
+        });
+    </script>
+
+    @*<script>
+            $(document).ready(function () {
+                // Initialize Editor
+                $('.textarea').summernote({
+                    height: 300, // set editor height
+                    minHeight: null, // set minimum height of editor
+                    maxHeight: null, // set maximum height of editor
+                    focus: true // set focus to editable area after initializing summernote
+                });
+            });
+        </script>*@
+
+
+
+
+</body>
+</html>
+
+

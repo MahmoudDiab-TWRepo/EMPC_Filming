@@ -1,0 +1,502 @@
+﻿
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, booking, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+@section EndHeader{
+    <link href="~/assets_2/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .header-bc {
+            background-image: url(../images/bc-header.jpg);
+            background-repeat: repeat-x;
+            height: 300px;
+            background-size: contain;
+            background-attachment: fixed;
+            position: relative;
+            background-position: center;
+        }
+    </style>
+}
+
+
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewBooking.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="title-header">
+
+                        <h3>@Resources.Global.Booking</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="#">@Resources.Global.Home</a> > </li>
+                                <li>@Resources.Global.Booking</li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+                    </div>
+                    <!--end title-header-->
+                </div>
+                <!--end col-6-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+<div class="bookingform">
+    <div class="overlay">
+        <div class="container">
+            <div class="bookingformcont">
+
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Your Company Name :-</label>
+                                    <input type="text" id="Text_CompanyName" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Your Company Email :-</label>
+                                    <input type="email" id="Text_CompanyEmail" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Date of Services</label>
+                                    <input type="date" id="Text_DataServicees" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <h2>Time of Services (GMT Time)</h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Start (00.00 GMT)</label>
+                                    <input type="time" id="Text_SartTime" class="form-control" placeholder="Date of Services">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>End (00.00 GMT)</label>
+                                    <input type="time" id="Text_EndTime" class="form-control" placeholder="Date of Services">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Origin :-</label>
+                                    <input type="text" id="Text_Origin" class="form-control" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-12 co-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <h2>Type of Services</h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_LiveStudio">Live Studio </label>
+                                                <input class="Text_ServiceType" value="1" id="Text_LiveStudio" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_StandUpPosition">Stand up Position </label>
+                                                <input class="Text_ServiceType" value="2" id="Text_StandUpPosition" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_TapeLayout">Tape Layout </label>
+                                                <input class="Text_ServiceType" value="3" id="Text_TapeLayout" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_EngCrew">Eng Crew </label>
+                                                <input class="Text_ServiceType" value="4" id="Text_EngCrew" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_NewsPackage">News Package </label>
+                                                <input class="Text_ServiceType" value="5" id="Text_NewsPackage" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_Edite">Edit </label>
+                                                <input class="Text_ServiceType" value="6" id="Text_Edite" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_Uplink">Uplink </label>
+                                                <input class="Text_ServiceType" value="7" id="Text_Uplink" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_SataliteSpace">Satalite Space </label>
+                                                <input class="Text_ServiceType" value="8" id="Text_SataliteSpace" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_Production">Production </label>
+                                                <input class="Text_ServiceType" value="9" id="Text_Production" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_SNG">SNG </label>
+                                                <input class="Text_ServiceType" value="10" id="Text_SNG" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_OBVAN">OB Van </label>
+                                                <input class="Text_ServiceType" value="11" id="Text_OBVAN" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkOption">
+                                        <div class="bg">
+                                            <div class="chiller_cb">
+                                                <label for="Text_Other">Other </label>
+                                                <input class="Text_ServiceType" value="12" id="Text_Other" type="checkbox">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>Your Messag</label>
+                            <textarea class="tettearea" id="Text_Message" placeholder="Please Clarify Your requist's Technical Details"></textarea>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <button id="BTN_SendBook" class="submitbtnbook">Send Book</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@section EndBody {
+
+    <script src="~/assets_2/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/default/base/Scripts.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/plugins/extended/bootstrap-notify.js" type="text/javascript"></script>
+
+    <script>
+        $(() => {
+
+            //$("input[name='options']").change(s => {
+            //    s.preventDefault();
+            //    let _val = $(s.currentTarget).val();
+            //    if (_val != 'student') {
+            //        $(".box_student").slideUp();
+            //    } else {
+            //        $(".box_student").slideDown();
+
+            //    }
+            //});
+            //let ddl_grades = $("#ddl_grades"),
+            //    ddl_groups = $("#ddl_groups");
+            //    getAllGroup(ddl_grades.val());
+
+            //function getAllGroup(gradeid) {
+            //    $.ajax({
+            //        type: "GET",
+            //        url: "/api/web/Grade/" + gradeid + "/GetGroups/en",
+            //        success: function (response) {
+
+            //            let option = ``;
+            //            for (var i = 0; i < response.length; i++) {
+            //                option += `<option value=${response[i].Id}>${response[i].Name}</option>`;
+            //            }
+            //            ddl_groups.html(option);
+            //        }
+            //    });
+            //}
+
+
+            //$("#ddl_grades").change(s => {
+
+            //    ddl_groups.children("option").eq(0).nextAll().remove();
+            //    ddl_groups.empty();
+            //    getAllGroup($(s.currentTarget).val());
+
+
+            //});
+
+            function errorMessage(error) {
+                $.notifyClose();
+                $.notify({
+                    title: "Error:",
+                    message: error,
+
+                }, {
+                    allow_dismiss: true,
+                    showProgressbar: false,
+                    type: "danger",
+                    mouse_over: null,
+                    animate: {
+                        enter: 'animated flipInY',
+                        exit: 'animated flipOutX',
+
+                    }
+                });
+
+            }
+
+            $("#BTN_SendBook").click(s => {
+                s.preventDefault();
+                let obj = {};
+
+                if (validateForm(obj)) {
+                    var _url = "/api/GlobalServices/AddBooking";
+
+
+                    $.ajax({
+                        type: "POST",
+                        url: _url,
+                        contentType: "application/json",
+                        data: JSON.stringify(obj.Data),
+                        success(resonse) {
+                            alert("sent succesfully");
+                            location.reload();
+                        }, error(error) {
+
+                            errorMessage(error.responseJSON.Message);
+
+                        }
+                    })
+                }
+
+
+
+            });
+
+            function validateEmail(email) {
+                var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+                return re.test(email);
+            }
+            function validateForm(obj) {
+
+                let flag = false,
+                    CompanyName = $("#Text_CompanyName").val(),
+                    CompanyEmail = $("#Text_CompanyEmail").val(),
+                    DataServicees = $("#Text_DataServicees").val(),
+                    SartTime = $("#Text_SartTime").val(),
+                    EndTime = $("#Text_EndTime").val(),
+                    Origin = $("#Text_Origin").val(),
+                    Message = $("#Text_Message").val();
+
+
+                if (CompanyName == "" || typeof (CompanyName) == 'undefined') {
+                    errorMessage("Please Enter The Your Company Name");
+                    return false;
+                }
+                if (CompanyEmail == "" || typeof (CompanyEmail) == 'undefined') {
+                    errorMessage("Please Enter Your Company Email");
+
+
+                    return false;
+                }
+                if (!validateEmail(CompanyEmail)) {
+
+                    errorMessage("Please Enter An Valid Email Address");
+                    return false;
+
+                }
+                if (DataServicees == "" || typeof (DataServicees) == 'undefined') {
+                    errorMessage("Please Enter Date Services");
+                    return false;
+                }
+
+                if (SartTime == "" || typeof (SartTime) == 'undefined') {
+                    errorMessage("Please Enter Start Time");
+                    return false;
+                }
+                if (EndTime == "" || typeof (EndTime) == 'undefined') {
+                    errorMessage("Please Enter End Time ");
+                    return false;
+                }
+                if (Origin == "" || typeof (Origin) == 'undefined') {
+                    errorMessage("Please Enter Origin");
+                    return false;
+                }
+
+                if (Message == "" || typeof (Message) == 'undefined') {
+                    errorMessage("Please Enter Your Message");
+                    return false;
+                }
+                var arr = $(".Text_ServiceType:checked").map(function () {
+                    return $(this).val();
+                });
+                var _arr = new Array();
+
+                for (var i = 0; i < arr.length; i++) {
+                    _arr.push(arr[i]);
+                }
+
+
+
+
+                obj.Data = {
+                    CompanyName: CompanyName,
+                    CompanyEmail: CompanyEmail,
+                    DataServicees: DataServicees,
+                    SartTime: SartTime,
+                    EndTime: EndTime,
+                    Origin: Origin,
+                    Message: Message,
+                    Services: _arr
+
+                }
+                return true;
+
+
+
+            }
+        })
+    </script>
+
+}

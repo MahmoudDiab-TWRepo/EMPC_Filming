@@ -1,0 +1,19 @@
+ SAFE 2016 Post Tensioning 16.0.0 (Analysis Build 9520/32)                      
+ File: G:\hassan sobhy\Project Gradiuation\new\cad\foot comb 2.OUT              
+                                                                     
+                                                                       
+
+ D I S P L A C E M E N T   D E G R E E S   O F   F R E E D O M
+
+         (A) = Active DOF, equilibrium equation
+         (-) = Restrained DOF, reaction computed
+         (+) = Constrained DOF
+         (>) = External substructure DOF
+         ( ) = Null DOF
+
+  JOINTS              UX  UY  UZ  RX  RY  RZ
+       2 TO       8    A   A   A   A   A   A
+       9               A   A   A   -   -   A
+      10               A   A   A   A   A   A
+      11               A   A   A   -   -   A
+      14 TO    ~372    A   A   A   A   A   A

@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewBag.Title = "Pending";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    int index = 1;
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+
+}
+
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">
+                    <a href="/Admission/Locations/Create" class="btn btn-success waves-effect waves-light"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> Add Location</a>
+                </h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission">Home</a></li>
+                        <li class="breadcrumb-item active">Locations</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_Slider" class=" table table-bordered tableOtherdite">
+                            <thead class="DarkThead">
+                                <tr>
+
+                                    <th><p>Action</p></th>
+                                    <th> <p>Accept</p> </th>
+                                    <th> <p>Refused</p> </th>
+                                    <th> <p>Title  Arabic</p> </th>
+                                    <th> <p>Title  English</p> </th>
+                                    <th> <p>Icon Image</p> </th>
+
+                                    <th> <p>Short Description AR </p></th>
+                                    <th> <p>Short Description EN</p> </th>
+                                    @*<th> <p>Description  Arabic</p> </th>
+        <th> <p>Description  English</p> </th>*@
+                                    <th> <p>Address  Arabic</p> </th>
+                                    <th> <p>Address  English</p> </th>
+
+                                    <th> <p>Main Image</p> </th>
+                                    <th> <p>Location Video</p> </th>
+                                    <th> <p>Created Time</p> </th>
+                                    <th> <p>User Created</p> </th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    @*<td><p>@item.Order</p></td>*@
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bx bx-dots-horizontal-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item align-middle " href="/Admission/Locations/Edit/@item.Id"><i class="bx bx-edit font-size-16 me-1"></i>@Resources.Global.Edit</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success align-middle btn_changeStatus d-block" data-id="@item.Id" style="width:max-content" data-name="Approval"><i class="bx bx-check font-size-16 me-1"></i>Approval</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger align-middle btn_changeStatus d-block" style="width:max-content" data-id="@item.Id" data-name="Rejected"><i class="bx bx-x font-size-16 me-1"></i>Reject</a>
+                                    </td>
+                                    <td><p class="FontArabic">@item.TitleArabic</p></td>
+                                    <td><p>@item.TitleEnglish</p></td>
+                                    <td>
+                                        <a href="@item.IconImage" class="btnIconImages" target="_blank">
+                                            <i class="bx bx-image"></i>
+                                        </a>
+                                    </td>
+                                    <td><p class="FontArabic DescriptionP">@item.ShortDescriptionArabic</p></td>
+                                    <td><p class="DescriptionP">@item.ShortDescriptionEnglish</p></td>
+                                    @*<td><p class="DescriptionP FontArabic">@Html.Raw(@item.DescriptionArabic)</p></td>
+        <td><p class="DescriptionP">@Html.Raw(@item.DescriptionEnglish)</p></td>*@
+                                    <td><p class="">@item.AddressArabic</p></td>
+                                    <td><p class="">@item.AddressEnglish</p></td>
+
+                                    <td>
+                                        <a href="@item.MainImage" class="btnIconImages" target="_blank">
+                                            <i class="bx bx-image"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="@item.LocationVideo" class="btnIconVideos" data-type="iframe" tabindex="0">
+                                            <i class="bx bx-play-circle"></i>
+                                        </a>
+                                    </td>
+                                    <td><p>@ctx.UserManager.GetBy(item.UserCreateId).FullName</p></td>
+                                    <td><p>@item.CreateTime</p></td>
+
+                                    @*<td>
+            <div class="dropdown">
+                <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item align-middle text-success btn_changeStatus" data-id="@item.Id" data-name="Approval" href="#"><i class="bx bx-check font-size-16 me-1"></i>Approval</a>
+                    <a class="dropdown-item align-middle text-danger btn_changeStatus" data-id="@item.Id" data-name="Rejected" href="#"><i class="bx bx-x font-size-16 me-1"></i>Reject</a>
+                    <a class="dropdown-item align-middle " href="/Admission/Locations/Edit/@item.Id"><i class="bx bx-edit font-size-16 me-1"></i>@Resources.Global.Edit</a>
+                    <a class="dropdown-item text-danger align-middle btn_delete" data-id="@item.Id" href="#"><i class="bx bx-trash font-size-16 me-1"></i>@Resources.Global.Delete</a>
+
+                </div>
+            </div>
+        </td>*@
+                                </tr>
+                                    {
+                                        index += 1;
+                                    }
+                                }
+
+                            </tbody>
+
+
+
+
+
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div>
+
+</div>
+
+
+
+@section EndBody{
+    <script>
+        $(function () {
+
+            $("body").on("click", ".btn_changeStatus", (s) => {
+                let self = $(s.currentTarget),
+                    entityId = self.attr('data-id'),
+                    dataName = self.attr('data-name');
+                bootbox.confirm("Confirm " + dataName + " Object", function (flag) {
+                    if (flag) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Admission/Locations/Pending?id=" + entityId + "&status=" + dataName + "",
+                            success: (response) => {
+                                toastr.success('The Object Has Been Successfully ' + dataName + '', '', { timeOut: 10000 });
+                                self.closest('tr').remove();
+                            }, error: (error) => {
+                                // unauthorize
+                                let errorMessage = manageAjaxError(error);
+                                pushNotification("danger", errorMessage);
+                            }
+                        });
+                    }
+                })
+
+
+            });
+
+  $("body").on("click", ".btn_delete", (s) => {
+                let self = $(s.currentTarget),
+                    entityId = self.attr('data-id');
+                bootbox.confirm("@Resources.Global.ConfirmDeleteoperation !", function (flag) {
+                    if (flag) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Admission/Locations/Delete/" + entityId+"",
+                            success: (response) => {
+                                toastr.success('@Resources.Global.Theunithasbeensuccessfullydeleted', '', { timeOut: 10000 });
+                                self.closest('tr').remove();
+                            }, error: (error) => {
+                                // unauthorize
+                                let errorMessage = manageAjaxError(error);
+                                pushNotification("danger", errorMessage);
+                            }
+                        });
+                    }
+                })
+            });
+        });
+    </script>
+
+}

@@ -1,0 +1,308 @@
+﻿@model AboutUs
+@{
+    ViewBag.Title = "About-Us";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var requestStatus = TempData.Peek("RequestStatus") as RequestStatus;
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+
+
+}
+
+@section EndHeader{
+
+    @*<script src="https://cdn.tiny.cloud/1/atq73pqlxm6o48zz52pwgoigtuw4hp81nyvfeahu1b8xtl4i/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '.textarea',
+                height: 500,
+                plugins: [
+                    'advlist autolink lists link image charmap print preview anchor  advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable ',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste imagetools wordcount',
+                    'image code',
+                ],
+                toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |  code',
+                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+            });
+
+        </script>*@
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Update About-US</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission/AboutUS">Home</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        @using (Html.BeginForm("Index", "AboutUS", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(s => s.Id)
+            @Html.HiddenFor(s => s.Image)
+
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Title English</label>
+                                        <textarea class="textarea"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Title English</label>
+                                        <h1>TinyMCE Quick Start Guide</h1>
+                                        <form method="post">
+                                            <textarea class="textarea" id="mytextarea2">Hello, World!</textarea>
+                                        </form>
+
+                                    </div>
+                                </div>*@
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <div>
+                                        <div>
+                                            <h1>Last User Edited : </h1>   <p>@ctx.UserManager.GetBy(Model.UserEditId).FullName</p>
+                                            <h1>Last Edited Time : </h1>    <p>@Model.EditeTime</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title Arabic</label>
+                                            @Html.TextBoxFor(s => s.TitleArabic, null, new
+                                       {
+                                           @class = "form-control FontArabic",
+                                           placeholder = "Title Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.TitleArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title English</label>
+                                            @Html.TextBoxFor(s => s.TitleEnglish, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Title English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.TitleEnglish)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description Arabic</label>
+                                            @Html.TextAreaFor(s => s.DescriptionArabic, new
+                                       {
+                                           @class = "form-control FontArabic textarea",
+                                           placeholder = "Description Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.DescriptionArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description English</label>
+                                            @Html.TextAreaFor(s => s.DescriptionEnglish, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "Description English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.DescriptionEnglish)*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Home Tap Description Arabic</label>
+                                            @Html.TextAreaFor(s => s.HomeTapDescriptionArabic, new
+                                       {
+                                           @class = "form-control FontArabic textarea",
+                                           placeholder = "Home Tap Description Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.HomeTapDescriptionArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Home Tap Description English</label>
+                                            @Html.TextAreaFor(s => s.HomeTapDescriptionEnglish, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "Home Tap Description English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.HomeTapDescriptionEnglish)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Profile Description Arabic</label>
+                                            @Html.TextAreaFor(s => s.ProfileDescriptionArabic, new
+                                       {
+                                           @class = "form-control FontArabic textarea",
+                                           placeholder = "Profile Description Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.ProfileDescriptionArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Profile Description English</label>
+                                            @Html.TextAreaFor(s => s.ProfileDescriptionEnglish, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "Profile Description English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.ProfileDescriptionEnglish)*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Message Tap Description Arabic </label>
+                                            @Html.TextAreaFor(s => s.MessageTapDescriptionArabic, new
+                                       {
+                                           @class = "form-control FontArabic textarea",
+                                           placeholder = "Message Tap Description Arabic "
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.MessageTapDescriptionArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Message Description English</label>
+                                            @Html.TextAreaFor(s => s.MessageTapDescriptionEnglish, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "Message Tap Description English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.MessageTapDescriptionEnglish)*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="mb-3">
+                                                    <label for="formFile" class="form-label">Logo <span class="extiniosType">(jpg, png, peg, gif, jpg)</span><span class="extiniosType">(W:512px, H:612px)</span></label>
+                                                    <input class="form-control" name="uploadattachments" type="file" id="uploadattachments">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                @if (Model != null && Model.Image != null)
+                                                {
+                                                    <img style="max-width: auto; height: 210px " src="@Model.Image" />
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">YouTube Frame</label>
+                                            @Html.TextBoxFor(s => s.YouTubeFrame, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "YouTube Frame"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.YouTubeFrame)
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> <!-- end col -->
+
+
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="foooterbuttons">
+
+                            <button type="submit" class="btn btn-success waves-effect waves-light">
+                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> @Resources.Global.Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+
+</div>
+
+
+@section EndBody{
+    <script>
+        $(document).ready(function () {
+            $('#summernote').summernote();
+        });
+    </script>
+
+    <!-- WYSIWYG Editor js -->
+    @*<script>
+            $(function (e) {
+                $('.TextEditor1').richText();
+                $('.TextEditor2').richText();
+                $('.TextEditor3').richText();
+                $('.TextEditor4').richText();
+                $('.TextEditor5').richText();
+                $('.TextEditor6').richText();
+                $('.TextEditor7').richText();
+                $('.TextEditor8').richText();
+                $('.TextEditor9').richText();
+            });
+        </script>*@
+
+
+
+    @if (requestStatus != null)
+    {
+
+        <script>
+
+              notify = $.notify({
+                  message: '@requestStatus.Message',
+
+              }, {
+
+                  type: '@requestStatus.Status' == 'Edited' ? "success" :"danger",
+                      animate: {
+                          enter: 'animated flipInY',
+                          exit: 'animated flipOutX',
+                      }
+                  });
+        </script>
+
+
+        TempData.Remove("RequestStatus");
+
+    }
+}

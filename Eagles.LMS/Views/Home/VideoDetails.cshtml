@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "VideoDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    UnitOfWork ctx = new UnitOfWork();
+    bool en = true;
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+    }
+
+    var Id = ViewBag.Id;
+    var albumId = ViewBag.AlbumId;
+
+    List<Galary> videos;
+    if (albumId != null)
+    {
+        videos = ctx.GalaryManager.GetAll().Where(s => !s.IsImage && s.AlbumId == albumId).OrderBy(s => s.Order).ToList();
+    }
+    else
+    {
+        //var firstvideo = new Galary();
+        //firstvideo = ctx.GalaryManager.GetBy(Id);
+
+        videos = ctx.GalaryManager.GetAll().Where(s => !s.IsImage && s.AlbumId == Id).OrderBy(s => s.Order).ToList();
+
+    }
+    if (en == true)
+    {
+        videos = videos.Where(s => s.TitleEnglish != null).ToList();
+    }
+    else
+    {
+        videos = videos.Where(s => s.TitleArabic != null).ToList();
+    }
+}
+
+@*@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}*@
+@section EndHeader{
+    <style>
+        .menu li a.active-a6 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+}
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewGallaryBGIN.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="title-header">
+                        <h3> @Resources.Global.Videos</h3>
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">@Resources.Global.Home</a> > </li>
+                                <li>  @Resources.Global.Videos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="VideoGallary">
+    <div class="container">
+        <div class="VideogallaryCont">
+            <div class="row">
+
+                @foreach (var Video in videos)
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="VedioIemGaleeary">
+                            <div class="images">
+                                @*<img src="~/assets_NewPublic/images/bg_2.jpg" />*@
+                                <div class=" imagsBG" style="background-image: url(@Video.Image)"></div>
+                            </div>
+                            <div class="buttonPopUp">
+                                @*<a href="@Video.Image" type="button" class="vediobtn" target="_blank">
+                                        <i class="fa fa-play" aria-hidden="true"></i>
+                                    </a>*@
+                                <a href="@Video.VideoIframe" class="vediobtn btnvediopopup" data-type="iframe" tabindex="0">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade Vediomodal" id="VedioPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="vedioIframe">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4AO7Pz-ArE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,252 @@
+File G:\hassan sobhy\Project Gradiuation\new\cad\foot comb1.$sf was saved on 10/9/17 at 0:06:06
+ 
+TABLE:  "ADVANCED MODELING OPTIONS"
+   2DOnly=No   RigDiaTop=No   NoOffsets=Yes
+ 
+TABLE:  "ADVANCED SAPFIRE OPTIONS"
+   SolverOpt=Advanced   ProcessOpt=Auto   Always32Bit=No
+ 
+TABLE:  "AUTOMATIC SLAB MESH OPTIONS"
+   MeshOpt=Rectangular   Localize=Yes   Merge=Yes   MaxSize=250
+ 
+TABLE:  "BEAM PROPERTIES 01 - GENERAL"
+   Beam=BEAM1   Type=Rectangular   Color=Green   GUID=6d9ae54c-a984-4e1c-971d-16e66a65d10e
+ 
+TABLE:  "BEAM PROPERTIES 02 - RECTANGULAR BEAM"
+   Beam=BEAM1   MatProp="Conc 250"   Depth=600   WidthTop=300   WidthBot=300
+ 
+TABLE:  "BEAM PROPERTIES 06 - DESIGN DATA"
+   Beam=BEAM1   MatRebarL="ST 36/52"   MatRebarS="ST 36/52"   FlngWOpt="Analysis Property"   CoverTop=75   CoverBot=75   NoDesign=No
+ 
+TABLE:  "COLUMN INSERTION POINT"
+   Line=1   CardinalPt="10 (centroid)"   OffsetXI=0   OffsetYI=0   OffsetZI=0   OffsetXJ=0   OffsetYJ=0   OffsetZJ=0
+   Line=2   CardinalPt="10 (centroid)"   OffsetXI=0   OffsetYI=0   OffsetZI=0   OffsetXJ=0   OffsetYJ=0   OffsetZJ=0
+ 
+TABLE:  "COLUMN LOCAL AXES"
+   Line=1   Angle=0
+   Line=2   Angle=0
+ 
+TABLE:  "COLUMN PROPERTIES 01 - GENERAL"
+   Column="Col 30*30"   Type=Rectangular   Color=Green   GUID=e75f84db-706d-4592-acb5-4dc2571fa620
+   Column="Col 30*65"   Type=Rectangular   Color=Green   Notes="Added 10/9/2017 12:01:38 AM"   GUID=e75f84db-706d-4592-acb5-4dc2571fa620
+ 
+TABLE:  "COLUMN PROPERTIES 02 - RECTANGULAR"
+   Column="Col 30*30"   MatProp="Conc 250"   SecDim2=300   SecDim3=300   AutoRigid=No   AutoDrop=No   IncludeCap=No
+   Column="Col 30*65"   MatProp="Conc 250"   SecDim2=300   SecDim3=650   AutoRigid=No   AutoDrop=No   IncludeCap=No
+ 
+TABLE:  "COLUMN PROPERTY ASSIGNMENTS"
+   Line=1   ColProp="Col 30*30"
+   Line=2   ColProp="Col 30*65"
+ 
+TABLE:  "COORDINATE SYSTEMS"
+   CoordSys=GLOBAL   Type=Cartesian   OriginGx=0   OriginGy=0   RotAngle=0
+   CoordSys=CSYS1   Type=Cartesian   OriginGx=0   OriginGy=0   RotAngle=0
+   CoordSys=CSYS1   Type=Cartesian   OriginGx=0   OriginGy=0   RotAngle=0
+ 
+TABLE:  "CRACKING ANALYSIS REINFORCEMENT"
+   ReinfOpt="FE Design"   MinReinfT=0.0018   MinReinfC=0
+ 
+TABLE:  "DESIGN PREFERENCES 01 - RESISTANCE FACTORS"
+   PhiTen=0.9   PhiComp=0.65   PhiShear=0.75
+ 
+TABLE:  "DESIGN PREFERENCES 02 - REBAR COVER - SLABS"
+   CoverTop=15   CoverBot=15   BarSize=18   InnerLayer=B   PTCGSTop=25   PTCGSBotExt=40   PTCGSBotInt=25   SlabType="Two Way"
+ 
+TABLE:  "DESIGN PREFERENCES 03 - REBAR COVER - BEAMS"
+   CoverTop=40   CoverBot=40   BarSizeF=28   BarSizeS=12   PTCGSTop=50   PTCGSBot=50
+ 
+TABLE:  "DESIGN PREFERENCES 04 - PRESTRESS DATA"
+   UserStress=No   InitConcRat=0.8   LLFraction=0.5
+ 
+TABLE:  "GROUP DEFINITIONS"
+   Group=ALL   Color=Red
+   Group=DXFIN1   Color=Yellow
+   Group=DXFIN2   Color=Yellow
+   Group=DXFIN3   Color=Yellow
+ 
+TABLE:  "LOAD ASSIGNMENTS - POINT LOADS"
+   Point=6   LoadPat=DEAD   Fx=0   Fy=0   Fgrav=98066.5019960652   Mx=0   My=0   Mz=0   XDim=0   YDim=0
+   Point=6   LoadPat=LIVE   Fx=0   Fy=0   Fgrav=19613.300399213   Mx=0   My=0   Mz=0   XDim=0   YDim=0
+   Point=8   LoadPat=DEAD   Fx=0   Fy=0   Fgrav=813951.966567341   Mx=0   My=0   Mz=0   XDim=0   YDim=0
+   Point=8   LoadPat=LIVE   Fx=0   Fy=0   Fgrav=107873.152195672   Mx=0   My=0   Mz=0   XDim=0   YDim=0
+ 
+TABLE:  "LOAD CASES 01 - GENERAL"
+   LoadCase=DEAD   Type=LinStatic   DesignOpt=Auto   DesignType=DEAD
+   LoadCase=LIVE   Type=LinStatic   DesignOpt=Auto   DesignType=LIVE
+ 
+TABLE:  "LOAD CASES 02 - STATIC"
+   LoadCase=DEAD   InitialCond=Zero   AType=Linear
+   LoadCase=LIVE   InitialCond=Zero   AType=Linear
+ 
+TABLE:  "LOAD CASES 06 - LOADS APPLIED"
+   LoadCase=DEAD   LoadPat=DEAD   SF=1
+   LoadCase=LIVE   LoadPat=LIVE   SF=1
+ 
+TABLE:  "LOAD COMBINATIONS"
+   Combo=DCONU1   Load=DEAD   SF=1.4   Type="Linear Add"   DSStrength=Yes   DSServInit=No   DSServNorm=No   DSServLong=No   AutoDesign=Yes   GUID=eeb969d6-987e-4bf8-80df-1aea3a19aad0
+   Combo=DCONU2   Load=DEAD   SF=1.2   Type="Linear Add"   DSStrength=Yes   DSServInit=No   DSServNorm=No   DSServLong=No   AutoDesign=Yes   GUID=14d275e8-a0f7-4b62-9b48-b7b5df4b6c23
+   Combo=DCONU2   Load=LIVE   SF=1.6
+   Combo=Ult   Load=DEAD   SF=1.4   Type="Linear Add"   DSStrength=No   DSServInit=No   DSServNorm=No   DSServLong=No   AutoDesign=No   Notes="Added 10/9/2017 12:03:28 AM"   GUID=02ff815a-6d7b-414b-86d9-02d7cbc5b6ef
+   Combo=Ult   Load=LIVE   SF=1.6
+   Combo=Working   Load=DEAD   SF=1   Type="Linear Add"   DSStrength=No   DSServInit=No   DSServNorm=No   DSServLong=No   AutoDesign=No   Notes="Added 10/9/2017 12:03:14 AM"   GUID=02ff815a-6d7b-414b-86d9-02d7cbc5b6ef
+   Combo=Working   Load=LIVE   SF=1
+ 
+TABLE:  "LOAD PATTERNS"
+   LoadPat=DEAD   Type=DEAD   SelfWtMult=1   GUID=fadf32ce-1bfb-45a8-bdfb-37ea03beb410
+   LoadPat=LIVE   Type=LIVE   SelfWtMult=0   GUID=85e51a01-12d7-4ba9-9616-4ca6ed25cf2e
+ 
+TABLE:  "MASS SOURCE"
+   LoadPat=DEAD   Multiplier=1
+ 
+TABLE:  "MATERIAL PROPERTIES 01 - GENERAL"
+   Material=A416MGr186   Type=Tendon   Color=Red   Notes="ASTM A416 Metric Grade 186 added 10/9/2017 12:00:19 AM"
+   Material="Conc 250"   Type=Concrete   Color=Gray8Dark   Notes="Normalweight C30 added 10/9/2017 12:00:19 AM"
+   Material="ST 36/52"   Type=Rebar   Color=Green   Notes="CSA-G30.18 Grade 400 added 10/9/2017 12:00:19 AM"
+ 
+TABLE:  "MATERIAL PROPERTIES 03 - CONCRETE"
+   Material="Conc 250"   E=2213594.36211787   U=0.2   A=9.9E-06   UnitWt=2.45166254990163E-05   Fc=19.613300399213   LtWtConc=No   UserModRup=No
+ 
+TABLE:  "MATERIAL PROPERTIES 04 - REBAR"
+   Material="ST 36/52"   E=200000   UnitWt=7.69822040669112E-05   Fy=353.039407185835   Fu=509.945810379539
+ 
+TABLE:  "MATERIAL PROPERTIES 05 - TENDON"
+   Material=A416MGr186   E=196500.5998512   UnitWt=7.69728639422648E-05   Fy=1690   Fu=1860
+ 
+TABLE:  "OBJECT GEOMETRY - AREAS 01 - GENERAL"
+   Area=1   Point1=1   Point2=2   Point3=3   Point4=4   Auto=No   GUID=8be78e1c-15a0-4690-ad78-68ed367eb0a7
+ 
+TABLE:  "OBJECT GEOMETRY - DESIGN STRIPS"
+   Strip=SA3   Point=35   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=SA3   Point=36   WBLeft=0   WBRight=1000
+   Strip=SA2   Point=33   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=SA2   Point=34   WBLeft=0   WBRight=1000
+   Strip=SA1   Point=31   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=SA1   Point=32   WBLeft=0   WBRight=1000
+   Strip=SB3   Point=25   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=SB3   Point=26   WBLeft=0   WBRight=1000
+   Strip=SB2   Point=23   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=SB2   Point=24   WBLeft=0   WBRight=1000
+   Strip=SB1   Point=21   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=SB1   Point=22   WBLeft=0   WBRight=1000
+   Strip=MSA4   Point=17   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=MSA4   Point=18   WBLeft=0   WBRight=1000
+   Strip=MSB2   Point=19   WALeft=0   WARight=1000   AutoWiden=No
+   Strip=MSB2   Point=20   WBLeft=0   WBRight=1000
+ 
+TABLE:  "OBJECT GEOMETRY - LINES 01 - GENERAL"
+   Line=1   PointI=5   PointJ=6   GUID=8362e734-3873-4282-b99e-b4ae0521ae82
+   Line=2   PointI=7   PointJ=8   GUID=4c22aaee-6767-46aa-b6ea-908ef3b6f7e1
+ 
+TABLE:  "OBJECT GEOMETRY - POINT COORDINATES"
+   Point=1   GlobalX=-1.164153E-10   GlobalY=3099   GlobalZ=0   SpecialPt=No
+   Point=2   GlobalX=0   GlobalY=0   GlobalZ=0   SpecialPt=No
+   Point=3   GlobalX=3201.5   GlobalY=0   GlobalZ=0   SpecialPt=No
+   Point=4   GlobalX=3201.5   GlobalY=3099   GlobalZ=0   SpecialPt=No
+   Point=5   GlobalX=2834.99994278769   GlobalY=2571.37965260382   GlobalZ=0   SpecialPt=No
+   Point=6   GlobalX=2834.99994278769   GlobalY=2571.37965260382   GlobalZ=1000   SpecialPt=Yes
+   Point=7   GlobalX=1384.99999999732   GlobalY=1305.82639831357   GlobalZ=0   SpecialPt=No
+   Point=8   GlobalX=1384.99999999732   GlobalY=1305.82639831357   GlobalZ=1000   SpecialPt=Yes
+   Point=9   GlobalX=0   GlobalY=3250   GlobalZ=0   SpecialPt=No
+   Point=10   GlobalX=3250   GlobalY=3250   GlobalZ=0   SpecialPt=No
+   Point=15   GlobalX=-250   GlobalY=-75   GlobalZ=0   SpecialPt=No
+   Point=16   GlobalX=-250   GlobalY=3250   GlobalZ=0   SpecialPt=No
+   Point=17   GlobalX=-250   GlobalY=3475   GlobalZ=0   SpecialPt=No
+   Point=18   GlobalX=3250   GlobalY=3475   GlobalZ=0   SpecialPt=No
+   Point=19   GlobalX=3500   GlobalY=3525   GlobalZ=0   SpecialPt=No
+   Point=20   GlobalX=3500   GlobalY=-325   GlobalZ=0   SpecialPt=No
+   Point=21   GlobalX=2500   GlobalY=3525   GlobalZ=0   SpecialPt=Yes
+   Point=22   GlobalX=2500   GlobalY=-325   GlobalZ=0   SpecialPt=Yes
+   Point=23   GlobalX=1500   GlobalY=3525   GlobalZ=0   SpecialPt=Yes
+   Point=24   GlobalX=1500   GlobalY=-325   GlobalZ=0   SpecialPt=Yes
+   Point=25   GlobalX=500   GlobalY=3525   GlobalZ=0   SpecialPt=Yes
+   Point=26   GlobalX=500   GlobalY=-325   GlobalZ=0   SpecialPt=Yes
+   Point=27   GlobalX=-500   GlobalY=3525   GlobalZ=0   SpecialPt=Yes
+   Point=29   GlobalX=-1500   GlobalY=3525   GlobalZ=0   SpecialPt=Yes
+   Point=31   GlobalX=-250   GlobalY=2475   GlobalZ=0   SpecialPt=Yes
+   Point=32   GlobalX=3250   GlobalY=2475   GlobalZ=0   SpecialPt=Yes
+   Point=33   GlobalX=-250   GlobalY=1475   GlobalZ=0   SpecialPt=Yes
+   Point=34   GlobalX=3250   GlobalY=1475   GlobalZ=0   SpecialPt=Yes
+   Point=35   GlobalX=-250   GlobalY=475   GlobalZ=0   SpecialPt=Yes
+   Point=36   GlobalX=3250   GlobalY=475   GlobalZ=0   SpecialPt=Yes
+   Point=37   GlobalX=-250   GlobalY=-525   GlobalZ=0   SpecialPt=Yes
+ 
+TABLE:  "POINT RESTRAINT ASSIGNMENTS"
+   Point=6   Ux=No   Uy=No   Uz=No   Rx=Yes   Ry=Yes   Rz=No
+   Point=8   Ux=No   Uy=No   Uz=No   Rx=Yes   Ry=Yes   Rz=No
+ 
+TABLE:  "PROGRAM CONTROL"
+   ProgramName="SAFE 2016"   Version=16.0.0   CurrUnits="N, mm, C"   MergeTol=2.5   ModelDatum=0   StHtAbove=0   StHtBelow=3000   ConcCode="ACI 318-14"
+ 
+TABLE:  "PROJECT INFORMATION"
+   Item="Client Name"
+   Item="Project Name"
+   Item="Project Number"
+   Item="Company Name"
+   Item=Engineer
+   Item=Checker
+   Item=Supervisor
+   Item="Model Name"
+   Item="Model Description"
+   Item="Revision Number"
+   Item="Issue Number"
+ 
+TABLE:  "PUNCHING SHEAR DESIGN OVERWRITES 01 - GENERAL"
+   Point=5   Check="Program Determined"   LocType=Auto   Perimeter=Auto   EffDepth=Auto   Openings=Auto   ReinfType=None
+   Point=7   Check="Program Determined"   LocType=Auto   Perimeter=Auto   EffDepth=Auto   Openings=Auto   ReinfType=None
+ 
+TABLE:  "REINFORCING BAR SIZES"
+   RebarID=6   Area=28.2999992370605   Diameter=6
+   RebarID=8   Area=50.2999992370605   Diameter=8
+   RebarID=10   Area=78.5   Diameter=10
+   RebarID=12   Area=113.099998474121   Diameter=12
+   RebarID=14   Area=153.899993896484   Diameter=14
+   RebarID=16   Area=201.100006103516   Diameter=16
+   RebarID=18   Area=254.5   Diameter=18
+   RebarID=20   Area=314.200012207031   Diameter=20
+   RebarID=22   Area=380.100006103516   Diameter=22
+   RebarID=25   Area=490.899993896484   Diameter=25
+   RebarID=26   Area=530.900024414063   Diameter=26
+   RebarID=28   Area=615.799987792969   Diameter=28
+   RebarID=32   Area=804.200012207031   Diameter=32
+   RebarID=36   Area=1017.90002441406   Diameter=36
+   RebarID=40   Area=1256.59997558594   Diameter=40
+   RebarID=50   Area=1963.5   Diameter=50
+ 
+TABLE:  "SLAB DESIGN OVERWRITES 01 - STRIP BASED"
+   Strip=SA3   Layer=A   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=SA2   Layer=A   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=SA1   Layer=A   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=SB3   Layer=B   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=SB2   Layer=B   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=SB1   Layer=B   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=MSA4   Layer=A   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+   Strip=MSB2   Layer=B   DesignType=Middle   RLLF=1   Design=Yes   IgnorePT=No   RebarMat="ST 36/52"   CoverType=Preferences
+ 
+TABLE:  "SLAB DESIGN OVERWRITES 02 - FINITE ELEMENT BASED"
+   Area=1   RebarMat="ST 36/52"   CoverType=Preferences   RLLF=1   Design=Yes   IgnorePT=No
+ 
+TABLE:  "SLAB PROPERTIES 01 - GENERAL"
+   Slab=Raft   Type=Mat   ThickPlate=Yes   Color=Gray8Dark   GUID=1a514153-20ac-4bff-b493-b758a27a4489
+ 
+TABLE:  "SLAB PROPERTIES 02 - SOLID SLABS"
+   Slab=Raft   Type=Mat   MatProp="Conc 250"   Thickness=600   Ortho=No
+ 
+TABLE:  "SLAB PROPERTY ASSIGNMENTS"
+   Area=1   SlabProp=Raft
+ 
+TABLE:  "SOIL PROPERTIES"
+   Soil=SOIL1   Subgrade=0.0147099752994098   NonlinOpt="Compression Only"   Color=Green
+ 
+TABLE:  "SOIL PROPERTY ASSIGNMENTS"
+   Area=1   SoilProp=SOIL1
+ 
+TABLE:  "SPRING PROPERTIES - LINE"
+   Spring=LSPR1   VertStiff=1   RotStiff=1   NonlinOpt="None (Linear)"   Color=Magenta
+ 
+TABLE:  "SPRING PROPERTIES - POINT"
+   Spring=PSPR1   Ux=0   Uy=0   Uz=1   Rx=0   Ry=0   Rz=0   NonlinOpt="None (Linear)"   Color=Gray8Dark
+ 
+TABLE:  "WALL PROPERTIES"
+   Wall=WALL1   MatProp="Conc 250"   Thickness=300   AutoRigid=No   OutOfPlane=Yes   Color=Red   GUID=c127eaac-9994-4e01-9a8d-a36f86f04b52
+ 
+END TABLE DATA

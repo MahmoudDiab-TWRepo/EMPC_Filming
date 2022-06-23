@@ -1,0 +1,141 @@
+﻿@model IEnumerable<User>
+@using Eagles.LMS.BLL
+@{
+    ViewBag.Title = Resources.Global.Users;
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+
+    UnitOfWork ctx = new UnitOfWork();
+}
+
+
+<div class="container-fluid" ng-controller="usersCtrl" id="kt_content">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">
+                    <a href="/Admission/Users/Create" class="btn btn-success waves-effect waves-light"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> @Resources.Global.CreateUser</a>
+                </h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission">Home</a></li>
+                        <li class="breadcrumb-item active">@Resources.Global.Users</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_users" class=" table table-bordered  text-center">
+                            <thead class="DarkThead">
+                                <tr>
+                                    <th><p>@Resources.Global.Monitor</p></th>
+                                    <th><p>@Resources.Global.FullName</p></th>
+
+                                    <th><p>@Resources.Global.Mobile</p> </th>
+                                    <th><p>@Resources.Global.EmailAddess</p></th>
+                                    <th><p>@Resources.Global.GroupName</p></th>
+                                    <th><p>@Resources.Global.UserType</p></th>
+                                    <th><p>@Resources.Global.CreatedTime</p></th>
+                                    <th><p>@Resources.Global.AccountState</p></th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+                                @foreach (var user in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bx bx-dots-horizontal-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item align-middle " href="/Admission/Users/Edit/@user.Id"><i class="bx bx-edit font-size-16 me-1"></i>@Resources.Global.Edit</a>
+                                                <a ng-click="Remove(@user.Id,$index,$event)" class="dropdown-item text-danger align-middle "><i class="bx bx-trash font-size-16 me-1"></i>@Resources.Global.Delete</a>
+                                                @if (user.AccountState == AccountState.Approval)
+                                                {
+                                                    <a ng-click="BlockAccount(@user.Id,$index,$event)" class="dropdown-item align-middle text-danger "><i class="bx bx-x font-size-18 me-1"></i>@Resources.Global.BlockAccount</a>
+                                                }
+                                                else
+                                                {
+                                                    <a ng-click="ActiveAccount(@user.Id,$index,$event)" class="dropdown-item align-middle text-success"><i class="bx bx-check font-size-18 me-1"></i>@Resources.Global.ActiveAccount</a>
+                                                }
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>@user.FullName</td>
+
+                                    <td>@user.Mobile</td>
+                                    <td>@user.EmailAddress</td>
+                                    <td>@user.Group.Name</td>
+                                    <td>@user.UserTybe</td>
+                                    <td>@user.CreatedTime</td>
+                                    <td>@user.AccountState</td>
+
+
+                                </tr>
+                                }
+                            </tbody>
+
+
+
+
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section EndBody{
+
+    <script src="~/Componnets/Groups/Services/GroupsFactory.js"></script>
+    <script src="~/Componnets/Users/Services/UsersFactory.js"></script>
+    <script src="~/Componnets/Users/Controllers/UsersController.js"></script>
+    <script>
+        $(() => {
+            $("#table_users").DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'print'
+                ]
+            });
+        });
+    </script>
+}

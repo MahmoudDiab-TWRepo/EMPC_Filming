@@ -1,0 +1,542 @@
+﻿
+@{
+    ViewBag.Title = "Locations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    UnitOfWork ctx = new UnitOfWork();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    var locations = new List<Location>();
+    if (en == true)
+    {
+        locations = ctx.LocationManager.GetAll().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).Where(s => s.TitleEnglish != null).ToList();
+    }
+    else
+    {
+        locations = ctx.LocationManager.GetAll().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).Where(s => s.TitleArabic != null).ToList();
+
+    }
+
+    var Id = ViewBag.Id;
+
+}
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews Location, Location, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@section EndHeader{
+    <style>
+        .menu li a.active-a3 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+}
+
+
+
+<div class="header-bc">
+
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewLocationBGin.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="title-header">
+
+                        <h3>@Resources.Global.Locations</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">@Resources.Global.Home</a> > </li>
+                                <li>@Resources.Global.Locations</li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+
+                    </div>
+                    <!--end title-header-->
+
+                </div>
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="news">
+    <div class="container">
+        <Div class="row">
+
+            <!--
+                            <div class="col-md-9">
+                                <a class="new location-new" href="#">
+            <img src="images/bg_2.jpg" class="img-responsive img-services"/>
+            <h3> <span>Lebanese
+             Visits EMPC </span> <p>></p></h3>
+
+            </a>
+                            </div>
+            -->
+            @if (Id != null)
+            {
+                var active_location = locations.FirstOrDefault(s => s.Id == Convert.ToInt32(Id));
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="new location-new">
+                        <img src="@active_location.MainImage" class="img-responsive img-services" />
+                        @*<div class="vediobutton">
+                                <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>*@
+
+                    </div>
+                </div><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="locationDesicription">
+                        <div class="ford_flex">
+                            @if (en)
+                            {
+                                <h2>@active_location.TitleEnglish</h2>
+                                <p>
+                                    @Html.Raw(@active_location.DescriptionEnglish)
+                                </p>
+                            }
+                            else
+                            {
+                                <h2>@active_location.TitleArabic</h2>
+                                <p>
+                                    @Html.Raw(@active_location.DescriptionArabic)
+                                </p>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            }
+            <!--end col-6-->
+            <!--end col-6-->
+            <!--
+                            <div class="col-md-4">
+                                <div class="new new-small small-location location-new">
+                                    <img src="images/bg_2.jpg" class="img-responsive img-services"/>
+                                    <button data-toggle="modal" data-target=".Imgtitlemodal"> <span>Lebanese
+                                     Visits EMPC </span> <p>></p></button>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="cleaner-h3 visible-xs"></div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="new new-small small-location location-new">
+                                    <img src="images/Mask_Group_32@2x.png" class="img-responsive img-services"/>
+                                    <button data-toggle="modal" data-target=".vediotitlemodal"> <span>Lebanese
+                                     Visits EMPC </span> <p>></p></button>
+
+
+                                </div>
+
+                            </div>
+            -->
+            <!--end col-4-->
+
+            <div class="cleaner-h3 visible-xs"></div>
+
+
+            @foreach (var location in locations)
+            {
+
+
+                <Div class="col-md-4">
+                    <a class="new new-small small-location location-new" href="/Home/LocationDetails/@location.Id">
+                        @*<img src="@location.MainImage" class="img-responsive img-services" />*@
+                        <div class="imgLocationItem">
+
+                            @if (!string.IsNullOrEmpty(location.MainImage))
+                            {
+                                <div class=" imagsBG" style="background-image: url(@location.MainImage)"></div>
+
+                            }
+                            else
+                            {
+                                <div class=" imagsBG" style="background-image: url(/assets_NewPublic/images/f14.jpeg)"></div>
+                            }
+
+
+                        </div>
+
+                        <h3>
+                            @if (en)
+                            {
+                                <span>
+                                    @location.TitleEnglish
+                                </span>
+
+                            }
+                            else
+                            {
+                                <span>
+                                    @location.TitleArabic
+                                </span>
+                            }
+                            <p>></p>
+                        </h3>
+                    </a>
+                </Div>
+            }
+            <!--end col-4-->
+            <!--end col-4-->
+
+            <div class="cleaner-h3"></div>
+
+
+
+
+
+
+
+
+
+        </Div>
+        <!--end row-->
+    </div>
+    <!--end continer-->
+</div>
+<!--end news-->
+<!--<div class="news" style="display:none">
+    <div class="container">
+        <Div class="row justify-content-center">-->
+<!--
+                <div class="col-md-9">
+                    <a class="new location-new" href="#">
+<img src="images/bg_2.jpg" class="img-responsive img-services"/>
+<h3> <span>Lebanese
+ Visits EMPC </span> <p>></p></h3>
+
+</a>
+                </div>
+-->
+<!--<div class="col-md-9">
+    <div class="new location-new">
+        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive img-services" />
+        <div class="vediobutton">
+            <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                <i class="fas fa-play"></i>
+            </button>
+        </div>
+
+    </div>
+</div>-->
+<!--end col-6-->
+<!--end col-6-->
+<!--<div class="col-md-4">
+    <div class="new new-small small-location location-new">
+        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive img-services" />
+        <button data-toggle="modal" data-target=".Imgtitlemodal">
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </button>
+
+
+    </div>
+
+</div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3 visible-xs"></div>
+
+
+
+<div class="col-md-4">
+    <div class="new new-small small-location location-new">
+        <img src="~/assets_NewPublic/images/Mask_Group_32@2x.png" class="img-responsive img-services" />
+        <button data-toggle="modal" data-target=".vediotitlemodal">
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </button>
+
+
+    </div>
+
+</div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3 visible-xs"></div>
+
+
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/gl19.jpg" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+</Div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3"></div>
+
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/bg_3.jpg" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+
+
+</Div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3 visible-xs"></div>
+
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/Mask_Group_32@2x.png" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+</Div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3 visible-xs"></div>
+
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/gl19.jpg" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+</Div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3"></div>
+
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/bg_3.jpg" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+
+
+</Div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3 visible-xs"></div>
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/Mask_Group_32@2x.png" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+</Div>-->
+<!--end col-4-->
+<!--<div class="cleaner-h3 visible-xs"></div>
+
+
+<Div class="col-md-4">
+    <a class="new new-small small-location location-new" href="#">
+        <img src="~/assets_NewPublic/images/gl19.jpg" class="img-responsive img-services" />
+        <h3>
+            <span>
+                Lebanese
+                Visits EMPC
+            </span> <p>></p>
+        </h3>
+    </a>
+</Div>-->
+<!--end col-4-->
+<!--<Div class="cleaner-h4 hidden-xs"></Div>
+    <div class="cleaner-h2 visible-xs"></div>
+
+    <nav class="nav-services" aria-label="...">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active">
+                <span class="page-link">
+                    2
+                    <span class="sr-only">(current)</span>
+                </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+</Div>-->
+<!--end row-->
+<!--</div>-->
+<!--end continer-->
+<!--</div>-->
+<!--end news-->
+
+
+
+
+
+
+
+<div class="modal fade Vediomodal" id="VedioPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="vedioIframe">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4AO7Pz-ArE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg Imgtitlemodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Lebanese Visits EMPC</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modalcontdsd">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="images">
+                                <img src="~/assets_NewPublic/images/f2c.jpeg">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="detailsdsck">
+                                <div class="fordflec">
+                                    <div class="title">
+                                        <h2>Titel Content</h2>
+                                    </div>
+                                    <div class="discription">
+                                        <p>EMPC Media Services Center is the newest division, offering an extensive range of production facilities, news gathering and broadcast services ensuring that our clients get the job done quickly and efficiently.</p>
+                                        <p>EMPC Media Services Center is the newest division, offering an extensive range of production facilities, news gathering and broadcast services ensuring that our clients get the job done quickly and efficiently.</p>
+                                        <p>EMPC Media Services Center is the newest division, offering an extensive range of production facilities, news gathering and broadcast services ensuring that our clients get the job done quickly and efficiently.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg vediotitlemodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Lebanese Visits EMPC</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modalcontdsd">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="images">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/4AO7Pz-ArE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="detailsdsck">
+                                <div class="fordflec">
+                                    <div class="title">
+                                        <h2>Titel Content</h2>
+                                    </div>
+                                    <div class="discription">
+                                        <p>EMPC Media Services Center is the newest division, offering an extensive range of production facilities, news gathering and broadcast services ensuring that our clients get the job done quickly and efficiently.</p>
+                                        <p>EMPC Media Services Center is the newest division, offering an extensive range of production facilities, news gathering and broadcast services ensuring that our clients get the job done quickly and efficiently.</p>
+                                        <p>EMPC Media Services Center is the newest division, offering an extensive range of production facilities, news gathering and broadcast services ensuring that our clients get the job done quickly and efficiently.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

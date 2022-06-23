@@ -1,0 +1,139 @@
+﻿@model Eagles.LMS.DTO.ViewModels.MainQuestionBankVM
+@{var counter = 1; }
+
+
+
+@*<button type="button" class=" btn btn-primary resetBank" data-toggle="modal" data-target="#addQuestionsBankModal">
+    @Resources.Global.AddQuestionsBank <i class="fa fa-plus-square" aria-hidden="true"></i>
+</button>*@
+
+<table class=" tablequestions table table-striped table-hover table-bordered">
+    <caption class="pending-student-table" style="margin-top: 15px;"> @Resources.Global.QuestionsBank </caption>
+    <thead>
+        <tr>
+            <th><p>#</p></th>
+            <th><p>@Resources.Global.Order</p></th>
+
+            <th><p>@Resources.Global.Name</p></th>
+
+            <th><p> @Resources.Global.Grade</p></th>
+            <th>@Resources.Global.Questions</th>
+            <th>@Resources.Global.Questions</th>
+            <th>@Resources.Global.Actions</th>
+            <th>@Resources.Global.Actions</th>
+
+        </tr>
+    </thead>
+    <tbody id="questionsBankList">
+        @foreach (var item in Model.QuestionsBanks)
+        {
+
+
+        <tr>
+
+            <td width="1px"><p>@counter</p></td>
+            <td width="1px"><p>@item.Order</p></td>
+
+            <td id="Name_@item.Id"><p>   @Html.DisplayFor(modelItem => item.Name)</p></td>
+
+
+            <td id="GradeName_@item.Id"><p>   @Html.DisplayFor(modelItem => item.GradeName)</p></td>
+            <td>
+                <ul>
+                    <li> @Resources.Global.TrueOrFalse <span class="badge badge-success">@item.TrueOrFalseCount</span></li>
+                    <li>   @Resources.Global.MultipleChoice <span class="badge badge-warning">@item.MultipleChoiceCount</span></li>
+                    <li>  @Resources.Global.Article <span class="badge badge-danger">@item.ArticleCount</span></li>
+                </ul>
+            </td>
+            <td>
+                <button type="button" class="showquestions btn btn-primary" onclick="ShowBankQuestion(@item.Id)">
+                    @Resources.Global.Questions
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" id="addQuestionBtn" onclick="addQuestionevent(); $('#QuestionsBankId').val(@item.Id)" data-toggle="modal" data-target="#addquestionModal">
+                    @Resources.Global.AddQuestions <i class="fa fa-plus-square" aria-hidden="true"></i>
+                </button>
+            </td>
+            <td>
+                <button type="button" id="editButton" class=" btn btn-success" onclick="EditBankRecord(@item.Id)" data-toggle="modal" data-target="#addQuestionsBankModal">
+                    @Resources.Global.Edit <i class="la la-pencil" aria-hidden="true"></i>
+                </button>
+            </td>
+            <td>
+                <button data-bankId="@item.Id" type="button" class="btn btn-danger deletebank">
+                    @Resources.Global.Delete <i class="la la-trash-o" aria-hidden="true"></i>
+                </button>
+            </td>
+        </tr>
+            counter++;
+        }
+    </tbody>
+</table>
+
+
+<script>
+
+     //================ Edit Show  Popup Modal for Edit QuestionsBank Record =====================
+    function EditBankRecord(bankId) {
+        debugger;
+        var url = "/api/web/QuestionsBank/GetQuestionsBank/" + bankId;
+
+        $("#bankModalTitle").html('@(@Resources.Global.UpdateQuestionsBank)');
+
+
+
+        $.ajax({
+
+            type: "GET"
+            ,
+            url: url
+            ,
+            success: function (data) {
+
+                $('#hiddenBankId').val(data.Id);
+                $('#NameEn').val(data.NameEn);
+                $('#NameAr').val(data.NameAr);
+                $('#GradeId_1').val(data.GradeId);
+
+
+            }
+        });
+    }
+     //delete
+
+    $(".deletebank").click(function (e) {
+        debugger;
+        e.preventDefault();
+        let self = $(this),
+            bankId = self.attr("data-bankId");
+
+
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/web/QuestionsBank/" + bankId + "/Delete",
+                        success: (response) => {
+                            swal({
+                                title: "",
+                                text:response.Message,
+                                type: "success"
+                            }, function () {
+                                self.parent('td').parent('tr').remove();
+
+                                    toastr.success('@(Resources.Global.QuestionsBankDeletedSuccessfully)', '', { timeOut: 10000 });
+
+                            });
+
+
+                        }, error: (error) => {
+                        // unauthorize
+                        let errorMessage = manageAjaxError(error);
+                        pushNotification("danger", errorMessage);
+                    }
+                    });
+
+
+
+    })
+</script>

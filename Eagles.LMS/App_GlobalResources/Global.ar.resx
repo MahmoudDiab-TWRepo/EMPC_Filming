@@ -1,0 +1,1921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Allthings" xml:space="preserve">
+    <value>يتم تعلم كل شيء</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>التطبيق</value>
+  </data>
+  <data name="ApplyNow" xml:space="preserve">
+    <value>قدم الان</value>
+  </data>
+  <data name="Beinvolved" xml:space="preserve">
+    <value>كن مشترك معنا ليصلك كل جديد لدينا</value>
+  </data>
+  <data name="DownloadThe" xml:space="preserve">
+    <value>حمل </value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكترونى </value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>الإسم كامل </value>
+  </data>
+  <data name="GetIntouch" xml:space="preserve">
+    <value>إتصل بنا </value>
+  </data>
+  <data name="learningmanigmentsystem" xml:space="preserve">
+    <value>نظام إدارة التعلم</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>الرسالة </value>
+  </data>
+  <data name="Ourwebsite" xml:space="preserve">
+    <value>تم إنشاء موقع الويب الخاص بنا على يد مدرس سابق ، والذي ظل دائمًا مقيدا للوقت والميزانية</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>رقم الموبيل</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="StayUpdated" xml:space="preserve">
+    <value>إشترك الآن</value>
+  </data>
+  <data name="STORYABOUTUS" xml:space="preserve">
+    <value>قصتنا</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="struggled" xml:space="preserve">
+    <value>أسس موقعنا المهندس / هشام علام الذي يسعى للحفاظ على محتوى الفيزياء وتطويره في مصر والشرق الأوسط للمدارس الثانوية والكليات العلمية بناءً على مواردنا</value>
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>موضوع الرسالة</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>سجل معنا </value>
+  </data>
+  <data name="teach" xml:space="preserve">
+    <value>تدريس</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>تيست</value>
+  </data>
+  <data name="walid" xml:space="preserve">
+    <value>وليد</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>أهلا وسهلا  </value>
+  </data>
+  <data name="WITHOURLOVE" xml:space="preserve">
+    <value>مع حبي</value>
+  </data>
+  <data name="aboutdetalies1" xml:space="preserve">
+    <value>تم إنشاء موقع الويب الخاص بنا على يد مدرس سابق ، والذي ظل دائمًا مقيدًا للوقت والميزانية ، وكان يسعى جاهداً للعثور على أفضل الإجابات وأكثرها صلة بالأسئلة وإدارتها ضمن وفرة موارد التعلم والمنصات والمحتوى المتاح بالفعل على الإنترنت.</value>
+  </data>
+  <data name="aboutdetalies2" xml:space="preserve">
+    <value>يقدم فريقنا لمستخدمية نظام مكتبة برعاية المعلمين يمكن الوصول إليه من خلال تكنولوجيا المجتمع. تسمح لك المنصة الخاصة بنا برؤية وحفظ وتقييم ومشاركة الموارد التعليمية المتاحة رقميًا ذات الصلة مع اكتشاف أفكار وأسئلة التعلم الشخصية من المعلمين الآخرين من جميع أنحاء العالم.
+
+
+
+نحن فخورون جدًا بأن برنامجنا يستخدم حاليًا من مئات الطلاب في جميع أنحاء العالم.
+
+
+
+يمكن قراءة المزيد عن روحنا وأفكارنا في منشور المدونة هذا المنشور على جهات الاتصال الخاصة بنا.
+
+
+
+ونحن نحب أن نسمع أفكارك! لا تخجل واتصل بالفريق هنا.</value>
+  </data>
+  <data name="abouttitel" xml:space="preserve">
+    <value>أفضل تعليم في العالم في أكاديميتنا</value>
+  </data>
+  <data name="Aboutus" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="Absence" xml:space="preserve">
+    <value>الغياب</value>
+  </data>
+  <data name="Academic-Students" xml:space="preserve">
+    <value>الطلاب الاكاديمين</value>
+  </data>
+  <data name="AcademicStudents" xml:space="preserve">
+    <value>أكاديمى</value>
+  </data>
+  <data name="Aleadyhaveaccount" xml:space="preserve">
+    <value>لديك حساب</value>
+  </data>
+  <data name="android" xml:space="preserve">
+    <value>الاندوريد</value>
+  </data>
+  <data name="androiddetaile" xml:space="preserve">
+    <value>سوف تجد تطبيقنا بسهوله في متجر جوجل .</value>
+  </data>
+  <data name="chooseimage" xml:space="preserve">
+    <value>اختار صوره</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد الباسورد</value>
+  </data>
+  <data name="Createaccount" xml:space="preserve">
+    <value>عمل حساب </value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>اليوم </value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Donhaveanaccount" xml:space="preserve">
+    <value>ليس لديك حساب ؟</value>
+  </data>
+  <data name="EasyEducation" xml:space="preserve">
+    <value>سهولة التعلم </value>
+  </data>
+  <data name="EasyEducationdetalies" xml:space="preserve">
+    <value>نسعى جاهدين لتوصيل المعلومات في كل مكان في العالم بكل سهولة من خلال الأنظمة التكنولوجية في أي وقت .</value>
+  </data>
+  <data name="EmailOrPhone" xml:space="preserve">
+    <value>ادخل رقم الموبيل او الايمل </value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>أنثى</value>
+  </data>
+  <data name="FollowAs" xml:space="preserve">
+    <value>تابعنا على </value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="Grades" xml:space="preserve">
+    <value>المراحل</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>المجموعات</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>الساعة</value>
+  </data>
+  <data name="Ios" xml:space="preserve">
+    <value>منصة أبل</value>
+  </data>
+  <data name="iosdetailes" xml:space="preserve">
+    <value>سوف تجد تطبيقنا بسهولة في متجر ابل  .</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>الوظيفه</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>موقعنا</value>
+  </data>
+  <data name="locationdetailes" xml:space="preserve">
+    <value>نحن متاحون بشكل اونلاين ويمكن الوصول لنا من أي مكان أو في فروعنا في مصر .</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>تسجيل دخول </value>
+  </data>
+  <data name="LoginFree" xml:space="preserve">
+    <value>أدخل من هنا </value>
+  </data>
+  <data name="Logintoyouraccount" xml:space="preserve">
+    <value>الدخول الى حسابك</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>تسجيل خروج</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>ذكر</value>
+  </data>
+  <data name="OnlineStudents" xml:space="preserve">
+    <value>أونلاين</value>
+  </data>
+  <data name="OurAccadimic" xml:space="preserve">
+    <value>لدينا أكاديمي</value>
+  </data>
+  <data name="OurFeatures" xml:space="preserve">
+    <value>لدينا مميزات</value>
+  </data>
+  <data name="Parent" xml:space="preserve">
+    <value>اولياء الامور</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Playlist" xml:space="preserve">
+    <value>قناة اليوتيوب</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>إقرأ المزيد</value>
+  </data>
+  <data name="RemmeberMe" xml:space="preserve">
+    <value>تذكرنى</value>
+  </data>
+  <data name="responsive" xml:space="preserve">
+    <value>متجاوب</value>
+  </data>
+  <data name="responsivedetailes" xml:space="preserve">
+    <value>مشروعنا متجاوب مع جميع الاجهزة ويب او اندرويد او اجهزة ابل .</value>
+  </data>
+  <data name="SiginupFree" xml:space="preserve">
+    <value>سجل من هنا </value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="SonPhoneNumber" xml:space="preserve">
+    <value>أرقام تليفونات الابناء</value>
+  </data>
+  <data name="Student" xml:space="preserve">
+    <value>طالب</value>
+  </data>
+  <data name="StudentType" xml:space="preserve">
+    <value>نوع التسجيل</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>الوحدات</value>
+  </data>
+  <data name="Visitor" xml:space="preserve">
+    <value>زائر</value>
+  </data>
+  <data name="Windows" xml:space="preserve">
+    <value>ويندوز فون</value>
+  </data>
+  <data name="Windowsdetailes" xml:space="preserve">
+    <value>سوف تجد تطبيقنا بسهولة في متجر ويندوز فون  .</value>
+  </data>
+  <data name="AccountIsPending" xml:space="preserve">
+    <value>حسبابك معلق </value>
+  </data>
+  <data name="AdminApproval" xml:space="preserve">
+    <value>فى انتظار  مراجعة البيانات والموافقه على الطلب من قبل الادمن</value>
+  </data>
+  <data name="Goto" xml:space="preserve">
+    <value>الذهاب الى </value>
+  </data>
+  <data name="CommingSoon" xml:space="preserve">
+    <value>قريبا ,,,,</value>
+  </data>
+  <data name="GradeMenue" xml:space="preserve">
+    <value>قائمه المراحل</value>
+  </data>
+  <data name="applicationapp" xml:space="preserve">
+    <value>التطبيق</value>
+  </data>
+  <data name="EXPERIENCEYOURSELF" xml:space="preserve">
+    <value>تجربة نفسك</value>
+  </data>
+  <data name="EXPERIENCEYOURSELFdetail" xml:space="preserve">
+    <value>الخبرة مجربة عندما تمر بها. ثم تفهمها. لا يمكننا تجربة تجربة الآخرين. لا يمكننا شرح تجاربنا مثل الآخرين</value>
+  </data>
+  <data name="explained" xml:space="preserve">
+    <value>شرح</value>
+  </data>
+  <data name="GRADUATIONDEGREE" xml:space="preserve">
+    <value>درجة التخرج</value>
+  </data>
+  <data name="GRADUATIONDEGREEdetail" xml:space="preserve">
+    <value>تشير درجة الدراسات العليا ببساطة إلى مستويات أعلى من التعليم بعد الحصول على درجة البكالوريوس. 1.) الدرجات الجامعية - بكالوريوس العلوم ، ليسانس الآداب</value>
+  </data>
+  <data name="MASTERYLEARNING" xml:space="preserve">
+    <value>تعلم الماجستير</value>
+  </data>
+  <data name="MASTERYLEARNINGdetail" xml:space="preserve">
+    <value>يستخدم إتقان التعلم من أجل تعزيز إمكانات الأفراد للتعلم. بالمقارنة مع نماذج التعلم التقليدية ،، يتم توفير المساعدة لكل طالب.</value>
+  </data>
+  <data name="ONLINELEARNING" xml:space="preserve">
+    <value>تعليم على الانترنت</value>
+  </data>
+  <data name="ONLINELEARNINGdetail" xml:space="preserve">
+    <value>في معظم الحالات ، يشير إلى دورة أو برنامج أو درجة يتم تسليمها عبر الإنترنت تمامًا. هناك العديد من المصطلحات المستخدمة لوصف التعليم الذي يتم تقديمة عبر الإنترنت</value>
+  </data>
+  <data name="webexplained" xml:space="preserve">
+    <value>شرح تفصيلى عن ادارة التطبيق وطريقة استخدامة</value>
+  </data>
+  <data name="24HOURSSERVICE" xml:space="preserve">
+    <value>خدمه 24 ساعة</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>الاتصال</value>
+  </data>
+  <data name="heshamallam" xml:space="preserve">
+    <value>هشام علام</value>
+  </data>
+  <data name="OnlineHelp" xml:space="preserve">
+    <value>مساعدة على الانترنت</value>
+  </data>
+  <data name="OnlinePaymentService" xml:space="preserve">
+    <value>خدمة الدفع عبر الإنترنت</value>
+  </data>
+  <data name="DailyQuizzes" xml:space="preserve">
+    <value>المسابقات اليومية</value>
+  </data>
+  <data name="DailyQuizzes_content" xml:space="preserve">
+    <value>موقعنا يوفر المسابقات التعليمية اليومية والاختبارات التى يقدمها المدرس لطلابه لتقوية مستواهم التعليمى فى جميع المواد الدراسية كلها في جميع المراحل مع حلولها</value>
+  </data>
+  <data name="InformingParents" xml:space="preserve">
+    <value>إبلاغ الوالدين</value>
+  </data>
+  <data name="InformingParents_content" xml:space="preserve">
+    <value>البقاء على اتصال مع والديك , يجب بالنسبة لنا ولهم أن يتم تحديثهم خطوة بخطوة علي مستواك</value>
+  </data>
+  <data name="MakingPhysicsEasier" xml:space="preserve">
+    <value>جعل المواد الدراسية اسهل</value>
+  </data>
+  <data name="MakingPhysicsEasier_content" xml:space="preserve">
+    <value>نأمل أن نجعل محتوى المواد الدراسية أسهل ويمكن الوصول إليه لكل طالب يشعر بأي صعوبة فيه , 
+سنكون فخورين بدرجاتك الكاملة</value>
+  </data>
+  <data name="OnlineLearning_content" xml:space="preserve">
+    <value>نحن نهتم بتفهمكم الكامل من خلال تقديم المدرسين دورات وكورسات لجميع المواد الدراسية على الانترنت فى مجالاتهم المتميزة لجميع المواد الدراسية والمراحل التعليمية</value>
+  </data>
+  <data name="FirstTerm" xml:space="preserve">
+    <value>التيرم الاول</value>
+  </data>
+  <data name="SecondTerm" xml:space="preserve">
+    <value> التيرم الثاني</value>
+  </data>
+  <data name="ChooseGovernorate" xml:space="preserve">
+    <value>اختيار محافظة</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="Governorate" xml:space="preserve">
+    <value>المحافظة</value>
+  </data>
+  <data name="governorateand_city_required" xml:space="preserve">
+    <value>يرجي اختيار محافظة ومدينة اولا</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>يرجي ادخال عنوان بريد بشكل صحيح</value>
+  </data>
+  <data name="invalid_password" xml:space="preserve">
+    <value>كلمة المرور يجب ان تكون علي الاقل 5 حروف او كلمات </value>
+  </data>
+  <data name="notMatchPassword" xml:space="preserve">
+    <value>كلمة مرور غير مطابقة</value>
+  </data>
+  <data name="PleaseEnterAValidPhoneNumber" xml:space="preserve">
+    <value>يرجي ادخال رقم هاتف بشكل صحيح</value>
+  </data>
+  <data name="PleaseenterfullName" xml:space="preserve">
+    <value>يرجي ادخال الاسم بالكامل</value>
+  </data>
+  <data name="SelectGrade_required" xml:space="preserve">
+    <value>يرجي اختيار المرحله</value>
+  </data>
+  <data name="SelectGroup_required" xml:space="preserve">
+    <value>يرجي اختيار المجموعه</value>
+  </data>
+  <data name="sonPhoneNumberRequired" xml:space="preserve">
+    <value>يرجي اضافة تليفون الابن بشكل صحيح</value>
+  </data>
+  <data name="Job_required" xml:space="preserve">
+    <value>يرجي ادخال الوظيفة</value>
+  </data>
+  <data name="AdminArea" xml:space="preserve">
+    <value>اعدادات النظام</value>
+  </data>
+  <data name="CreateGroup" xml:space="preserve">
+    <value>اضافة مجموعة</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>تعديل المجموعة</value>
+  </data>
+  <data name="RemoveGroup" xml:space="preserve">
+    <value>حذف المجموعة</value>
+  </data>
+  <data name="AcademicStudet" xml:space="preserve">
+    <value>الطلاب الاكاديمين</value>
+  </data>
+  <data name="AccountState" xml:space="preserve">
+    <value>حالة الاكونت</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="Add  Blogs" xml:space="preserve">
+    <value>اضافة  مقال جديد</value>
+  </data>
+  <data name="add quiz" xml:space="preserve">
+    <value>اضافة امتحان جديد</value>
+  </data>
+  <data name="addedQuestions" xml:space="preserve">
+    <value>الاسئله المضافة</value>
+  </data>
+  <data name="AddNewGovernorate" xml:space="preserve">
+    <value>اضافة محافظة جديدة</value>
+  </data>
+  <data name="AddQuestions" xml:space="preserve">
+    <value>اضافة سؤال</value>
+  </data>
+  <data name="addquiz" xml:space="preserve">
+    <value>اضافة سؤال</value>
+  </data>
+  <data name="AddQuize" xml:space="preserve">
+    <value>اضافة سؤال</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="AllAcademicStudents" xml:space="preserve">
+    <value>كل الطلاب الاكاديمين</value>
+  </data>
+  <data name="AllOnlineStudents" xml:space="preserve">
+    <value>كل الطلاب الاونلاين</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>الاجابة</value>
+  </data>
+  <data name="Appointments" xml:space="preserve">
+    <value>المواعيد</value>
+  </data>
+  <data name="Approval" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>إسم البنك</value>
+  </data>
+  <data name="BlockUser" xml:space="preserve">
+    <value>ايقاف مستخدم</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>تم الإلغاء</value>
+  </data>
+  <data name="ChangeStatus" xml:space="preserve">
+    <value>تغير الحالة</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>اختيار المدينه</value>
+  </data>
+  <data name="ChooseGrade" xml:space="preserve">
+    <value>اختيار مرحله</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>المدن</value>
+  </data>
+  <data name="CitiesInGovernorate" xml:space="preserve">
+    <value>المدن فى المحافظة</value>
+  </data>
+  <data name="CityName" xml:space="preserve">
+    <value>اسم المدينة</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>اغلاق</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>انشاء</value>
+  </data>
+  <data name="CreatedTime" xml:space="preserve">
+    <value>وقت الانضمام</value>
+  </data>
+  <data name="CreationTime" xml:space="preserve">
+    <value>وقت الانشاء</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>التاريخ من</value>
+  </data>
+  <data name="Dateto" xml:space="preserve">
+    <value>التاريخ الى</value>
+  </data>
+  <data name="Dawnload" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>الايام</value>
+  </data>
+  <data name="degreeperquestion" xml:space="preserve">
+    <value>درجة السؤال</value>
+  </data>
+  <data name="duration" xml:space="preserve">
+    <value>المده </value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="EmailAddess" xml:space="preserve">
+    <value>البريد الالكترونى</value>
+  </data>
+  <data name="FiledRequired" xml:space="preserve">
+    <value> الحقل مطلوب</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="fStTermPath" xml:space="preserve">
+    <value>نظام الترم الواحد</value>
+  </data>
+  <data name="GenerateReport" xml:space="preserve">
+    <value>انشاء تقرير</value>
+  </data>
+  <data name="GovernorateName" xml:space="preserve">
+    <value>اسم المحافظه</value>
+  </data>
+  <data name="GovernorateNameAr" xml:space="preserve">
+    <value>اسم بالمحافظه بالعربى</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>المرحله</value>
+  </data>
+  <data name="GradeName" xml:space="preserve">
+    <value>اسم المرحله</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>المجموعه</value>
+  </data>
+  <data name="Group Attendance" xml:space="preserve">
+    <value>تقرير حضور المجموعات البث</value>
+  </data>
+  <data name="GroupName" xml:space="preserve">
+    <value>اسم المجموعه</value>
+  </data>
+  <data name="GroupNameAr" xml:space="preserve">
+    <value>اسم المجموعه بالعربى</value>
+  </data>
+  <data name="GroupNameEn" xml:space="preserve">
+    <value>اسم المجموعه بالانجليزى</value>
+  </data>
+  <data name="IdNotFound" xml:space="preserve">
+    <value>لا يوجد كيان بهذه الهويه</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>صورة</value>
+  </data>
+  <data name="IsTeacher" xml:space="preserve">
+    <value>يكون مدرس</value>
+  </data>
+  <data name="LivePublicName" xml:space="preserve">
+    <value>اسم الليف </value>
+  </data>
+  <data name="MaxmumStudentCount" xml:space="preserve">
+    <value>اقصى عدد لطلبه</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>الموبيل</value>
+  </data>
+  <data name="Monitor" xml:space="preserve">
+    <value>الاعدادات</value>
+  </data>
+  <data name="MultipleChoice" xml:space="preserve">
+    <value>اختيار من متعدد</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>الاسم بالعربى</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>الاسم بالانجليزى</value>
+  </data>
+  <data name="NewAppointment" xml:space="preserve">
+    <value>ميعاد جديد</value>
+  </data>
+  <data name="NewCity" xml:space="preserve">
+    <value>مدينه جديده</value>
+  </data>
+  <data name="NewGovernorate" xml:space="preserve">
+    <value>محافظه جديده</value>
+  </data>
+  <data name="NewGrade" xml:space="preserve">
+    <value>مرحله جديده</value>
+  </data>
+  <data name="NewUnit" xml:space="preserve">
+    <value>وحده جديده</value>
+  </data>
+  <data name="NotesAr" xml:space="preserve">
+    <value>الملاحظات بالعربى</value>
+  </data>
+  <data name="NotesEn" xml:space="preserve">
+    <value>الملاحظات بالانجليزى</value>
+  </data>
+  <data name="NotificationMessage" xml:space="preserve">
+    <value>اشعار الرسالة</value>
+  </data>
+  <data name="NumberOfQuestion" xml:space="preserve">
+    <value>عدد الاسئلة</value>
+  </data>
+  <data name="OnlineStudet" xml:space="preserve">
+    <value>الطلاب الاونلاين</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>الترتيب</value>
+  </data>
+  <data name="PDF" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="PdfAttAchmets" xml:space="preserve">
+    <value>رفع ملف pdf</value>
+  </data>
+  <data name="PendingAcadmicStudents" xml:space="preserve">
+    <value>الطلاب الاكاديمين المعلقين</value>
+  </data>
+  <data name="PendingOnlineStudents" xml:space="preserve">
+    <value>الطلاب الاونلاين المعلقين</value>
+  </data>
+  <data name="PendingStudnets" xml:space="preserve">
+    <value>الطلاب المعلقين</value>
+  </data>
+  <data name="PleaseAddQuestions" xml:space="preserve">
+    <value>من فضلك اضف سؤال</value>
+  </data>
+  <data name="PublicName" xml:space="preserve">
+    <value>الاسم العام</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>السؤال</value>
+  </data>
+  <data name="QuestionAddedSuccessfully" xml:space="preserve">
+    <value>تم إضافة السؤال بنجاح</value>
+  </data>
+  <data name="questiondegree" xml:space="preserve">
+    <value>درجة السؤال</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>السؤال</value>
+  </data>
+  <data name="questionscount" xml:space="preserve">
+    <value>عدد الاسئله</value>
+  </data>
+  <data name="QuestionType" xml:space="preserve">
+    <value>نوع السؤال</value>
+  </data>
+  <data name="quizessearch" xml:space="preserve">
+    <value>بحث عن سؤال</value>
+  </data>
+  <data name="Quizetitle" xml:space="preserve">
+    <value>عنوان السؤال</value>
+  </data>
+  <data name="Refused" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="RemoveUser" xml:space="preserve">
+    <value>حذف مستخدم</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="SaveAnswer" xml:space="preserve">
+    <value>حفظ الاجابه</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="SelectGroup" xml:space="preserve">
+    <value>اختار المجموعه</value>
+  </data>
+  <data name="SelectGroups" xml:space="preserve">
+    <value>اختار المجموعه</value>
+  </data>
+  <data name="SelectStudent" xml:space="preserve">
+    <value>اختار الطالب</value>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>حدث خطأ في السيرفر, حاول مرة أخرى</value>
+  </data>
+  <data name="sStTermPath" xml:space="preserve">
+    <value>نظام الترمين</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحاله</value>
+  </data>
+  <data name="StudnetType" xml:space="preserve">
+    <value>نوع الطالب</value>
+  </data>
+  <data name="Term" xml:space="preserve">
+    <value>الترم</value>
+  </data>
+  <data name="Timer" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>الى</value>
+  </data>
+  <data name="TybeOfStudent" xml:space="preserve">
+    <value>نوع الطالب</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>الوحده</value>
+  </data>
+  <data name="UnitPDF" xml:space="preserve">
+    <value>pdf الوحده</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تحديت</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>رفع صوره</value>
+  </data>
+  <data name="UsedTermSystem" xml:space="preserve">
+    <value>نظام الترم</value>
+  </data>
+  <data name="Valide" xml:space="preserve">
+    <value>صحيحه</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>القيمة</value>
+  </data>
+  <data name="YoutubeChannel" xml:space="preserve">
+    <value>قناة اليوتيوب</value>
+  </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>المقالات</value>
+  </data>
+  <data name="ContactListAndEmail" xml:space="preserve">
+    <value>بيانات التواصل</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="CorrectionExam" xml:space="preserve">
+    <value>تصحيح الامتحان</value>
+  </data>
+  <data name="Create Channel" xml:space="preserve">
+    <value>اضافة بث جديد</value>
+  </data>
+  <data name="Export-Sheets" xml:space="preserve">
+    <value>تصدير الملفات</value>
+  </data>
+  <data name="Governorate and cities" xml:space="preserve">
+    <value>المحافظات والمدن</value>
+  </data>
+  <data name="Import-Sheets" xml:space="preserve">
+    <value>تحميل ملف</value>
+  </data>
+  <data name="Live Video" xml:space="preserve">
+    <value>بث مباشر</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>الرسائل</value>
+  </data>
+  <data name="My Personal Information" xml:space="preserve">
+    <value>معلوماتي الشخصية</value>
+  </data>
+  <data name="Online-Students" xml:space="preserve">
+    <value>الطلاب الاونلاين</value>
+  </data>
+  <data name="QuestionBank" xml:space="preserve">
+    <value>بنك الاسئله</value>
+  </data>
+  <data name="quizes" xml:space="preserve">
+    <value>الامتحانات</value>
+  </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>تذكير بالبث المباشر</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>التقارير</value>
+  </data>
+  <data name="Send Message" xml:space="preserve">
+    <value>ارسال رساله</value>
+  </data>
+  <data name="show  Suggestions And Complaint" xml:space="preserve">
+    <value>الشكوى والاقتراحات</value>
+  </data>
+  <data name="show quizes" xml:space="preserve">
+    <value>عرض الامتحانات</value>
+  </data>
+  <data name="Sign In Visitors" xml:space="preserve">
+    <value>تقرير الزوار</value>
+  </data>
+  <data name="Student and Parent Report" xml:space="preserve">
+    <value>تقرير الطلاب والاباء</value>
+  </data>
+  <data name="Student Attendance" xml:space="preserve">
+    <value>تقرير حضور الطلاب</value>
+  </data>
+  <data name="Suggestions And Complaint" xml:space="preserve">
+    <value>عرض الشكاوى والاقتراحات </value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>المستخدمين </value>
+  </data>
+  <data name="AppointmentsMenu" xml:space="preserve">
+    <value>مواعيد المجموعات</value>
+  </data>
+  <data name="Appointments_Create" xml:space="preserve">
+    <value>اضافة ميعاد</value>
+  </data>
+  <data name="Appointments_Edit" xml:space="preserve">
+    <value>تعديل ميعاد</value>
+  </data>
+  <data name="GradeMenu" xml:space="preserve">
+    <value>المراحل</value>
+  </data>
+  <data name="Grade_Create" xml:space="preserve">
+    <value>اضافة مرحلة</value>
+  </data>
+  <data name="Grade_Edit" xml:space="preserve">
+    <value>تعديل المرحله</value>
+  </data>
+  <data name="Groups_Create" xml:space="preserve">
+    <value>اضافة مجموعه</value>
+  </data>
+  <data name="ImportSheets" xml:space="preserve">
+    <value> رفع ملفات </value>
+  </data>
+  <data name="UnitsMenu" xml:space="preserve">
+    <value>الوحدات</value>
+  </data>
+  <data name="Units_Create" xml:space="preserve">
+    <value>اضافة وحده</value>
+  </data>
+  <data name="Units_Edit" xml:space="preserve">
+    <value>تعديل الوحده</value>
+  </data>
+  <data name="ActiveAccount" xml:space="preserve">
+    <value>تنشيط الاكونت</value>
+  </data>
+  <data name="addgroupe" xml:space="preserve">
+    <value>اضافة مجموعه</value>
+  </data>
+  <data name="BlockAccount" xml:space="preserve">
+    <value>قفل الاكونت</value>
+  </data>
+  <data name="coments" xml:space="preserve">
+    <value>التعليقات</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>اضافه مستخدم</value>
+  </data>
+  <data name="creation" xml:space="preserve">
+    <value>انشاء</value>
+  </data>
+  <data name="detalis" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>طباعه</value>
+  </data>
+  <data name="SuggestionsAndComplaint" xml:space="preserve">
+    <value>الشكاوى والاقتراحات</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
+  <data name="AddnewBlog" xml:space="preserve">
+    <value>اضافة مقال جديد</value>
+  </data>
+  <data name="Createstudent" xml:space="preserve">
+    <value>الطلاب الفعلين</value>
+  </data>
+  <data name="ListofBlogs" xml:space="preserve">
+    <value>قائمة المقالات</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>تعديل مستخدم</value>
+  </data>
+  <data name="GroupsAndPermissions" xml:space="preserve">
+    <value>المجموعات والصلاحيات</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>اللغه</value>
+  </data>
+  <data name="AccountApproval" xml:space="preserve">
+    <value>تنشيط حسابات الطلاب المعلقه</value>
+  </data>
+  <data name="AccountRefuesd" xml:space="preserve">
+    <value>ايقاف حسابات الطلاب المعلقه</value>
+  </data>
+  <data name="AcademicStudentsReport" xml:space="preserve">
+    <value>تقرير الطلاب الاكاديمين</value>
+  </data>
+  <data name="OnlineStudentsReport" xml:space="preserve">
+    <value>تقرير الطلاب الاونلاين</value>
+  </data>
+  <data name="Registrationtime" xml:space="preserve">
+    <value>وقت التسجيل</value>
+  </data>
+  <data name="ReportOfStudentsAndParents" xml:space="preserve">
+    <value>تقرير الطلاب واوالياء الامر</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="SignInVisitorsReport" xml:space="preserve">
+    <value>تقرير الزائرين</value>
+  </data>
+  <data name="EditGovernorate" xml:space="preserve">
+    <value>تعديل المحافظه</value>
+  </data>
+  <data name="editQuestions" xml:space="preserve">
+    <value>تعديل السؤال</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="QuestionNumber" xml:space="preserve">
+    <value>عدد الاسئله</value>
+  </data>
+  <data name="QuizeReport" xml:space="preserve">
+    <value>تقارير الاختبارات</value>
+  </data>
+  <data name="TotalDegree" xml:space="preserve">
+    <value>الدرجه النهائيه</value>
+  </data>
+  <data name="AddQuestion" xml:space="preserve">
+    <value>اضافة سؤال</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>مقالى</value>
+  </data>
+  <data name="false" xml:space="preserve">
+    <value>خطاء</value>
+  </data>
+  <data name="showquestions" xml:space="preserve">
+    <value>عرض السؤال</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>الحاله</value>
+  </data>
+  <data name="thereisnotdatatoshow" xml:space="preserve">
+    <value>لايوجد بيانات لعرضها</value>
+  </data>
+  <data name="true" xml:space="preserve">
+    <value>صح</value>
+  </data>
+  <data name="TrueOrFalse" xml:space="preserve">
+    <value>صح وخطاء</value>
+  </data>
+  <data name="updateuestionsBank" xml:space="preserve">
+    <value>تعديل بنك الاسئله</value>
+  </data>
+  <data name="valid" xml:space="preserve">
+    <value>صح</value>
+  </data>
+  <data name="AddNewRecord" xml:space="preserve">
+    <value>اضافة سجل جديد</value>
+  </data>
+  <data name="MANAGEYOUTUBECHANAL" xml:space="preserve">
+    <value>ادارة قناة اليوتيوب</value>
+  </data>
+  <data name="SOCIAL" xml:space="preserve">
+    <value>مواقع التواصل</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>المسار</value>
+  </data>
+  <data name="AddQuestionsBank" xml:space="preserve">
+    <value>اضافة بنك اسئله</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="addyourtexthere" xml:space="preserve">
+    <value>أضف نصك هنا</value>
+  </data>
+  <data name="answers" xml:space="preserve">
+    <value>الاجبات</value>
+  </data>
+  <data name="Autocompletesearch" xml:space="preserve">
+    <value>البحث التلقائى</value>
+  </data>
+  <data name="blogedite" xml:space="preserve">
+    <value>تعديل المقال</value>
+  </data>
+  <data name="dateadded" xml:space="preserve">
+    <value>تاريخ الاضافه</value>
+  </data>
+  <data name="datestartexame" xml:space="preserve">
+    <value>تاريخ بدايه الامتحان</value>
+  </data>
+  <data name="Designyourquize" xml:space="preserve">
+    <value>صمم الامتحان</value>
+  </data>
+  <data name="Enteralocation" xml:space="preserve">
+    <value>ادخل موقعا</value>
+  </data>
+  <data name="examedetails" xml:space="preserve">
+    <value>بيانات الامتحان</value>
+  </data>
+  <data name="exameduration" xml:space="preserve">
+    <value>مدة الامتحان</value>
+  </data>
+  <data name="Examsets" xml:space="preserve">
+    <value>مجموعات الامتحان</value>
+  </data>
+  <data name="join" xml:space="preserve">
+    <value>التحاق</value>
+  </data>
+  <data name="questiondetails" xml:space="preserve">
+    <value>نص السؤال</value>
+  </data>
+  <data name="QuestionsBank" xml:space="preserve">
+    <value>بنك الاسئله</value>
+  </data>
+  <data name="QuestionTypedegreedetails" xml:space="preserve">
+    <value>نوع الاسئلة  وعددها ودرجة كل سؤال</value>
+  </data>
+  <data name="SaveQuize" xml:space="preserve">
+    <value>حفظ الامتحان</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>اختار</value>
+  </data>
+  <data name="Selectanoption" xml:space="preserve">
+    <value>حدد اختيارا</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>ارسال رساله</value>
+  </data>
+  <data name="SendStudentMessage" xml:space="preserve">
+    <value>ارسال رساله الى الطالب</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>مشاركه</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>تاريخ نهاية الامتحان</value>
+  </data>
+  <data name="Thenumberofquestionsavailable" xml:space="preserve">
+    <value>عدد الاسئله المتاحه</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="deletegroup" xml:space="preserve">
+    <value>حذف مجموعه</value>
+  </data>
+  <data name="deletgroupdescription" xml:space="preserve">
+    <value>من فضلك قم بنقل  الطلبه التى فى هذه المجموعه الى مجموعه اخرى</value>
+  </data>
+  <data name="Accountstatuschangedsuccessfully" xml:space="preserve">
+    <value>تم تغير حالة الحساب بنجاح</value>
+  </data>
+  <data name="appdownload" xml:space="preserve">
+    <value>تحميل التطبيق</value>
+  </data>
+  <data name="arabicCountryNameIsRequired" xml:space="preserve">
+    <value>اسم المحافظه باللغه العربيه مطلوب</value>
+  </data>
+  <data name="Buyyourcopynow" xml:space="preserve">
+    <value>اشتر نسختك الان</value>
+  </data>
+  <data name="chooseagroupplease" xml:space="preserve">
+    <value>اختر مجموعة من فضلك</value>
+  </data>
+  <data name="CityNameArIsRequired" xml:space="preserve">
+    <value>اسم المدينه باللغه العربيه مطلوب</value>
+  </data>
+  <data name="CityNameIsRequired" xml:space="preserve">
+    <value>اسم المدينه باللغه الانجليزيه مطلوب</value>
+  </data>
+  <data name="ConfirmAccountApproval" xml:space="preserve">
+    <value>تأكيد الموافقة على الحساب</value>
+  </data>
+  <data name="ConfirmDeleteoperation" xml:space="preserve">
+    <value>تأكيد حذف العمليه</value>
+  </data>
+  <data name="ConfirmDeleteStudent" xml:space="preserve">
+    <value>تأكيد حذف الطالب</value>
+  </data>
+  <data name="Confirmoperation" xml:space="preserve">
+    <value>تاكيد العمليه</value>
+  </data>
+  <data name="CountOrDegreemustbemorethan" xml:space="preserve">
+    <value>يجب أن يكون العدد أو الدرجة أكثر من</value>
+  </data>
+  <data name="discriptionappp" xml:space="preserve">
+    <value>بصفتنا أكبر منصة تعليمية في البلاد ، لدينا الخدمات والخبرة لجعل عملية التدريس من المعلم إلى الطالب بسيطة وسهلة وغير مملة.</value>
+  </data>
+  <data name="discriptionone" xml:space="preserve">
+    <value>نحن نقدم لك برنامج ايجلز اكاديمي لتقديم تطبيقات التعليم عبر الانترنت لمساعدتك على تعليم طلابك اينما كانوا ومساعدتهم على اجتياز مراحلهم الدراسية والامتحانات على تطبيق مبتكر</value>
+  </data>
+  <data name="discriptiontwo" xml:space="preserve">
+    <value>     نحن منصة تعليمية نقوم بمساعدة المدرس لاستكمال اعماله التى يقوم بها مع الطلاب ومواصلة المراجعة مع طلابه اثناء الامتحانات ، ايضا نغطى كافة التطورات التى يقدمها المدرس سواء كانت اونلاين او على النطاق الاكاديمى ونقوم ايضا بعمل متابعة مع اولياء الامور لتعريفهم على مستوى ابنائهم فى المراحل التعليمية ونقوم ايضا بتوفير الجهد على المدرس لعمل مجموعات طلابية منظمة بأماكن ومواعيد مختلفة على مدار السنة</value>
+  </data>
+  <data name="Duplicatedanswer" xml:space="preserve">
+    <value>اجابه مكرره</value>
+  </data>
+  <data name="DuplicatedanswerSuccess" xml:space="preserve">
+    <value>اجابه صحيحه متكرره</value>
+  </data>
+  <data name="DuplicatedQuizetype" xml:space="preserve">
+    <value>نوع اختبار مكرر</value>
+  </data>
+  <data name="EaglezAccadmy" xml:space="preserve">
+    <value>ايجلز اكاديمي</value>
+  </data>
+  <data name="EmailisRequired" xml:space="preserve">
+    <value>البريد الالكتروني مطلوب</value>
+  </data>
+  <data name="englishCountryNameIsRequired" xml:space="preserve">
+    <value>اسم المحافظه باللغه الانجليزيه مطلوب</value>
+  </data>
+  <data name="EnterDegree" xml:space="preserve">
+    <value>ادخل الدرجه</value>
+  </data>
+  <data name="entervalidemailaddress" xml:space="preserve">
+    <value>أدخل عنوان بريد إلكتروني صالح</value>
+  </data>
+  <data name="entervalidphone" xml:space="preserve">
+    <value>أدخل رقم الهاتف صحيحا</value>
+  </data>
+  <data name="fullNameisRequired" xml:space="preserve">
+    <value>الإسم الكامل ضروري</value>
+  </data>
+  <data name="GetEaglezAcadmyApp" xml:space="preserve">
+    <value>احصل على تطبيق ايجلز اكاديمي</value>
+  </data>
+  <data name="GovernorateNameIsRequired" xml:space="preserve">
+    <value>اسم المحافظه مطلوب</value>
+  </data>
+  <data name="hithere" xml:space="preserve">
+    <value>مرحبا</value>
+  </data>
+  <data name="InvalidAnswer" xml:space="preserve">
+    <value>اجابه غير صحيحه</value>
+  </data>
+  <data name="isinvalidallowedextensionsis" xml:space="preserve">
+    <value>الإضافات المسموح بها غير صالحة</value>
+  </data>
+  <data name="Learnmoreabout" xml:space="preserve">
+    <value>اعرف اكتر عن</value>
+  </data>
+  <data name="Makeeducationeasie" xml:space="preserve">
+    <value>اجعل التعليم اسهل</value>
+  </data>
+  <data name="MessageisRequired" xml:space="preserve">
+    <value>الرسالة مطلوبة</value>
+  </data>
+  <data name="modelAnswer" xml:space="preserve">
+    <value>نموزج الاجابه</value>
+  </data>
+  <data name="mustbeanswercontainonesuccess" xml:space="preserve">
+    <value>يجب أن يكون الجواب يحتوي على نجاح واحد</value>
+  </data>
+  <data name="NumberOfQuestionOutOfRange" xml:space="preserve">
+    <value>عدد الأسئلة خارج النطاق</value>
+  </data>
+  <data name="Numberofrecords" xml:space="preserve">
+    <value>عدد السجلات</value>
+  </data>
+  <data name="OnlineLearningAccadmy" xml:space="preserve">
+    <value>اكاديمية تعليم اونلاين</value>
+  </data>
+  <data name="operationaccomplishedsuccessfully" xml:space="preserve">
+    <value>تمت العملية بنجاح</value>
+  </data>
+  <data name="PhoneisRequired" xml:space="preserve">
+    <value>رقم الهاتف مطلوب</value>
+  </data>
+  <data name="pleasecompleteyourquizeoptionentercountofquestion" xml:space="preserve">
+    <value>يرجى إكمال خيار العرض الخاص بك أدخل عدد الأسئلة</value>
+  </data>
+  <data name="Pleasefillinalldata" xml:space="preserve">
+    <value>يرجى ملء جميع البيانات</value>
+  </data>
+  <data name="Pleaseincreasethenumberofstudentsinthisgroupto" xml:space="preserve">
+    <value>من فضلك قم بزيادة عدد الطلاب فى هذه المجموعه الى</value>
+  </data>
+  <data name="pleaseselectBank" xml:space="preserve">
+    <value>قم بتحديد بنك الاسئله</value>
+  </data>
+  <data name="pleaseselectBankQuestions" xml:space="preserve">
+    <value>قم باختيار بنك الاسئله </value>
+  </data>
+  <data name="PleaseWriteyourComment" xml:space="preserve">
+    <value>من فضلك اكتب تعليقك</value>
+  </data>
+  <data name="ReadMoretwo" xml:space="preserve">
+    <value>اقرأ المزيد</value>
+  </data>
+  <data name="Requestafreetrial" xml:space="preserve">
+    <value>طلب تجربه مجانيه</value>
+  </data>
+  <data name="ServerErrortryagainlater" xml:space="preserve">
+    <value>خطأ في الخادم ، حاول مرة أخرى لاحقًا</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="SessionSuccessfulyEnded" xml:space="preserve">
+    <value>انتهت الجلسة بنجاح</value>
+  </data>
+  <data name="Sorry" xml:space="preserve">
+    <value>اسف</value>
+  </data>
+  <data name="studentAnswerAnswer" xml:space="preserve">
+    <value>اجابة الطالب</value>
+  </data>
+  <data name="studentName" xml:space="preserve">
+    <value>اسم الطالب</value>
+  </data>
+  <data name="Studentsavailableinthisgroup" xml:space="preserve">
+    <value>الطلاب المتاحه فى هذه المجموعه</value>
+  </data>
+  <data name="Studentsuccessfullydeleted" xml:space="preserve">
+    <value>تم حذف الطالب بنجاح</value>
+  </data>
+  <data name="subjectisRequired" xml:space="preserve">
+    <value>الموضوع مطلوب</value>
+  </data>
+  <data name="teachyourstudents" xml:space="preserve">
+    <value>تعليم طلابك</value>
+  </data>
+  <data name="TheAppointmentshasbeensuccessfullyAdded" xml:space="preserve">
+    <value>تمت إضافة المواعيد بنجاح</value>
+  </data>
+  <data name="TheAppointmentshasbeensuccessfullyUpdated" xml:space="preserve">
+    <value>تم تحديث المواعيد بنجاح</value>
+  </data>
+  <data name="Thecityhasbeensuccessfullydeleted" xml:space="preserve">
+    <value>تم حذف المدينه بنجاح</value>
+  </data>
+  <data name="TheGovernoratehasbeensuccessfullyadded" xml:space="preserve">
+    <value>تمت إضافة المحافظة بنجاح</value>
+  </data>
+  <data name="TheGovernoratehasbeensuccessfullydeleted" xml:space="preserve">
+    <value>تم حذف المحافظة بنجاح</value>
+  </data>
+  <data name="ThePdfFilehasbeensuccessfullydeleted" xml:space="preserve">
+    <value>تم حذف ملف Pdf بنجاح</value>
+  </data>
+  <data name="TheRawhasbeensuccessfullydeleted" xml:space="preserve">
+    <value>تم حذف الصف بنجاح</value>
+  </data>
+  <data name="Thereisnodatatodisplay" xml:space="preserve">
+    <value>لايوجد بيانات لعرضها</value>
+  </data>
+  <data name="Thescoremustbelessthanthemaximumscore" xml:space="preserve">
+    <value>يجب أن تكون الدرجة أقل من الدرجة القصوى</value>
+  </data>
+  <data name="Thetiminghasbeensuccessfullydeleted" xml:space="preserve">
+    <value>تم حذف التوقيت بنجاح</value>
+  </data>
+  <data name="Theunithasbeensuccessfullydeleted" xml:space="preserve">
+    <value>تم الحذف بنجاح</value>
+  </data>
+  <data name="transferstudent" xml:space="preserve">
+    <value>نقل الطلاب</value>
+  </data>
+  <data name="UnauthorizedDonothavethepermesstiontodotheoperation" xml:space="preserve">
+    <value>غير مصرح به ، لا تملك الإذن للقيام بهذه العملية</value>
+  </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>تم التحديث بنجاح</value>
+  </data>
+  <data name="Wanttodeleteblog" xml:space="preserve">
+    <value>تريد حذف المدونة</value>
+  </data>
+  <data name="Wearean" xml:space="preserve">
+    <value>نحن</value>
+  </data>
+  <data name="Wehelpyouto" xml:space="preserve">
+    <value>نحن نساعدك على</value>
+  </data>
+  <data name="WelcomeTo" xml:space="preserve">
+    <value>اهلا بكم فى  </value>
+  </data>
+  <data name="Groups_Remove" xml:space="preserve">
+    <value>حذف مجموعه</value>
+  </data>
+  <data name="MailSetting" xml:space="preserve">
+    <value>اعدادت الميل </value>
+  </data>
+  <data name="Option" xml:space="preserve">
+    <value>الخيارات </value>
+  </data>
+  <data name="SMSSetting" xml:space="preserve">
+    <value>اعدادت SMS</value>
+  </data>
+  <data name="UpdateMailSetting" xml:space="preserve">
+    <value>تعديل اعدات الميل </value>
+  </data>
+  <data name="UpdateOption" xml:space="preserve">
+    <value>تعديل الخيارات</value>
+  </data>
+  <data name="UpdateSMSSetting" xml:space="preserve">
+    <value>تعديل  SMS </value>
+  </data>
+  <data name="GroupType" xml:space="preserve">
+    <value>نوع المجموعة</value>
+  </data>
+  <data name="UserType" xml:space="preserve">
+    <value>نوع المستخدم</value>
+  </data>
+  <data name="YouWelcomeIn" xml:space="preserve">
+    <value>مرحبا بك في</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>الدرجة</value>
+  </data>
+  <data name="StudentAttendances" xml:space="preserve">
+    <value>حضور الطالب</value>
+  </data>
+  <data name="Attend" xml:space="preserve">
+    <value>حضر</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="dateendexame" xml:space="preserve">
+    <value>تاريخ نهاية الامتحان</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>انهاء</value>
+  </data>
+  <data name="GroupLiveVideoAttendance" xml:space="preserve">
+    <value>حضور جماعي بالفيديو</value>
+  </data>
+  <data name="JoinNow" xml:space="preserve">
+    <value>انضم الآن</value>
+  </data>
+  <data name="LiveBroadcastAddress" xml:space="preserve">
+    <value>عنوان البث المباشر</value>
+  </data>
+  <data name="LiveSession" xml:space="preserve">
+    <value>جلسة البث المباشر</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>لا توجد بيانات</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>الطلاب</value>
+  </data>
+  <data name="Examinations" xml:space="preserve">
+    <value>الامتحانات</value>
+  </data>
+  <data name="PermissionsOfUsers" xml:space="preserve">
+    <value>صلاحيات المستخدمين</value>
+  </data>
+  <data name="PleaseSpecifyAtLeastOneStudentOnly" xml:space="preserve">
+    <value>يرجي تحديد علي الاقل طالب واحد فقط</value>
+  </data>
+  <data name="SchoolGrade" xml:space="preserve">
+    <value>المراحل الدراسيه</value>
+  </data>
+  <data name="StudyGroups" xml:space="preserve">
+    <value>مجموعات دراسيه</value>
+  </data>
+  <data name="DeletedSuccessfully" xml:space="preserve">
+    <value>تم الحذف بنجاح</value>
+  </data>
+  <data name="IsUseOnlineAcdmicOption" xml:space="preserve">
+    <value>استخدام نظام تسجيل طلاب اكاديمي &amp; اونلاين</value>
+  </data>
+  <data name="UseMailSetting" xml:space="preserve">
+    <value>استخدام اعدادات البريد الالكتروني</value>
+  </data>
+  <data name="UseSmsMisr" xml:space="preserve">
+    <value>استخدام اعدادات SMS مصر</value>
+  </data>
+  <data name="StudentCountInGroup" xml:space="preserve">
+    <value>عدد الطلبه بالجروب</value>
+  </data>
+  <data name="ali" xml:space="preserve">
+    <value>علي</value>
+  </data>
+  <data name="Delet" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="NewFolder" xml:space="preserve">
+    <value>اضافة مجلد</value>
+  </data>
+  <data name="OpenStudentList" xml:space="preserve">
+    <value>افتح قائمة الطلاب</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>اعادة تسمية</value>
+  </data>
+  <data name="UploadNewFile" xml:space="preserve">
+    <value>اضافه ملف</value>
+  </data>
+  <data name="UploadPdf" xml:space="preserve">
+    <value>رفع ملف PDF</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>الملفات</value>
+  </data>
+  <data name="Matrials" xml:space="preserve">
+    <value>الماتريالز</value>
+  </data>
+  <data name="ShowStudentsList" xml:space="preserve">
+    <value>عرض قائمه الطلاب</value>
+  </data>
+  <data name="UploadVideos" xml:space="preserve">
+    <value>رفع الفيديوهات</value>
+  </data>
+  <data name="vedios" xml:space="preserve">
+    <value>فيديوهات</value>
+  </data>
+  <data name="CreateNewFolder" xml:space="preserve">
+    <value>اضافه ملف جديد</value>
+  </data>
+  <data name="FolderName" xml:space="preserve">
+    <value>اسم الملف</value>
+  </data>
+  <data name="ShowFiles" xml:space="preserve">
+    <value>عرض الملفات</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>الفيديوهات</value>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>الحسابات</value>
+  </data>
+  <data name="CreateServicePrvider" xml:space="preserve">
+    <value>اضافه مزود خدمه</value>
+  </data>
+  <data name="ServiceProvider" xml:space="preserve">
+    <value>مزود الخدمه</value>
+  </data>
+  <data name="A4paper" xml:space="preserve">
+    <value>A4paper</value>
+  </data>
+  <data name="AddLogo" xml:space="preserve">
+    <value>اضافة لوجو</value>
+  </data>
+  <data name="amount" xml:space="preserve">
+    <value>القيمه</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>موافقه</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>اللوجو</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="operationaccomplishedsuccessfully...!" xml:space="preserve">
+    <value>تمت العمليه بنجاح...!</value>
+  </data>
+  <data name="operationnumber" xml:space="preserve">
+    <value>رقم العملية</value>
+  </data>
+  <data name="Operationnumberonthesystem" xml:space="preserve">
+    <value>رقم العملية على النظام</value>
+  </data>
+  <data name="operationState" xml:space="preserve">
+    <value>حالة العملية</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>تاريخ الدفع</value>
+  </data>
+  <data name="paymentsystem" xml:space="preserve">
+    <value>نظام الدفع</value>
+  </data>
+  <data name="pending" xml:space="preserve">
+    <value>معلقه</value>
+  </data>
+  <data name="Pendingstudentpayments" xml:space="preserve">
+    <value>مدفوعات الطلاب المعلقه</value>
+  </data>
+  <data name="Print12A4" xml:space="preserve">
+    <value>طباعه 1/2 A4</value>
+  </data>
+  <data name="PrintReset" xml:space="preserve">
+    <value>طباعه ريسيت</value>
+  </data>
+  <data name="ProvidernameArabic" xml:space="preserve">
+    <value>اسم المزود عربى</value>
+  </data>
+  <data name="ProvidernameEnglish" xml:space="preserve">
+    <value>اسم المزود انجليزى</value>
+  </data>
+  <data name="reason" xml:space="preserve">
+    <value>السبب</value>
+  </data>
+  <data name="Resetpaper" xml:space="preserve">
+    <value>Resetpaper</value>
+  </data>
+  <data name="SendingDate" xml:space="preserve">
+    <value>تاريخ الارسال</value>
+  </data>
+  <data name="ss" xml:space="preserve">
+    <value>ss</value>
+  </data>
+  <data name="Studentcode" xml:space="preserve">
+    <value>كود الطالب</value>
+  </data>
+  <data name="Studentnotes" xml:space="preserve">
+    <value>ملاحظات الطالب</value>
+  </data>
+  <data name="StudentPayment" xml:space="preserve">
+    <value>تدفيع طالب</value>
+  </data>
+  <data name="supervisingadministrator" xml:space="preserve">
+    <value>المسؤل المشرف</value>
+  </data>
+  <data name="Systemtype" xml:space="preserve">
+    <value>نوع النظام</value>
+  </data>
+  <data name="Takeoperationnumber" xml:space="preserve">
+    <value>اخذ رقم العمليه</value>
+  </data>
+  <data name="Takeoperationnumberfromstudent" xml:space="preserve">
+    <value>اخذ رقم العمليه من الطالب</value>
+  </data>
+  <data name="thereasonofrefuse" xml:space="preserve">
+    <value>سبب الرفض</value>
+  </data>
+  <data name="Thetransactionnumberontheserviceprovider" xml:space="preserve">
+    <value>رقم العملية على مزود الخدمة</value>
+  </data>
+  <data name="Timeofsending" xml:space="preserve">
+    <value>وقت الارسال</value>
+  </data>
+  <data name="Uploadreceipt" xml:space="preserve">
+    <value>رفع ايصال</value>
+  </data>
+  <data name="YourCode" xml:space="preserve">
+    <value>الكود</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>العربيه</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>الانجليزيه</value>
+  </data>
+  <data name="BacktoHome" xml:space="preserve">
+    <value>العوده الى الرئيسيه</value>
+  </data>
+  <data name="congratulations" xml:space="preserve">
+    <value>تهانينا</value>
+  </data>
+  <data name="penemass" xml:space="preserve">
+    <value>النموذج الخاص بك قيد الانتظار الآن ، وسيتم تنشيطه في أقل من 24 ساعة.</value>
+  </data>
+  <data name="Finsh" xml:space="preserve">
+    <value>النتيجه</value>
+  </data>
+  <data name="Gotohome" xml:space="preserve">
+    <value>العوده الى الرئيسيه</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>ساعه</value>
+  </data>
+  <data name="Mins" xml:space="preserve">
+    <value>دقيقه</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالى</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>النتيجه</value>
+  </data>
+  <data name="review" xml:space="preserve">
+    <value>مراجعه</value>
+  </data>
+  <data name="Secs" xml:space="preserve">
+    <value>ثانيه</value>
+  </data>
+  <data name="Thanksforyouinformation" xml:space="preserve">
+    <value>شكرا لك على المعلومات</value>
+  </data>
+  <data name="Youaredone" xml:space="preserve">
+    <value>لقد انتهيت</value>
+  </data>
+  <data name="startTheExam" xml:space="preserve">
+    <value>ابدأ الامتحان</value>
+  </data>
+  <data name="MaxDegree" xml:space="preserve">
+    <value>اعلي درجه</value>
+  </data>
+  <data name="AnswerVideo" xml:space="preserve">
+    <value>فيديو الاجابه</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="CopyVideo" xml:space="preserve">
+    <value>نسخ الفيديو</value>
+  </data>
+  <data name="StudentDegree" xml:space="preserve">
+    <value>درجه الطالب</value>
+  </data>
+  <data name="StudentDegreeDetails" xml:space="preserve">
+    <value>تفاصيل درجات الطالب</value>
+  </data>
+  <data name="StudentsDegrees" xml:space="preserve">
+    <value>درجات الطلاب</value>
+  </data>
+  <data name="MyFolders" xml:space="preserve">
+    <value>ملفاتي</value>
+  </data>
+  <data name="Showing" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Videos" xml:space="preserve">
+    <value>الفيديوهات</value>
+  </data>
+  <data name="NewVideoAdded" xml:space="preserve">
+    <value>تمت إضافة فيديو جديد</value>
+  </data>
+  <data name="NewQuizesAdded" xml:space="preserve">
+    <value>تمت اضافه كويز جديد</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>تمت اضافه فيديو جديد</value>
+  </data>
+  <data name="AddStudent" xml:space="preserve">
+    <value>اضافة طالب</value>
+  </data>
+  <data name="AreYouSureYouWantToDeletThisStudent" xml:space="preserve">
+    <value>هل انت متاكد من حذف هذا الطالب</value>
+  </data>
+  <data name="DeleteStudent" xml:space="preserve">
+    <value>حذف الطالب</value>
+  </data>
+  <data name="NoOrderFoundNow" xml:space="preserve">
+    <value>لا توجد طلبات معلقه الان</value>
+  </data>
+  <data name="NoStudentFoundNow" xml:space="preserve">
+    <value>لا توجد طلبه الان</value>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>تاريخ الطلب</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>رقم الطلب</value>
+  </data>
+  <data name="PendingOrderList" xml:space="preserve">
+    <value>قائمة الطلابات المعلقه</value>
+  </data>
+  <data name="StudentId" xml:space="preserve">
+    <value>كود الطالب</value>
+  </data>
+  <data name="Thedatawillbeprocessedwithin24hoursfromnow" xml:space="preserve">
+    <value>وسوف يتم معالجة البيانات خلال 24 ساعة من الان</value>
+  </data>
+  <data name="Thestudenthasbeenaddedwithanumber" xml:space="preserve">
+    <value>تم اضافة الطالب برقم</value>
+  </data>
+  <data name="AboutCreate" xml:space="preserve">
+    <value>يمكننا خلق بيئة تفوق خيالك.</value>
+  </data>
+  <data name="Agenda" xml:space="preserve">
+    <value>الاجنده</value>
+  </data>
+  <data name="Booking" xml:space="preserve">
+    <value>الحجز</value>
+  </data>
+  <data name="Citizen" xml:space="preserve">
+    <value>صحيفة المواطن</value>
+  </data>
+  <data name="ContPagrgraph" xml:space="preserve">
+    <value>تشجع EMPC حاليًا شركات الإنتاج الأجنبية على التصوير في مصر وتأمل في تحقيق أهداف دور الإنتاج فيما يتعلق بالتنوع ،</value>
+  </data>
+  <data name="copyRight" xml:space="preserve">
+    <value>جميع الحقوق محفوظه © مدينة الانتاج الاعلامي 2022</value>
+  </data>
+  <data name="DesignAbout" xml:space="preserve">
+    <value>مشاهدة احدث الفيديوهات الخاصه بنا</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>الوسائط</value>
+  </data>
+  <data name="Latestnews" xml:space="preserve">
+    <value>أحدث الأخبار</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>مباشر</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>المواقع</value>
+  </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>مجلس الإدارة</value>
+  </data>
+  <data name="MoreDetails" xml:space="preserve">
+    <value>المزيد من التفاصيل</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>الاخبار</value>
+  </data>
+  <data name="NewsEvents" xml:space="preserve">
+    <value>الأخبار &amp; الأحداث</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>خدماتنا</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>الحساب </value>
+  </data>
+  <data name="Relatedwebsites" xml:space="preserve">
+    <value>مواقع ذات صله</value>
+  </data>
+  <data name="watchVideo" xml:space="preserve">
+    <value>مشاهدة الفيديو</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>العملاء</value>
+  </data>
+  <data name="watchMore" xml:space="preserve">
+    <value>مشاهدة المزيد</value>
+  </data>
+  <data name="Deletepictureinalbum" xml:space="preserve">
+    <value>يجب مسح صور الالبوم أولا</value>
+  </data>
+  <data name="Go To Home Page" xml:space="preserve">
+    <value>اذهب الى الصفحة الرئيسية</value>
+  </data>
+  <data name="Not Found Page" xml:space="preserve">
+    <value>الصفحة غير موجودة</value>
+  </data>
+  <data name="This Page Is Not Found" xml:space="preserve">
+    <value>عفوا،هذا الخبر غير موجود</value>
+  </data>
+  <data name="GallaryParg" xml:space="preserve">
+    <value>مجموعة متنوعة من الصور والتقارير الإخبارية التى تتناول الأحداث الجارية في الشرق الأوسط والعالم</value>
+  </data>
+  <data name="LatestNewsParg" xml:space="preserve">
+    <value>تغطية إخبارية لأهم الأحداث المحلية والعالمية على مدار الساعة طوال أيام الأسبوع</value>
+  </data>
+  <data name="LocationParg" xml:space="preserve">
+    <value>مجموعة متنوعة من مناطق التصوير المفتوحة علي مساحة 2 مليون متر مربع</value>
+  </data>
+  <data name="MISSION" xml:space="preserve">
+    <value>المهمة</value>
+  </data>
+  <data name="ServicesParg" xml:space="preserve">
+    <value>تزويد القنوات الأجنبية والمراسلين الأجانب بأطقم تصوير وكاميرات بالإضافة إلى توفير استوديوهات ومواقع للتصوير وخدمات أخرى..</value>
+  </data>
+  <data name="VISSION" xml:space="preserve">
+    <value>الرؤية</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>اختيار</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>الاسم الاول</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>الاسم الاخير</value>
+  </data>
+  <data name="phoneNumber" xml:space="preserve">
+    <value>رقم التليفون</value>
+  </data>
+  <data name="SendNews" xml:space="preserve">
+    <value>ارسال خبر</value>
+  </data>
+  <data name="UploadImagesOrVideo" xml:space="preserve">
+    <value>تحميل صور او فيديو</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>رسالتك</value>
+  </data>
+  <data name="HatefPhone" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="SendYourmessage" xml:space="preserve">
+    <value>ارسل رسالتك</value>
+  </data>
+  <data name="ClientsPargrapgh" xml:space="preserve">
+    <value>مجموعة متميزة من القنوات الأجنبية داخل مصر تتمتع بخدماتنا الإعلامية المختلفة</value>
+  </data>
+  <data name="FilmedinEgypt" xml:space="preserve">
+    <value>التصوير من مصر</value>
+  </data>
+  <data name="LocationMap" xml:space="preserve">
+    <value>الموقع على الخريطه</value>
+  </data>
+  <data name="OurClients" xml:space="preserve">
+    <value>عملائنا</value>
+  </data>
+</root>

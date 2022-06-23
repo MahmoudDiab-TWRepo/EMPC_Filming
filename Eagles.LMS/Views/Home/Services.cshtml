@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    UnitOfWork ctx = new UnitOfWork();
+
+    var services = ctx.ServiceManager.GetAll().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).ToList();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    if (en == true)
+    {
+        services = services.Where(s => s.TitleEnglish != null).ToList();
+    }
+    else
+    {
+        services = services.Where(s => s.TitleArabic != null).ToList();
+
+    }
+}
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews Services, Services, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@section EndHeader{
+    <style>
+    </style>
+}
+
+
+
+
+
+<!-- Page Tile -->
+<div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <div class="gen-breadcrumb-title">
+                        <h1>
+                            @Resources.Global.services
+                        </h1>
+                    </div>
+                    <div class="gen-breadcrumb-container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/Home"><i class="fas fa-home mr-2"></i>@Resources.Global.Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">@Resources.Global.services</li>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Title -->
+
+<div class="NewServPage">
+    <div class="overlay">
+        <div class="row otherroww">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 otherrrcoll">
+                <a href="/Home/CrewServices" class="ServItemNew">
+                    <div class="imgages">
+                        <!--<img src="img/NewImg/f18c.jpeg">-->
+                        <div class="BGImg" style="background-image: url(/assets_New_Puplic/img/NewImg/f18c.jpeg)"></div>
+                    </div>
+                    <div class="ServDetails">
+                        <div class="forflex">
+                            <h2>Crew <span>Services</span></h2>
+                            <p>Awesome Subtittle Goes Here Awesome Subtittle Goes Here Awesome Subtittle Goes Here</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @foreach (var service in services)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 otherrrcoll">
+                    <a href="/Home/ServicesDetails/@service.Id" class="ServItemNew">
+                        <div class="imgages">
+                            <!--<img src="img/NewImg/f18c.jpeg">-->
+                            @if (!string.IsNullOrEmpty(service.MainImage))
+                            {
+                                <div class="BGImg" style="background-image: url(@service.MainImage)"></div>
+                            }
+                            else
+                            {
+                                <div class="BGImg" style="background-image: url(img/NewImg/f15c.jpeg)"></div>
+                            }
+
+                        </div>
+                        <div class="ServDetails">
+                            <div class="forflex">
+                                @if (en)
+                                {
+                                    <h2>@service.TitleEnglish <span>Services</span></h2>
+                                    <p>@Html.Raw(@service.ShortDescriptionEnglish)</p>
+                                }
+                                else
+                                {
+                                    <h2>@service.TitleArabic </h2>
+                                    <p>@Html.Raw(@service.ShortDescriptionArabic)</p>
+                                }
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

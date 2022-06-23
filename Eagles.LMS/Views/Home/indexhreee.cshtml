@@ -1,0 +1,493 @@
+﻿
+@{
+    ViewBag.Title = "indexhreee";
+}
+
+
+@using Eagles.LMS.App_GlobalResources
+
+@{
+    ViewBag.Title = "Eaglez-academy";
+    bool en = true;
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+}
+
+
+@using Eagles.LMS.BLL
+
+
+@using Eagles.LMS.App_GlobalResources
+
+@{
+    UnitOfWork ctx = new UnitOfWork();
+
+    var social = ctx.SocialRefernceManager.GetAll().FirstOrDefault();
+}
+
+<style>
+    .seccontent {
+        min-height: 280px
+    }
+</style>
+
+
+<div class="slider" id="tf-Home">
+    <div class="overlay">
+        <div class="container">
+            <div class="slidercontent">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                        <div class="discription wow fadeInUp" >
+                            <div id="tf-home" class="text-center infobio">
+                                <div class="content">
+                                    <h1>@Resources.Global.hithere !</h1>
+                                    <h2> <span id="typed" style="white-space:pre;"></span></h2>
+                                    <div id="typed-strings" class="writerwordes">
+                                        <p>@Resources.Global.WelcomtTo<i>@Resources.Global.EaglezAccadmy</i></p>
+
+                                        <p>@Resources.Global.Wearean <i>@Resources.Global.OnlineLearningAccadmy</i></p>
+                                        <p>@Resources.Global.Wehelpyouto <i>@Resources.Global.teachyourstudents </i></p>
+                                    </div>
+
+
+                                    <div class="bio">
+                                        <p>@Resources.Global.discriptionone </p>
+                                    </div>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#" class="about"> @Resources.Global.Buyyourcopynow</a></li>
+                                            <li>
+                                                <a href="#" class="portfolio">
+                                                    @Resources.Global.Requestafreetrial
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 sliderothercoll">
+                        <div class="images ">
+                            @*<img class="one" src="~/StaticFiles/img/1.png" />*@
+                            <img class="one wow fadeInDown delay-0-1s" src="~/StaticFiles/img/11.png" />
+                            @*<img class="one" src="~/StaticFiles/img/pexels-photo-4145153.jpeg" />*@
+                            <img class="two wow fadeInRight delay-0-2s" src="~/StaticFiles/img/2.png" />
+                            <img class="three wow fadeInLeft delay-0-3s" src="~/StaticFiles/img/3.png" />
+                            <img class="four wow fadeInUp delay-0-4s" src="~/StaticFiles/img/4.png" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="aboutusaaaaa" id="tf-Aboutus">
+    <div class="overlay">
+        <div class="container">
+            <div class="aboutcontent">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="abutimage  wow fadeInUp delay-0-2s">
+                            <img src="~/StaticFiles/img/science.png" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="abutdiscrip  wow fadeInUp">
+                            <h2>
+                                @Resources.Global.Learnmoreabout <span>@Resources.Global.EaglezAccadmy</span>
+                            </h2>
+                            <p class="text">@Resources.Global.discriptiontwo</p>
+                            <a href="#" class="theme-btn btn-style-three">
+                                <span class="txt">@Resources.Global.ReadMoretwo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="servessec" id="tf-services">
+    <div class="container">
+        <div class="sercon wow bounceInUp">
+            <div class="seritem itemdark">
+                <i class="fa fa-user font-64"></i>
+                <h4 class="text-uppercase mt-20"><a onclick="return false;" href="#">@Resources.Global._24HOURSSERVICE</a></h4>
+            </div>
+        </div>
+        <div class="sercon wow bounceInUp delay-1s">
+            <div class="seritem">
+                <i class="far fa-comments"></i>
+                <h4 class="text-uppercase mt-20"><a onclick="return false;" href="#">@Resources.Global.OnlineHelp</a></h4>
+            </div>
+        </div>
+        <div class="sercon wow bounceInUp delay-1-5s">
+            <div class="seritem itemdark">
+                <i class="fas fa-shopping-cart"></i>
+                <h4 class="text-uppercase mt-20"><a onclick="return false;" href="#">@Resources.Global.OnlinePaymentService </a></h4>
+            </div>
+        </div>
+        <div class="sercon wow bounceInUp delay-2s">
+            <div class="seritem">
+                <i class="fas fa-mobile-alt"></i>
+                <h4 class="text-uppercase mt-20"><a onclick="return false;" href="#">@Resources.Global.Call +(010)99414609 </a></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section-adds" style="display:block">
+
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent  wow bounceInUp delay-0-1s">
+                        <div class="images">
+                            <img src="~/StaticFiles/images/distance-learning.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.ONLINELEARNING</a></h4>
+                        <p class="">@Resources.Global.OnlineLearning_content</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent wow bounceInUp delay-0-2s">
+                        <div class="images">
+
+                            <img src="~/StaticFiles/images/quiz.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.DailyQuizzes</a></h4>
+                        <p class="">@Resources.Global.DailyQuizzes_content</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent wow bounceInUp delay-0-3s">
+                        <div class="images">
+
+                            <img src="~/StaticFiles/images/family.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.InformingParents</a></h4>
+                        <p class="">@Resources.Global.InformingParents_content</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="seccontent wow bounceInUp delay-0-4s">
+                        <div class="images">
+
+                            <img src="~/StaticFiles/images/student.png" />
+                        </div>
+                        <h4 class="box-title"><a class="" href="#">@Resources.Global.MakingPhysicsEasier</a></h4>
+                        <p class="">@Resources.Global.MakingPhysicsEasier_content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="bg-li subscript" style="display:block">
+
+    <div class="overlay">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- subscribe -->
+            <div class="subscribe mx-auto">
+                <div class="icon-effect-w3  wow bounceIn">
+                    <span class="fa fa-envelope"></span>
+                </div>
+                <h2 class="tittle text-center font-weight-bold  wow slideInUp">@Resources.Global.StayUpdated</h2>
+                <p class="sub-tittle text-center mt-3 mb-sm-5 mb-4  wow fadeIn">
+                    @Resources.Global.Beinvolved
+                </p>
+                <form action="#" method="post" class="subscribe-wthree pt-2  wow bounceInUp">
+                    <div class="d-flex subscribe-wthree-field">
+                        <input class="form-control" type="email" id="SusecribeEmail" placeholder="@Resources.Global.Email" name="email" required="">
+                        <button class="btn form-control w-50" type="button" id="btn_subscribe">@Resources.Global.Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //subscribe -->
+        </div>
+    </div>
+
+</div>
+
+
+<div class="dowenloadapp   wow zoomIn">
+    <div class="overlay">
+        <div class="container">
+            <div class="dawencontent">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="appimage">
+                            <img src="~/StaticFiles/img/apps01.png" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="appdiscription">
+                            <div class="section-header">
+                                <span class="cate">@Resources.Global.GetEaglezAcadmyApp</span>
+                                <h2 class="title">@Resources.Global.appdownload</h2>
+                            </div>
+                            <div class="content">
+                                <h5 class="title">@Resources.Global.Makeeducationeasie</h5>
+                                <p>
+                                    @Resources.Global.discriptionappp
+
+                                </p>
+                                <ul class="app-button">
+                                    <li>
+                                        <a href="#0">
+
+                                            <img src="~/StaticFiles/img/apps03.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">
+
+                                            <img src="~/StaticFiles/img/apps02.png" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="contactus  wow slideInUp" style="display:block" id="tf-client">
+    <div class="container">
+        <div class="formcontact">
+            <h3 class="text-capitalize  text-center">@Resources.Global.GetIntouch</h3>
+            <form action="#" method="post">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>@Resources.Global.FullName</label>
+                        <div class="input-group ">
+
+                            <input type="text" class="margin2 form-control" id="ContactFullName" name="name" placeholder="@Resources.Global.FullName" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>@Resources.Global.subject</label>
+                        <div class="input-group ">
+
+                            <input type="text" name="name" class="form-control" id="Contactsubject" placeholder="@Resources.Global.subject" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>@Resources.Global.Email</label>
+                        <div class="input-group mt-3">
+
+                            <input type="email" class="margin2 form-control" id="Contactemail" name="email" placeholder="@Resources.Global.Email" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <label>@Resources.Global.phone</label>
+                        <div class="input-group mt-3">
+
+                            <input type="number" name="number" class="form-control" id="Contactphone" placeholder="@Resources.Global.phone" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <label>@Resources.Global.message</label>
+                        <div class="input-group mt-3">
+
+                            <textarea rows="4" cols="50" class="form-control" id="Contactmessage" placeholder="@Resources.Global.message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="input-group mt-3">
+                            <button class="submit btn " id="btn_contactUs">@Resources.Global.Send </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="/StaticFiles/js/jquery-3.3.1.min.js"></script>
+
+<script src="~/StaticFiles/toastr.js"></script>
+
+<script>
+
+
+    $("#btn_subscribe").click(function (e) {
+        e.preventDefault();
+        let Email = $('#SusecribeEmail').val();
+        if (Email == null || typeof (Email) == "undefined" || Email === "") {
+            pushNotification("danger", '@Resources.Global.EmailisRequired');
+            return;
+        }
+
+        if (!validateEmail(Email)) {
+            pushNotification("danger", '@Resources.Global.entervalidemailaddress!');
+            return;
+        }
+
+        $.ajax({
+            url: "/Home/SubScribe?Email=" + Email + "",
+            type: "POST",
+            contenType: "application/json",
+            success: function (res) {
+                $('#SusecribeEmail').val('');
+                pushNotification("success", `@Resources.Global.operationaccomplishedsuccessfully`);
+            },
+            error: function () {
+                pushNotification("danger", '@Resources.Global.services');
+            },
+
+        });
+
+
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    //ContactUs
+    $("#btn_contactUs").click(function (e) {
+
+        e.preventDefault();
+        let fullName = $('#ContactFullName').val();
+        if (fullName == null || typeof (fullName) == "undefined" || fullName === "") {
+            pushNotification("danger", '@Resources.Global.fullNameisRequired');
+            return;
+        }
+        let subject = $('#Contactsubject').val();
+        if (subject === "") {
+
+
+            // toastr.error('subject  is Required')
+            pushNotification("danger", '@Resources.Global.subjectisRequired');
+            return;
+
+        }
+
+        let email = $('#Contactemail').val();
+        if (email == null || typeof (email) == "undefined" || email === "") {
+            pushNotification("danger", '@Resources.Global.EmailisRequired');
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            pushNotification("danger", '@Resources.Global.entervalidemailaddress!');
+            return;
+        }
+
+
+
+        let phone = $('#Contactphone').val();
+        if (phone === "") {
+
+            //  toastr.error('Phone  is Required')
+            pushNotification("danger", '@Resources.Global.PhoneisRequired');
+            return;
+
+        }
+        if (phone.length != 11) {
+            pushNotification("danger", '@Resources.Global.entervalidphone !');
+            return;
+        }
+        let message = $('#Contactmessage').val();
+        if (message === "") {
+
+            //  toastr.error('Message  is Required')
+            pushNotification("danger", '@Resources.Global.MessageisRequired');
+
+            return;
+
+        }
+
+
+        $.ajax({
+            url: "/Home/ContactUs",
+            type: "Get",
+            data: { "Email": email, "Message": message, "Subject": subject, "PhoneNumber": phone, "FullName": fullName },
+            cache: false,
+            datatype: "application/json",
+            success: function (res) {
+                pushNotification("success", `@Resources.Global.operationaccomplishedsuccessfully`);
+                $('#Contactemail').val('');
+                $('#Contactsubject').val('');
+                $('#Contactphone').val('');
+                $('#Contactmessage').val('');
+                $('#ContactFullName').val('');
+            },
+            error: function () {
+                toastr.error('error')
+
+            },
+        });
+
+
+    });
+
+    $(document).ready(function () {
+
+        $(document).ajaxStart(function () {
+            $("#loading").show();
+        }).ajaxStop(function () {
+            $("#loading").hide();
+        });
+    });
+</script>
+
+@section EndBody{
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $(".soonProvider").click(s => {
+                s.preventDefault();
+                //bootbox.alert('')
+
+                $('#commingSoon').modal('show');
+            })
+        });
+
+
+
+
+    </script>
+}
+
+
+

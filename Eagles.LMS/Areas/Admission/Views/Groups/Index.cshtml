@@ -1,0 +1,195 @@
+﻿@model IEnumerable<Group>
+@{
+    ViewBag.Title = Resources.Global.Groups;
+}
+
+
+<style>
+    .kt-portlet {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+        box-shadow: 0px 0px 13px 0px rgb(228, 228, 228);
+        background-color: #fffeff;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        margin-top: 25px;
+    }
+
+    #table_Groups_filter {
+        display: none
+    }
+
+    .dropdown {
+        position: relative !important;
+        top: 0;
+        right: 5px !important;
+    }
+
+    .menuositingdrop {
+        transform: none !important;
+        right: 15px !important;
+        top: 35px !important;
+        width: 180px !important;
+    }
+</style>
+
+
+
+
+<div class="container-fluid" ng-controller="groupsCtrl" id="kt_content">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18"><a href="/Admission/Groups/Create" class="btn btn-success waves-effect waves-light"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> @Resources.Global.addgroupe</a></h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission">Home</a></li>
+                        <li class="breadcrumb-item active">@Resources.Global.GroupsAndPermissions</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+
+
+
+                                    <table id="table_Groups" class="text-center table table-bordered dt-responsive nowrap w-100">
+                                        <thead class="DarkThead">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>@Resources.Global.GroupName</th>
+                                                <th>@Resources.Global.Monitor</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <tr ng-cloak ng-repeat="group in Groups track by $index">
+                                                <td><p>{{$index + 1}}</p></td>
+                                                <td><p>{{group.Name}}</p> </td>
+
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="bx bx-dots-horizontal-rounded"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item align-middle " href="/Admission/Groups/Edit/{{group.Id}}"><i class="bx bx-edit font-size-16 me-1"></i><span>@Resources.Global.Edit</span></a>
+                                                            <a class="dropdown-item text-danger align-middle" ng-click="Remove(group.Id,$index,$event)" href="#"><i class="bx bx-trash font-size-16  me-1"></i><span>@Resources.Global.Delete</span></a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+
+                                       
+
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                 
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade modalquesdesign " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resources.Global.deletegroup</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label style="text-align:center">@Resources.Global.deletgroupdescription</label>
+                </div>
+                <div class="form-group">
+                    <label>@Resources.Global.Group</label>
+                    <select class="form-control" id="GradeId" name="GradeId">
+                        <option value="">@Resources.Global.All</option>
+                        <option value="20">@Resources.Global.All</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btnicon">@Resources.Global.Save <i class="fa fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+@section EndBody{
+
+
+    <script src="~/assets_2/plugins/extended/jstree.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_2/plugins/extended/treeview.js" type="text/javascript"></script>
+    <script src="~/Componnets/Groups/Controllers/GroupsController.js"></script>
+    <script src="~/Componnets/Groups/Services/GroupsFactory.js"></script>
+
+    <!-- Required datatable js -->
+    <script src="~/assets_NewDash/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets_NewDash/libs/jszip/jszip.min.js"></script>
+    <script src="~/assets_NewDash/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/assets_NewDash/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/assets_NewDash/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+
+    <script>
+        $(function () {
+
+            $("#table_Groups").DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'print'
+                ]
+            });
+        });
+    </script>
+
+
+}

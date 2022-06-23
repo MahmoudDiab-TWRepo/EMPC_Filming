@@ -1,0 +1,273 @@
+﻿@model Slider
+@{
+    ViewBag.Title = "Create-Slider";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var requestStatus = TempData.Peek("RequestStatus") as RequestStatus;
+
+}
+
+
+@section EndHeader{
+
+
+
+    @*<link href="~/assets_NewDash/libs/Line Control text Editor/editor.css" rel="stylesheet" />*@
+    <style>
+/*        .dropdown-menu > li > a {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            color: #000;
+            font-size: 15px;
+        }
+
+        .line-control-status-bar {
+            display: none
+        }
+
+        .line-control-menu-bar {
+            border-radius: 0px 0px 0 0;
+            padding-bottom: 0;
+            background: #2a3042;
+        }
+
+            .line-control-menu-bar a.btn {
+                position: relative;
+                margin-bottom: 3px;
+                color: #fff;
+                outline: 0 !important;
+                box-shadow: none;
+            }
+
+        .Editor-editor {
+            outline: 0;
+        }
+*/
+
+        .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li.inline a {
+            display: block;
+            padding: 0;
+            margin: 0;
+            width: 30px;
+            height: 30px;
+        }
+        .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li a {
+            display: block !important;
+            padding: 0 !important;
+            border-bottom: #EFEFEF solid 1px;
+            color: #2a3042;
+            height: 40px;
+            line-height: 40px !important;
+        }
+        .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown {
+            list-style: none;
+            height: 300px;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+        .richText .richText-toolbar ul li a .richText-dropdown-outer ul.richText-dropdown li a span{
+         
+        }
+    </style>
+
+}
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Add Slider</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission/Sliders">Home</a></li>
+                        <li class="breadcrumb-item active">Add-Slider</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        @using (Html.BeginForm("Create", "Sliders", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title Arabic</label>
+                                            @Html.TextAreaFor(s => s.TitleArabic, new
+                                       {
+                                           @class = "form-control TextEditor1",
+                                           placeholder = "Title Arabic"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.TitleArabic)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title English</label>
+                                            @Html.TextAreaFor(s => s.TitleEnglish, new
+                                       {
+                                           @class = "form-control TextEditor2",
+                                           placeholder = "Title English"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.TitleEnglish)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description Arabic</label>
+                                            @Html.TextAreaFor(s => s.DescriptionArabic, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Description Arabic"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.DescriptionArabic)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description English</label>
+                                            @Html.TextAreaFor(s => s.DescriptionEnglish, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Description English"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.DescriptionEnglish)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Link [OPTINAL]</label>
+                                            @Html.TextBoxFor(s => s.Link, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Link"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Link)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label"> Iframe Video [OPTINAL]</label>
+                                            @Html.TextBoxFor(s => s.Iframe, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Iframe"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Link)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Order</label>
+                                            @Html.TextBoxFor(s => s.Order, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Order"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Order)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">Image <span class="extiniosType">(jpg, png, peg, gif, jpg)</span><span class="extiniosType">(W:1920px, H:870px)</span></label>
+                                            <input class="form-control" name="uploadattachments" type="file" id="uploadattachments">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> <!-- end col -->
+
+
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="foooterbuttons">
+                            <button type="submit" class="btn btn-success waves-effect waves-light">
+                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> @Resources.Global.Save
+                            </button>
+                            <a href="/Admission/Sliders" class="btn btn-danger waves-effect waves-light">
+                                <i class="fa fa-backspace back font-size-16 align-middle me-2"></i> @Resources.Global.Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+
+</div>
+
+
+@section EndBody{
+    @*<script src="~/assets_NewDash/libs/Line Control text Editor/editor.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".txtEditorline").Editor();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".txtEditorline2").Editor();
+        });
+    </script>*@
+
+    <script>
+            $(function (e) {
+                $('.TextEditor1').richText();
+                $('.TextEditor2').richText();
+            });
+        </script>
+
+
+
+    @if (requestStatus != null)
+    {
+
+        <script>
+
+              notify = $.notify({
+                  message: '@requestStatus.Message',
+
+              }, {
+
+                      type: '@requestStatus.Status' == 'Created' ? "success" :"danger",
+                      animate: {
+                          enter: 'animated flipInY',
+                          exit: 'animated flipOutX',
+                      }
+                  });
+        </script>
+
+        TempData.Remove("RequestStatus");
+    }
+}

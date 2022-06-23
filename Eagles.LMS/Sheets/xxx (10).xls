@@ -1,0 +1,25 @@
+<table id="studnet_table" style="display:none" class="all-table table table-striped table-hover info-bill table-bordered pending-table">
+
+                    <thead>
+                        <tr>
+              
+                            <th>Id</th>
+                            <th>FullName</th>
+                            <th>Mobile</th>
+                            <th>Degree</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="studnet_table_data"><tr>
+                                                </tr><tr>
+                                   
+                                                <td>2</td>
+
+                                                <td>Habiba Mohamed Samak</td>
+                                                <td>01022357278</td>
+                                                <td></td>
+
+                                                </tr>
+                            </tbody>
+                </table>

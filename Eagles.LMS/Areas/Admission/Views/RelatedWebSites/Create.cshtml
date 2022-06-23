@@ -1,0 +1,198 @@
+﻿@model RelatedWebSite
+@{
+    ViewBag.Title = "Create-Related Web Site";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var requestStatus = TempData.Peek("RequestStatus") as RequestStatus;
+
+}
+@section EndHeader{
+
+    @*<script src="https://cdn.tiny.cloud/1/darv2hkyj2fhq6bcw9dvds7nq95xpa5p19zfb5q6ybjadm5z/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '.textarea',
+            height: 500,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor  advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable ',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste imagetools wordcount',
+                'image code',
+            ],
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |  code',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        });
+
+    </script>*@
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Add Related Web Site</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission/RelatedWebSites">Home</a></li>
+                        <li class="breadcrumb-item active">Add-Related Web Site</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        @using (Html.BeginForm("Create", "RelatedWebSites", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+
+
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title Arabic</label>
+                                            @Html.TextBoxFor(s => s.TitleArabic, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Title Arabic"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.TitleArabic)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Title English</label>
+                                            @Html.TextBoxFor(s => s.TitleEnglish, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Title English"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.TitleEnglish)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description Arabic</label>
+                                            @Html.TextAreaFor(s => s.DescriptionArabic, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "Description Arabic"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.DescriptionArabic)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Description English</label>
+                                            @Html.TextAreaFor(s => s.DescriptionEnglish, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "Description English"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.DescriptionEnglish)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Link</label>
+                                            @Html.TextBoxFor(s => s.Link, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Link"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Link)
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">Image <span class="extiniosType">(jpg, png, peg, gif, jpg)</span><span class="extiniosType">(W:310px, H:540px)</span></label>
+                                            <input class="form-control" name="uploadattachments" type="file" id="uploadattachments">
+                                        </div>
+                                    </div>
+                                    @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Order</label>
+                                            @Html.TextBoxFor(s => s.Order, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Order"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Order)
+                                        </div>
+                                    </div>*@
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div> <!-- end col -->
+
+
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="foooterbuttons">
+                            <button type="submit" class="btn btn-success waves-effect waves-light">
+                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> @Resources.Global.Save
+                            </button>
+                            <a href="/Admission/RelatedWebSites" class="btn btn-danger waves-effect waves-light">
+                                <i class="fa fa-backspace back font-size-16 align-middle me-2"></i> @Resources.Global.Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+
+</div>
+
+
+@section EndBody{
+
+    @*<script>
+        $(function (e) {
+            $('.TextEditor1').richText();
+            $('.TextEditor2').richText();
+        });
+    </script>*@
+
+    @if (requestStatus != null)
+    {
+
+        <script>
+
+              notify = $.notify({
+                  message: '@requestStatus.Message',
+
+              }, {
+
+                      type: '@requestStatus.Status' == 'Created' ? "success" :"danger",
+                      animate: {
+                          enter: 'animated flipInY',
+                          exit: 'animated flipOutX',
+                      }
+                  });
+        </script>
+
+        TempData.Remove("RequestStatus");
+    }
+}

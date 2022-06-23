@@ -1,0 +1,87 @@
+﻿@model  IEnumerable<Eagles.LMS.DTO.ViewModels.LiveVideoAttendanceVM>
+@{
+    var counter = 1;
+}
+
+
+
+<div class="tablessearch">
+  
+	<p class="tabletitle" style="margin-top: 15px;"> @Resources.Global.GroupLiveVideoAttendance </p>
+    <div class="table-responsive">
+        <table id="Attendance_table" class="all-table table table-hover info-bill table-bordered pending-table">
+    
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>@Resources.Global.LiveBroadcastAddress</th>
+					<th>@Resources.Global.Date</th>
+					<th>@Resources.Global.Attend</th>
+                    @*<th>@Html.DisplayNameFor(model => model.Attend)</th>*@
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@counter</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublicName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    @*<td>
+                        @Html.CheckBoxFor(modelItem => item.Attend, new { @disabled = "disabled" })
+                    </td>*@
+					<td class="custom-ch">
+
+						@if (item.Attend)
+						{
+							<div class="chiller_cb">
+								<label for="item_Attend"></label>
+								<input id="item_Attend" type="checkbox" disabled checked="checked">
+								<span></span>
+							</div>
+						}
+						else
+						{
+							<div class="chiller_cb">
+								<label for="item_Attend"></label>
+								<input id="item_Attend" type="checkbox" disabled>
+								<span></span>
+							</div>
+						}
+
+
+					</td>
+
+
+                </tr>
+                    counter++;
+                }
+                @if (Model.Count() == 0)
+                {
+                    <tr style="text-align:center">
+                <td colspan="12"><span style="font-size:30px">@Resources.Global.NoData</span></td> 
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+
+
+<script>
+    $("#Attendance_table").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+
+</script>

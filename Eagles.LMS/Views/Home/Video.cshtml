@@ -1,0 +1,382 @@
+﻿
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    UnitOfWork ctx = new UnitOfWork();
+
+    //var pictures = ctx.GalaryManager.GetAll().Where(s => s.IsImage).OrderBy(s => s.Order).ToList();
+    //var vidoes = ctx.GalaryManager.GetAll().Where(s => !s.IsImage).OrderBy(s => s.Order).ToList();
+    var vidoes = new List<Galary>();
+    Galary active_galary;
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    if (en == true)
+    {
+        vidoes = ctx.GalaryManager.GetAll().Where(s => !s.IsImage && s.TitleEnglish != null).OrderBy(s => s.Order).ToList();
+    }
+    else
+    {
+        vidoes = ctx.GalaryManager.GetAll().Where(s => !s.IsImage && s.TitleArabic != null).OrderBy(s => s.Order).ToList();
+    }
+
+    var Id = ViewBag.Id;
+}
+
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, Videos, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+
+
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/GallaryBG.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="title-header">
+
+                        <h3>@Resources.Global.vedios</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">Home</a> > </li>
+                                <li>@Resources.Global.vedios</li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+
+                    </div>
+                    <!--end title-header-->
+
+                </div>
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+
+
+<div class="news">
+    <div class="container">
+        <Div class="row">
+            <div class="cleaner-h3 visible-xs"></div>
+            @foreach (var vidoe in vidoes)
+            {
+                <Div class="col-md-4">
+                    <a class="new new-small small-location location-new" href="/Home/VideoDetails/@vidoe.Id">
+                        <img src="~/assets_NewPublic/images/f14.jpeg" class="img-responsive img-services" />
+                        <h3>
+                            @if (en)
+                            {
+                                <span>
+                                    @vidoe.TitleEnglish
+                                </span>
+                            }
+                            else
+                            {
+                                <span>
+                                    @vidoe.TitleArabic
+                                </span>
+                            }
+                            <p>></p>
+                        </h3>
+                    </a>
+                </Div>
+            }
+        </Div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gallaySection" style="display:none;">
+    <div class="container">
+        <div class="row">
+            <div class="cleaner-h4"></div>
+            <div style="display:none" class="col-md-3">
+                <div class="sendmessage">
+                    <select>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                    </select>
+                </div>
+            </div>
+            <!--end col-3-->
+            <div style="display:none" class="col-lg-9 col-md-9">
+                <A href="#" class="btn btn-black">Select</A>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="vedioSecNew">
+                    <div class="row justify-content-center">
+                        @if (Id != null)
+                        {
+                            active_galary = vidoes.FirstOrDefault(s => s.Id == Convert.ToInt32(Id));
+                        }
+                        else
+                        {
+                            active_galary = vidoes.FirstOrDefault();
+
+                        }
+                        @if (active_galary != null)
+                        {
+                            <div class="col-lg-9 col-md-9 col-md-9 col-xs-12">
+                                <div class="bigvedios ">
+                                    <div class="iframdiv zoom-gallery">
+                                        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4AO7Pz-ArE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                                        <div class="images">
+                                            @*<a href="@active_galary.Image">
+                                                <img src="@active_galary.Image">*@
+                                            <img src="~/assets_NewPublic/images/f14.jpeg" />
+                                            @*</a>*@
+                                        </div>
+                                        <div class="buttonPopUp">
+                                            <a target="_blank" href="@active_galary.Image" class="vediobtn">
+                                                <i class="fas fa-play" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="vediossowlwl">
+                                <div class="carousel-vedios owl-carousel zoom-gallery">
+                                    @foreach (var vidoe in vidoes)
+                                    {
+                                        <div class="item">
+                                            <div class="frmadevsmall">
+                                                <div class="images">
+                                                    @*<a href="@vidoe.Image">*@
+                                                    @*<img src="@vidoe.Image">*@
+                                                    <img src="~/assets_NewPublic/images/f14.jpeg" />
+                                                    @*</a>*@
+                                                </div>
+                                                <div class="buttonplay">
+                                                    <a target="_blank" href="@vidoe.Image" class="vediobtn">
+                                                        <i class="fas fa-play" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end row-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="vediosgallary" style="display:none">
+    <div class="container">
+        <div class="row">
+
+            <div class="cleaner-h4"></div>
+
+            <div class="col-lg-3 col-md-3">
+                <div class="sendmessage">
+                    <select>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                        <option>categories</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-9 col-md-9">
+                <A href="#" class="btn btn-black">Select</A>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="vedioSecNew">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9 col-md-9 col-md-9 col-xs-12">
+                            <div class="bigvedios">
+                                <div class="iframdiv">
+                                    <div class="imags">
+                                        <img src="~/assets_NewPublic/images/f14.jpeg">
+                                    </div>
+                                    <div class="buttonPopUp">
+                                        <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                            <i class="fas fa-play" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="vediossowlwl">
+                                <div class="carousel-vedios owl-carousel">
+
+
+                                    <div class="item">
+                                        <div class="frmadevsmall">
+                                            <div class="images">
+                                                <img src="~/assets_NewPublic/images/f14.jpeg">
+                                            </div>
+                                            <div class="buttonplay">
+                                                <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="frmadevsmall">
+                                            <div class="images">
+                                                <img src="~/assets_NewPublic/images/f14.jpeg">
+                                            </div>
+                                            <div class="buttonplay">
+                                                <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="frmadevsmall">
+                                            <div class="images">
+                                                <img src="~/assets_NewPublic/images/f14.jpeg">
+                                            </div>
+                                            <div class="buttonplay">
+                                                <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="frmadevsmall">
+                                            <div class="images">
+                                                <img src="~/assets_NewPublic/images/f14.jpeg">
+                                            </div>
+                                            <div class="buttonplay">
+                                                <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="frmadevsmall">
+                                            <div class="images">
+                                                <img src="~/assets_NewPublic/images/f14.jpeg">
+                                            </div>
+                                            <div class="buttonplay">
+                                                <button type="button" class="vediobtn" data-toggle="modal" data-target="#VedioPopup">
+                                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+
+
+<div class="modal fade Vediomodal" id="VedioPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="vedioIframe">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4AO7Pz-ArE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

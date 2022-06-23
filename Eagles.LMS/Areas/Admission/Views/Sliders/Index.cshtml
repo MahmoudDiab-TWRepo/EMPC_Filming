@@ -1,0 +1,220 @@
+﻿@model List<Slider>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    int index = 1;
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+
+}
+
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">
+                    <a href="/Admission/Sliders/Create" class="btn btn-success waves-effect waves-light"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> Add Slider</a>
+                </h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission">Home</a></li>
+                        <li class="breadcrumb-item active">Slider</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_Slider" class=" table table-bordered tableOtherdite">
+                            <thead class="DarkThead">
+                                <tr>
+
+                                    <th><p>#Order</p></th>
+                                    <th> <p>Action</p> </th>
+                                    <th> <p>Images Or Video</p> </th>
+                                    <th> <p>Title Arabic</p> </th>
+                                    <th> <p>Title English</p> </th>
+                                    <th> <p>Description Arabic</p> </th>
+                                    <th> <p>Description English</p> </th>
+                                    <th> <p>Is Image</p> </th>
+                                    <th> <p>Link</p> </th>
+
+
+                                    <th> <p>User Created</p> </th>
+                                    <th> <p>Created Time</p> </th>
+                                    <th> <p>Last User Edited</p> </th>
+                                    <th> <p>Last Edited Time</p> </th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td><p>@item.Order</p></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bx bx-dots-horizontal-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item align-middle " href="/Admission/Sliders/Edit/@item.Id"><i class="bx bx-edit font-size-16 me-1"></i>@Resources.Global.Edit</a>
+                                                <a class="dropdown-item text-danger align-middle btn_delete" data-id="@item.Id" href="#"><i class="bx bx-trash font-size-16 me-1"></i>@Resources.Global.Delete</a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if ((@item.Image != null) && (@item.Iframe == null))
+                                        {
+                                            <a href="@item.Image" class=" fancybox btnIconImages">
+                                                <i class="bx bx-image"></i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="https://www.youtube.com/embed/@item.Iframe?autoplay=1" class="btnIconVideos" data-type="iframe" tabindex="0">
+                                                <i class="bx bx-play-circle"></i>
+                                            </a>
+                                        }
+
+
+                                    </td>
+                                    <td class="">
+                                        <div class="TRDISCRIPTION FontArabic">
+                                            <p class="FontArabic DescriptionP">@Html.Raw(@item.TitleArabic)</p>
+                                        </div>
+
+                                    </td>
+                                    <td class="">
+                                        <div class="TRDISCRIPTION">
+                                            <p class="DescriptionP">@Html.Raw(@item.TitleEnglish)</p>
+                                        </div>
+                                    </td>
+
+                                    <td class="">
+                                        <div class="TRDISCRIPTION FontArabic">
+                                            <p class="DescriptionP ">@item.DescriptionArabic</p>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="TRDISCRIPTION">
+                                            <p class="DescriptionP">@item.DescriptionEnglish</p>
+                                        </div>
+                                    </td>
+                                    <td><p>@item.IsImage</p></td>
+                                    <td><p>@item.Link</p></td>
+
+
+
+                                    <td><p>@ctx.UserManager.GetBy(item.UserCreateId).FullName</p></td>
+                                    <td><p>@item.CreateTime</p></td>
+                                    <td><p>@ctx.UserManager.GetBy(item.UserEditId).FullName</p></td>
+                                    <td><p>@item.EditeTime</p></td>
+
+                                </tr>
+                                    {
+                                        index += 1;
+                                    }
+                                }
+
+                            </tbody>
+
+
+
+
+
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div>
+
+</div>
+
+
+
+
+<div class="modal fade ModalShowImage" id="imagesPrivew" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="imagesCOntent">
+                    <img src="~/assets_NewDash/images/companies/img-4.png" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade ModalShowImage" id="VedioPriview" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="imagesCOntent">
+                    <video controls="controls">
+                        <source src="~/assets_NewDash/Vedios/1.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section EndBody{
+    <script>
+        $(function () {
+
+  $("body").on("click", ".btn_delete", (s) => {
+                let self = $(s.currentTarget),
+                    entityId = self.attr('data-id');
+                bootbox.confirm("@Resources.Global.ConfirmDeleteoperation !", function (flag) {
+                    if (flag) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Admission/Sliders/Delete/" + entityId+"",
+                            success: (response) => {
+                                toastr.success('@Resources.Global.Theunithasbeensuccessfullydeleted', '', { timeOut: 10000 });
+                                self.closest('tr').remove();
+                            }, error: (error) => {
+                                // unauthorize
+                                let errorMessage = manageAjaxError(error);
+                                pushNotification("danger", errorMessage);
+                            }
+                        });
+                    }
+                })
+            });
+        });
+    </script>
+
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Eagles.LMS.Models.LiveVideo>
+
+@{
+    ViewBag.Title = "LiveSession";
+    //Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LiveSession</h2>
+
+
+<table class="table">
+    <tr>  
+       
+        <th>
+            @Html.DisplayNameFor(model => model.PublicName)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicName)
+           
+        </td>
+       
+      
+       
+        <td>
+            <a href="https://uitmzwwvtc1vaav6zrrqhg-on.drv.tw/www.myJitsi.com?Name=@item.Name&Id=@item.Id" target="_blank" class="btn btn-success">join now </a>
+
+
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,213 @@
+﻿
+<style>
+    .spinner {
+        display: block;
+    }
+    .pagecontent .pagedetails .searchss .form-group {
+        /*border: 2px solid #eae9e9;
+				box-shadow: 0 0 5px #c4cff9;
+				padding: 15px;
+				margin-bottom: 5px !important;*/
+        margin-bottom: 25px !important;
+    }
+</style>
+
+
+
+
+
+
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 xol-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">@Resources.Global.FullName</label>
+                    <input ng-model="FullName" class="form-control" type="text" required placeholder="Full Name">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 xol-xs-12">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input ng-model="Password" required class="form-control" type="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input ng-model="ConfirmPassword" required class="form-control" type="password" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 xol-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input ng-model="EmailAddress" required class="form-control" type="email" placeholder="Email Address">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 xol-xs-12">
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input ng-model="Phone" required class="form-control" type="text" placeholder="Phone Number">
+                </div>
+            </div>
+     
+
+            <div class="col-lg-12">
+                <div class="mb-3">
+                    <label class="form-label">Group</label>
+                    <select ng-model="Group_dll" ng-options="date as date.Name for date in Groups track by date.Id" class="form-control select2">
+                    </select>
+                </div>
+            </div>
+     
+        </div>
+    </div>
+    @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="imagesIcon">
+            <div class="imagescont">
+                <img src="~/assets_NewDash/user-add.png" />
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="kt-portlet__body pagedetails" style="display:none">
+    <div class=" searchss">
+        <div class="row">
+            <div class="col-md-4 center img-w">
+                <img src="~/assets/vendors/base/images/user-add.png" />
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12 ">
+                <br />
+
+                <div class="form-group col-sm-12 fl-r">
+                    <div class="kt-input-icon kt-input-icon--left">
+                        <input  type="text" class="form-control circle" required="" style="padding: 0 30px;">
+                        <span class="placeholder">  </span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                            <span><i class="la la-user"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-12 fl-l">
+                    <div class="kt-input-icon kt-input-icon--left">
+                        <input  type="password" class="form-control pass circle" required="" style="padding: 0 30px;">
+                        <span class="placeholder">  @Resources.Global.Password</span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                            <span><i class="la la-lock"></i></span>
+                        </span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--right show-hidden ">
+                            <span><i class="la la-eye-slash"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-12 fl-l">
+                    <div class="kt-input-icon kt-input-icon--left">
+                        <input  type="password" class="form-control pass circle" required="" style="padding: 0 30px;">
+                        <span class="placeholder">  @Resources.Global.ConfirmPassword</span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                            <span><i class="la la-lock"></i></span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-sm-12 fl-r">
+                    <div class="kt-input-icon kt-input-icon--left">
+                        <input  type="text" class="form-control circle" required="" style="padding: 0 30px;">
+                        <span class="placeholder">  @Resources.Global.EmailAddess</span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                            <span><i class="la la-envelope-o"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 fl-r">
+                    <div class="kt-input-icon kt-input-icon--left">
+                        <input data-type="numberOnly"  type="text" class="form-control circle" required="" style="padding: 0 30px;">
+                        <span class="placeholder"> @Resources.Global.Mobile</span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                            <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        </span>
+                    </div>
+                </div>
+
+       
+
+
+                <div class="form-group col-sm-12 fl-r">
+                    <div ng-cloak="" class="kt-input-icon kt-input-icon--left">
+                        <select class="form-control"  style="padding: 0 30px;"></select>
+                        <span class="placeholder2">  @Resources.Global.Group</span>
+                        <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                            <span><i class="fa fa-users" aria-hidden="true"></i></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 fl-r">
+                    <div class="kt-input-icon kt-input-icon--left">
+                        @*<input ng-model="IsTeacher" type="checkbox" class="form-control circle" required="" style="padding: 0 30px;">
+                    <span class="placeholder"> @Resources.Global.IsTeacher</span>
+                    <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    </span>*@
+
+                        <div class="chiller_cb" style="margin:0;width: max-content;">
+                            <label for="myCheckbox3" style="width: max-content;"> @Resources.Global.IsTeacher </label>
+                            <input class=" circle" id="myCheckbox3"  type="checkbox" required="">
+                            <span style="margin-top:10px;"></span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>

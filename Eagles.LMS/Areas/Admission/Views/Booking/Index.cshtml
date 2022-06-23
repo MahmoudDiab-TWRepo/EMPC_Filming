@@ -1,0 +1,103 @@
+﻿@model List<Booking>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+    List<BookingInServices> bookingInServices = new List<BookingInServices>();
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">
+                    Booking
+                </h4>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_Slider" class=" table table-bordered tableOtherdite">
+                            <thead class="DarkThead">
+                                <tr>
+                                    <th> <p>Company Name</p> </th>
+                                    <th> <p>Company Email </p></th>
+                                    <th> <p>Date of Services </p></th>
+                                    <th> <p>Start Time</p> </th>
+                                    <th> <p>End Time </p></th>
+                                    <th> <p>Origin  </p></th>
+
+                                    <th> <p>Message </p></th>
+                                    <th> <p>Services </p></th>
+
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        bookingInServices = ctx.BookingInServicesManager.GetAllIncluded(item.Id);
+
+                                    <tr>
+                                        <td> <p>@item.CompanyName</p> </td>
+                                        <td> <p>@item.CompanyEmail</p> </td>
+                                        <td> <p>@item.DataServicees</p> </td>
+                                        <td> <p>@item.SartTime</p> </td>
+                                        <td> <p>@item.EndTime</p> </td>
+                                        <td> <p>@item.Origin</p> </td>
+                                        <td> <p>@item.Message</p> </td>
+
+
+
+                                        <td>
+                                            @if (bookingInServices != null && bookingInServices.Any())
+                                            {
+                                                foreach (var book_services in bookingInServices)
+                                                {
+                                                    <span>@book_services.BookingService.Name</span>
+                                                    <span> - </span>
+                                                }
+                                            }
+                                        </td>
+
+
+                                    </tr>
+                                }
+
+
+                                </tbody>
+
+
+
+
+
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div> <!-- end col -->
+
+        </div>
+
+    </div>
+
+

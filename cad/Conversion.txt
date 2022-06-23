@@ -1,0 +1,17 @@
+Conversion Report:
+Created by AutoCAD DWG Convert Saturday, February 9, 2019, 2:08 PM.
+
+Conversion Summary
+------------------
+Conversion File Format:  AutoCAD 2013/LT 2013 Drawing Format
+Conversion package type: In-place (overwrite files)
+Converted DWG files:     0
+Recovered DWG files:     0
+Conversion errors:       1
+
+
+Conversion Errors
+-----------------
+Unconverted files:
+The files listed below could not be saved due to a sharing violation or disk write problem.
+G:\hassan sobhy\Project Gradiuation\\U+0635\U+0648\U+0631 \U+0648\U+0645\U+0644\U+0641\U+0627\U+062A \U+0627\U+0644\U+0648\U+062D\U+062F\U+0647 \U+0627\U+0644\U+0627\U+0648\U+0644\U+0649\Basement floor slab.dwg

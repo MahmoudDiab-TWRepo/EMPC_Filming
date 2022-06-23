@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "PictureDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    UnitOfWork ctx = new UnitOfWork();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    var Id = ViewBag.Id;
+}
+
+@*@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}*@
+
+@section EndHeader{
+    @*<link href="css/lightgallery.css" rel="stylesheet">*@
+    <link href="~/assets_NewPublic/css/lightgallery.css" rel="stylesheet" />
+}
+
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewGallaryBGIN.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="title-header">
+
+                        <h3> Gallary Name</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                @if (en)
+                                {
+                                    <li><a href="/Home">@Resources.Global.Home</a> > </li>
+                                    <li><a href="/Home/Picture">@Resources.Global.Gallery</a> ></li>
+                                    <li>  Picture</li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Home">@Resources.Global.Home</a> > </li>
+                                    <li><a href="/Home/Picture">@Resources.Global.Gallery</a> ></li>
+                                    <li>  Picture</li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="gallaySection">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12" style="">
+
+
+                <div class="demo-gallery">
+                    <div id="lightgallery" class="row list-unstyled oterrow">
+
+
+
+
+
+
+                        <div class="col-xs-6 col-sm-4 col-md-3 othercol" data-src="/assets_NewPublic/images/bg_2.jpg"
+                             data-sub-html="
+                             @if (en) { @*<h4></h4>
+                                        <p> </p>*@  } else { <h4>Fading AR</h4>
+                                    <p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on. Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>
+                                 }
+                            ">
+                            <a href="" class="imagesitem">
+                                <img class="img-responsive" src="~/assets_NewPublic/images/bg_2.jpg" alt="Thumb-1">
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4 col-md-3 othercol" data-src="/assets_NewPublic/images/bg_2.jpg"
+                             data-sub-html="
+                             @if (en) {<h4>Fading EN 2</h4>
+                                        <p>Classic hot similar to an old post but a little later on.</p>
+
+                                    }
+                                    else
+                                    {
+                                        <h4>Fading AR</h4>
+                                        <p>Classic hot similar to an old post but a little later on.</p>
+                                    }
+                            ">
+                            <a href="" class="imagesitem">
+                                <img class="img-responsive" src="~/assets_NewPublic/images/bg_2.jpg" alt="Thumb-1">
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="gallerys popup-gallery2" style="display: none">
+
+
+
+
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/bg_2.jpg" class="big">
+                            <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive first" alt="" title="Beautiful Image" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/Mask_Group_18.png">
+                            <img src="~/assets_NewPublic/images/Mask_Group_18.png" class="img-responsive second" alt="" title="" />
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl1.jpg">
+                            <img src="~/assets_NewPublic/images/gl1.jpg" class="img-responsive second" alt="" title="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl13.jpg">
+                            <img src="~/assets_NewPublic/images/gl13.jpg" class="img-responsive second" alt="" title="Beautiful Image" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl20.jpg">
+                            <img src="~/assets_NewPublic/images/gl20.jpg" class="img-responsive second margin-no" alt="" title="" />
+                        </a>
+                    </div>
+
+
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl11.jpg">
+                            <img src="~/assets_NewPublic/images/gl11.jpg" class="img-responsive second" alt="" title="" />
+                        </a>
+                    </div>
+
+
+                    <div class="item">
+                        <a href="~/assets_NewPublic/images/gl11.jpg">
+                            <img src="~/assets_NewPublic/images/gl11.jpg" class="img-responsive second margin-no" alt="" title="" />
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/bg_2.jpg" class="big">
+                            <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive first" alt="" title="Beautiful Image" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl1.jpg">
+                            <img src="~/assets_NewPublic/images/gl1.jpg" class="img-responsive second" alt="" title="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl13.jpg">
+                            <img src="~/assets_NewPublic/images/gl13.jpg" class="img-responsive second" alt="" title="Beautiful Image" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl20.jpg">
+                            <img src="~/assets_NewPublic/images/gl20.jpg" class="img-responsive second margin-no" alt="" title="" />
+                        </a>
+                    </div>
+
+
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl11.jpg">
+                            <img src="~/assets_NewPublic/images/gl11.jpg" class="img-responsive second" alt="" title="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/Mask_Group_18.png">
+                            <img src="~/assets_NewPublic/images/Mask_Group_18.png" class="img-responsive second" alt="" title="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/gl11.jpg">
+                            <img src="~/assets_NewPublic/images/gl11.jpg" class="img-responsive second margin-no" alt="" title="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/assets_NewPublic/images/bg_2.jpg" class="big">
+                            <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive first margin-no" alt="" title="Beautiful Image" />
+                        </a>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+                <!--end items-->
+            </div>
+
+            <Div class="cleaner-h4"></Div>
+
+            <div class="buttonToogle" style="display: none;"><a href="javascript:;" class="showMore">Load More</a></div>
+
+            <Div class="cleaner-h4"></Div>
+        </div>
+
+
+
+    </div>
+    <!--end row-->
+</div>
+
+
+
+@section EndBody{
+    <!--        <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>-->
+    <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+    <!--        <script src="../demo/js/lg-rotate.js"></script>-->
+    <script>
+        lightGallery(document.getElementById('lightgallery'));
+    </script>
+}

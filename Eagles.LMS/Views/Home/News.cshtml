@@ -1,0 +1,540 @@
+﻿
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    UnitOfWork ctx = new UnitOfWork();
+    var _news = new List<New>();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    if (en == true)
+    {
+        _news = ctx.NewManager.GetAll().Where(s => s.Status == EntityStatus.Approval && s.TitleEnglish != null).OrderByDescending(s => s.Order).ToList();
+
+    }
+    else
+    {
+        _news = ctx.NewManager.GetAll().Where(s => s.Status == EntityStatus.Approval && s.TitleArabic != null).OrderByDescending(s => s.Order).ToList();
+
+    }
+}
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@section EndHeader{
+    <style>
+        .menu li a.active-a5 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+}
+
+
+
+
+
+
+
+<div class="header-bc">
+
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewNewsGBIN.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="title-header">
+
+                        <h3>@Resources.Global.News</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">@Resources.Global.Home</a> > </li>
+                                <li>@Resources.Global.News</li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+
+                    </div>
+                    <!--end title-header-->
+
+                </div>
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="threecitizenimgadetails newsssspagess">
+    <div class="overlay">
+        <div class="container">
+            <div class="ciciccont">
+                <div style="display:none" class="row mb-3">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="sendmessage">
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9">
+                        <A href="#" class="btn btn-black">Search</A>
+                    </div>
+                </div>
+                <div class="row otherrooow">
+                    @foreach (var _new in _news)
+                    {
+                        <div class="NewsCoool">
+                            <div class="SmallImg images">
+                                <a href="/Home/NewsDetails/@_new.Id">
+                                    @*<img src="@_new.MainImage">*@
+                                    <div class="NewsItemImg">
+                                        @if (!string.IsNullOrEmpty(_new.MainImage))
+                                        {
+
+                                            <div class=" imagsBG" style="background-image: url(@_new.MainImage)"></div>
+
+                                        }
+                                        else
+                                        {
+
+                                            <div class=" imagsBG" style="background-image: url(/assets_NewPublic/images/f14.jpeg)"></div>
+
+
+                                        }
+                                    </div>
+                                </a>
+                                <div class="discription">
+                                    <a href="/Home/NewsDetails/@_new.Id">
+                                        @if (en)
+                                        {
+                                            <h2>@_new.TitleEnglish</h2>
+                                            if (_new.CreatedTime != null)
+                                            {
+                                                <h1 class="Date"><span><i class="far fa-calendar-alt"></i></span>@_new.NewsDate.ToShortDateString()</h1>
+
+                                            }
+                                            @*<h1 class="Date"><span><i class="far fa-calendar-alt"></i></span>@_new.NewsDate.ToShortDateString()</h1>*@
+
+                                            <div class="ContentPargraph">
+                                                <p>@Html.Raw(@_new.ShortDescriptionEnglish)</p>
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <h2>@_new.TitleArabic</h2>
+                                            if (_new.CreatedTime != null)
+                                            {
+                                                <h1 class="Date"><span><i class="far fa-calendar-alt"></i></span>@_new.NewsDate.ToShortDateString()</h1>
+
+                                            }
+                                            @*<h1 class="Date"><span><i class="far fa-calendar-alt"></i></span>@_new.NewsDate.ToShortDateString()</h1>*@
+
+                                            <div class="ContentPargraph">
+                                                <p>@Html.Raw(@_new.ShortDescriptionArabic)</p>
+                                            </div>
+
+                                        }
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="news newspag" style="display:none">
+    <div class="container">
+        <div class="row">
+
+            <div class="top-position">
+
+                <!--
+                                    <div class="col-md-6">
+                                        <div class="big-new">
+
+                                            <img src="images/bg_3.jpg" class="img-responsive" />
+                                            <div>
+                                                <h4>Lebanese Minister of Information Visits EMPC</h4>
+                                                <p>H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                -->
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end top-posiotion-->
+
+            <div class="cleaner-h2"></div>
+
+            <div class="col-md-4">
+
+                <div class="new-des">
+                    <a class="but-new" href="/Home/NewsDetails">
+                        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                    </a>
+
+
+                    <div class="share">
+
+                        <div class="lef">
+                            <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                        </div>
+
+                        <div class="righ">
+                            <a href="#">
+                                <p><i class="fa fa-share-alt"></i> Share</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end share-->
+
+                    <div class="description">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                            <p>
+                                H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                            </p>
+
+                        </a>
+                    </div>
+                    <!--end description-->
+
+
+                </div>
+                <!--end new-desc-->
+
+            </div>
+            <!--end col-4-->
+            <div class="cleaner-h2 visible-xs"></div>
+
+            <div class="col-md-4">
+
+                <div class="new-des">
+                    <a class="but-new" href="/Home/NewsDetails">
+                        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                    </a>
+
+
+                    <div class="share">
+
+                        <div class="lef">
+                            <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                        </div>
+
+                        <div class="righ">
+                            <a href="#">
+                                <p><i class="fa fa-share-alt"></i> Share</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end share-->
+
+                    <div class="description">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                            <p>
+                                H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                            </p>
+
+                        </a>
+                    </div>
+                    <!--end description-->
+
+
+                </div>
+                <!--end new-desc-->
+
+            </div>
+            <!--end col-4-->
+
+
+
+            <div class="col-md-4">
+
+                <div class="new-des">
+                    <a class="but-new" href="/Home/NewsDetails">
+                        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                    </a>
+
+
+                    <div class="share">
+
+                        <div class="lef">
+                            <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                        </div>
+
+                        <div class="righ">
+                            <a href="#">
+                                <p><i class="fa fa-share-alt"></i> Share</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end share-->
+
+                    <div class="description">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                            <p>
+                                H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                            </p>
+
+                        </a>
+                    </div>
+                    <!--end description-->
+
+
+                </div>
+                <!--end new-desc-->
+
+            </div>
+            <!--end col-4-->
+
+
+
+            <div class="col-md-4">
+
+                <div class="new-des">
+                    <a class="but-new" href="/Home/NewsDetails">
+                        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                    </a>
+
+
+                    <div class="share">
+
+                        <div class="lef">
+                            <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                        </div>
+
+                        <div class="righ">
+                            <a href="#">
+                                <p><i class="fa fa-share-alt"></i> Share</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end share-->
+
+                    <div class="description">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                            <p>
+                                H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                            </p>
+
+                        </a>
+                    </div>
+                    <!--end description-->
+
+
+                </div>
+                <!--end new-desc-->
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="new-des">
+                    <a class="but-new" href="/Home/NewsDetails">
+                        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                    </a>
+
+
+                    <div class="share">
+
+                        <div class="lef">
+                            <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                        </div>
+
+                        <div class="righ">
+                            <a href="#">
+                                <p><i class="fa fa-share-alt"></i> Share</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end share-->
+
+                    <div class="description">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                            <p>
+                                H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                            </p>
+
+                        </a>
+                    </div>
+                    <!--end description-->
+
+
+                </div>
+                <!--end new-desc-->
+
+            </div>
+            <!--end col-4-->
+
+
+            <div class="col-md-4">
+
+                <div class="new-des">
+                    <a class="but-new" href="/Home/NewsDetails">
+                        <img src="~/assets_NewPublic/images/bg_2.jpg" class="img-responsive" />
+                    </a>
+
+
+                    <div class="share">
+
+                        <div class="lef">
+                            <p><i class="fa fa-calendar"></i> 30 Noveber</p>
+                        </div>
+
+                        <div class="righ">
+                            <a href="#">
+                                <p><i class="fa fa-share-alt"></i> Share</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--end share-->
+
+                    <div class="description">
+                        <a class="but-new" href="/Home/NewsDetails">
+                            <h4>Lebanese Minister of Information Visits EMPC</h4>
+
+
+                            <p>
+                                H.E professor Majid Abdullah El.Khasabi, the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation,
+                                in the presence of H.E Mr. Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.H.E professor Majid Abdullah El.Khasabi,
+                                the Saudi minister of commerce and the appointed minister of information visited EMPC this evening. Osama Heikal, EMPC chairman welcomed the Saudi minister and the accompanying delegation, in the presence of H.E Mr.
+                                Osama Nokhali, the Saudi Ambassador in Cairo, General Ahmed Anis, Nile Sat chairman and Mr. Hussein Zein, president of the National Authority of Information.
+                            </p>
+
+                        </a>
+                    </div>
+                    <!--end description-->
+
+
+                </div>
+                <!--end new-desc-->
+
+            </div>
+            <!--end col-4-->
+
+
+            <Div class="cleaner-h2"></Div>
+
+            <nav aria-label="...">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <span class="page-link">
+                            2
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</div>
+<!--end news-->
+
+
+
+@section EndBody{
+
+}

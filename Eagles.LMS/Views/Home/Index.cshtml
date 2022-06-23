@@ -1,0 +1,1799 @@
+﻿
+
+@using Eagles.LMS.App_GlobalResources
+
+@{
+
+    ViewBag.Title = "Home";
+
+    string host = Request.Url.Host;
+
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+}
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, Home, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@using Eagles.LMS.BLL
+@using Eagles.LMS.App_GlobalResources
+
+@{
+    UnitOfWork ctx = new UnitOfWork();
+    var setting = ctx.SettingsManager.GetAll().FirstOrDefault();
+    var aboutUs = ctx.AboutUsManager.GetAll().FirstOrDefault();
+    var _contactUs = ctx.ContactUsManager.GetAll().FirstOrDefault();
+    var allSliders = new List<Slider>();
+    var services = new List<Service>();
+    var _relatedWerbsites = new List<RelatedWebSite>();
+    var _Clients = new List<Client>();
+    var _galaries = new List<Album>();
+    var _locations = new List<Location>();
+    var _news = new List<New>();
+
+    var allPictures = ctx.GalaryManager.GetAll().Select(s => s.AlbumId).Distinct();
+
+    if (en == true)
+    {
+        allSliders = ctx.SliderManager.GetAllBind().OrderBy(S => S.Order).Where(s => s.TitleEnglish != null).ToList();
+        services = ctx.ServiceManager.GetAllBind().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).Where(s => s.TitleEnglish != null).ToList();
+        _news = ctx.NewManager.GetAll().Where(s => s.ShowInHomePage && s.Status == EntityStatus.Approval).OrderByDescending(S => S.Order).Where(s => s.TitleEnglish != null).ToList();
+        _locations = ctx.LocationManager.GetAllBind().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).Where(s => s.TitleEnglish != null).ToList();
+        //var _galaries = ctx.GalaryManager.GetAllBind().OrderBy(S => S.Order).ToList();
+
+        _galaries = _galaries = ctx.AlbumManager.GetAll().OrderByDescending(s => s.Id).Where(s => allPictures.Contains(s.Id) && s.TitleEnglish != null).ToList();
+        //var _galaries = ctx.GalaryManager.GetAll().Where(s => s.IsImage).OrderByDescending(s => s.Id).ToList();
+        _Clients = ctx.ClientsManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.NameEnglish != null).ToList();
+        _relatedWerbsites = ctx.RelatedWebSiteManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.TitleEnglish != null).ToList();
+    }
+    else
+    {
+        allSliders = ctx.SliderManager.GetAllBind().OrderBy(S => S.Order).Where(s => s.TitleArabic != null).ToList();
+        services = ctx.ServiceManager.GetAllBind().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).Where(s => s.TitleArabic != null).ToList();
+        _news = ctx.NewManager.GetAll().Where(s => s.ShowInHomePage && s.Status == EntityStatus.Approval).OrderByDescending(S => S.Order).Where(s => s.TitleArabic != null).ToList();
+        _locations = ctx.LocationManager.GetAllBind().Where(s => s.Status == EntityStatus.Approval).OrderByDescending(s => s.Id).Where(s => s.TitleArabic != null).ToList();
+        //var _galaries = ctx.GalaryManager.GetAllBind().OrderBy(S => S.Order).ToList();
+        _galaries = _galaries = ctx.AlbumManager.GetAll().OrderByDescending(s => s.Id).Where(s => allPictures.Contains(s.Id) && s.TitleArabic != null).ToList();
+        _Clients = ctx.ClientsManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.NameArabic != null).ToList();
+        _relatedWerbsites = ctx.RelatedWebSiteManager.GetAllBind().OrderByDescending(s => s.Id).Where(s => s.TitleArabic != null).ToList();
+    }
+}
+
+
+
+
+@section EndHeader{
+    <style>
+        .menu li a.active-a1 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+}
+
+
+
+@*<iframe width="500" height="600" src="{{https://www.youtube.com/embed/nGnX6GkrOgk }}?playlist={{nGnX6GkrOgk}}&controls=1&autoplay=1&loop=1&rel=0&showinfo=0&mute=1" frameborder="0" allow='autoplay' allowfullscreen></iframe>*@
+
+
+
+
+
+<!-- slider-start -->
+@if (setting.ShowSliders)
+{
+    <div class="slider-area">
+        <div class="slider-active">
+
+            @*<div class="single-slider slider-height d-flex align-items-center" style="display:none">
+                    <div class="video_background">
+                        <div class="video_foreground">
+
+                            <video muted autoplay loop>
+                                <source src="~/assets_New_Puplic/videos/video1.mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="OverlaySlider">
+                        <div class="container">
+                            <div class="row ">
+                                <div class="col-xl-9 col-lg-9 ">
+                                    <div class="slider-content mt-90">
+                                        <h1 data-animation="fadeInUp" data-delay=".5s">Filming in Egypt </h1>
+                                        <p data-animation="fadeInUp" data-delay=".5s">EMPC Filming is a one- stop shop for filming permits and production services</p>
+                                        <div class="slider-button">
+                                            <a class="btn btn-gray" href="#" data-animation="fadeInUp" data-delay=".9s">Watch More <i class="far fa-long-arrow-right"></i></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+
+
+
+            @foreach (var slider in allSliders)
+            {
+                if (slider.IsImage)
+                {
+                    <div class="single-slider slider-height d-flex align-items-center"
+                         style="background-image: url(@slider.Image)">
+                        <div class="OverlaySlider">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-xl-9 col-lg-9 ">
+                                        <div class="slider-content mt-90">
+                                            @if (en)
+                                            {
+
+                                                if (!string.IsNullOrEmpty(slider.TitleEnglish))
+                                                {
+                                                    <h1 data-animation="fadeInUp" data-delay=".7s">@Html.Raw(@slider.TitleEnglish)</h1>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.DescriptionEnglish))
+                                                {
+                                                    <p data-animation="fadeInUp" data-delay=".5s">@slider.DescriptionEnglish</p>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.Link))
+                                                {
+                                                    <div class="slider-button">
+                                                        <a class="btn btn-gray" target="_blank" href="@slider.Link" data-animation="fadeInUp" data-delay=".9s">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (!string.IsNullOrEmpty(slider.TitleArabic))
+                                                {
+                                                    <h1 data-animation="fadeInUp" data-delay=".7s">@Html.Raw(@slider.TitleArabic)</h1>
+
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.DescriptionArabic))
+                                                {
+                                                    <p data-animation="fadeInUp" data-delay=".5s">@slider.DescriptionArabic</p>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.Link))
+                                                {
+                                                    <div class="slider-button">
+                                                        <a class="btn btn-gray" target="_blank" href="@slider.Link" data-animation="fadeInUp" data-delay=".9s">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="single-slider slider-height d-flex align-items-center">
+                        <div class="video_background">
+                            <div class="video_foreground">
+                                @*<iframe src="https://www.youtube.com/embed/@slider.Iframe?rel=0&mute=1"></iframe>*@
+                                <iframe src="https://www.youtube.com/embed/@slider.Iframe?playlist=@slider.Iframe&controls=1&autoplay=1&loop=1&rel=0&showinfo=0&mute=1 " frameborder="0" allow='autoplay' allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="OverlaySlider">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-xl-9 col-lg-9 ">
+                                        <div class="slider-content mt-90">
+                                            @if (en)
+                                            {
+                                                if (!string.IsNullOrEmpty(slider.TitleEnglish))
+                                                {
+                                                    <h1 data-animation="fadeInUp" data-delay=".5s">@Html.Raw(@slider.TitleEnglish)</h1>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.DescriptionEnglish))
+                                                {
+                                                    <p data-animation="fadeInUp" data-delay=".5s">@slider.DescriptionEnglish</p>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.Link))
+                                                {
+                                                    <div class="slider-button">
+                                                        <a class="btn btn-gray" target="_blank" href="@slider.Link" data-animation="fadeInUp" data-delay=".9s">@Resources.Global.watchMore <i class="far fa-long-arrow-right"></i></a>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (!string.IsNullOrEmpty(slider.TitleEnglish))
+                                                {
+                                                    <h1 data-animation="fadeInUp" data-delay=".5s">@Html.Raw(@slider.TitleArabic)</h1>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.DescriptionEnglish))
+                                                {
+                                                    <p data-animation="fadeInUp" data-delay=".5s">@slider.DescriptionArabic</p>
+                                                }
+                                                if (!string.IsNullOrEmpty(slider.Link))
+                                                {
+                                                    <div class="slider-button">
+                                                        <a class="btn btn-gray" target="_blank" href="@slider.Link" data-animation="fadeInUp" data-delay=".9s">@Resources.Global.watchMore <i class="far fa-long-arrow-right"></i></a>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
+    </div>
+}
+<!-- slider-start -->
+
+
+
+@if (setting.ShowServices)
+{
+    <div class="LocationTwo">
+        <div class="row oterrowww">
+
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 othercool">
+                <div class="LocationTwoTitle ">
+                    <p class="smalltitlt wow fadeInUp">EMPC Filming</p>
+                    <a href="NewServices.html"><h1 class="wow fadeInUp">@Resources.Global.OurServices</h1></a>
+                    <p class="Discription wow fadeInUp">@Resources.Global.ServicesParg</p>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 othercool">
+                <div class="row oterrowww">
+                    <div class="LocationTwo-Caurosel owl-carousel">
+
+                        @foreach (var service in services)
+                        {
+
+                            <div class="col-lg-12 col-md-12 othercool">
+                                <div class="LocationTwoItem">
+                                    <div class="imagess">
+                                        @if (!string.IsNullOrEmpty(@service.MainImage))
+                                        {
+                                            <div class="BGIMAge" style="background: url(@service.MainImage)"></div>
+                                        }
+                                        else
+                                        {
+                                            <div class="BGIMAge" style="background: url(/assets_New_Puplic/img/NewImg/51.jpg)"></div>
+                                        }
+                                    </div>
+                                    <div class="DiscriptioLoc">
+                                        <a href="/Home/ServicesDetails/@service.Id" class="contloc">
+                                            @if (en)
+                                            {
+                                                <h1 class="tititlw wow fadeInUp">@service.TitleEnglish</h1>
+                                            }
+                                            else
+                                            {
+                                                <h1 class="tititlw wow fadeInUp">@service.TitleArabic</h1>
+                                            }
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+
+
+                        @*<div class="col-lg-12 col-md-12 othercool">
+                                <div class="LocationTwoItem">
+                                    <div class="imagess">
+                                        <div class="BGIMAge" style="background: url(/assets_New_Puplic/img/NewImg/51.jpg)"></div>
+                                    </div>
+                                    <div class="DiscriptioLoc">
+                                        <div class="contloc">
+                                            <p>06</p>
+                                            <h1 class="tititlw wow fadeInUp">Expert Staf Service</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+}
+
+
+
+<!-- about-area-start -->
+@if (setting.ShowAboutUs)
+{
+    <div class="about-area NewAboutArea pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-2-wrapper mb-30">
+                        <div class="displayForFlex">
+                            @if (en)
+                            {
+                                <div class="section-2-title mb-35">
+                                    <a href="aboutus.html"><h1 class=" wow fadeInLeft">@aboutUs.TitleEnglish</h1></a>
+                                </div>
+                                <div class="about-2-content">
+                                    <div class="extoverflow">
+                                        <p class=" wow fadeInUp">@Html.Raw(@aboutUs.DescriptionEnglish) </p>
+                                    </div>
+
+                                    <a class="btn  wow fadeInUp" href="/AboutUs">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="section-2-title mb-35">
+                                    <a href="aboutus.html"><h1 class=" wow fadeInLeft">@aboutUs.TitleArabic</h1></a>
+                                </div>
+                                <div class="about-2-content">
+                                    <div class="extoverflow">
+                                        <p class=" wow fadeInUp">@Html.Raw(@aboutUs.DescriptionArabic) </p>
+                                    </div>
+                                    <a class="btn  wow fadeInUp" href="/AboutUs">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-2-img mb-30  wow fadeInRight">
+                        <img src="@aboutUs.Image" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!-- about-area-end -->
+
+
+<div class="NewWhyChooseus" style="background-image: url(/assets_New_Puplic/img/NewImg/BG/writing.jpg)">
+    <div class="overlay">
+        <div class="container">
+            <div class="NewWhyCont">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="WhychoosCont">
+                            <div class="forflex">
+                                <div class="tititle">
+                                    <a href="Facility.html"><h2 class=" wow fadeInUp">Why Filming in Egypt</h2></a>
+                                    <div class="Squares wow fadeInUp">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="Discription" style="display: none">
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics. This is a four stage process. This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cocllc">
+                            <div class="itemWhyGrou">
+                                <div class="whyItem  wow slideInLeft">
+                                    <div class="icon">
+                                        <span>
+                                            <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                        </span>
+                                    </div>
+                                    <div class="Details">
+                                        <h2>Diverse range of unique locations</h2>
+                                        <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cocllc">
+                            <div class="itemWhyGrou">
+                                <div class="whyItem  wow slideInLeft">
+                                    <div class="icon">
+                                        <span>
+                                            <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                        </span>
+                                    </div>
+                                    <div class="Details">
+                                        <h2>Diverse range of unique locations</h2>
+                                        <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cocllc">
+                            <div class="itemWhyGrou">
+                                <div class="whyItem  wow slideInLeft">
+                                    <div class="icon">
+                                        <span>
+                                            <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                        </span>
+                                    </div>
+                                    <div class="Details">
+                                        <h2>Diverse range of unique locations</h2>
+                                        <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 cocllc">
+                            <div class="itemWhyGrou">
+                                <div class="whyItem  wow slideInLeft">
+                                    <div class="icon">
+                                        <span>
+                                            <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                        </span>
+                                    </div>
+                                    <div class="Details">
+                                        <h2>Diverse range of unique locations</h2>
+                                        <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="itemWhyGrou">
+                            <div class="whyItem  wow slideInLeft">
+                                <div class="icon">
+                                    <span>
+                                        <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                    </span>
+                                </div>
+                                <div class="Details">
+                                    <h2>Diverse range of unique locations</h2>
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+
+                            <div class="whyItem wow slideInLeft">
+                                <div class="icon">
+                                    <span>
+                                        <img src="~/assets_New_Puplic/img/NewImg/Location/floppy-disk.png">
+                                    </span>
+                                </div>
+                                <div class="Details">
+                                    <h2>Perfect weather all year that will fit the desires of filmmakers</h2>
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+
+
+                            <div class="whyItem wow slideInLeft">
+                                <div class="icon">
+                                    <span>
+                                        <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                    </span>
+                                </div>
+                                <div class="Details">
+                                    <h2>Professional crew & staff</h2>
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="itemWhyGrou">
+                            <div class="whyItem wow slideInRight">
+                                <div class="icon">
+                                    <span>
+                                        <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                    </span>
+                                </div>
+                                <div class="Details">
+                                    <h2>One stop-shop for filming permits</h2>
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+
+                            <div class="whyItem wow slideInRight">
+                                <div class="icon">
+                                    <span>
+                                        <img src="~/assets_New_Puplic/img/NewImg/Location/floppy-disk.png">
+                                    </span>
+                                </div>
+                                <div class="Details">
+                                    <h2>Provides security escort from the Ministry of Interior</h2>
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+
+
+                            <div class="whyItem wow slideInRight">
+                                <div class="icon">
+                                    <span>
+                                        <img src="~/assets_New_Puplic/img/NewImg/Location/medal.png">
+                                    </span>
+                                </div>
+                                <div class="Details">
+                                    <h2>Production services</h2>
+                                    <p>This is a why choose us template 1 ppt PowerPoint presentation portfolio graphics.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- owl-carousel images Start -->
+@if (setting.ShowLocations)
+{
+    <section class=" newLocationSction">
+        <div class="tittle">
+            <span class=" wow fadeInUp">EMPC Filming</span>
+            <a href="Locations.html"><h1 class=" wow fadeInUp"> @Html.ActionLink(@Resources.Global.Locations, "Locations", "Home")</h1></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="gen-banner-movies">
+                        <div class="owl-carousel owl-loaded owl-drag locationthree" data-dots="true" data-nav="false"
+                             data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1"
+                             data-autoplay="true" data-loop="true" data-margin="30">
+
+                            @foreach (var location in _locations)
+                            {
+
+                                <div class="item" style="background-image: url('@location.IconImage')">
+                                    <div class="gen-movie-contain h-100">
+                                        <div class="container h-100">
+                                            <div class="row align-items-center h-100">
+                                                <div class="col-xl-8">
+                                                    <div class="gen-movie-info">
+                                                        @if (en)
+                                                        {
+
+                                                            <h3>@location.TitleEnglish</h3>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <h3>@location.TitleArabic</h3>
+
+                                                        }
+
+                                                    </div>
+
+                                                    <div class="gen-movie-action">
+                                                        <div class="gen-btn-container button-1">
+                                                            <a href="/Home/LocationDetails/@location.Id" class="gen-button">
+                                                                <span class="text">@Resources.Global.ReadMore</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<!-- owl-carousel images End -->
+
+<div class="FilmingInEgypy">
+    <div class="imagBG">
+        <div class="imhddh" style="background-image: url(/assets_New_Puplic/img/NewImg/BG/home__bg.jpg)"></div>
+    </div>
+    <div class="overlay">
+        <div class="container">
+            <div class="FilmingInEgypCOntent">
+                <div class="titile">
+                    <a href="Filming.html"><h2><span>Filmed</span> in egypt</h2></a>
+                    <p>Celebrity interviews, trending entertainment stories, and expert analysis.</p>
+                </div>
+
+                <div class="FilmingInEgypyGroupItem">
+                    <div class="row">
+                        <div class="filminginegypt-Caurosel owl-carousel">
+                            <div class="col-lg-12 otercool">
+                                <div class="interview">
+                                    <a href="filmingDetails.html" class="interview__cover">
+                                        <img src="~/assets_New_Puplic/img/NewImg/BG/1.jpg" alt="">
+                                        <span>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z" stroke-linecap="round" stroke-linejoin="round"></path></svg> 3:52
+                                        </span>
+                                    </a>
+                                    <h3 class="interview__title"><a href="filmingDetails.html">How Movies and TV Shaped Our Perception of HIV/AIDS</a></h3>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 otercool">
+                                <div class="interview">
+                                    <a href="filmingDetails.html" class="interview__cover">
+                                        <img src="~/assets_New_Puplic/img/NewImg/BG/2.jpg" alt="">
+                                        <span>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z" stroke-linecap="round" stroke-linejoin="round"></path></svg> 3:52
+                                        </span>
+                                    </a>
+                                    <h3 class="interview__title"><a href="filmingDetails.html">How Movies and TV Shaped Our Perception of HIV/AIDS</a></h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 otercool">
+                                <div class="interview">
+                                    <a href="filmingDetails.html" class="interview__cover">
+                                        <img src="~/assets_New_Puplic/img/NewImg/BG/3.jpg" alt="">
+                                        <span>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z" stroke-linecap="round" stroke-linejoin="round"></path></svg> 3:52
+                                        </span>
+                                    </a>
+                                    <h3 class="interview__title"><a href="filmingDetails.html">How Movies and TV Shaped Our Perception of HIV/AIDS</a></h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 otercool">
+                                <div class="interview">
+                                    <a href="filmingDetails.html" class="interview__cover">
+                                        <img src="~/assets_New_Puplic/img/NewImg/BG/4.jpg" alt="">
+                                        <span>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z" stroke-linecap="round" stroke-linejoin="round"></path></svg> 3:52
+                                        </span>
+                                    </a>
+                                    <h3 class="interview__title"><a href="filmingDetails.html">How Movies and TV Shaped Our Perception of HIV/AIDS</a></h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 otercool">
+                                <div class="interview">
+                                    <a href="filmingDetails.html" class="interview__cover">
+                                        <img src="~/assets_New_Puplic/img/NewImg/BG/5.jpg" alt="">
+                                        <span>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z" stroke-linecap="round" stroke-linejoin="round"></path></svg> 3:52
+                                        </span>
+                                    </a>
+                                    <h3 class="interview__title"><a href="filmingDetails.html">How Movies and TV Shaped Our Perception of HIV/AIDS</a></h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 otercool">
+                                <div class="interview">
+                                    <a href="filmingDetails.html" class="interview__cover">
+                                        <img src="~/assets_New_Puplic/img/NewImg/BG/6.jpg" alt="">
+                                        <span>
+                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z" stroke-linecap="round" stroke-linejoin="round"></path></svg> 3:52
+                                        </span>
+                                    </a>
+                                    <h3 class="interview__title"><a href="filmingDetails.html">How Movies and TV Shaped Our Perception of HIV/AIDS</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- testimonial-area-start -->
+<div class="testimonial-area tetstNewSeccc pos-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
+                <div class="section-title text-center  pr-80 pl-80 pos-relative">
+
+                    <span>EMPC FILMING</span>
+                    <a href="#"><h1 class=" wow fadeInUp">Happy Customers</h1></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 offset-lg-1 offset-xl-1">
+                <div class="testimonial-active owl-carousel">
+                    <div class="testimonial-wrapper mt-5">
+                        <div class="TetsNew">
+                            <div class="imagss">
+                                <img src="~/assets_New_Puplic/img/NewImg/Stalone.png" class="animate__zoomIn" data-animation="fadeInUp" data-delay=".5s">
+                            </div>
+                            <h3>
+                                <span>“ </span>
+                                The film industry 22 is where life and dreams soar
+                                <span>” </span>
+                            </h3>
+                            <h4 class="line-before">Eagle Films Group</h4>
+                        </div>
+                    </div>
+                    <div class="testimonial-wrapper mt-5">
+                        <div class="TetsNew">
+                            <div class="imagss">
+                                <img src="~/assets_New_Puplic/img/NewImg/Stalone.png">
+                            </div>
+                            <h3>
+                                <span>“ </span>
+                                The film industry 1 is where life and dreams soar
+                                <span>” </span>
+                            </h3>
+                            <h4 class="line-before">Eagle Films Group</h4>
+                        </div>
+                    </div>
+                    <div class="testimonial-wrapper mt-5">
+                        <div class="TetsNew">
+                            <div class="imagss">
+                                <img src="~/assets_New_Puplic/img/NewImg/Stalone.png">
+                            </div>
+                            <h3>
+                                <span>“ </span>
+                                The film industry 2 is where life and dreams soar
+                                <span>” </span>
+                            </h3>
+                            <h4 class="line-before">Eagle Films Group</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- testimonial-area-end -->
+<!-- certificate-area-start -->
+<div class="certificate-area clientssection" style="">
+    <div class="overlaiClients pt-50 pb-30">
+        <div class="">
+            <div class="row   justify-content-center">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="section-title text-center mb-60  pos-relative">
+                        <div class="section-icon wow fadeInUp">
+                            <img src="~/assets_New_Puplic/img/NewImg/section.png" alt="">
+                        </div>
+                        <span>EMPC Filming</span>
+                        <a href="#"><h1 class=" wow fadeInUp">Our Clients</h1></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="certificate-active owl-carousel">
+                    @foreach (var Client in _Clients)
+                    {
+                        <div class="col-xl-12 p-0">
+                            <div class="certificate-img">
+                                <img src="@Client.Image" alt="">
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="certificateRTL-active owl-carousel">
+                    @foreach (var Client in _Clients)
+                    {
+                        <div class="col-xl-12 p-0">
+                            <div class="certificate-img">
+                                <img src="@Client.Image" alt="">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- certificate-area-end -->
+<!-- team-area-start -->
+<div class="team-area RelatedWebsites pt-60 pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4">
+                <div class="single-team mb-30 mt-90">
+                    <div class="section-title pos-relative">
+                        <div class="section-icon text-center mr-90 wow fadeInUp">
+                            <img src="~/assets_New_Puplic/img/NewImg/section.png" alt="">
+                        </div>
+                        <span>EMPC Filming</span>
+                        <h1 class=" wow fadeInUp">@Resources.Global.Relatedwebsites</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8">
+                <div class="team-bg  wow fadeInRight">
+                    <div class="row">
+                        <div class="Related-Caurosel owl-carousel">
+
+
+
+                            @for (int i = 0; i < _relatedWerbsites.Count; i++)
+                            {
+                                <div class="col-lg-12">
+                                    <div class="relatedItem">
+                                        <div class="row">
+                                            <div class="col-xl-9 col-lg-9 col-md-9">
+                                                <div class="team-2-img pr-30 mb-0">
+                                                    <div class="relatedwebsiteImg">
+                                                        <div class="BGImage" style="background: url(@_relatedWerbsites[i].Image)"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-3">
+                                                <div class="team-2-wrapper mb-30">
+                                                    <div class="team-2-content">
+                                                        @if (en)
+                                                        {
+                                                            <a href="#"><span>@_relatedWerbsites[i].TitleEnglish</span></a>
+                                                            <p>@Html.Raw(@_relatedWerbsites[i].DescriptionEnglish)</p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a href="#"><span>@_relatedWerbsites[i].TitleArabic</span></a>
+                                                            <p>@Html.Raw(@_relatedWerbsites[i].DescriptionArabic)</p>
+                                                        }
+
+                                                        <div class="awards-button">
+                                                            <a class="btn" href="@_relatedWerbsites[i].Link" target="_blank">@Resources.Global.MoreDetails <i class="far fa-long-arrow-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                if (i == 1)
+                                {
+                                    break;
+                                }
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- team-area-end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@if (setting.ShowNews)
+{
+    <div class="newNewsSec" style="display:none">
+        <div class="overlay">
+            <div class="container">
+                <div class="titile">
+                    <h2>@Html.ActionLink(@Resources.Global.Latestnews, "News", "Home")</h2>
+
+                    <div class="cubics">
+                        <span class="cubicItem smallcub"></span>
+                        <span class="cubicItem Bigcub"></span>
+                        <span class="cubicItem smallcub"></span>
+                    </div>
+
+
+                    <p>@Resources.Global.LatestNewsParg</p>
+                </div>
+                <div class="NewNewsCont">
+                    <div class="row otherrow">
+                        @*@foreach (var _new in _news)*@
+                        @for (int i = 0; i < _news.Count; i++)
+                        {
+
+
+
+                            <div class=" othercol">
+                                <div class="newsItem newsItemBig">
+                                    @*<div class="imags" style="background-image: url(@_news[i].MainImage)"></div>*@
+
+                                    <div class="Images">
+                                        @if (!string.IsNullOrEmpty(@_news[i].MainImage))
+                                        {
+                                            <img src="@_news[i].MainImage" />
+
+                                        }
+                                        else
+                                        {
+                                            <img src="~/assets_NewPublic/images/f14.jpeg" />
+                                            @*<img src="@_news[i].MainImage" />*@
+                                        }
+
+                                    </div>
+                                    <div class="newsDetails">
+                                        <div class="newdtcont">
+                                            <div class="marknew">
+                                                @if (en)
+                                                {
+
+                                                    if (!string.IsNullOrEmpty(@_news[i].NotsEnglish))
+                                                    {
+                                                        <span>@_news[i].NotsEnglish</span>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if (!string.IsNullOrEmpty(@_news[i].NotsArabic))
+                                                    {
+                                                        <span>@_news[i].NotsArabic</span>
+                                                    }
+
+                                                }
+
+                                            </div>
+                                            <div class="newsTitle">
+                                                @if (en)
+                                                {
+                                                    <a href="/Home/NewsDetails/@_news[i].Id">
+
+                                                        @_news[i].TitleEnglish
+
+                                                    </a>
+                                                }
+                                                else
+                                                {
+
+                                                    <a href="/Home/NewsDetails/@_news[i].Id">
+
+                                                        @_news[i].TitleArabic
+
+                                                    </a>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            if (i == 6)
+                            {
+                                break;
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+
+@if (setting.ShowServices)
+{
+
+
+    <section class="locations " style="background-image: url(/assets_NewPublic/images/bg/servicecover.jpg); display:none ">
+
+
+        <div class="opacity-groub"></div>
+
+        <div class="container">
+            <div class="row justify-content-center mb-3 pb-3">
+
+
+                <div class="col-md-12 heading-section text-center ftco-animate">
+
+                    <!--                    <div class="red-line"></div>-->
+
+
+                    <h2 class="mb-4 headh2">@Html.ActionLink(@Resources.Global.services, "Services", "Home")</h2>
+
+                    <p class="headp">
+                        @Resources.Global.ServicesParg
+
+                    </p>
+
+
+                </div>
+                <!--end col-12-->
+
+
+
+                <div class="cleaner-h4"></div>
+
+
+                <div class="carousel-locatonsss owl-carousel ">
+                    @foreach (var service in services)
+                    {
+                        <div class="item">
+                            <div class="col-md-12">
+
+                                <div class="pyrimidis-title">
+                                    <div class="img-div">
+                                        <div class="ImageItemServce">
+                                            @if (!string.IsNullOrEmpty(@service.MainImage))
+                                            {
+
+                                                <div class="imags" style="background-image: url(@service.MainImage)"></div>
+
+                                            }
+                                            else
+                                            {
+
+                                                <div class="imags" style="background-image: url(/assets_NewPublic/images/f14.jpeg)"></div>
+
+                                            }
+
+
+                                            <a class="linkServ" href="/Home/ServicesDetails/@service.Id">
+                                            </a>
+                                        </div>
+                                        @*<a href="/Home/ServicesDetails/@service.Id">
+                                                <img src="@service.MainImage" class="img-pyrimid" />
+                                            </a>*@
+
+                                    </div>
+                                    <div class="contlocation">
+                                        <div class="forflex">
+                                            <a href="/Home/ServicesDetails/@service.Id">
+                                                @if (en)
+                                                {
+                                                    <h4>@service.TitleEnglish</h4>
+                                                    <div class="ContentPargraph">
+                                                        <p>
+                                                            @Html.Raw(@service.ShortDescriptionEnglish)
+                                                        </p>
+                                                    </div>
+
+                                                }
+                                                else
+                                                {
+                                                    <h4>@service.TitleArabic</h4>
+                                                    <div class="ContentPargraph">
+                                                        <p>
+                                                            @Html.Raw(@service.ShortDescriptionArabic)
+                                                        </p>
+                                                    </div>
+
+                                                }
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--end img-div-->
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+
+    </section>
+    <!-- End services section  locationServices-->
+}
+
+
+@if (setting.ShowLocations)
+{
+    <div class="newSerivcess" style="background-image: url(/assets_NewPublic/images/bg/LocationBG.jpg); display:none">
+        <div class="overlay">
+            <div class="container">
+                <div class="titile">
+                    <h2>@Html.ActionLink(@Resources.Global.Locations, "Locations", "Home")</h2>
+                    <p>@Resources.Global.LocationParg</p>
+                </div>
+                <div class="newsrcont">
+                    <div class="carousel-NewServices owl-carousel ftco-owl">
+                        @foreach (var location in _locations)
+                        {
+
+
+                            <div class="item">
+                                <div class="servItem">
+                                    <div class="ServCont">
+                                        <div class="icon">
+                                            @if (!string.IsNullOrEmpty(location.MainImage))
+                                            {
+                                                <img src="@location.IconImage">
+
+                                            }
+                                            else
+                                            {
+                                                <img src="~/assets_NewPublic/images/f14.jpeg" />
+                                            }
+
+                                        </div>
+                                        @if (en)
+                                        {
+
+
+                                            <div class="title">
+                                                <h2>@location.TitleEnglish</h2>
+                                            </div>
+
+
+                                            <div class="Discription">
+                                                <p>@Html.Raw(@location.ShortDescriptionEnglish)</p>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="title">
+                                                <h2>@location.TitleArabic</h2>
+
+                                            </div>
+
+
+                                            <div class="Discription">
+                                                <p>@Html.Raw(@location.ShortDescriptionArabic)</p>
+                                            </div>
+                                        }
+                                        <div class="lingoto">
+                                            <a href="/Home/LocationDetails/@location.Id">
+                                                <i class="ion-ios-arrow-forward"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@if (setting.ShowGalaryPhotos)
+{
+    <div class="newLatestNews" style="background-image:url(/assets_NewPublic/images/bg/GallaryBG.jpg); display:none">
+        <div class="overlay">
+            <div class=" text-center ftco-animate">
+
+                <!--                    <div class="red-line"></div>-->
+
+                <h2 class="mb-4 headh2">
+                    @Html.ActionLink(@Resources.Global.Gallery, "Albums", "Home")
+                </h2>
+                <p class="headp">@Resources.Global.GallaryParg</p>
+            </div>
+            <div class="container">
+                <div class="newlatscont">
+
+
+                    <div class="row otherrow">
+                        @*@foreach (var galary in _galaries)
+                                    {
+                                        <div class=" othercoll">
+                                            <div class="imagesmnewscont smallImages">
+                                                <div class="imags ">
+                                                    <img src="@galary.Image">
+                                                </div>
+                                                <div class="discription">
+                                                    @if (en)
+                                                    {
+                                                        <a href="/Home/Picture/@galary.Id">@galary.TitleEnglish</a>
+                            location
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="/Home/Picture/@galary.Id">@galary.TitleArabic</a>
+
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }*@
+
+                        @for (int i = 0; i < _galaries.Count; i++)
+                        {
+
+
+                            if (@_galaries[i].Galaries.FirstOrDefault().IsImage)
+                            {
+                                <div class=" othercoll">
+                                    <div class="imagesmnewscont smallImages">
+                                        @*<div class="imags imagsBG" style="background-image: url(@_galaries[i].Image)"></div>*@
+
+                                        <a href="/Home/Picture/@_galaries[i].Id" class="imags " style=" cursor: crosshair;">
+                                            <div class=" imagsBG" style="background-image: url(@_galaries[i].Image)"></div>
+                                        </a>
+                                        <div class="discription" style=" cursor: crosshair;">
+                                            @if (en)
+                                            {
+                                                <a href="/Home/Picture/@_galaries[i].Id">@_galaries[i].TitleEnglish</a>
+
+                                            }
+                                            else
+                                            {
+                                                <a href="/Home/Picture/@_galaries[i].Id">@_galaries[i].TitleArabic</a>
+
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+
+                                <div class=" othercoll">
+                                    <div class="imagesmnewscont smallImages videioGallaryItem">
+                                        @*<div class="imags imagsBG" style="background-image: url(@_galaries[i].Image)"></div>*@
+
+                                        <a href="/Home/VideoDetails/@_galaries[i].Id" class="imags ">
+                                            <div class=" imagsBG" style="background-image: url(@_galaries[i].Image)"></div>
+                                            @*<img src="@_galaries[i].Image">*@
+
+
+                                        </a>
+
+                                        <div class="iconVideooo">
+
+                                            <a href="/Home/VideoDetails/@_galaries[i].Id" class="">
+                                                <i class="fas fa-play" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <div class="discription">
+                                            @if (en)
+                                            {
+                                                <a href="/Home/VideoDetails/@_galaries[i].Id">@_galaries[i].TitleEnglish</a>
+
+                                            }
+                                            else
+                                            {
+                                                <a href="/Home/VideoDetails/@_galaries[i].Id">@_galaries[i].TitleArabic</a>
+
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+
+
+
+                            if (i == 7)
+                            {
+                                break;
+                            }
+                        }
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (setting.ShowAboutUs)
+{
+    <section class="who" style="display:none">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="border-top"></div>
+                    <div class="border-top-1"></div>
+                    <div class="wearecont">
+                        <div class="images">
+                            @*<img src="@aboutUs.Image" class="img-responsive img-who" />*@
+                            <div class=" imagsBG" style="background-image: url(@aboutUs.Image)"></div>
+                        </div>
+                        <div class="buttonpopupvedio" style="display:none">
+                            @*<button type="button" class="btnvediopopup" data-toggle="modal" data-target="#VedioPopup">
+                                    <i class="fas fa-play"></i>
+                                </button>*@
+
+                            <a href="@aboutUs.YouTubeFrame" class="btnvediopopup" data-type="iframe" tabindex="0">
+                                <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!--end col-6-->
+
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+
+
+                    <!--                    <div class="red-line1"></div>-->
+
+                    <div class="overflowheightabout">
+                        @if (en)
+                        {
+                            <h2 class="headh2">@aboutUs.TitleEnglish</h2>
+
+
+                            <p class="headp1">
+                                @Html.Raw(@aboutUs.DescriptionEnglish)
+                            </p>
+                        }
+                        else
+
+                        {
+                            <h2 class="headh2">@aboutUs.TitleArabic</h2>
+
+                            <p class="headp1">
+                                @Html.Raw(@aboutUs.DescriptionArabic)
+                            </p>
+                        }
+                    </div>
+
+                    <Div class="width-btn-who AboutBTNHOME">
+                        <a href="/Home/AboutUs" class="btn btn-danger btn-block btn-theme"> @Resources.Global.ReadMore</a>
+                    </Div>
+                    <!--end width-btn-->
+
+
+                </div>
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end conatiner-->
+    </section>
+    <!--end who-->
+}
+
+
+<div class="Custommr" style="display:none">
+    <div class="overlay">
+        <div class="titile">
+            <h2 class="mb-4 headh2">@Resources.Global.Clients</h2>
+            <p class="headp">@Resources.Global.ClientsPargrapgh</p>
+        </div>
+        <div class="container">
+            <div class="castomerContent">
+                <div class="carousel-CustomerNew owl-carousel">
+
+                    @foreach (var Client in _Clients)
+                    {
+                        <div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="@Client.Image" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @*<div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="~/assets_NewPublic/images/newimg/logocap.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="~/assets_NewPublic/images/newimg/logocap.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="~/assets_NewPublic/images/newimg/logocap.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="~/assets_NewPublic/images/newimg/logocap.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="~/assets_NewPublic/images/newimg/logocap.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="CustomerItem">
+                                <div class="images">
+                                    <img src="~/assets_NewPublic/images/newimg/logocap.png" />
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@if (setting.ShowRelatedWebSites)
+{
+
+
+
+    <div class="relatedwebsite" style="background-image: url(/assets_NewPublic/images/bg/ProductionCity.jpg); display:none">
+        <div class="overlay">
+            <div class="TitleSec">
+                <h2>@Resources.Global.Relatedwebsites</h2>
+            </div>
+            <div class="container">
+                <div class="relatedCOntent">
+                    <div class="row">
+                        @*@foreach (var related_web in _relatedWerbsites)*@
+                        @for (int i = 0; i < _relatedWerbsites.Count; i++)
+                        {
+
+
+
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 relatedCOntentItemSec">
+                                <div class="relateditem">
+                                    <div class="leftside">
+                                        <div class="imags">
+                                            @*<img src="@_relatedWerbsites[i].Image">*@
+                                            <div class=" imagsBG" style="background-image: url(@_relatedWerbsites[i].Image)"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rightside">
+                                        <div class="wecont">
+                                            <div class="reldetright">
+                                                @if (en)
+                                                {
+                                                    <h2>@_relatedWerbsites[i].TitleEnglish</h2>
+                                                    <p>@Html.Raw(@_relatedWerbsites[i].DescriptionEnglish)</p>
+                                                }
+                                                else
+                                                {
+                                                    <h2>@_relatedWerbsites[i].TitleArabic</h2>
+                                                    <p>@Html.Raw(@_relatedWerbsites[i].DescriptionArabic)</p>
+                                                }
+                                                <div class="btns">
+                                                    <a target="_blank" href="@_relatedWerbsites[i].Link" class="theme-btn" tabindex="0"> @Resources.Global.MoreDetails</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            if (i == 1)
+                            {
+                                break;
+                            }
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+
+
+
+@if (setting.ShowContactUs)
+{
+
+    <section class="map-loading" style="display:none">
+
+        <div class="opacity-map">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!--                        <div class="red-line"></div>-->
+
+                        <h2 class="mb-4 headh2"> @Resources.Global.ContactUs</h2>
+
+
+
+                        <div class="location-map">
+                            <i class="fa fa-map-marker"></i>
+                            <h3>@Resources.Global.address</h3>
+                            @if (en)
+                            {
+
+
+                                <p>@_contactUs.AddressEnglish</p>
+                            }
+                            else
+                            {
+
+                                <p>@_contactUs.AddressArabic</p>
+
+
+                            }
+
+                        </div>
+                        <!--end location-map-->
+
+                        <div class="cleaner-h3"></div>
+
+
+                        <div class="location-map">
+                            <i class="fa fa-phone"></i>
+                            <h3>@Resources.Global.HatefPhone</h3>
+                            @if (en)
+                            {
+
+
+                                <p>@_contactUs.Phone</p>
+                            }
+                            else
+                            {
+
+                                <p style=" direction: ltr;">@_contactUs.Phone</p>
+
+
+                            }
+
+
+                        </div>
+                        <!--end location-map-->
+
+                        <div class="cleaner-h3"></div>
+
+                        <div class="location-map">
+                            <i class="fa fa-envelope"></i>
+                            <h3>@Resources.Global.Email</h3>
+                            <p>@_contactUs.Email</p>
+
+                        </div>
+                        <!--end location-map-->
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1726.7709238441291!2d31.21595155872192!3d30.049999200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841fe81fb8d79%3A0x7292c22730b866c5!2sMedia%20Services%20Center%20EMPC!5e0!3m2!1sen!2seg!4v1647522850851!5m2!1sen!2seg"
+                width="100%" height="100%" style="border:0;" allowfullscreen=""></iframe>
+
+
+
+    </section>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section EndBody{
+    @*<script>
+            var coverflow = $("#coverflow").flipster({
+                style: 'carousel',
+                spacing: -0.3,
+                nav: true,
+                buttons: true,
+            });
+        </script>*@
+}
+

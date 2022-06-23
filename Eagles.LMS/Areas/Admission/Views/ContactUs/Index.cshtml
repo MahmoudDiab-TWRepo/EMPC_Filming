@@ -1,0 +1,250 @@
+﻿@model ContactUs
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var requestStatus = TempData.Peek("RequestStatus") as RequestStatus;
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+
+
+}
+
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">Contact Us</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission/ContactUs">Home</a></li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        @using (Html.BeginForm("Index", "ContactUs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(s => s.Id)
+            @Html.HiddenFor(s => s.Logo)
+
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+
+                                    <div>
+                                        <div>
+                                            <h1>Last User Edited : </h1>   <p>@ctx.UserManager.GetBy(Model.UserEditId).FullName</p>
+                                            <h1>Last Edited Time : </h1>    <p>@Model.EditeTime</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Company Title Arabic</label>
+                                            @Html.TextBoxFor(s => s.CompanyTitleArabic, null, new
+                                       {
+                                           @class = "form-control FontArabic",
+                                           placeholder = "Company Title Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.CompanyTitleArabic)*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Company Title English</label>
+                                            @Html.TextBoxFor(s => s.CompanyTitleEnglish, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Company Title English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.CompanyTitleEnglish)*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Address Arabic</label>
+                                            @Html.TextBoxFor(s => s.AddressArabic, new
+                                       {
+                                           @class = "form-control FontArabic",
+                                           placeholder = "Address Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.AddressArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Address English</label>
+                                            @Html.TextBoxFor(s => s.AddressEnglish, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Address English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.AddressEnglish)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            @Html.TextBoxFor(s => s.Email, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Email"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.Email)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Phone</label>
+                                            @Html.TextBoxFor(s => s.Phone, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Phone"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.Phone)*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Citizen Email</label>
+                                            @Html.TextBoxFor(s => s.CitizenEmail, null, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Citizen Email"
+                                       })
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12"></div>
+
+
+                                    @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">FaceBook</label>
+                                            @Html.TextBoxFor(s => s.FaceBook, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "FaceBook"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.FaceBook)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Instagram</label>
+                                            @Html.TextBoxFor(s => s.Instagram, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Instagram"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Instagram)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Twitter</label>
+                                            @Html.TextBoxFor(s => s.Twitter, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Twitter"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Twitter)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Youtube</label>
+                                            @Html.TextBoxFor(s => s.Youtube, new
+                                       {
+                                           @class = "form-control",
+                                           placeholder = "Youtube"
+                                       })
+                                            @Html.ValidationMessageFor(s => s.Youtube)
+                                        </div>
+                                    </div>*@
+
+
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Image <span class="extiniosType">(jpg, png, peg, gif, jpg)</span><span class="extiniosType">(W:520px, H:520px)</span></label>
+                                        <input class="form-control" name="uploadattachments" type="file" id="uploadattachments">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    @if (Model != null && Model.Logo != null)
+                                    {
+                                        <img style="max-width: auto; height: 110px " src="@Model.Logo" />
+                                    }
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+   <!-- end col -->
+
+
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="foooterbuttons">
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light">
+                            <i class="bx bx-check-double font-size-16 align-middle me-2"></i> @Resources.Global.Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+    </div>
+    </div>
+
+
+
+    @section EndBody{
+
+        @if (requestStatus != null)
+        {
+
+            <script>
+
+              notify = $.notify({
+                  message: '@requestStatus.Message',
+
+              }, {
+
+                  type: '@requestStatus.Status' == 'Edited' ? "success" :"danger",
+                      animate: {
+                          enter: 'animated flipInY',
+                          exit: 'animated flipOutX',
+                      }
+                  });
+            </script>
+
+            TempData.Remove("RequestStatus");
+        }
+    }

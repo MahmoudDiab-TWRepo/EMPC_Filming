@@ -1,0 +1,108 @@
+﻿body {
+}
+.skills .nav-tabs {
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 0;
+}
+.user-content {
+    width: 100%;
+}
+.m-topbar {
+    float: left;
+}
+.m-header-search .m-header-search__icon-search {
+
+    padding: 10px;
+}
+.m-dropdown.m-dropdown--align-right .m-dropdown__wrapper {
+    left: 0 !important;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: bold !important;
+    float: right;
+    margin-right: 15px;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: 40px;
+    padding: 0 10px;
+}
+.pagetitleee {
+    background: #076195;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+.chiller_cb label {
+    /* padding-right: 2rem; */
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    margin-bottom: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    /* margin-left: 82px; */
+    float: right;
+    margin-right: 0;
+}
+.calender label {
+    width: 100%;
+    float: right;
+    text-align: right;
+}
+.media {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    direction: ltr;
+}
+.modal .modal-content .modal-header .close {
+
+    margin-left: 15px;
+    margin-top: 0px;
+}
+.control-label{
+    text-align:right;
+}
+.m-dropdown.m-dropdown--align-right .m-dropdown__wrapper {
+    right: -230px;
+    margin-top:-15px;
+}
+.m-dropdown.m-dropdown--arrow .m-dropdown__arrow, .m-dropdown.m-dropdown--arrow.m-dropdown--up .m-dropdown__arrow {
+
+    right: 74% !important;
+}
+.m-topbar .m-topbar__nav.m-nav > .m-nav__item > .m-nav__link .m-topbar__userpic {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    top: -15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.col-form-label {
+    font-weight: bold;
+    text-align: right;
+}

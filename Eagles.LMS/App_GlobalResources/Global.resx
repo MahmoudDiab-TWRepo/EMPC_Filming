@@ -1,0 +1,2031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="24HOURSSERVICE" xml:space="preserve">
+    <value>24 HOURS SERVICE</value>
+  </data>
+  <data name="aboutdetalies1" xml:space="preserve">
+    <value>Our website was founded by a former teacher who, constantly constrained for time and budget, struggled to find and manage the best and most relevant answers to his questions among the abundance of learning resources, platforms and content already available on the Internet.</value>
+  </data>
+  <data name="aboutdetalies2" xml:space="preserve">
+    <value>Our Team offers its users a teacher-curated library system accessible through a community technology. Our platform allows you to see, save, rate and share the most relevant digitally available educational resources while discovering the personal learning ideas and questions from other teachers from around the world.</value>
+  </data>
+  <data name="aboutdetalies3" xml:space="preserve">
+    <value>We're also very proud that our software is currently being used in hundreds of Students all over the world.
+
+
+
+More about our ethos and ideas can be read in this blog post published on our contacts .
+
+
+
+And we would love to hear your ideas! Don't be shy and get in touch with the team here .</value>
+  </data>
+  <data name="abouttitel" xml:space="preserve">
+    <value>easy education</value>
+  </data>
+  <data name="Aboutus" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Absence" xml:space="preserve">
+    <value>Absence</value>
+  </data>
+  <data name="Academic-Students" xml:space="preserve">
+    <value>Academic-Students</value>
+  </data>
+  <data name="AcademicStudents" xml:space="preserve">
+    <value>Academic </value>
+  </data>
+  <data name="AcademicStudet" xml:space="preserve">
+    <value>Academic Student</value>
+  </data>
+  <data name="AccountApproval" xml:space="preserve">
+    <value>Account Pending Approval</value>
+  </data>
+  <data name="AccountIsPending" xml:space="preserve">
+    <value>Account  Is Pending</value>
+  </data>
+  <data name="AccountRefuesd" xml:space="preserve">
+    <value>Account Pending  Refuesd</value>
+  </data>
+  <data name="AccountState" xml:space="preserve">
+    <value>Account State</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ActiveUser" xml:space="preserve">
+    <value>Active User</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Add  Blogs" xml:space="preserve">
+    <value>Add  Blogs</value>
+  </data>
+  <data name="add quiz" xml:space="preserve">
+    <value>add quiz</value>
+  </data>
+  <data name="addedQuestions" xml:space="preserve">
+    <value>added Questions</value>
+  </data>
+  <data name="AddedSuccessfully" xml:space="preserve">
+    <value>Added Successfully</value>
+  </data>
+  <data name="AddNewGovernorate" xml:space="preserve">
+    <value>Add New Governorate</value>
+  </data>
+  <data name="AddQuestion" xml:space="preserve">
+    <value>Add Question</value>
+  </data>
+  <data name="AddQuestions" xml:space="preserve">
+    <value>Add Questions</value>
+  </data>
+  <data name="AddQuestionsBank" xml:space="preserve">
+    <value>Add Questions Bank</value>
+  </data>
+  <data name="addquiz" xml:space="preserve">
+    <value>add quiz</value>
+  </data>
+  <data name="AddQuize" xml:space="preserve">
+    <value>Add Quize</value>
+  </data>
+  <data name="AdminApproval" xml:space="preserve">
+    <value>Your account is suspended pending approval from the admin</value>
+  </data>
+  <data name="AdminArea" xml:space="preserve">
+    <value>Admin Area</value>
+  </data>
+  <data name="Aleadyhaveaccount" xml:space="preserve">
+    <value>Aleady have an account?</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AllAcademicStudents" xml:space="preserve">
+    <value>All Academic Student</value>
+  </data>
+  <data name="AllOnlineStudents" xml:space="preserve">
+    <value>All Online Students</value>
+  </data>
+  <data name="Allthings" xml:space="preserve">
+    <value>ALL THING IS PHYSICS IS</value>
+  </data>
+  <data name="android" xml:space="preserve">
+    <value>android</value>
+  </data>
+  <data name="androiddetaile" xml:space="preserve">
+    <value>You will find our app. easly in Google Store .</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="applicationapp" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="ApplyNow" xml:space="preserve">
+    <value>Apply Now</value>
+  </data>
+  <data name="Appointments" xml:space="preserve">
+    <value>Appointments</value>
+  </data>
+  <data name="AppointmentsMenu" xml:space="preserve">
+    <value>Appointments</value>
+  </data>
+  <data name="Appointments_Create" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="Appointments_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Approval" xml:space="preserve">
+    <value>Approval</value>
+  </data>
+  <data name="AreYouSureDelete" xml:space="preserve">
+    <value>? Are you sure to delete</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Bank Name</value>
+  </data>
+  <data name="Beinvolved" xml:space="preserve">
+    <value>Be involved with us to receive all our new</value>
+  </data>
+  <data name="BlockUser" xml:space="preserve">
+    <value>Block User</value>
+  </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>Blogs</value>
+  </data>
+  <data name="Call" xml:space="preserve">
+    <value>Call</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="ChangeStatus" xml:space="preserve">
+    <value>Change Status</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>Choose City</value>
+  </data>
+  <data name="ChooseGovernorate" xml:space="preserve">
+    <value>Choose Governorate</value>
+  </data>
+  <data name="ChooseGrade" xml:space="preserve">
+    <value>Choose Grade</value>
+  </data>
+  <data name="chooseimage" xml:space="preserve">
+    <value>Choose Image</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>Cities</value>
+  </data>
+  <data name="CitiesInGovernorate" xml:space="preserve">
+    <value>Cities In Governorate</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="CityName" xml:space="preserve">
+    <value>CityName</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CommingSoon" xml:space="preserve">
+    <value>CommingSoon ,,,,</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="CorrectionExam" xml:space="preserve">
+    <value>Correction Exam</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Create Channel" xml:space="preserve">
+    <value>Create Channel</value>
+  </data>
+  <data name="Createaccount" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="CreatedTime" xml:space="preserve">
+    <value>Created Time</value>
+  </data>
+  <data name="CreateGroup" xml:space="preserve">
+    <value>Create Group</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>CreateUser</value>
+  </data>
+  <data name="CreationTime" xml:space="preserve">
+    <value>Creation Time</value>
+  </data>
+  <data name="DailyQuizzes" xml:space="preserve">
+    <value>Daily Quizzes</value>
+  </data>
+  <data name="DailyQuizzes_content" xml:space="preserve">
+    <value>Our site provides daily educational competitions and tests that the teacher provides for his students to strengthen their educational level in all academic subjects all at all stages with their solutions.</value>
+  </data>
+  <data name="DataIsSafe" xml:space="preserve">
+    <value>The data is still safe</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>Date From</value>
+  </data>
+  <data name="Dateto" xml:space="preserve">
+    <value>Date to</value>
+  </data>
+  <data name="Dawnload" xml:space="preserve">
+    <value>Dawnload</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="degreeperquestion" xml:space="preserve">
+    <value>degree per question</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeletedSuccessfully" xml:space="preserve">
+    <value>Deleted Successfully</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Donhaveanaccount" xml:space="preserve">
+    <value>Don't have an account?</value>
+  </data>
+  <data name="DownloadThe" xml:space="preserve">
+    <value>Download The</value>
+  </data>
+  <data name="duration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="EasyEducation" xml:space="preserve">
+    <value>Easy Education</value>
+  </data>
+  <data name="EasyEducationdetalies" xml:space="preserve">
+    <value>We strive to deliver information everywhere in the world with ease through technological systems at anytime .</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Edit Group</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailAddess" xml:space="preserve">
+    <value>Email Addess</value>
+  </data>
+  <data name="EmailOrPhone" xml:space="preserve">
+    <value>Enter your Email Or Phone Number</value>
+  </data>
+  <data name="EXPERIENCEYOURSELF" xml:space="preserve">
+    <value>EXPERIENCE YOURSELF</value>
+  </data>
+  <data name="EXPERIENCEYOURSELFdetail" xml:space="preserve">
+    <value>Experience is experienced when you go through it. Then you understand it. We can’t experience others’ experience. We can’t explain our experiences like others</value>
+  </data>
+  <data name="explained" xml:space="preserve">
+    <value>Explained The</value>
+  </data>
+  <data name="Export-Sheets" xml:space="preserve">
+    <value>Export-Sheets</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="FiledRequired" xml:space="preserve">
+    <value>Filed is Required</value>
+  </data>
+  <data name="FirstTerm" xml:space="preserve">
+    <value>First Term</value>
+  </data>
+  <data name="FollowAs" xml:space="preserve">
+    <value>Follow As</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="fStTermPath" xml:space="preserve">
+    <value>1St-Term-Path</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="GenerateReport" xml:space="preserve">
+    <value>Generate Report</value>
+  </data>
+  <data name="GetIntouch" xml:space="preserve">
+    <value>Get In touch</value>
+  </data>
+  <data name="Goto" xml:space="preserve">
+    <value>Go To</value>
+  </data>
+  <data name="Governorate" xml:space="preserve">
+    <value>Governorate</value>
+  </data>
+  <data name="Governorate and cities" xml:space="preserve">
+    <value>Governorate and cities</value>
+  </data>
+  <data name="governorateand_city_required" xml:space="preserve">
+    <value>Please choose your governorate and city first</value>
+  </data>
+  <data name="GovernorateName" xml:space="preserve">
+    <value>Governorate Name</value>
+  </data>
+  <data name="GovernorateNameAr" xml:space="preserve">
+    <value>Governorate Name Ar</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="GradeMenu" xml:space="preserve">
+    <value>GradeMenu</value>
+  </data>
+  <data name="GradeMenue" xml:space="preserve">
+    <value>Grade Menue</value>
+  </data>
+  <data name="GradeName" xml:space="preserve">
+    <value>Grade Name</value>
+  </data>
+  <data name="Grades" xml:space="preserve">
+    <value>Grades</value>
+  </data>
+  <data name="Grade_Create" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="Grade_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="GRADUATIONDEGREE" xml:space="preserve">
+    <value>GRADUATION DEGREE</value>
+  </data>
+  <data name="GRADUATIONDEGREEdetail" xml:space="preserve">
+    <value>A graduate degree simply refers to higher levels of education after an undergraduate degree. 1.) Undergraduate Degrees - Bachelor of Science, Bachelor of Arts</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="Group Attendance" xml:space="preserve">
+    <value>Group Attendance Report</value>
+  </data>
+  <data name="GroupName" xml:space="preserve">
+    <value>Group Name</value>
+  </data>
+  <data name="GroupNameAr" xml:space="preserve">
+    <value>Group Name Ar</value>
+  </data>
+  <data name="GroupNameEn" xml:space="preserve">
+    <value>Group Name En</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Groups_Create" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="heshamallam" xml:space="preserve">
+    <value>Hesham Allam</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="IdNotFound" xml:space="preserve">
+    <value>Id Not Found</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Import-Sheets" xml:space="preserve">
+    <value>Import-Sheets</value>
+  </data>
+  <data name="ImportSheets" xml:space="preserve">
+    <value>Import Sheets</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="InformingParents" xml:space="preserve">
+    <value>Informing Parents</value>
+  </data>
+  <data name="InformingParents_content" xml:space="preserve">
+    <value>Keeping in touch with your parent is must for us to and for them to be updated step by step with your level.</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>Invalid Email Address !!</value>
+  </data>
+  <data name="invalid_password" xml:space="preserve">
+    <value>The Password Must Be 5 Letters Or Numbers !!</value>
+  </data>
+  <data name="Ios" xml:space="preserve">
+    <value>Ios</value>
+  </data>
+  <data name="iosdetailes" xml:space="preserve">
+    <value>You will find our app. easly in ِApp Store .</value>
+  </data>
+  <data name="IsTeacher" xml:space="preserve">
+    <value>Is Teacher</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>Job Name</value>
+  </data>
+  <data name="Job_required" xml:space="preserve">
+    <value>Please Enter Your Job!!</value>
+  </data>
+  <data name="learningmanigmentsystem" xml:space="preserve">
+    <value>learning manigment system</value>
+  </data>
+  <data name="Live Video" xml:space="preserve">
+    <value>Live Video</value>
+  </data>
+  <data name="LivePublicName" xml:space="preserve">
+    <value>Live Public Name</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="locationdetailes" xml:space="preserve">
+    <value>We are available online and can reach us from anywhere or in our branches in Egypt</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="LoginFree" xml:space="preserve">
+    <value>Login Free !</value>
+  </data>
+  <data name="Logintoyouraccount" xml:space="preserve">
+    <value>Login to your account</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="MakingPhysicsEasier" xml:space="preserve">
+    <value>Making school subjects easier</value>
+  </data>
+  <data name="MakingPhysicsEasier_content" xml:space="preserve">
+    <value>We hope to make the content of educational materials easier and accessible for every student who feels any difficulty in it.
+We will be proud of your full score.</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="MASTERYLEARNING" xml:space="preserve">
+    <value>MASTERY LEARNING</value>
+  </data>
+  <data name="MASTERYLEARNINGdetail" xml:space="preserve">
+    <value>Mastery learning is used in order to advance an individuals potential for learning. Compared to traditional learning models,, and help are afforded to each student.</value>
+  </data>
+  <data name="MaxmumStudentCount" xml:space="preserve">
+    <value>Maxmum Student Count</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>message</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Monitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="MultipleChoice" xml:space="preserve">
+    <value>Multiple Choice</value>
+  </data>
+  <data name="My Personal Information" xml:space="preserve">
+    <value>My Personal Information</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>Name Ar</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>Name En</value>
+  </data>
+  <data name="NewAppointment" xml:space="preserve">
+    <value>New Appointment</value>
+  </data>
+  <data name="NewCity" xml:space="preserve">
+    <value>New City</value>
+  </data>
+  <data name="NewGovernorate" xml:space="preserve">
+    <value>New Governorate</value>
+  </data>
+  <data name="NewGrade" xml:space="preserve">
+    <value>New Grade</value>
+  </data>
+  <data name="NewUnit" xml:space="preserve">
+    <value>New Unit</value>
+  </data>
+  <data name="NoCancle" xml:space="preserve">
+    <value>! cancle , plz </value>
+  </data>
+  <data name="NonValid" xml:space="preserve">
+    <value>non valid</value>
+  </data>
+  <data name="NotesAr" xml:space="preserve">
+    <value>NotesAr</value>
+  </data>
+  <data name="NotesEn" xml:space="preserve">
+    <value>Notes En</value>
+  </data>
+  <data name="NotificationMessage" xml:space="preserve">
+    <value>Notification Message</value>
+  </data>
+  <data name="notMatchPassword" xml:space="preserve">
+    <value>No Matching Password !!</value>
+  </data>
+  <data name="NumberOfQuestion" xml:space="preserve">
+    <value>Number Of Question</value>
+  </data>
+  <data name="Online-Students" xml:space="preserve">
+    <value>Online-Student</value>
+  </data>
+  <data name="OnlineHelp" xml:space="preserve">
+    <value>Online Help</value>
+  </data>
+  <data name="ONLINELEARNING" xml:space="preserve">
+    <value>Online Learning</value>
+  </data>
+  <data name="ONLINELEARNINGdetail" xml:space="preserve">
+    <value>In most cases, it refers to a course, program or degree delivered completely online. There are many terms used to describe learning that is delivered online Learning</value>
+  </data>
+  <data name="OnlineLearning_content" xml:space="preserve">
+    <value>We care for your full understanding by providing teachers with courses and courses for all study materials on the Internet in their distinct fields for all subjects and educational stages.</value>
+  </data>
+  <data name="OnlinePaymentService" xml:space="preserve">
+    <value>Online Payment </value>
+  </data>
+  <data name="OnlineStudents" xml:space="preserve">
+    <value>Online </value>
+  </data>
+  <data name="OnlineStudet" xml:space="preserve">
+    <value>Online Student</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="OurAccadimic" xml:space="preserve">
+    <value>Our Accadimic</value>
+  </data>
+  <data name="OurFeatures" xml:space="preserve">
+    <value>Our Features</value>
+  </data>
+  <data name="Ourwebsite" xml:space="preserve">
+    <value>Our website was founded by a former teacher who, constantly constrained for time and budget</value>
+  </data>
+  <data name="Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PDF" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="PdfAttAchmets" xml:space="preserve">
+    <value>Pdf AttAchmets</value>
+  </data>
+  <data name="PendingAcadmicStudents" xml:space="preserve">
+    <value>Pending Academic Student</value>
+  </data>
+  <data name="PendingOnlineStudents" xml:space="preserve">
+    <value>Pending Online Student</value>
+  </data>
+  <data name="PendingStudnets" xml:space="preserve">
+    <value>Pending Studnet</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>phone</value>
+  </data>
+  <data name="Playlist" xml:space="preserve">
+    <value>Playlist</value>
+  </data>
+  <data name="PleaseAddQuestions" xml:space="preserve">
+    <value>Please Add Questions</value>
+  </data>
+  <data name="PleaseEnterAValidPhoneNumber" xml:space="preserve">
+    <value>Please Enter A Valid Phone Number !!</value>
+  </data>
+  <data name="PleaseenterfullName" xml:space="preserve">
+    <value>Please Enter Full Name !!</value>
+  </data>
+  <data name="PublicName" xml:space="preserve">
+    <value>Public Name</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="QuestionAddedSuccessfully" xml:space="preserve">
+    <value>Question is addeds successfully</value>
+  </data>
+  <data name="QuestionBank" xml:space="preserve">
+    <value>QuestionBank</value>
+  </data>
+  <data name="questiondegree" xml:space="preserve">
+    <value>Questions Degree</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="QuestionsBank" xml:space="preserve">
+    <value>QuestionsBank</value>
+  </data>
+  <data name="QuestionsBankDeletedSuccessfully" xml:space="preserve">
+    <value>Questions Bank Deleted Successfully</value>
+  </data>
+  <data name="questionscount" xml:space="preserve">
+    <value>Questions count</value>
+  </data>
+  <data name="QuestionType" xml:space="preserve">
+    <value>Question Type</value>
+  </data>
+  <data name="quizes" xml:space="preserve">
+    <value>Quizes</value>
+  </data>
+  <data name="quizessearch" xml:space="preserve">
+    <value>quizes search</value>
+  </data>
+  <data name="Quizetitle" xml:space="preserve">
+    <value>Quize title</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="Refused" xml:space="preserve">
+    <value>Refused</value>
+  </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="RemmeberMe" xml:space="preserve">
+    <value>Remmeber Me</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>remove</value>
+  </data>
+  <data name="RemoveGroup" xml:space="preserve">
+    <value>Remove Group</value>
+  </data>
+  <data name="RemoveUser" xml:space="preserve">
+    <value>Remove User</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="responsive" xml:space="preserve">
+    <value>responsive</value>
+  </data>
+  <data name="responsivedetailes" xml:space="preserve">
+    <value>Our project is responsive to all Web, Android or Apple devices .</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveAnswer" xml:space="preserve">
+    <value>Save Answer</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SecondTerm" xml:space="preserve">
+    <value>Second Term</value>
+  </data>
+  <data name="SelectGrade_required" xml:space="preserve">
+    <value>A Grade Must Be Selected !!</value>
+  </data>
+  <data name="SelectGroup" xml:space="preserve">
+    <value>Select Group</value>
+  </data>
+  <data name="SelectGroups" xml:space="preserve">
+    <value>Select Groups</value>
+  </data>
+  <data name="SelectGroup_required" xml:space="preserve">
+    <value>A Group Must Be Selected !!</value>
+  </data>
+  <data name="SelectStudent" xml:space="preserve">
+    <value>Select Student</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Send Message" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>@Resources.Global.ServerErrortryagainlater</value>
+  </data>
+  <data name="show  Suggestions And Complaint" xml:space="preserve">
+    <value>show  Suggestions And Complaint</value>
+  </data>
+  <data name="show quizes" xml:space="preserve">
+    <value>show quizes</value>
+  </data>
+  <data name="SiginupFree" xml:space="preserve">
+    <value>Sigin up Free!</value>
+  </data>
+  <data name="Sign In Visitors" xml:space="preserve">
+    <value>Sign In Visitors</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="SonPhoneNumber" xml:space="preserve">
+    <value>Son Phone Numbers</value>
+  </data>
+  <data name="sonPhoneNumberRequired" xml:space="preserve">
+    <value>Please add the son phone correctly !!</value>
+  </data>
+  <data name="sStTermPath" xml:space="preserve">
+    <value>2St-Term-Path</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StayUpdated" xml:space="preserve">
+    <value>Stay Updated!</value>
+  </data>
+  <data name="STORYABOUTUS" xml:space="preserve">
+    <value>STORY ABOUT US</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>We will be proud of your full marked grade 💚</value>
+  </data>
+  <data name="struggled" xml:space="preserve">
+    <value>Our website was founded by Eng : Hesham Allam who seeks for maintaining and developing the Physics content in Egypt and the middle east for high secondary schools &amp; scientific faculties based on our resources</value>
+  </data>
+  <data name="Student" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="Student and Parent Report" xml:space="preserve">
+    <value>Student and Parent Report</value>
+  </data>
+  <data name="Student Attendance" xml:space="preserve">
+    <value>Student Attendance Report</value>
+  </data>
+  <data name="StudentType" xml:space="preserve">
+    <value>Student Type</value>
+  </data>
+  <data name="StudnetType" xml:space="preserve">
+    <value>Studnet Type</value>
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>subject</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
+  <data name="Suggestions And Complaint" xml:space="preserve">
+    <value>Suggestions And Complaint</value>
+  </data>
+  <data name="teach" xml:space="preserve">
+    <value>teach</value>
+  </data>
+  <data name="Term" xml:space="preserve">
+    <value>Term</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="Timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="TrueOrFalse" xml:space="preserve">
+    <value>True Or False</value>
+  </data>
+  <data name="TybeOfStudent" xml:space="preserve">
+    <value>Tybe Of Student</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="UnitPDF" xml:space="preserve">
+    <value>Unit PDF</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="UnitsMenu" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="Units_Create" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="Units_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>Update Successfully</value>
+  </data>
+  <data name="UpdateQuestionsBank" xml:space="preserve">
+    <value>Update Questions Banks</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>Upload Image</value>
+  </data>
+  <data name="UsedTermSystem" xml:space="preserve">
+    <value>Used Term System</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UserType" xml:space="preserve">
+    <value>User Type</value>
+  </data>
+  <data name="Valid" xml:space="preserve">
+    <value>valid</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Values</value>
+  </data>
+  <data name="Visitor" xml:space="preserve">
+    <value>Visitor</value>
+  </data>
+  <data name="walid" xml:space="preserve">
+    <value>walid</value>
+  </data>
+  <data name="webexplained" xml:space="preserve">
+    <value>Detailed explanation of the application's management and how to use it</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome  </value>
+  </data>
+  <data name="Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Windowsdetailes" xml:space="preserve">
+    <value>You will find our app. easly in Windows phone Store .</value>
+  </data>
+  <data name="WITHOURLOVE" xml:space="preserve">
+    <value> OUR LOVE.</value>
+  </data>
+  <data name="YesDelete" xml:space="preserve">
+    <value>!! yes , delete it </value>
+  </data>
+  <data name="YouCantRecover" xml:space="preserve">
+    <value>! ! you cant recover this data again</value>
+  </data>
+  <data name="YoutubeChannel" xml:space="preserve">
+    <value>Youtube Channel</value>
+  </data>
+  <data name="AddnewBlog" xml:space="preserve">
+    <value>Add new Blog</value>
+  </data>
+  <data name="addyourtexthere" xml:space="preserve">
+    <value>add your text here</value>
+  </data>
+  <data name="CreateChannel" xml:space="preserve">
+    <value>Create Channel</value>
+  </data>
+  <data name="Createstudent" xml:space="preserve">
+    <value>Create student</value>
+  </data>
+  <data name="ListofBlogs" xml:space="preserve">
+    <value>List of Blogs</value>
+  </data>
+  <data name="phoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Registrationtime" xml:space="preserve">
+    <value>Registration Time</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="SignInVisitorsReport" xml:space="preserve">
+    <value>Visitors Report</value>
+  </data>
+  <data name="StudentandParentReport" xml:space="preserve">
+    <value>Student and Parent Report</value>
+  </data>
+  <data name="StudentAttendances" xml:space="preserve">
+    <value>Student Attendances</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="timing" xml:space="preserve">
+    <value>timing</value>
+  </data>
+  <data name="ActiveAccount" xml:space="preserve">
+    <value>Active Account</value>
+  </data>
+  <data name="addgroupe" xml:space="preserve">
+    <value>Add Groupe</value>
+  </data>
+  <data name="BlockAccount" xml:space="preserve">
+    <value>Block Account</value>
+  </data>
+  <data name="coments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="creation" xml:space="preserve">
+    <value>creation</value>
+  </data>
+  <data name="detalis" xml:space="preserve">
+    <value>detalis</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>print</value>
+  </data>
+  <data name="SuggestionsAndComplaint" xml:space="preserve">
+    <value>Suggestions And Complaint</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>time</value>
+  </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>CreateStudent</value>
+  </data>
+  <data name="ContactListAndEmail" xml:space="preserve">
+    <value>Contact List And Emails</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us </value>
+  </data>
+  <data name="GroupsAndPermissions" xml:space="preserve">
+    <value>Groups And Permissions</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="AcademicStudentsReport" xml:space="preserve">
+    <value>Academic Students Report</value>
+  </data>
+  <data name="OnlineStudentsReport" xml:space="preserve">
+    <value>Online Student Report</value>
+  </data>
+  <data name="ReportOfStudentsAndParents" xml:space="preserve">
+    <value>Report Of Students And Parents</value>
+  </data>
+  <data name="EditGovernorate" xml:space="preserve">
+    <value>Edit Governorate</value>
+  </data>
+  <data name="editQuestions" xml:space="preserve">
+    <value>Edit Questions</value>
+  </data>
+  <data name="QuestionNumber" xml:space="preserve">
+    <value>Question Number</value>
+  </data>
+  <data name="QuizeReport" xml:space="preserve">
+    <value>Quize Report</value>
+  </data>
+  <data name="TotalDegree" xml:space="preserve">
+    <value>Total Degree</value>
+  </data>
+  <data name="false" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="showquestions" xml:space="preserve">
+    <value>show questions</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>state</value>
+  </data>
+  <data name="thereisnotdatatoshow" xml:space="preserve">
+    <value>there is not data to show</value>
+  </data>
+  <data name="true" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="updateuestionsBank" xml:space="preserve">
+    <value>Update QuestionsBank</value>
+  </data>
+  <data name="valide" xml:space="preserve">
+    <value>valid</value>
+  </data>
+  <data name="AddNewRecord" xml:space="preserve">
+    <value>Add New Record</value>
+  </data>
+  <data name="MANAGEYOUTUBECHANAL" xml:space="preserve">
+    <value>MANAGE YOUTUBE CHANAL</value>
+  </data>
+  <data name="SOCIAL" xml:space="preserve">
+    <value>SOCIAL</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="answers" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="Autocompletesearch" xml:space="preserve">
+    <value>Auto complete search</value>
+  </data>
+  <data name="blogedite" xml:space="preserve">
+    <value>Edite Blog</value>
+  </data>
+  <data name="dateadded" xml:space="preserve">
+    <value>Date Added</value>
+  </data>
+  <data name="dateendexame" xml:space="preserve">
+    <value>Date End Exame</value>
+  </data>
+  <data name="datestartexame" xml:space="preserve">
+    <value>Date Start Exame</value>
+  </data>
+  <data name="Designyourquize" xml:space="preserve">
+    <value>Design your quize</value>
+  </data>
+  <data name="Enteralocation" xml:space="preserve">
+    <value>Enter a location</value>
+  </data>
+  <data name="examedetails" xml:space="preserve">
+    <value>Exame Details</value>
+  </data>
+  <data name="exameduration" xml:space="preserve">
+    <value>Exame Duration</value>
+  </data>
+  <data name="Examsets" xml:space="preserve">
+    <value>Exam sets</value>
+  </data>
+  <data name="join" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="questiondetails" xml:space="preserve">
+    <value>Question Details</value>
+  </data>
+  <data name="QuestionTypedegreedetails" xml:space="preserve">
+    <value>The type and number of questions and the degree of each question</value>
+  </data>
+  <data name="SaveQuize" xml:space="preserve">
+    <value>Save Quize</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Selectanoption" xml:space="preserve">
+    <value>Select an option</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="SendStudentMessage" xml:space="preserve">
+    <value>Send Student Message</value>
+  </data>
+  <data name="Thenumberofquestionsavailable" xml:space="preserve">
+    <value>The number of questions available</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="IsUseOnlineAcdmicOption" xml:space="preserve">
+    <value>Use Online &amp; Academic </value>
+  </data>
+  <data name="MailSetting" xml:space="preserve">
+    <value>Mail Setting</value>
+  </data>
+  <data name="Option" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="SMSSetting" xml:space="preserve">
+    <value>SMS Setting</value>
+  </data>
+  <data name="UpdateMailSetting" xml:space="preserve">
+    <value>Update Mail Setting</value>
+  </data>
+  <data name="UpdateOption" xml:space="preserve">
+    <value>Update Option</value>
+  </data>
+  <data name="UpdateSMSSetting" xml:space="preserve">
+    <value>Update SMS Setting</value>
+  </data>
+  <data name="UseMailSetting" xml:space="preserve">
+    <value>Use Mail Settings</value>
+  </data>
+  <data name="UseSmsMisr" xml:space="preserve">
+    <value>Use SMS  Settings</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="deletegroup" xml:space="preserve">
+    <value>delete group</value>
+  </data>
+  <data name="deletgroupdescription" xml:space="preserve">
+    <value>Please transfer the students in this group to another group</value>
+  </data>
+  <data name="studentAnswer" xml:space="preserve">
+    <value>Student Answer</value>
+  </data>
+  <data name="studentName" xml:space="preserve">
+    <value>Student Name</value>
+  </data>
+  <data name="ConfirmDeleteoperation" xml:space="preserve">
+    <value>Confirm Delete operation</value>
+  </data>
+  <data name="TheRawhasbeensuccessfullydeleted" xml:space="preserve">
+    <value>The Raw Has Been Successfully Deleted</value>
+  </data>
+  <data name="UnauthorizedDonothavethepermesstiontodotheoperation" xml:space="preserve">
+    <value>Unauthorized , Do not have the permesstion to do the operation</value>
+  </data>
+  <data name="aaa" xml:space="preserve">
+    <value>Updated Successfully</value>
+  </data>
+  <data name="Accountstatuschangedsuccessfully" xml:space="preserve">
+    <value>The account status has changed successfully</value>
+  </data>
+  <data name="appdownload" xml:space="preserve">
+    <value>app download</value>
+  </data>
+  <data name="Buyyourcopynow" xml:space="preserve">
+    <value>Buy your copy now</value>
+  </data>
+  <data name="chooseagroupplease" xml:space="preserve">
+    <value>choose a group please</value>
+  </data>
+  <data name="ConfirmAccountApproval" xml:space="preserve">
+    <value>Confirm Account Approval</value>
+  </data>
+  <data name="ConfirmDeleteStudent" xml:space="preserve">
+    <value>Confirm Delete Student</value>
+  </data>
+  <data name="CountOrDegreemustbemorethan" xml:space="preserve">
+    <value>Count Or Degree must be more than</value>
+  </data>
+  <data name="discriptionappp" xml:space="preserve">
+    <value>As the largest educational platform in the country, we have the services, expertise and experience to make the teaching process from teacher to student simple, easy and not boring.</value>
+  </data>
+  <data name="discriptionone" xml:space="preserve">
+    <value>We offer you the Eaglez Academy Program for presenting educational applications via the Internet to help you educate your students wherever they are and help them to complete the study and exams stages on an innovative application . </value>
+  </data>
+  <data name="discriptiontwo" xml:space="preserve">
+    <value>we are an educational platform that we assist the teacher to complete his work with students and continue the review with his students during the exams. We also cover all developments provided by the teacher, whether online or on the academic scale and also follow up with parents to know them at the level of their children in the educational stages We also provide the effort for the teacher to create organized student groups in different places and appointments throughout the year</value>
+  </data>
+  <data name="DuplicatedQuizetype" xml:space="preserve">
+    <value>Duplicate Quiz type</value>
+  </data>
+  <data name="EaglezAccadmy" xml:space="preserve">
+    <value>Eaglez Academy</value>
+  </data>
+  <data name="EmailisRequired" xml:space="preserve">
+    <value>Email is Required</value>
+  </data>
+  <data name="EnterDegree" xml:space="preserve">
+    <value>Enter Degree</value>
+  </data>
+  <data name="entervalidemailaddress" xml:space="preserve">
+    <value>enter valid email address</value>
+  </data>
+  <data name="entervalidphone" xml:space="preserve">
+    <value>enter valid phone</value>
+  </data>
+  <data name="fullNameisRequired" xml:space="preserve">
+    <value>full Name is Required</value>
+  </data>
+  <data name="GetEaglezAcadmyApp" xml:space="preserve">
+    <value>Get Eaglez Acadmy App</value>
+  </data>
+  <data name="hithere" xml:space="preserve">
+    <value>hi there</value>
+  </data>
+  <data name="isinvalidallowedextensionsis" xml:space="preserve">
+    <value>is invalid, allowed extensions is</value>
+  </data>
+  <data name="Learnmoreabout" xml:space="preserve">
+    <value>Learn more about</value>
+  </data>
+  <data name="Makeeducationeasie" xml:space="preserve">
+    <value>Make education easier</value>
+  </data>
+  <data name="MessageisRequired" xml:space="preserve">
+    <value>Message is Required</value>
+  </data>
+  <data name="modelAnswer" xml:space="preserve">
+    <value>Model Answer</value>
+  </data>
+  <data name="mustbeanswercontainonesuccess" xml:space="preserve">
+    <value>must be answer contain one success</value>
+  </data>
+  <data name="NumberOfQuestionOutOfRange" xml:space="preserve">
+    <value>Number Of Question Out Of Range</value>
+  </data>
+  <data name="Numberofrecords" xml:space="preserve">
+    <value>Number of records</value>
+  </data>
+  <data name="OnlineLearningAccadmy" xml:space="preserve">
+    <value>Online Learning Academy</value>
+  </data>
+  <data name="operationaccomplishedsuccessfully" xml:space="preserve">
+    <value>operation accomplished successfully</value>
+  </data>
+  <data name="PhoneisRequired" xml:space="preserve">
+    <value>Phone is Required</value>
+  </data>
+  <data name="pleasecompleteyourquizeoptionentercountofquestion" xml:space="preserve">
+    <value>please  complete your quize option enter count of question</value>
+  </data>
+  <data name="Pleasefillinalldata" xml:space="preserve">
+    <value>Please fill in all data</value>
+  </data>
+  <data name="PleaseWriteyourComment" xml:space="preserve">
+    <value>Please Write your Comment</value>
+  </data>
+  <data name="ReadMoretwo" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="Requestafreetrial" xml:space="preserve">
+    <value>Request a free trial</value>
+  </data>
+  <data name="ServerErrortryagainlater" xml:space="preserve">
+    <value>Server-Error , try again later</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="SessionSuccessfulyEnded" xml:space="preserve">
+    <value>Session Successfuly Ended</value>
+  </data>
+  <data name="Sorry" xml:space="preserve">
+    <value>Sorry</value>
+  </data>
+  <data name="studentAnswerAnswer" xml:space="preserve">
+    <value>Student Answer</value>
+  </data>
+  <data name="Studentsuccessfullydeleted" xml:space="preserve">
+    <value>Student successfully deleted</value>
+  </data>
+  <data name="subjectisRequired" xml:space="preserve">
+    <value>subject is Required</value>
+  </data>
+  <data name="teachyourstudents" xml:space="preserve">
+    <value>teach your students</value>
+  </data>
+  <data name="TheAppointmentshasbeensuccessfullyAdded" xml:space="preserve">
+    <value>The Appointments has been successfully Added</value>
+  </data>
+  <data name="TheAppointmentshasbeensuccessfullyUpdated" xml:space="preserve">
+    <value>The Appointments has been successfully Updated</value>
+  </data>
+  <data name="Thecityhasbeensuccessfullydeleted" xml:space="preserve">
+    <value>The Cityhas been successfully deleted</value>
+  </data>
+  <data name="TheGovernoratehasbeensuccessfullyadded" xml:space="preserve">
+    <value>The Governorate has been successfully added</value>
+  </data>
+  <data name="TheGovernoratehasbeensuccessfullydeleted" xml:space="preserve">
+    <value>The Governorate has been successfully deleted</value>
+  </data>
+  <data name="ThePdfFilehasbeensuccessfullydeleted" xml:space="preserve">
+    <value>The Pdf File  has been successfully deleted</value>
+  </data>
+  <data name="Thereisnodatatodisplay" xml:space="preserve">
+    <value>There is no data to display</value>
+  </data>
+  <data name="Thescoremustbelessthanthemaximumscore" xml:space="preserve">
+    <value>The score must be less than the maximum score</value>
+  </data>
+  <data name="Thetiminghasbeensuccessfullydeleted" xml:space="preserve">
+    <value>The timing has been successfully deleted</value>
+  </data>
+  <data name="Theunithasbeensuccessfullydeleted" xml:space="preserve">
+    <value>The Entity has been successfully deleted</value>
+  </data>
+  <data name="Wanttodeleteblog" xml:space="preserve">
+    <value>Want to delete blog</value>
+  </data>
+  <data name="Wearean" xml:space="preserve">
+    <value>We are an</value>
+  </data>
+  <data name="Wehelpyouto" xml:space="preserve">
+    <value>We help you to</value>
+  </data>
+  <data name="WelcomeTo" xml:space="preserve">
+    <value>Welcome To</value>
+  </data>
+  <data name="arabicCountryNameIsRequired" xml:space="preserve">
+    <value>arabic Country Name Is Required</value>
+  </data>
+  <data name="CityNameArIsRequired" xml:space="preserve">
+    <value>City Name Ar Is Required</value>
+  </data>
+  <data name="CityNameIsRequired" xml:space="preserve">
+    <value>City Name Is Required</value>
+  </data>
+  <data name="Confirmoperation" xml:space="preserve">
+    <value>Confirm Operation</value>
+  </data>
+  <data name="Duplicatedanswer" xml:space="preserve">
+    <value>Duplicated answer</value>
+  </data>
+  <data name="DuplicatedanswerSuccess" xml:space="preserve">
+    <value>Duplicated answer Success</value>
+  </data>
+  <data name="englishCountryNameIsRequired" xml:space="preserve">
+    <value>english Country Name Is Required</value>
+  </data>
+  <data name="GovernorateNameIsRequired" xml:space="preserve">
+    <value>Governorate Name Is Required</value>
+  </data>
+  <data name="InvalidAnswer" xml:space="preserve">
+    <value>Invalid Answer</value>
+  </data>
+  <data name="Pleaseincreasethenumberofstudentsinthisgroupto" xml:space="preserve">
+    <value>Please increase the number of students in this group to</value>
+  </data>
+  <data name="pleaseselectBank" xml:space="preserve">
+    <value>please select Bank</value>
+  </data>
+  <data name="pleaseselectBankQuestions" xml:space="preserve">
+    <value>please select Bank Questions</value>
+  </data>
+  <data name="Studentsavailableinthisgroup" xml:space="preserve">
+    <value>Students available in this group</value>
+  </data>
+  <data name="transferstudent" xml:space="preserve">
+    <value>transfer student</value>
+  </data>
+  <data name="NumberOfStudentsRegistered" xml:space="preserve">
+    <value>Number Of Students Registered</value>
+  </data>
+  <data name="ThisGroupCannotBeDeletedBecauseThere_STUDNET" xml:space="preserve">
+    <value>This group cannot be deleted because there are students in it - please move students first</value>
+  </data>
+  <data name="Groups_Remove" xml:space="preserve">
+    <value>Delete Group</value>
+  </data>
+  <data name="GroupType" xml:space="preserve">
+    <value>Group Type</value>
+  </data>
+  <data name="YouWelcomeIn" xml:space="preserve">
+    <value>You Welcome In</value>
+  </data>
+  <data name="Attend" xml:space="preserve">
+    <value>Attend</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="GroupLiveVideoAttendance" xml:space="preserve">
+    <value>Group Live Video Attendance</value>
+  </data>
+  <data name="JoinNow" xml:space="preserve">
+    <value>join Now</value>
+  </data>
+  <data name="LiveBroadcastAddress" xml:space="preserve">
+    <value>Live Broadcast Address</value>
+  </data>
+  <data name="LiveSession" xml:space="preserve">
+    <value>Live Session</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>There is no data</value>
+  </data>
+  <data name="Students" xml:space="preserve">
+    <value>Students</value>
+  </data>
+  <data name="PleaseSpecifyAtLeastOneStudentOnly" xml:space="preserve">
+    <value>Please Specify At Leas tOne Student Only</value>
+  </data>
+  <data name="Examinations" xml:space="preserve">
+    <value>Examination</value>
+  </data>
+  <data name="PermissionsOfUsers" xml:space="preserve">
+    <value>Users Permissions </value>
+  </data>
+  <data name="SchoolGrade" xml:space="preserve">
+    <value>School Grades</value>
+  </data>
+  <data name="StudyGroups" xml:space="preserve">
+    <value>Study Groups</value>
+  </data>
+  <data name="StudentCountInGroup" xml:space="preserve">
+    <value>Student Count In Group</value>
+  </data>
+  <data name="ali" xml:space="preserve">
+    <value>ali</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="Matrials" xml:space="preserve">
+    <value>Matrials</value>
+  </data>
+  <data name="ShowStudentsList" xml:space="preserve">
+    <value>Show Students List</value>
+  </data>
+  <data name="UploadVideos" xml:space="preserve">
+    <value>UploadVideos</value>
+  </data>
+  <data name="vedios" xml:space="preserve">
+    <value>vedios</value>
+  </data>
+  <data name="CreateNewFolder" xml:space="preserve">
+    <value>Create New Folder</value>
+  </data>
+  <data name="FolderName" xml:space="preserve">
+    <value>Folder Name</value>
+  </data>
+  <data name="ShowFiles" xml:space="preserve">
+    <value>Show Files</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="CreateServicePrvider" xml:space="preserve">
+    <value>Create ServicePrvider</value>
+  </data>
+  <data name="ServiceProvider" xml:space="preserve">
+    <value>Service Provider</value>
+  </data>
+  <data name="A4paper" xml:space="preserve">
+    <value>A4paper</value>
+  </data>
+  <data name="AddLogo" xml:space="preserve">
+    <value>Add Logo</value>
+  </data>
+  <data name="amount" xml:space="preserve">
+    <value>amount</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="operationaccomplishedsuccessfully...!" xml:space="preserve">
+    <value>operationaccomplishedsuccessfully...!</value>
+  </data>
+  <data name="operationnumber" xml:space="preserve">
+    <value>operation number</value>
+  </data>
+  <data name="Operationnumberonthesystem" xml:space="preserve">
+    <value>Operation number on the system</value>
+  </data>
+  <data name="operationState" xml:space="preserve">
+    <value>operation State</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Payment Date</value>
+  </data>
+  <data name="paymentsystem" xml:space="preserve">
+    <value>payment system</value>
+  </data>
+  <data name="pending" xml:space="preserve">
+    <value>pending</value>
+  </data>
+  <data name="Pendingstudentpayments" xml:space="preserve">
+    <value>Pending student payments</value>
+  </data>
+  <data name="Print12A4" xml:space="preserve">
+    <value>Print 1/2 A4</value>
+  </data>
+  <data name="PrintReset" xml:space="preserve">
+    <value>Print Reset</value>
+  </data>
+  <data name="ProvidernameArabic" xml:space="preserve">
+    <value>Provider name Arabic</value>
+  </data>
+  <data name="ProvidernameEnglish" xml:space="preserve">
+    <value>Provider name English</value>
+  </data>
+  <data name="reason" xml:space="preserve">
+    <value>reason</value>
+  </data>
+  <data name="Resetpaper" xml:space="preserve">
+    <value>Resetpaper</value>
+  </data>
+  <data name="SendingDate" xml:space="preserve">
+    <value>Sending Date</value>
+  </data>
+  <data name="Studentcode" xml:space="preserve">
+    <value>Student code</value>
+  </data>
+  <data name="Studentnotes" xml:space="preserve">
+    <value>Student notes</value>
+  </data>
+  <data name="StudentPayment" xml:space="preserve">
+    <value>Student Payment</value>
+  </data>
+  <data name="supervisingadministrator" xml:space="preserve">
+    <value>supervising administrator</value>
+  </data>
+  <data name="Systemtype" xml:space="preserve">
+    <value>System type</value>
+  </data>
+  <data name="Takeoperationnumber" xml:space="preserve">
+    <value>Take operation number</value>
+  </data>
+  <data name="Takeoperationnumberfromstudent" xml:space="preserve">
+    <value>Take operation number from student</value>
+  </data>
+  <data name="thereasonofrefuse" xml:space="preserve">
+    <value>the reason of refuse</value>
+  </data>
+  <data name="Thetransactionnumberontheserviceprovider" xml:space="preserve">
+    <value>transaction number on provider</value>
+  </data>
+  <data name="Timeofsending" xml:space="preserve">
+    <value>Time of sending</value>
+  </data>
+  <data name="Uploadreceipt" xml:space="preserve">
+    <value>Upload receipt</value>
+  </data>
+  <data name="YourCode" xml:space="preserve">
+    <value>Your Code</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="BacktoHome" xml:space="preserve">
+    <value>Back to Home</value>
+  </data>
+  <data name="congratulations" xml:space="preserve">
+    <value>congratulations</value>
+  </data>
+  <data name="penemass" xml:space="preserve">
+    <value>Your Form Is Under Pending Now , It Will Activate In Less Than 24-hr.</value>
+  </data>
+  <data name="Finsh" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="Gotohome" xml:space="preserve">
+    <value>Go to Home</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="Mins" xml:space="preserve">
+    <value>Mins</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="result" xml:space="preserve">
+    <value>result</value>
+  </data>
+  <data name="review" xml:space="preserve">
+    <value>review</value>
+  </data>
+  <data name="Secs" xml:space="preserve">
+    <value>Secs</value>
+  </data>
+  <data name="Thanksforyouinformation" xml:space="preserve">
+    <value>Thanks for your information</value>
+  </data>
+  <data name="Youaredone" xml:space="preserve">
+    <value>You Are Done</value>
+  </data>
+  <data name="startTheExam" xml:space="preserve">
+    <value>Start The Exam</value>
+  </data>
+  <data name="MaxDegree" xml:space="preserve">
+    <value>Max Degree</value>
+  </data>
+  <data name="AnswerVideo" xml:space="preserve">
+    <value>Answer Video</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyVideo" xml:space="preserve">
+    <value>Copy Video</value>
+  </data>
+  <data name="StudentDegree" xml:space="preserve">
+    <value>Student Degree</value>
+  </data>
+  <data name="StudentDegreeDetails" xml:space="preserve">
+    <value>Student Degree Details</value>
+  </data>
+  <data name="StudentsDegrees" xml:space="preserve">
+    <value>Students Degrees</value>
+  </data>
+  <data name="MyFolders" xml:space="preserve">
+    <value>My Folders</value>
+  </data>
+  <data name="Showing" xml:space="preserve">
+    <value>Showing</value>
+  </data>
+  <data name="Videos" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="NewVideoAdded" xml:space="preserve">
+    <value>New Video Added</value>
+  </data>
+  <data name="NewQuizesAdded" xml:space="preserve">
+    <value>New Quize Added</value>
+  </data>
+  <data name="AddStudent" xml:space="preserve">
+    <value>Add Student</value>
+  </data>
+  <data name="AreYouSureYouWantToDeletThisStudent" xml:space="preserve">
+    <value>Are You Sure You Want To Delete This Student</value>
+  </data>
+  <data name="DeleteStudent" xml:space="preserve">
+    <value>Delete Student</value>
+  </data>
+  <data name="NoOrderFoundNow" xml:space="preserve">
+    <value>No Order Found Now</value>
+  </data>
+  <data name="NoStudentFoundNow" xml:space="preserve">
+    <value>No Student Found Now</value>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>Order Date</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Order Number</value>
+  </data>
+  <data name="PendingOrderList" xml:space="preserve">
+    <value>Pending Order List</value>
+  </data>
+  <data name="sdsdsd" xml:space="preserve">
+    <value>dasds</value>
+  </data>
+  <data name="StudentId" xml:space="preserve">
+    <value>Student ID</value>
+  </data>
+  <data name="Thedatawillbeprocessedwithin24hoursfromnow" xml:space="preserve">
+    <value>The data will be processed within 24 hours from now</value>
+  </data>
+  <data name="Thestudenthasbeenaddedwithanumber" xml:space="preserve">
+    <value>The student has been added with a number</value>
+  </data>
+  <data name="AboutCreate" xml:space="preserve">
+    <value>We Can Create an Environment That's Beyond Your Imagination.</value>
+  </data>
+  <data name="Agenda" xml:space="preserve">
+    <value>Agenda</value>
+  </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="Citizen" xml:space="preserve">
+    <value>Citizen</value>
+  </data>
+  <data name="ContPagrgraph" xml:space="preserve">
+    <value>EMPC is currently encouraging foreign production houses to shoot in Egypt and hopes to meet the production houses' goals regarding versatility,</value>
+  </data>
+  <data name="copyRight" xml:space="preserve">
+    <value>All Rights Reserved © EMPC  2022. </value>
+  </data>
+  <data name="DesignAbout" xml:space="preserve">
+    <value>Watch Our Latest Video</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="Latestnews" xml:space="preserve">
+    <value>Latest news</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>Locations</value>
+  </data>
+  <data name="MeetOurTeam" xml:space="preserve">
+    <value>Meet Our Team</value>
+  </data>
+  <data name="MoreDetails" xml:space="preserve">
+    <value>More Details</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="NewsEvents" xml:space="preserve">
+    <value>News &amp; Events</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Relatedwebsites" xml:space="preserve">
+    <value>Related websites</value>
+  </data>
+  <data name="watchVideo" xml:space="preserve">
+    <value>Watch Video</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="watchMore" xml:space="preserve">
+    <value>Watch More</value>
+  </data>
+  <data name="Deletepictureinalbum" xml:space="preserve">
+    <value>you should Delete Pictures in Album</value>
+  </data>
+  <data name="Go To Home Page" xml:space="preserve">
+    <value>Go To Home Page</value>
+  </data>
+  <data name="Not Found Page" xml:space="preserve">
+    <value>Not Found Page</value>
+  </data>
+  <data name="This Page Is Not Found" xml:space="preserve">
+    <value>Sorry, This New Is Not Found</value>
+  </data>
+  <data name="GallaryParg" xml:space="preserve">
+    <value>photos and news reports for important events in the Middle East and the world</value>
+  </data>
+  <data name="LatestNewsParg" xml:space="preserve">
+    <value>Non-stop news coverage of the most important local and international events</value>
+  </data>
+  <data name="LocationParg" xml:space="preserve">
+    <value>A variety of open filming areas on an area of 2 million square meters</value>
+  </data>
+  <data name="MISSION" xml:space="preserve">
+    <value>MISSION</value>
+  </data>
+  <data name="ServicesParg" xml:space="preserve">
+    <value>Providing foreign channels and foreign correspondents with visual news coverage inside Egypt.</value>
+  </data>
+  <data name="VISSION" xml:space="preserve">
+    <value>VISSION</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Messagedasd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SendNews" xml:space="preserve">
+    <value>Send News</value>
+  </data>
+  <data name="UploadImagesOrVideo" xml:space="preserve">
+    <value>Upload Images Or Video</value>
+  </data>
+  <data name="YourMessage" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="DateofServices" xml:space="preserve">
+    <value>Date of Services</value>
+  </data>
+  <data name="EndGMT" xml:space="preserve">
+    <value>End (00.00 GMT)</value>
+  </data>
+  <data name="EngCrew" xml:space="preserve">
+    <value>Eng Crew</value>
+  </data>
+  <data name="HatefPhone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="LiveStudio" xml:space="preserve">
+    <value>Live Studio</value>
+  </data>
+  <data name="NewsPackage" xml:space="preserve">
+    <value>News Package</value>
+  </data>
+  <data name="OBVan" xml:space="preserve">
+    <value>OBVan</value>
+  </data>
+  <data name="Origin" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PleaseClarifyYour" xml:space="preserve">
+    <value>Please Clarify Your requist's Technical Details</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Production</value>
+  </data>
+  <data name="SataliteSpace" xml:space="preserve">
+    <value>Satalite Space</value>
+  </data>
+  <data name="SendYourmessage" xml:space="preserve">
+    <value>Send Your Message</value>
+  </data>
+  <data name="SNG" xml:space="preserve">
+    <value>SNG</value>
+  </data>
+  <data name="StandupPosition" xml:space="preserve">
+    <value>Stand up Position</value>
+  </data>
+  <data name="StartGMT" xml:space="preserve">
+    <value>Start (00.00 GMT)</value>
+  </data>
+  <data name="TapeLayout" xml:space="preserve">
+    <value>Tape Layout</value>
+  </data>
+  <data name="TimeofServices" xml:space="preserve">
+    <value>Time of Services (GMT Time)</value>
+  </data>
+  <data name="TypeofServices" xml:space="preserve">
+    <value>Type of Services</value>
+  </data>
+  <data name="Uplink" xml:space="preserve">
+    <value>Uplink</value>
+  </data>
+  <data name="YourCompanyEmail" xml:space="preserve">
+    <value>Your Company Email</value>
+  </data>
+  <data name="YourCompanyName" xml:space="preserve">
+    <value>Your Company Name</value>
+  </data>
+  <data name="YourMessag" xml:space="preserve">
+    <value>YourMessag</value>
+  </data>
+  <data name="ClientsPargrapgh" xml:space="preserve">
+    <value>This global group of channels benefits from our various media services</value>
+  </data>
+  <data name="FilmedinEgypt" xml:space="preserve">
+    <value>Filmed in Egypt</value>
+  </data>
+  <data name="LocationMap" xml:space="preserve">
+    <value>Location Map</value>
+  </data>
+  <data name="OurClients" xml:space="preserve">
+    <value>Our Clients</value>
+  </data>
+</root>

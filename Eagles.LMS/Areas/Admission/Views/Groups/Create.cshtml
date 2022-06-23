@@ -1,0 +1,182 @@
+﻿@model  Eagles.LMS.BLL.GroupsTreePrivilageDTO
+@{
+    ViewBag.Title = "اضافة المجموعه";
+
+
+}
+
+
+
+
+<style>
+    .jstree-open > .jstree-anchor > .fa-folder:before {
+        margin-right: 2px;
+        content: "\f07c";
+    }
+    .kt-font-warning {
+        color: #ffb822 !important;
+    }
+    .jstree-default .jstree-icon.fa {
+        font-size: 1.1rem;
+    }
+
+
+
+
+
+
+    .kt-portlet {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+        box-shadow: 0px 0px 13px 0px rgb(228, 228, 228);
+        background-color: #fffeff;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        margin-top: 25px;
+    }
+</style>
+
+
+
+
+<div class="container-fluid" ng-controller="groupsCtrl" id="kt_content">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">@Resources.Global.GroupsAndPermissions</h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission">Home</a></li>
+                        <li class="breadcrumb-item active">@Resources.Global.GroupsAndPermissions</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3 row">
+                        <div class="col-xl-6">
+
+
+
+                            <form>
+                                <div class="mb-3">
+                                    <label for="formrow-firstname-input" class="form-label">@Resources.Global.GroupName</label>
+                                    <input ng-model="txt_groupName" placeholder=" Group name" type="text" class="form-control">
+                                </div>
+                                <div class="m-3">
+                                    <div id="jstree">
+                                    </div>
+
+                                </div>
+
+
+
+                                <div>
+
+
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- end col -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="foooterbuttons">
+                        <button ng-click="Create()" type="button" class="btn btn-success waves-effect waves-light">
+                            <i class="bx bx-check-double font-size-16 align-middle me-2"></i> @Resources.Global.addgroupe
+                        </button>
+                        <a href="/Admission/Groups" class="btn btn-danger waves-effect waves-light">
+                            <i class="fa fa-backspace back font-size-16 align-middle me-2"></i> @Resources.Global.Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div  class="kt-content  kt-grid__item kt-grid__item--fluid" >
+    <div class="kt-portlet">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <span class="kt-portlet__head-icon">
+                    <i class="kt-font-brand flaticon-edit-1"></i>
+                </span>
+                <h3 class="kt-portlet__head-title">
+                    @Resources.Global.GroupsAndPermissions
+                </h3>
+            </div>
+        </div>
+        <div class="kt-portlet__body">
+            <div class="form-group col-xl-5 col-lg-6 col-md-8 col-sm-12 ">
+                <div class="kt-input-icon kt-input-icon--left">
+                    <input  type="text" class="form-control circle " required="">
+                    <span class="placeholder">  </span>
+                    <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                        <span><i class="la la-plus"></i></span>
+                    </span>
+                </div>
+            </div>
+            <br />
+            
+            <br>
+        </div>
+        <div class="kt-portlet__foot">
+            <div class="kt-form__actions">
+                <div class="btns">
+                    <button  type="button" class="btn btn-success btn-elevate btn-elevate-air"><i class="fa fa-check"></i>  </button>
+                    <a href="/Admission/Groups" type="button" class="btn btn-danger btn-elevate btn-elevate-air btn-appearance"><i class="fa fa-backspace back"></i>@Resources.Global.Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+@section EndBody{
+    <script src="~/assets_NewDash/libs/extended/jstree.bundle.js" type="text/javascript"></script>
+    <script src="~/assets_NewDash/libs/extended/treeview.js" type="text/javascript"></script>
+    <script src="~/Componnets/Groups/Services/GroupsFactory.js"></script>
+    <script src="~/Componnets/Groups/Controllers/GroupsController.js"></script>
+}

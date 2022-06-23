@@ -1,0 +1,416 @@
+﻿@*@{
+        ViewBag.Title = "ResetPrintpage";
+    }*@
+
+
+@{
+    Layout = null;
+}
+
+
+
+
+@*@section EndHead{
+
+
+    }*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>LMS -   @ViewBag.Title </title>
+    @*<link href="~/assets/css/resetpage.css" rel="stylesheet" />*@
+    <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,700,900" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+        }
+
+        .resetpap {
+            width: 9cm;
+            border: 2px solid #ddd;
+            margin: auto;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+            .resetpap .hedare {
+            }
+
+                .resetpap .hedare .noerow {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+
+                .resetpap .hedare .imagelogo {
+                    width: 90%;
+                    margin: auto;
+                    height: auto;
+                    margin-top: 15px;
+                    padding: 10px;
+                    border: 2px solid #000;
+                    border-radius: 10px;
+                }
+
+                    .resetpap .hedare .imagelogo img {
+                        display: block;
+                        width: 40%;
+                        height: 85px;
+                        margin: auto;
+                    }
+
+                .resetpap .hedare .num-tran-moslal {
+                }
+
+                    .resetpap .hedare .num-tran-moslal table {
+                        padding-bottom: 5px;
+                    }
+
+                        .resetpap .hedare .num-tran-moslal table tbody {
+                        }
+
+                            .resetpap .hedare .num-tran-moslal table tbody tr td p {
+                                margin: auto;
+                                text-align: center;
+                                /* float: right; */
+                                margin: -6px 0;
+                                width: max-content;
+                                margin: auto;
+                                margin-bottom: -8px;
+                                margin-top: -6px;
+                                font-weight: 100;
+                            }
+
+                .resetpap .hedare .headcont {
+                    text-align: center;
+                    margin-top: 10px;
+                }
+
+                    .resetpap .hedare .headcont h2 {
+                        margin-top: 0px;
+                        margin-bottom: 0;
+                    }
+
+                    .resetpap .hedare .headcont h3 {
+                        font-size: 20px;
+                        margin-top: 0;
+                    }
+
+                    .resetpap .hedare .headcont p {
+                    }
+
+            .resetpap .content {
+                margin-top: 0;
+            }
+
+                .resetpap .content .fircont {
+                    padding: 0 .5cm;
+                }
+
+                    .resetpap .content .fircont h2 {
+                        text-align: right;
+                        font-size: 16px;
+                        margin-top: 10px;
+                        display: inline;
+                    }
+
+                    .resetpap .content .fircont p {
+                        text-align: left;
+                        margin-bottom: 0px;
+                        margin-bottom: 0px;
+                        margin-top: 0;
+                    }
+
+                    .resetpap .content .fircont .pppppp {
+                        text-align: center;
+                        font-size: 15px;
+                        display: inherit;
+                        margin-right: 0;
+                        margin-bottom: 0px;
+                        line-height: 20px;
+                    }
+
+                    .resetpap .content .fircont .code {
+                        text-align: center !important;
+                        font-size: 25px;
+                        font-weight: bold;
+                    }
+
+                    .resetpap .content .fircont .namecart {
+                        text-align: center !important;
+                        font-size: 20px;
+                        font-weight: 600;
+                        margin-top: 15px;
+                        margin-bottom: 20px;
+                    }
+
+            .resetpap .foterpage {
+                margin-top: 5px;
+                border-top: 1px dashed #aaa;
+                padding: 5px;
+            }
+
+                .resetpap .foterpage p {
+                    text-align: center;
+                    margin-bottom: 0;
+                    font-size: 15px;
+                    margin-top: 0;
+                    line-height: 20px;
+                }
+
+
+
+
+
+        table {
+            width: 100%;
+            padding-bottom: 0;
+            border-bottom: 1px dashed #aaa;
+        }
+
+            table caption {
+                text-align: center;
+                font-size: 20px;
+                font-weight: 500;
+                padding: 0;
+                /*border-top: 2px dashed #aaa;*/
+            }
+
+                table caption .namecart {
+                    margin: 0;
+                }
+
+            table tbody {
+            }
+
+                table tbody tr {
+                }
+
+                    table tbody tr td {
+                    }
+
+                        table tbody tr td h2 {
+                            text-align: center;
+                            font-size: 15px;
+                            margin-top: 0px;
+                            margin-bottom: 0px;
+                            width: max-content;
+                            margin: auto;
+                            font-weight: 500;
+                        }
+
+                        table tbody tr td p {
+                            text-align: center;
+                            font-size: 15px;
+                            margin-top: 0;
+                            margin-bottom: 0px;
+                            width: max-content;
+                            margin: auto;
+                        }
+
+                        table tbody tr td .code {
+                            font-weight: 600;
+                        }
+
+
+
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            font: 12pt "Tahoma";
+        }
+
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .resetpap {
+            width: 9cm;
+            padding: 5px 10px;
+            margin: 10mm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        @@page {
+            size: portrait;
+            margin: 0;
+        }
+
+        @@media print {
+
+            html, body {
+                width: 9cm;
+                float: left;
+                padding: 0 .5cm;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .page {
+                margin: 0 !important;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+                width: 9cm;
+                float: left;
+                padding: 0 .5cm;
+                border: 2px dashed #000;
+            }
+        }
+    </style>
+</head>
+
+
+<body class="  rtl " dir="rtl">
+    <div class="resetpap page" id="div1">
+        <div class="hedare">
+            <div class="row noerow">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="imagelogo">
+
+                        <img src="~/assets/images/logoalone.png" />
+                    </div>
+                    <div class="num-tran-moslal">
+                        <table>
+                            <caption><p class="namecart">كروت شحن فودافون </p></caption>
+                            <tbody>
+
+                                <tr>
+                                    <td><p>رقم العمليه</p></td>
+                                    <td><p>0586332544</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>رقم المسلسل</p></td>
+                                    <td><p>058651515155332544</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="content">
+
+
+            <table>
+
+                <tbody>
+
+                    <tr>
+                        <td><h2>اسم العميل  :-</h2></td>
+                        <td><p class="">حسين صبحى عطيه الشرقاوى</p></td>
+                    </tr>
+                    <tr>
+                        <td><h2>كود الشحن :-</h2></td>
+                        <td><p class="code">1479-8529-7899-1479</p></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><h2> القيمه :-  </h2></td>
+                        <td><p class="pppppp">10 <span>L.E</span></p></td>
+                    </tr>
+                    <tr>
+                        <td><h2> التاريخ :-  </h2></td>
+                        <td><p class="pppppp"> 22/10/2018 22:22:22 AM </p></td>
+                    </tr>
+                    <tr>
+                        <td><h2>طريقه الشحن :-  </h2></td>
+                        <td><p class="pppppp" style="    direction: ltr;">*858*كود الشحن #</p></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table>
+
+                <tbody>
+
+                    <tr>
+                        <td><p>اسم المركز  :-</p></td>
+                        <td><p class="">الشرقاوى-159753</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>رقم المركز :-</p></td>
+                        <td><p>159753</p></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+            <div class="fircont">
+                <h2>معلومات اضافيه :-  </h2>
+
+            </div>
+            <div class="fircont">
+
+                <p class="pppppp">- يرجى التاكد من طباعه هذه الايصال امامك </p>
+
+            </div>
+            <div class="fircont">
+
+
+                <p class="pppppp"> -المبلغ المدفوع شامل (ض . ق . م )</p>
+            </div>
+        </div>
+
+        <div class="foterpage">
+            <p>للإستفسار يرجى الاتصال على  125489</p>
+            <p>شكرا لاستخدامكم <span>All Safe</span> لخدمات دفع الفواتير والانترنت</p>
+            <p> www.All-Safe.com </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+    <script>
+        $(window).load(function () {
+            window.print();
+        });
+    </script>
+</body>
+
+</html>
+
+@*@section EndBody{
+
+
+    }*@
+
+

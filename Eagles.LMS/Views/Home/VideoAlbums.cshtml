@@ -1,0 +1,213 @@
+﻿
+@{
+    ViewBag.Title = "VideoAlbums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    UnitOfWork ctx = new UnitOfWork();
+    //var allPictures = ctx.GalaryManager.GetAll().Where(s => s.IsImage).Select(s => s.AlbumId).Distinct();
+
+
+    //var albums_img = ctx.AlbumManager.GetAll().OrderBy(s => s.Order).Where(s => allPictures.Contains(s.Id)).ToList();
+
+    var allvideos = ctx.GalaryManager.GetAll().Where(s => !s.IsImage).Select(s => s.AlbumId).Distinct();
+
+    var albums_videos = ctx.AlbumManager.GetAll().OrderBy(s => s.Order).Where(s => allvideos.Contains(s.Id)).ToList();
+
+    //var vidoes = ctx.GalaryManager.GetAll().Where(s =>! s.IsImage).OrderBy(s => s.Order).ToList();
+
+    Galary active_galary;
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    if (en == true)
+    {
+        albums_videos = albums_videos.Where(s => s.TitleEnglish != null).ToList();
+    }
+    else
+    {
+        albums_videos = albums_videos.Where(s => s.TitleArabic != null).ToList();
+
+    }
+    var Id = ViewBag.Id;
+}
+
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, Videoalbum, Album empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@section EndHeader {
+
+
+    <style>
+        .menu li a.active-a6 {
+            color: #af7a2c;
+            border-bottom: 1px solid #fff0;
+            font-weight: 500;
+        }
+    </style>
+
+
+
+    @*<link href="~/assets_NewPublic/css/lightgallery.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="~/assets_NewPublic/libs/magnific-popup/magnific-popup.css">
+}
+
+<div class="header-bc">
+    <div class="ClassImaesBG">
+        <img src="~/assets_NewPublic/images/bg/NEWBG/NewGallaryBGIN.jpg" />
+    </div>
+    <div class="PageTitleCOnt">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="title-header">
+
+                        <h3>@Resources.Global.Videos</h3>
+
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="/Home">Home</a> > </li>
+                                <li><a>@Resources.Global.Gallery</a> > </li>
+                                <li>@Resources.Global.Videos</li>
+                            </ul>
+                        </div>
+                        <!--end breadcrumb-->
+
+                    </div>
+                    <!--end title-header-->
+
+                </div>
+                <!--end col-6-->
+
+
+
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+    </div>
+</div>
+<!--end header-bc-->
+
+
+
+
+
+
+
+<div class="news">
+    <div class="container">
+        <Div class="row">
+
+
+            <div class="cleaner-h3 visible-xs"></div>
+
+
+            @foreach (var picture in albums_videos)
+            {
+                <Div class="col-md-4">
+                    <a class="new new-small small-location location-new" href="/Home/VideoDetails?albumId=@picture.Id">
+                        @*<img src="@picture.Image" class="img-responsive img-services" />*@
+                        <div class="AlbumImgItem">
+                            <div class=" imagsBG" style="background-image: url(@picture.Image)"></div>
+                        </div>
+                        <h3>
+                            @if (en)
+                            {
+                                <span>
+                                    @picture.TitleEnglish
+                                </span>
+
+                            }
+                            else
+                            {
+                                <span>
+                                    @picture.TitleArabic
+                                </span>
+                            }
+                            <p>></p>
+                        </h3>
+                    </a>
+                </Div>
+            }
+            <!--end col-4-->
+            <!--end col-4-->
+
+            <div class="cleaner-h3"></div>
+
+
+
+
+
+
+
+
+
+        </Div>
+        <!--end row-->
+    </div>
+    <!--end continer-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--end row-->
+<!--end container-->
+
+
+@section EndBody{
+    <!--        <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>-->
+    <!--<script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+    <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>-->
+    <!--        <script src="../demo/js/lg-rotate.js"></script>-->
+    <!--<script>
+        lightGallery(document.getElementById('lightgallery'));
+    </script>-->
+
+
+    <script src="~/assets_NewPublic/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets_NewPublic/libs/magnific-popup/lightbox.init.js"></script>
+}
