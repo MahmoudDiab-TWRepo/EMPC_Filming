@@ -82,14 +82,14 @@
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 
-                                                        <select class="form-control">
-                                                            <option>Nothing selected</option>
-                                                            <option>Mr.</option>
-                                                            <option>Ms.</option>
-                                                            <option>Mrs.</option>
-                                                            <option>Miss.</option>
-                                                            <option>Dr.</option>
-                                                            <option>Prof.</option>
+                                                        <select class="form-control" id="Text_Title" required>
+                                                            <option value="">Nothing selected</option>
+                                                            <option value="Mr">Mr.</option>
+                                                            <option value="Ms">Ms.</option>
+                                                            <option value="Mrs">Mrs.</option>
+                                                            <option value="Miss">Miss.</option>
+                                                            <option value="Dr">Dr.</option>
+                                                            <option value="Prof">Prof.</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -104,7 +104,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="Text_FirstName">
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="Text_LastName">
                                                     </div>
                                                 </div>
                                             </div>
@@ -132,7 +132,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="Text_JobTitle">
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,7 +146,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="Text_Organisation">
                                                     </div>
                                                 </div>
                                             </div>
@@ -160,7 +160,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="email" class="form-control">
+                                                        <input type="email" class="form-control" id="Text_Email">
                                                     </div>
                                                 </div>
                                             </div>
@@ -174,7 +174,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="Text_Phone">
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,7 +188,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <textarea class="form-control form-textarea"></textarea>
+                                                        <textarea class="form-control form-textarea" id="Text_Address"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -202,7 +202,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" id="Text_City">
                                                     </div>
                                                 </div>
                                             </div>
@@ -217,7 +217,7 @@
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 
-                                                        <select class="form-control">
+                                                        <select class="form-control" id="Text_Country">
                                                             <option>Nothing selected</option>
                                                             <option>Mr.</option>
                                                             <option>Ms.</option>
@@ -240,7 +240,7 @@
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 
-                                                        <select class="form-control">
+                                                        <select class="form-control" id="Text_Subject">
                                                             <option>Nothing selected</option>
                                                             <option>Mr.</option>
                                                             <option>Ms.</option>
@@ -262,7 +262,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <textarea class="form-control form-textarea"></textarea>
+                                                        <textarea class="form-control form-textarea" id="Text_Message"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -275,7 +275,7 @@
 
                                                     </div>
                                                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                        <button type="submit" class="btn btn-info">Submit</button>
+                                                        <button type="submit" class="btn btn-info" id="Text_BTNSubmit">Submit</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -469,7 +469,7 @@
 </div>
 <!--end news-->
 
-<div class="container sendmessage">
+<div class="container sendmessage" style="display:none">
     <div class="row">
 
         <div class="col-md-12">
@@ -482,7 +482,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" id="Text_FirstName" placeholder='@Resources.Global.FirstName' />
+                    <input type="text"  placeholder='@Resources.Global.FirstName' />
                 </div>
                 <div class="col-md-6">
                     <input type="text" id="Text_LastName" placeholder='@Resources.Global.LastName' />
@@ -512,8 +512,11 @@
 
 
 <Div class="cleaner-h3 hidden-xs"></Div>
+<div style="display:none">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13822.334720113951!2d31.43418945!3d29.9913924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1635321981691!5m2!1sar!2seg" width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13822.334720113951!2d31.43418945!3d29.9913924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1635321981691!5m2!1sar!2seg" width="100%" height="450" style="border:0;" allowfullscreen=""></iframe>
+
+</div>
 
 
 
@@ -532,45 +535,6 @@
 
     <script>
         $(() => {
-
-            //$("input[name='options']").change(s => {
-            //    s.preventDefault();
-            //    let _val = $(s.currentTarget).val();
-            //    if (_val != 'student') {
-            //        $(".box_student").slideUp();
-            //    } else {
-            //        $(".box_student").slideDown();
-
-            //    }
-            //});
-            //let ddl_grades = $("#ddl_grades"),
-            //    ddl_groups = $("#ddl_groups");
-            //    getAllGroup(ddl_grades.val());
-
-            //function getAllGroup(gradeid) {
-            //    $.ajax({
-            //        type: "GET",
-            //        url: "/api/web/Grade/" + gradeid + "/GetGroups/en",
-            //        success: function (response) {
-
-            //            let option = ``;
-            //            for (var i = 0; i < response.length; i++) {
-            //                option += `<option value=${response[i].Id}>${response[i].Name}</option>`;
-            //            }
-            //            ddl_groups.html(option);
-            //        }
-            //    });
-            //}
-
-
-            //$("#ddl_grades").change(s => {
-
-            //    ddl_groups.children("option").eq(0).nextAll().remove();
-            //    ddl_groups.empty();
-            //    getAllGroup($(s.currentTarget).val());
-
-
-            //});
 
             function errorMessage(error) {
                 $.notifyClose();
@@ -592,9 +556,11 @@
 
             }
 
-            $("#BTN_SendMessage").click(s => {
+            $("#Text_BTNSubmit").click(s => {
                 s.preventDefault();
+                
                 let obj = {};
+                console.log(obj);
                 if (validateForm(obj)) {
                     //$.ajax({
                     //    type: "POST",
@@ -627,20 +593,53 @@
             function validateForm(obj) {
 
                 let flag = false,
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+
+                    Title = $("#Text_Title").val(),
                     FirstName = $("#Text_FirstName").val(),
                     LastName = $("#Text_LastName").val(),
+                    JobTitle = $("#Text_JobTitle").val(),
+                    Organisation = $("#Text_Organisation").val();
                     Email = $("#Text_Email").val(),
                     Phone = $("#Text_Phone").val(),
+                    Address = $("#Text_Address").val(),
+                    City = $("#Text_City").val(),
+                    Country = $("#Text_Country").val();
+                    Subject = $("#Text_Subject").val(),
                     Message = $("#Text_Message").val();
 
 
-
+                if (Title.value == "" || typeof (Title) == 'undefined') {
+                    errorMessage("Please Enter Your First Name");
+                    return false;
+                }
                 if (FirstName == "" || typeof (FirstName) == 'undefined') {
                     errorMessage("Please Enter Your First Name");
                     return false;
                 }
                 if (LastName == "" || typeof (LastName) == 'undefined') {
                     errorMessage("Please Enter Your Last Name");
+                    return false;
+                }
+                if (JobTitle == "" || typeof (JobTitle) == 'undefined') {
+                    errorMessage("Please Enter Your Job Title");
+                    return false;
+                }
+                if (Organisation == "" || typeof (Organisation) == 'undefined') {
+                    errorMessage("Please Enter Organisation");
                     return false;
                 }
                 if (Email == "" || typeof (Email) == 'undefined') {
@@ -655,17 +654,39 @@
                     errorMessage("Please Enter Your Phone");
                     return false;
                 }
-
+                if (Address == "" || typeof (Address) == 'undefined') {
+                    errorMessage("Please Enter Your Address");
+                    return false;
+                }
+                if (City == "" || typeof (City) == 'undefined') {
+                    errorMessage("Please Enter Your City");
+                    return false;
+                }
+                if (Country.value == "" || typeof (Country) == 'undefined') {
+                    errorMessage("Please Select Your Country");
+                    return false;
+                }
+                if (Subject.value == "" || typeof (Subject) == 'undefined') {
+                    errorMessage("Please Select Your Subject");
+                    return false;
+                }
                 if (Message == "" || typeof (Message) == 'undefined') {
                     errorMessage("Please Write Your Message");
                     return false;
                 }
 
                 obj.Data = {
+                    Title: Title,
                     FirstName: FirstName,
                     LastName: LastName,
+                    JobTitle: JobTitle,
+                    Organisation: Organisation,
                     Email: Email,
                     Phone: Phone,
+                    Address: v,
+                    City: City,
+                    Country: Country,
+                    Subject: Subject,
                     Message: Message,
                 }
                 return true;

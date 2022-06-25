@@ -47,6 +47,8 @@ namespace Eagles.LMS.BLL
         public RelatedWebSiteManager RelatedWebSiteManager { get { return new RelatedWebSiteManager(ctx); } }
         public TeamManager TeamManager { get { return new TeamManager(ctx); } }
 
+        public CustomerManager CustomerManager { get { return new CustomerManager(ctx); } }
+
         public NewManager NewManager { get { return new NewManager(ctx); } }
 
         public CitizensManager CitizensManager { get { return new CitizensManager(ctx); } }

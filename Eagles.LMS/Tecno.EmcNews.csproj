@@ -367,6 +367,7 @@
     <Compile Include="Areas\Admission\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admission\Controllers\CitizensController.cs" />
     <Compile Include="Areas\Admission\Controllers\ClientsController.cs" />
+    <Compile Include="Areas\Admission\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admission\Controllers\LogsController.cs" />
     <Compile Include="Areas\Admission\Controllers\SettingsController.cs" />
     <Compile Include="BLL\AlbumManager.cs" />
@@ -375,11 +376,12 @@
     <Compile Include="BLL\BookingServiceManager.cs" />
     <Compile Include="BLL\CitizensManager.cs" />
     <Compile Include="BLL\ClientsManager.cs" />
+    <Compile Include="BLL\CustomerManager.cs" />
     <Compile Include="BLL\logManager.cs" />
     <Compile Include="BLL\SettingsManager.cs" />
-    <Compile Include="Migrations\202206221602221_first.cs" />
-    <Compile Include="Migrations\202206221602221_first.designer.cs">
-      <DependentUpon>202206221602221_first.cs</DependentUpon>
+    <Compile Include="Migrations\202206251729376_ffifir.cs" />
+    <Compile Include="Migrations\202206251729376_ffifir.designer.cs">
+      <DependentUpon>202206251729376_ffifir.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -450,6 +452,7 @@
     <Compile Include="Models\AgendaImages.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Galary.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\GroupPriviage.cs" />
@@ -1689,6 +1692,9 @@
     <Content Include="assets_New_Puplic\img\NewImg\about-1 %281%29.rar" />
     <Content Include="assets_New_Puplic\libs\magnific-popup\fonts\lg.ttf" />
     <Content Include="assets_New_Puplic\libs\magnific-popup\fonts\lg.woff" />
+    <Content Include="Areas\Admission\Views\Customers\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\Customers\Create.cshtml" />
+    <Content Include="Areas\Admission\Views\Customers\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <Content Include="Scripts_2\angular-sanitize.js" />
@@ -1821,8 +1827,8 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206221602221_first.resx">
-      <DependentUpon>202206221602221_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206251729376_ffifir.resx">
+      <DependentUpon>202206251729376_ffifir.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
