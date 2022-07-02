@@ -40,12 +40,15 @@ namespace Eagles.LMS.Models
 
         //[Required(ErrorMessage = "Home Tap Description Arabic Is Required")]
         [AllowHtml]
-        public string HomeTapDescriptionArabic { get; set; }
+        public string WHoWeDescriptionArabic { get; set; }
         //[Required(ErrorMessage = "Home Tap Description English Is Required")]
         [AllowHtml]
 
-        public string HomeTapDescriptionEnglish { get; set; }
+        public string WhoWeDescriptionEnglish { get; set; }
         //[Required(ErrorMessage = "Profile Description Arabic Is Required")]
+
+        public string ImageWhoWe { get; set; }
+
         [AllowHtml]
         public string ProfileDescriptionArabic { get; set; }
         //[Required(ErrorMessage = "Profile Description English Is Required")]

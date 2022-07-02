@@ -1,4 +1,4 @@
-﻿
+﻿@model Customer
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
@@ -62,23 +62,23 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="mb-3">
                                             <label class="form-label">Job Title Arabic</label>
-                                            @Html.TextBoxFor(s => s.JobTitleArabic, new
+                                            @Html.TextBoxFor(s => s.MessageArabic, new
                                        {
                                            @class = "form-control",
                                            placeholder = "Job Title Arabic"
                                        })
-                                            @Html.ValidationMessageFor(s => s.JobTitleArabic)
+                                            @Html.ValidationMessageFor(s => s.MessageArabic)
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="mb-3">
                                             <label class="form-label">Job Title English</label>
-                                            @Html.TextBoxFor(s => s.JobTitleEnglish, new
+                                            @Html.TextBoxFor(s => s.MessageEnglish, new
                                        {
                                            @class = "form-control",
                                            placeholder = "Job Title English"
                                        })
-                                            @Html.ValidationMessageFor(s => s.JobTitleEnglish)
+                                            @Html.ValidationMessageFor(s => s.MessageEnglish)
                                         </div>
                                     </div>
 

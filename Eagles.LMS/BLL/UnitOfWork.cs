@@ -48,9 +48,18 @@ namespace Eagles.LMS.BLL
         public TeamManager TeamManager { get { return new TeamManager(ctx); } }
 
         public CustomerManager CustomerManager { get { return new CustomerManager(ctx); } }
+        public ProceduresManager ProceduresManager { get { return new ProceduresManager(ctx); } }
+
+        public DocumentsManager DocumentsManager { get { return new DocumentsManager(ctx); } }
+
+        public WhoWeAreManager WhoWeAreManager { get { return new WhoWeAreManager(ctx); } }
+        public FacilitiesManager FacilitiesManager { get { return new FacilitiesManager(ctx); } }
 
         public NewManager NewManager { get { return new NewManager(ctx); } }
 
+        public WhyFilmedManager WhyFilmedManager { get { return new WhyFilmedManager(ctx); } }
+        public FilmedManager FilmedManager { get { return new FilmedManager(ctx); } }
+        public FilmedImagesManager FilmedImagesManager { get { return new FilmedImagesManager(ctx); } }
         public CitizensManager CitizensManager { get { return new CitizensManager(ctx); } }
         public SettingsManager SettingsManager { get { return new SettingsManager(ctx); } }
         public BookingManager BookingManager { get { return new BookingManager(ctx); } }

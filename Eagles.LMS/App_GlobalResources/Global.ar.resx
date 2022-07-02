@@ -1918,4 +1918,34 @@
   <data name="OurClients" xml:space="preserve">
     <value>عملائنا</value>
   </data>
+  <data name="HappyCustomers" xml:space="preserve">
+    <value>افضل عملائنا</value>
+  </data>
+  <data name="AudioLanguages" xml:space="preserve">
+    <value>لغة الصوت</value>
+  </data>
+  <data name="FilmGallary" xml:space="preserve">
+    <value>صور عن الفلم</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>التصنيف</value>
+  </data>
+  <data name="ReleaseDate" xml:space="preserve">
+    <value>تاريخ الانتاج</value>
+  </data>
+  <data name="RunTime" xml:space="preserve">
+    <value>مدة الفيديو</value>
+  </data>
+  <data name="Subtitles" xml:space="preserve">
+    <value>الترجمة</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>مشاهده</value>
+  </data>
+  <data name="WhoWeAre" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="WhyFilminginEgypt" xml:space="preserve">
+    <value>لماذا التصوير من مصر</value>
+  </data>
 </root>

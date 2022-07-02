@@ -61,6 +61,37 @@ namespace Eagles.LMS.Web_Services
 
 
         [HttpPost]
+        [Route("api/GlobalServices/RemoveFilmedImg")]
+        public async Task<IHttpActionResult> RemoveFilmdImg(int id)
+        {
+            UnitOfWork ctx = new UnitOfWork();
+            var filmedImg = ctx.FilmedImagesManager.GetBy(id);
+            if (filmedImg != null)
+            {
+                ctx.FilmedImagesManager.Delete(filmedImg);
+                return Ok();
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        [Route("api/GlobalServices/RemoveFilmedMainImg")]
+        public async Task<IHttpActionResult> RemoveFilmedMainImg(int id)
+        {
+            UnitOfWork ctx = new UnitOfWork();
+            var _filmed = ctx.FilmedManager.GetBy(id);
+            if (_filmed != null)
+            {
+                _filmed.MainImage = "";
+                ctx.FilmedManager.UpdateWithSave(_filmed);
+
+                return Ok();
+            }
+            return NotFound();
+        }
+
+
+        [HttpPost]
         [Route("api/GlobalServices/RemoveAgendaMainImg")]
         public async Task<IHttpActionResult> RemoveAgendaMainImg(int id)
         {

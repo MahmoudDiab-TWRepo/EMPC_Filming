@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Eagles.LMS.Models
 {
-    [Table("Customers")]
+    [Table("Customer")]
     public class Customer
     {
         public int Id { get; set; }
@@ -24,10 +24,10 @@ namespace Eagles.LMS.Models
 
         //[Required(ErrorMessage = "Job Title Arabic Is Required")]
 
-        public string JobTitleArabic { get; set; }
+        public string MessageArabic { get; set; }
         //[Required(ErrorMessage = "Job Title English Is Required")]
 
-        public string JobTitleEnglish { get; set; }
+        public string MessageEnglish { get; set; }
 
         public DateTime CreateTime { get; set; }
         public int UserCreateId { get; set; }

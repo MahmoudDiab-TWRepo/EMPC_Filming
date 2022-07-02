@@ -4,6 +4,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using Eagles.LMS.BLL
+@using Eagles.LMS.App_GlobalResources
+
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="About empcnews, Who We Are, Empc Facility, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@{
+    UnitOfWork ctx = new UnitOfWork();
+    var Document = ctx.DocumentsManager.GetAll().FirstOrDefault();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+
+
+
+}
+
 <!-- Page Tile -->
 <div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg')">
     <div class="container">
@@ -36,7 +60,18 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="about-wrapper mb-30">
                     <div class="section-title">
-                        <h1>Documents needed from <br>forigin production compains</h1>
+
+                        @if (en)
+                        {
+                            <h1>@Document.TitleEnglish</h1>
+                            <p>@Html.Raw(Document.DescriptionEnglish)</p>
+                        }
+                        else
+                        {
+                            <h1>@Document.TitleArabic</h1>
+                            <p>@Html.Raw(Document.DescriptionArabic)</p>
+                        }
+                        @*<h1>Documents needed from <br>forigin production compains</h1>
                         <p>But we must orem ipsum dolor sit amet consectetur adipisicing elitsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adeste minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
                         <h1>Documents needed from </h1>
                         <ul>
@@ -58,7 +93,7 @@
                             <li>
                                 <p>But we must orem ipsum dolor sit amet consectetur adipisicing    </p>
                             </li>
-                        </ul>
+                        </ul>*@
 
                     </div>
                     <div class="about-button" style="display: none">
@@ -68,7 +103,7 @@
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="about-img mb-30">
-                    <img src="~/assets_New_Puplic/img/NewImg/BG/About2.jpg" alt="">
+                    <img src="@Document.Image" alt="">
                 </div>
             </div>
         </div>

@@ -2,8 +2,31 @@
 @{
     ViewBag.Title = "FilmedInEgypt";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    UnitOfWork ctx = new UnitOfWork();
+    var _filmed = new List<Filmed>();
+    bool en = true;
 
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+    if (en == true)
+    {
+        _filmed = ctx.FilmedManager.GetAll().Where(s => s.Status == EntityStatus.Approval && s.TitleEnglish != null).OrderByDescending(s => s.Order).ToList();
+
+    }
+    else
+    {
+        _filmed = ctx.FilmedManager.GetAll().Where(s => s.Status == EntityStatus.Approval && s.TitleArabic != null).OrderByDescending(s => s.Order).ToList();
+
+    }
+}
+@section metatags{
+    <meta name="keywords" id="metaKeyword" content="empcnews, news, empc, " />
+    <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+    <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
 <!-- Page Tile -->
 <div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg');">
     <div class="container">
@@ -12,7 +35,7 @@
                 <nav aria-label="breadcrumb">
                     <div class="gen-breadcrumb-title">
                         <h1>
-                            Filming in Egypt
+                            @Resources.Global.FilmedinEgypt
                         </h1>
                     </div>
                     <div class="gen-breadcrumb-container">
@@ -34,146 +57,71 @@
     <div class="container">
         <div class="NewPresContet">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="NewPresItem">
-                        <div class="uperSecPres">
-                            <div class="images">
-                                <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f15c.jpeg)"></div>
-                                <!--                                            <img src="img/NewImg/n1.png">-->
-                            </div>
-                            <div class="DatePrss">
-                                <span>03 <br> Jun</span>
-                            </div>
-                        </div>
-                        <div class="lovwerSec">
-                            <div class="TitlePress">
-                                <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
-                            </div>
-                            <div class="Discripton">
-                                <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
-                            </div>
-                            <div class="ReadMoreLink">
-                                <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="NewPresItem">
-                        <div class="uperSecPres">
-                            <div class="images">
-                                <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f18c.jpeg)"></div>
+
+                @foreach (var film in _filmed)
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewPresItem">
+                            <div class="uperSecPres">
+                                <div class="images">
+                                    <div class="BGImages" style="background-image: url(@film.MainImage)"></div>
+                                </div>
+                                @*<div class="DatePrss">
+                                    <span>03 <br> Jun</span>
+                                </div>*@
                             </div>
-                            <div class="DatePrss">
-                                <span>03 <br> Jun</span>
-                            </div>
-                        </div>
-                        <div class="lovwerSec">
-                            <div class="TitlePress">
-                                <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
-                            </div>
-                            <div class="Discripton">
-                                <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
-                            </div>
-                            <div class="ReadMoreLink">
-                                <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="NewPresItem">
-                        <div class="uperSecPres">
-                            <div class="images">
-                                <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f1c.jpeg)"></div>
-                            </div>
-                            <div class="DatePrss">
-                                <span>03 <br> Jun</span>
-                            </div>
-                        </div>
-                        <div class="lovwerSec">
-                            <div class="TitlePress">
-                                <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
-                            </div>
-                            <div class="Discripton">
-                                <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
-                            </div>
-                            <div class="ReadMoreLink">
-                                <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
+                            <div class="lovwerSec">
+                                @if (en)
+                                {
+                                    <div class="TitlePress">
+                                        <h2>@film.TitleEnglish</h2>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="TitlePress">
+                                        <h2>@film.TitleArabic</h2>
+                                    </div>
+                                }
+
+                                <div class="ReadMoreLink">
+                                    <a href="/Home/FilmedInEgyptDetails/@film.Id">@Resources.Global.ReadMore </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="NewPresItem">
-                        <div class="uperSecPres">
-                            <div class="images">
-                                <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f20c.jpeg)"></div>
-                            </div>
-                            <div class="DatePrss">
-                                <span>03 <br> Jun</span>
-                            </div>
-                        </div>
-                        <div class="lovwerSec">
-                            <div class="TitlePress">
-                                <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
-                            </div>
-                            <div class="Discripton">
-                                <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
-                            </div>
-                            <div class="ReadMoreLink">
-                                <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
+                }
+
+
+
+
+
+
+                @*<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="NewPresItem">
+                <div class="uperSecPres">
+                    <div class="images">
+                        <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f18c.jpeg)"></div>
+                    </div>
+                    <div class="DatePrss">
+                        <span>03 <br> Jun</span>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="NewPresItem">
-                        <div class="uperSecPres">
-                            <div class="images">
-                                <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f21c.jpeg)"></div>
-                            </div>
-                            <div class="DatePrss">
-                                <span>03 <br> Jun</span>
-                            </div>
-                        </div>
-                        <div class="lovwerSec">
-                            <div class="TitlePress">
-                                <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
-                            </div>
-                            <div class="Discripton">
-                                <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
-                            </div>
-                            <div class="ReadMoreLink">
-                                <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
+                <div class="lovwerSec">
+                    <div class="TitlePress">
+                        <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
+                    </div>
+                    <div class="Discripton">
+                        <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
+                    </div>
+                    <div class="ReadMoreLink">
+                        <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="NewPresItem">
-                        <div class="uperSecPres">
-                            <div class="images">
-                                <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f2c.jpeg)"></div>
-                            </div>
-                            <div class="DatePrss">
-                                <span>03 <br> Jun</span>
-                            </div>
-                        </div>
-                        <div class="lovwerSec">
-                            <div class="TitlePress">
-                                <h2>2021’s highest grossing US independent film - HITMAN'S WIFE BODYGUARD</h2>
-                            </div>
-                            <div class="Discripton">
-                                <p>Younger audiences returned to North American cinemas in 2021 but independent, international and da...</p>
-                            </div>
-                            <div class="ReadMoreLink">
-                                <a href="/Home/FilmedInEgyptDetails">Read More <span><i class="fas fa-long-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>*@
+
             </div>
 
             <div class="PagePaginationItems">

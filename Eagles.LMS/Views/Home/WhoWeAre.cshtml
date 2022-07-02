@@ -3,10 +3,28 @@
     ViewBag.Title = "WhoWeAre";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Eagles.LMS.BLL
+@using Eagles.LMS.App_GlobalResources
+
 @section metatags{
     <meta name="keywords" id="metaKeyword" content="About empcnews, Who We Are, Empc Facility, news, empc, " />
     <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
     <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+}
+
+@{
+    UnitOfWork ctx = new UnitOfWork();
+    var WhoWe = ctx.WhoWeAreManager.GetAll().FirstOrDefault();
+    bool en = true;
+
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+
+
+
 }
 <!-- Page Tile -->
 <div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg');">
@@ -16,17 +34,17 @@
                 <nav aria-label="breadcrumb">
                     <div class="gen-breadcrumb-title">
                         <h1>
-                            Who We Are
+                           @Resources.Global.WhoWeAre
                         </h1>
                     </div>
                     <div class="gen-breadcrumb-container">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html"><i class="fas fa-home mr-2"></i>Home</a>
+                                <a href="/Home"><i class="fas fa-home mr-2"></i>@Resources.Global.Home</a>
                             </li>
 
 
-                            <li class="breadcrumb-item active">About Us</li>
+                            <li class="breadcrumb-item active">@Resources.Global.Aboutus</li>
                         </ol>
                     </div>
                 </nav>
@@ -43,19 +61,35 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="AboutStudioContent">
                         <div class="Tirlrlre">
-                            <h2>
-                                Who <span>We Are</span>
-                            </h2>
+                            @if (en)
+                            {
+                                <h2>
+                                    Who <span>We Are</span>
+                                </h2>
+                            }
+                            else
+                            {
+                                <h2>
+                                    من  <span>نحن</span>
+                                </h2>
+                            }
+
                         </div>
                         <div class="Discription">
-                            <p>Quickly incentivize impactful action items before tactical collaboration and idea-sharing. Monotonically engage market-driven intellectual capital through wireless opportunities. Progressively network performance based services for functionalized testing procedures.</p>
-                            <p>Quickly incentivize impactful action items before tactical collaboration and idea-sharing. Monotonically engage market-driven intellectual capital through wireless opportunities. Progressively network performance based services for functionalized testing procedures.</p>
+                            @if (en)
+                            {
+                                <p>@Html.Raw(WhoWe.DescriptionEnglish)</p>
+                            }
+                            else
+                            {
+                                <p>@Html.Raw(WhoWe.DescriptionArabic)</p>
+                            }
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="imageGirl">
-                        <div class="imgBG" style="background-image: url(/assets_New_Puplic/img/NewImg/Mask_Group_18.png)"></div>
+                        <div class="imgBG" style="background-image: url(@WhoWe.Image)"></div>
                     </div>
                 </div>
 

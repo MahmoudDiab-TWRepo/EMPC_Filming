@@ -47,3 +47,104 @@ p {
     top: 1px;
     right: 5px;
 }
+
+.newLocationSction{
+    direction:ltr;
+}
+    .newLocationSction .gen-banner-movies .gen-movie-contain .gen-movie-info h3 {
+
+        font-family: inherit;
+    }
+    .newLocationSction .gen-button {
+        font-family: inherit;
+    }
+.FilmingInEgypy {
+    direction: ltr;
+}
+    .FilmingInEgypy .FilmingInEgypCOntent .FilmingInEgypyGroupItem .interview .interview__cover span {
+
+        right: 30px;
+        left: auto;
+    }
+.gen-breadcrumb-container .breadcrumb li {
+    text-transform: capitalize;
+    list-style-type: none;
+    margin-left: 15px;
+    margin-right: 0;
+    padding-left: 0;
+    align-items: center;
+}
+.gen-breadcrumb-container .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    padding-left: 15px;
+    padding-right: 0;
+    content: "\f124";
+}
+.gen-breadcrumb-container .breadcrumb li a i {
+    margin-left: 0.5rem !important;
+}
+.filmingDetails .FilmingDetCont .FilmingInfo .gen-single-meta-holder ul {
+
+    float: right;
+}
+.Filmingpage {
+    direction: ltr;
+}
+.FilmGallary .owl-nav {
+    left: 0;
+    right: auto;
+}
+.FilmGallary .titleGallary h2::before {
+    right: 0;
+    left: auto;
+}
+.contact-address-icon {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.collFacilitis:nth-child(even) {
+    direction: ltr;
+}
+.FacilityPage .facilitycont .facilityCont .manDisc {
+    margin-bottom: 25px;
+    border-left: 0px solid #e50916;
+    padding: 0 15px;
+    border-right: 2px solid #e50916;
+}
+.FacilityPage .facilitycont .facilityCont {
+    padding-right:0;
+    padding-left: 100px;
+}
+
+
+.AboutStudio .AboutStudioContent .Tirlrlre {
+    border-right: 10px solid #f7335d;
+    border-left: 0;
+}
+.AboutStudio .AboutStudioContent .Discription p {
+    text-align: right;
+}
+
+.main-menu nav > ul > li .sub-menu{
+    left:auto;
+    right:0;
+}
+    .main-menu nav > ul > li .sub-menu li a {
+        text-align: right;
+    }
+.filmingDetails .FilmingDetCont .FilmingInfo .gen-single-meta-holder ul li:last-child span {
+   
+    font-family: 'Cairo';
+}
+.FilmingInEgypy .FilmingInEgypCOntent .titile h2 span {
+
+    font-family: 'Cairo';
+}
+.certificate-active{
+    direction:ltr;
+}
+.team-bg {
+    margin-left: 70px;
+    direction: ltr;
+}

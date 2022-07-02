@@ -37,8 +37,16 @@ namespace Eagles.LMS.Data
 
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<New> News { get; set; }
+
+        public DbSet<Filmed> Filmed { get; set; }
+        public DbSet<FilmedImages> FilmedImages { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<AboutUs> AboutUs { get; set; }
+
+        public DbSet<Procedures> Procedures { get; set; }
+        public DbSet<Documents> Documents { get; set; }
+
+        public DbSet<WhoWeAre> WhoWeAre { get; set; }
         public DbSet<Galary> Galaries { get; set; }
         public DbSet<Service> Services { get; set; }
 
@@ -47,6 +55,10 @@ namespace Eagles.LMS.Data
 
         public DbSet<Team> Teams { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Facilities> Facilities { get; set; }
+
+        public DbSet<WhyFilmed> WhyFilmed { get; set; }
         public DbSet<ServiceImages> ServiceImages { get; set; } 
 
         public DbSet<Citizens> Citizens { get; set; }

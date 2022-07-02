@@ -115,10 +115,32 @@ namespace Eagles.LMS.Controllers
             //return Redirect("/Admission");
             return View();
         }
-        public ActionResult FilmedInEgyptDetails()
+        public ActionResult FilmedInEgyptDetails(int id)
         {
+            var _filmed = new Filmed();
+            bool en = true;
+
+            if (Request.Cookies["Language"] != null)
+            {
+                en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+            }
+            if (en == true)
+            {
+                _filmed = new UnitOfWork().FilmedManager.GetAll().Where(s => s.TitleEnglish != null).FirstOrDefault(s => s.Id == id);
+
+            }
+            else
+            {
+                _filmed = new UnitOfWork().FilmedManager.GetAll().Where(s => s.TitleArabic != null).FirstOrDefault(s => s.Id == id);
+
+            }
+            if (_filmed == null)
+                return View("NotFound");
+            _filmed.FilmedImages = new UnitOfWork().FilmedImagesManager.GetAllBind().Where(s => s.FilmedId == _filmed.Id).ToList();
+
             //return Redirect("/Admission");
-            return View();
+            return View(_filmed);
         }
         public ActionResult ContactUsHome()
         {

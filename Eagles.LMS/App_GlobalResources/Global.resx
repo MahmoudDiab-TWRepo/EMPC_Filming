@@ -2028,4 +2028,34 @@ We will be proud of your full score.</value>
   <data name="OurClients" xml:space="preserve">
     <value>Our Clients</value>
   </data>
+  <data name="HappyCustomers" xml:space="preserve">
+    <value>Happy Customers</value>
+  </data>
+  <data name="WhoWeAre" xml:space="preserve">
+    <value>Who We Are</value>
+  </data>
+  <data name="AudioLanguages" xml:space="preserve">
+    <value>Audio Languages</value>
+  </data>
+  <data name="FilmGallary" xml:space="preserve">
+    <value>Filmed Gallary</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="ReleaseDate" xml:space="preserve">
+    <value>Release Date</value>
+  </data>
+  <data name="RunTime" xml:space="preserve">
+    <value>Run Time</value>
+  </data>
+  <data name="Subtitles" xml:space="preserve">
+    <value>Subtitles</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="WhyFilminginEgypt" xml:space="preserve">
+    <value>Why Filmed in Egypt</value>
+  </data>
 </root>

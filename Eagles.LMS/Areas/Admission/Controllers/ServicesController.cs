@@ -306,5 +306,17 @@ namespace Eagles.LMS.Areas.Admission.Controllers
             ctx.ServiceManager.Delete(entity);
             return Json(JsonRequestBehavior.AllowGet);
         }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

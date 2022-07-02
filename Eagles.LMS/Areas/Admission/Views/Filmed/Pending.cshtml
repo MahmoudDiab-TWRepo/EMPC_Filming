@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "Pending";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    int index = 1;
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">
+                    <a href="/Admission/Filmed/Create" class="btn btn-success waves-effect waves-light"> <i class="bx bx-plus font-size-16 align-middle me-2"></i> Add Filmed</a>
+                </h4>
+
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/Admission">Home</a></li>
+                        <li class="breadcrumb-item active">Pending Filmed</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_Slider" class=" table table-bordered tableOtherdite">
+                            <thead class="DarkThead">
+                                <tr>
+
+                                    <th><p>Order</p></th>
+                                    <th><p>Action</p></th>
+                                    <th> <p>Accept</p> </th>
+                                    <th> <p>Refused</p> </th>
+                                    <th><p>Show Home </p></th>
+                                    <th> <p>Main Image</p> </th>
+                                    <th> <p>Title  Arabic</p> </th>
+                                    <th> <p>Title  English</p> </th>
+                                    <th> <p>Type English</p> </th>
+                                    <th> <p>Views Number</p> </th>
+                                    <th> <p>Language English</p> </th>
+                                    <th> <p>Subtitle English</p></th>
+                                    <th> <p>Audio Language English</p></th>
+                                    <th> <p>Genre English</p></th>
+                                    <th> <p>Run Time</p></th>
+                                    <th> <p>Release Date</p></th>
+                                    <th> <p>User Created</p> </th>
+                                    <th> <p>Created Time</p> </th>
+
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td><p>@item.Order</p></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="bx bx-dots-horizontal-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item align-middle " href="/Admission/Filmed/Edit/@item.Id"><i class="bx bx-edit font-size-16 me-1"></i>@Resources.Global.Edit</a>
+                                                <a class="dropdown-item text-danger align-middle btn_delete" data-id="@item.Id" href="#"><i class="bx bx-trash font-size-16 me-1"></i>@Resources.Global.Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success align-middle btn_changeStatus d-block" data-id="@item.Id" style="width:max-content" data-name="Approval"><i class="bx bx-check font-size-16 me-1"></i>Approval</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger align-middle btn_changeStatus d-block" style="width:max-content" data-id="@item.Id" data-name="Rejected"><i class="bx bx-x font-size-16 me-1"></i>Reject</a>
+                                    </td>
+                                    <td><p>@item.ShowInHomePage</p></td>
+                                    <td>
+                                        <a href="@item.MainImage" class="btnIconImages" target="_blank">
+                                            <i class="bx bx-image"></i>
+                                        </a>
+                                    </td>
+                                    <td><p class="FontArabic">@item.TitleArabic</p></td>
+                                    <td><p>@item.TitleEnglish</p></td>
+                                    <td><p>@item.TypeEnglish</p></td>
+                                    <td><p>@item.ViewsNumber</p></td>
+                                    <td><p>@item.LanguageEnglish</p></td>
+                                    <td><p>@item.SubtitleEnglish</p></td>
+                                    <td><p>@item.AudioLanguageEnglish</p></td>
+                                    <td><p>@item.GenreEnglish</p></td>
+                                    <td><p>@item.RunTime</p></td>
+                                    <td><p>@item.ReleaseDate</p></td>
+                                    <td><p>@ctx.UserManager.GetBy(item.UserCreateId).FullName</p></td>
+                                    <td><p>@item.CreatedTime</p></td>
+
+                                </tr>
+                                    {
+                                        index += 1;
+                                    }
+                                }
+
+                            </tbody>
+
+
+
+
+
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div>
+
+</div>
+
+
+
+@section EndBody{
+    <script>
+        $(function () {
+
+  $("body").on("click", ".btn_delete", (s) => {
+                let self = $(s.currentTarget),
+                    entityId = self.attr('data-id');
+                bootbox.confirm("@Resources.Global.ConfirmDeleteoperation !", function (flag) {
+                    if (flag) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Admission/Filmed/Delete/" + entityId+"",
+                            success: (response) => {
+                                toastr.success('@Resources.Global.Theunithasbeensuccessfullydeleted', '', { timeOut: 10000 });
+                                self.closest('tr').remove();
+                            }, error: (error) => {
+                                // unauthorize
+                                let errorMessage = manageAjaxError(error);
+                                pushNotification("danger", errorMessage);
+                            }
+                        });
+                    }
+                })
+
+
+  });
+
+            $("body").on("click", ".btn_changeStatus", (s) => {
+                let self = $(s.currentTarget),
+                    entityId = self.attr('data-id'),
+                    dataName = self.attr('data-name');
+                bootbox.confirm("Confirm " + dataName+" Object", function (flag) {
+                    if (flag) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Admission/Filmed/Pending?id=" + entityId + "&status=" + dataName+"",
+                            success: (response) => {
+                                toastr.success('The Object Has Been Successfully ' + dataName+'', '', { timeOut: 10000 });
+                                self.closest('tr').remove();
+                            }, error: (error) => {
+                                // unauthorize
+                                let errorMessage = manageAjaxError(error);
+                                pushNotification("danger", errorMessage);
+                            }
+                        });
+                    }
+                })
+
+
+            });
+        });
+    </script>
+
+}
+

@@ -537,8 +537,8 @@ $("[data-background]").each(function () {
     
     
     
-        $('.filminginegypt-Caurosel').owlCarousel({
-		loop: true,
+	$('.filminginegypt-Caurosel').owlCarousel({
+		loop: false,
 		nav: true,
 		dots: false,
 		autoplay: false,

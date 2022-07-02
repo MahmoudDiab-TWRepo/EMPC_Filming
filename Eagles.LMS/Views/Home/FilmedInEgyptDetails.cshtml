@@ -1,12 +1,23 @@
-﻿
+﻿@model Eagles.LMS.Models.Filmed
 @{
     ViewBag.Title = "FilmedInEgyptDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    bool en = true;
 
+    if (Request.Cookies["Language"] != null)
+    {
+        en = (Request.Cookies["Language"].Value.ToString() == "en") ? true : false;
+
+    }
+}
+@*@section metatags{
+        <meta name="keywords" id="metaKeyword" content="empcnews, news, empc, " />
+        <meta name="description" id="metaDesc" content="Non-stop news coverage of the most important local and international events" />
+        <link rel="canonical" id="canonicalUrl" href="https://www.empcnews.com" />
+    }*@
 @section EndHeader{
     <link rel="stylesheet" href="~/assets_New_Puplic/libs/magnific-popup/magnific-popup.css">
-    }
+}
 <!-- Page Tile -->
 <div class="PageSectionTitle" style="background-image: url('/assets_New_Puplic/img/NewImg/Location/asset-21.jpg');">
     <div class="container">
@@ -14,17 +25,22 @@
             <div class="col-lg-12">
                 <nav aria-label="breadcrumb">
                     <div class="gen-breadcrumb-title">
-                        <h1>
-                            Filming in Egypt
-                        </h1>
+                        @if (en)
+                        {
+                            <h1>@Model.TitleEnglish</h1>
+                        }
+                        else
+                        {
+                            <h1>@Model.TitleArabic</h1>
+                        }
                     </div>
                     <div class="gen-breadcrumb-container">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html"><i class="fas fa-home mr-2"></i>Home</a>
+                                <a href="index.html"><i class="fas fa-home mr-2"></i>@Resources.Global.Home</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="/Home/FilmedInEgypt">Filming in Egypt</a>
+                                <a href="/Home/FilmedInEgypt">@Resources.Global.FilmedinEgypt</a>
                             </li>
                         </ol>
                     </div>
@@ -40,79 +56,133 @@
     <div class="container">
         <div class="FilmingDetCont">
             <div class="videoIframe" style="margin-bottom: 10px;">
-                <iframe src="https://www.youtube.com/embed/XHOmBV4js_E" name="iFrame Name" scrolling="No" height="100%" width="100%" style="border: none;"></iframe>
+                <iframe src="@Model.VideoIframe" name="iFrame Name" scrolling="No" height="100%" width="100%" style="border: none;"></iframe>
 
 
             </div>
 
-            <div class="Imagesss" style="display: none">
-                <img src="img/NewImg/bg_2.jpg">
-            </div>
+            @*<div class="Imagesss">
+                    <img src="@Model.MainImage">
+                </div>*@
             <div class="FilmingInfo">
-                <h2 class="filmName">My Generation</h2>
+                @if (en)
+                {
+                    <h2 class="filmName">@Model.TitleEnglish</h2>
+                }
+                else
+                {
+                    <h2 class="filmName">@Model.TitleArabic</h2>
+                }
+
                 <div class="gen-single-meta-holder">
-                    <ul>
-                        <li class="gen-sen-rating">Action</li>
-                        <li>
-                            <i class="fas fa-eye">
-                            </i>
-                            <span>237 Views</span>
-                        </li>
-                    </ul>
+                    @if (en)
+                    {
+                        <ul>
+
+                            <li class="gen-sen-rating">@Model.TypeEnglish</li>
+                            <li>
+                                <i class="fas fa-eye">
+                                </i>
+                                <span>@Model.ViewsNumber @Resources.Global.Views</span>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+
+                            <li class="gen-sen-rating">@Model.TypeArabic</li>
+                            <li>
+                                <i class="fas fa-eye">
+                                </i>
+                                <span>@Model.ViewsNumber @Resources.Global.Views</span>
+                            </li>
+                        </ul>
+                    }
+
                 </div>
                 <div class="discription">
-                    <p>
-                        Streamlab is a long established fact that a reader will be distracted by the
-                        readable
-                        content of a page when Streamlab at its layout. The point of using Lorem
-                        Streamlab
-                        is that it has a more-or-less normal distribution of Streamlab as opposed
-                        Streamlab. Streamlab is a long established fact that a reader will be distracted by the
-                        readable
-                        content of a page when Streamlab at its layout. The point of using Lorem
-                        Streamlab
-                        is that it has a more-or-less normal distribution of Streamlab as opposed
-                        Streamlab.
-                    </p>
+                    @if (en)
+                    {
+                        <p>@Html.Raw(@Model.DescriptionEnglish)</p>
+                    }
+                    else
+                    {
+                        <p>@Html.Raw(@Model.DescriptionArabic)</p>
+                    }
                 </div>
 
                 <div class="gen-after-excerpt">
                     <div class="gen-extra-data">
-                        <ul>
-                            <li>
-                                <span>Language :</span>
-                                <span>English</span>
-                            </li>
-                            <li>
-                                <span>Subtitles :</span>
-                                <span>English</span>
-                            </li>
-                            <li>
-                                <span>Audio Languages :</span>
-                                <span>English</span>
-                            </li>
-                            <li>
-                                <span>Genre :</span>
-                                <span>
-                                    <a href="action.html">
-                                        Action,
-                                    </a>
-                                </span>
-                                <span>
-                                    <a href="adventure.html">
-                                        Documentary
-                                    </a>
-                                </span>
-                            </li>
-                            <li>
-                                <span>Run Time :</span>
-                                <span>1hr 24 mins</span>
-                            </li>
-                            <li>
-                                <span>Release Date :</span>
-                                <span>14 Aug,2018</span>
-                            </li>
-                        </ul>
+                        @if (en)
+                        {
+                            <ul>
+                                <li>
+                                    <span>@Resources.Global.Language :</span>
+
+                                    <span>@Model.LanguageEnglish</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.Subtitles :</span>
+                                    <span>@Model.SubtitleEnglish</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.AudioLanguages :</span>
+                                    <span>@Model.AudioLanguageEnglish</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.Genre :</span>
+                                    <span>
+                                        <a>
+                                            @Model.GenreEnglish
+                                        </a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.RunTime :</span>
+                                    <span>@Model.RunTime</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.ReleaseDate :</span>
+                                    <span>@Model.ReleaseDate.ToShortDateString()</span>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>
+                                    <span>@Resources.Global.Language :</span>
+
+                                    <span>@Model.LanguageArabic</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.Subtitles :</span>
+                                    <span>@Model.SubtitleArabic</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.AudioLanguages :</span>
+                                    <span>@Model.AudioLanguageArabic</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.Genre :</span>
+                                    <span>
+                                        <a>
+                                            @Model.GenreArabic
+                                        </a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.RunTime :</span>
+                                    <span>@Model.RunTime</span>
+                                </li>
+                                <li>
+                                    <span>@Resources.Global.ReleaseDate :</span>
+                                    <span>@Model.ReleaseDate.ToShortDateString()</span>
+                                </li>
+                            </ul>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -123,49 +193,44 @@
 
 
 
+@if (Model.FilmedImages != null && Model.FilmedImages.Any())
+{
+    <div class="Filmingpage">
+        <div class="container">
+            <div class="FilmGallary">
 
-<div class="Filmingpage">
-    <div class="container">
-        <div class="FilmGallary">
-
-            <div class="titleGallary">
-                <h2>Film Gallary</h2>
-            </div>
-
-            <div class="FilmGallary_caurosel owl-carousel popup-gallery2">
-                <div class="GallaryItem">
-                    <a href="/assets_New_Puplic/img/NewImg/f15c.jpeg">
-
-                        <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f15c.jpeg)"></div>
-                    </a>
+                <div class="titleGallary">
+                    <h2>@Resources.Global.FilmGallary</h2>
                 </div>
 
-                <div class="GallaryItem">
-                    <a href="/assets_New_Puplic/img/NewImg/f6c.jpeg">
+                <div class="FilmGallary_caurosel owl-carousel popup-gallery2">
 
-                        <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f6c.jpeg)"></div>
-                    </a>
-                </div>
-                <div class="GallaryItem">
-                    <a href="/assets_New_Puplic/img/NewImg/f18c.jpeg">
+                    @foreach (var item in Model.FilmedImages)
+                    {
+                        <div class="GallaryItem">
+                            <a href="@item.Path">
 
-                        <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f18c.jpeg)"></div>
-                    </a>
-                </div>
-                <div class="GallaryItem">
-                    <a href="/assets_New_Puplic/img/NewImg/f7c.jpeg">
+                                <div class="BGImages" style="background-image: url(@item.Path)"></div>
+                            </a>
+                        </div>
+                    }
 
-                        <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f7c.jpeg)"></div>
-                    </a>
+
+                    @*<div class="GallaryItem">
+                        <a href="/assets_New_Puplic/img/NewImg/f6c.jpeg">
+
+                            <div class="BGImages" style="background-image: url(/assets_New_Puplic/img/NewImg/f6c.jpeg)"></div>
+                        </a>
+                    </div>*@
+
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
-
-
-@section EndBody{
-    <script src="~/assets_New_Puplic/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="~/assets_New_Puplic/libs/magnific-popup/lightbox.init.js"></script>
 }
+    @section EndBody{
+        <script src="~/assets_New_Puplic/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="~/assets_New_Puplic/libs/magnific-popup/lightbox.init.js"></script>
+    }

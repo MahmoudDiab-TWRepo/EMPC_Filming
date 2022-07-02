@@ -8648,7 +8648,8 @@ font-size: 35px;
 
 .tetstNewSeccc{
     padding: 50px 0;
-    background: #161616
+    background: #161616;
+    direction:ltr;
 }
 .tetstNewSeccc .section-title h1{
     color: #fff;
@@ -11552,20 +11553,34 @@ font-size: 36px;
     transition: 0.5s;
         display: block;
     width: 100%;
+    height:250px;
 }
-.FilmingInEgypy .FilmingInEgypCOntent .FilmingInEgypyGroupItem .interview .interview__cover span{
+
+    .FilmingInEgypy .FilmingInEgypCOntent .FilmingInEgypyGroupItem .interview .interview__cover .imagesBg {
+        display: block;
+        height: 250px;
+    }
+        .FilmingInEgypy .FilmingInEgypCOntent .FilmingInEgypyGroupItem .interview .interview__cover .imagesBg .BGIMG {
+            background-position:center;
+            height:100%;
+            background-size:cover;
+        }
+
+
+
+    .FilmingInEgypy .FilmingInEgypCOntent .FilmingInEgypyGroupItem .interview .interview__cover span {
         font-size: 15px;
         z-index: 3;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 15px;
-    color: #e0e0e0;
-    bottom: 30px;
-    left: 30px;
-}
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 15px;
+        color: #e0e0e0;
+        bottom: 30px;
+        left: 30px;
+    }
 .FilmingInEgypy .FilmingInEgypCOntent .FilmingInEgypyGroupItem .interview .interview__cover span svg{
         width: 28px;
     margin-right: 12px;
@@ -11933,6 +11948,67 @@ position: fixed;
     color: #fff;
     font-size: 15px;
 }
+
+
+
+
+
+
+.collFacilitis:nth-child(even){
+    direction:rtl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media(max-width:991px) {
     .ImageBrandItem{

@@ -368,8 +368,14 @@
     <Compile Include="Areas\Admission\Controllers\CitizensController.cs" />
     <Compile Include="Areas\Admission\Controllers\ClientsController.cs" />
     <Compile Include="Areas\Admission\Controllers\CustomersController.cs" />
+    <Compile Include="Areas\Admission\Controllers\DocumentsController.cs" />
+    <Compile Include="Areas\Admission\Controllers\FacilitiesController.cs" />
+    <Compile Include="Areas\Admission\Controllers\FilmedController.cs" />
     <Compile Include="Areas\Admission\Controllers\LogsController.cs" />
+    <Compile Include="Areas\Admission\Controllers\ProceduresController.cs" />
     <Compile Include="Areas\Admission\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admission\Controllers\WhoWeAreController.cs" />
+    <Compile Include="Areas\Admission\Controllers\WhyFilmedController.cs" />
     <Compile Include="BLL\AlbumManager.cs" />
     <Compile Include="BLL\BookingInServicesManager.cs" />
     <Compile Include="BLL\BookingManager.cs" />
@@ -377,11 +383,18 @@
     <Compile Include="BLL\CitizensManager.cs" />
     <Compile Include="BLL\ClientsManager.cs" />
     <Compile Include="BLL\CustomerManager.cs" />
+    <Compile Include="BLL\DocumentsManager.cs" />
+    <Compile Include="BLL\FacilitiesManager.cs" />
+    <Compile Include="BLL\FilmedImagesManager.cs" />
+    <Compile Include="BLL\FilmedManager.cs" />
     <Compile Include="BLL\logManager.cs" />
+    <Compile Include="BLL\ProceduresManager.cs" />
     <Compile Include="BLL\SettingsManager.cs" />
-    <Compile Include="Migrations\202206251729376_ffifir.cs" />
-    <Compile Include="Migrations\202206251729376_ffifir.designer.cs">
-      <DependentUpon>202206251729376_ffifir.cs</DependentUpon>
+    <Compile Include="BLL\WhoWeAreManager.cs" />
+    <Compile Include="BLL\WhyFilmedManager.cs" />
+    <Compile Include="Migrations\202207021329181_intialProject.cs" />
+    <Compile Include="Migrations\202207021329181_intialProject.designer.cs">
+      <DependentUpon>202207021329181_intialProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -453,6 +466,10 @@
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Documents.cs" />
+    <Compile Include="Models\Facilities.cs" />
+    <Compile Include="Models\Filmed.cs" />
+    <Compile Include="Models\FilmedImages.cs" />
     <Compile Include="Models\Galary.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\GroupPriviage.cs" />
@@ -464,6 +481,7 @@
     <Compile Include="Models\NewImages.cs" />
     <Compile Include="Models\Privilage.cs" />
     <Compile Include="Models\PrivilageRoute.cs" />
+    <Compile Include="Models\Procedures.cs" />
     <Compile Include="Models\RelatedWebSite.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceImages.cs" />
@@ -473,6 +491,8 @@
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserTybe.cs" />
+    <Compile Include="Models\WhoWeAre.cs" />
+    <Compile Include="Models\WhyFilmed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_GlobalResources\Global.ar.Designer.cs">
       <DependentUpon>Global.ar.resx</DependentUpon>
@@ -1695,6 +1715,19 @@
     <Content Include="Areas\Admission\Views\Customers\Index.cshtml" />
     <Content Include="Areas\Admission\Views\Customers\Create.cshtml" />
     <Content Include="Areas\Admission\Views\Customers\Edit.cshtml" />
+    <Content Include="Areas\Admission\Views\Facilities\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\Facilities\Edit.cshtml" />
+    <Content Include="Areas\Admission\Views\Facilities\Create.cshtml" />
+    <Content Include="Areas\Admission\Views\Procedures\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\Documents\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\WhoWeAre\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\Filmed\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\Filmed\Pending.cshtml" />
+    <Content Include="Areas\Admission\Views\Filmed\Create.cshtml" />
+    <Content Include="Areas\Admission\Views\Filmed\Edit.cshtml" />
+    <Content Include="Areas\Admission\Views\WhyFilmed\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\WhyFilmed\Create.cshtml" />
+    <Content Include="Areas\Admission\Views\WhyFilmed\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <Content Include="Scripts_2\angular-sanitize.js" />
@@ -1827,8 +1860,8 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206251729376_ffifir.resx">
-      <DependentUpon>202206251729376_ffifir.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202207021329181_intialProject.resx">
+      <DependentUpon>202207021329181_intialProject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

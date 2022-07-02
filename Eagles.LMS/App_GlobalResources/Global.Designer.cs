@@ -735,6 +735,15 @@ namespace Eagles.LMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Audio Languages.
+        /// </summary>
+        public static string AudioLanguages {
+            get {
+                return ResourceManager.GetString("AudioLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto complete search.
         /// </summary>
         public static string Autocompletesearch {
@@ -1896,6 +1905,15 @@ namespace Eagles.LMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filmed Gallary.
+        /// </summary>
+        public static string FilmGallary {
+            get {
+                return ResourceManager.GetString("FilmGallary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Result.
         /// </summary>
         public static string Finsh {
@@ -2009,6 +2027,15 @@ namespace Eagles.LMS.App_GlobalResources {
         public static string GenerateReport {
             get {
                 return ResourceManager.GetString("GenerateReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genre.
+        /// </summary>
+        public static string Genre {
+            get {
+                return ResourceManager.GetString("Genre", resourceCulture);
             }
         }
         
@@ -2288,6 +2315,15 @@ namespace Eagles.LMS.App_GlobalResources {
         public static string GroupType {
             get {
                 return ResourceManager.GetString("GroupType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Happy Customers.
+        /// </summary>
+        public static string HappyCustomers {
+            get {
+                return ResourceManager.GetString("HappyCustomers", resourceCulture);
             }
         }
         
@@ -4012,6 +4048,15 @@ namespace Eagles.LMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Release Date.
+        /// </summary>
+        public static string ReleaseDate {
+            get {
+                return ResourceManager.GetString("ReleaseDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reminder.
         /// </summary>
         public static string Reminder {
@@ -4143,6 +4188,15 @@ namespace Eagles.LMS.App_GlobalResources {
         public static string review {
             get {
                 return ResourceManager.GetString("review", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run Time.
+        /// </summary>
+        public static string RunTime {
+            get {
+                return ResourceManager.GetString("RunTime", resourceCulture);
             }
         }
         
@@ -4876,6 +4930,15 @@ namespace Eagles.LMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subtitles.
+        /// </summary>
+        public static string Subtitles {
+            get {
+                return ResourceManager.GetString("Subtitles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suggestions And Complaint.
         /// </summary>
         public static string Suggestions_And_Complaint {
@@ -5560,6 +5623,15 @@ namespace Eagles.LMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Views.
+        /// </summary>
+        public static string Views {
+            get {
+                return ResourceManager.GetString("Views", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Visitor.
         /// </summary>
         public static string Visitor {
@@ -5655,6 +5727,24 @@ namespace Eagles.LMS.App_GlobalResources {
         public static string WelcomeTo {
             get {
                 return ResourceManager.GetString("WelcomeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Who We Are.
+        /// </summary>
+        public static string WhoWeAre {
+            get {
+                return ResourceManager.GetString("WhoWeAre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why Filmed in Egypt.
+        /// </summary>
+        public static string WhyFilminginEgypt {
+            get {
+                return ResourceManager.GetString("WhyFilminginEgypt", resourceCulture);
             }
         }
         

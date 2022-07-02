@@ -96,6 +96,8 @@ namespace Eagles.LMS.Areas.Admission.Controllers
         {
             return View();
         }
+
+        [HttpPost]
         public ActionResult Create(Customer customer, HttpPostedFileBase uploadattachments)
         {
 
@@ -180,7 +182,7 @@ namespace Eagles.LMS.Areas.Admission.Controllers
                 ActionTime = DateTime.Now,
                 EntityId = id,
                 TableName = "Customer",
-                Action = "Delete:Customer",
+                Action = "Delete:Facilities",
                 LoginDate = user.LoginDate,
                 LogoutDate = user.LogoutDate,
                 ActionTitle = entity.NameArabic
