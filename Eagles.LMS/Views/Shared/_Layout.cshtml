@@ -33,6 +33,18 @@
 <html>
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PM2WDHP');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
 
     <title>EMPC Filming - @ViewBag.Title</title>
     <meta name="description" content="">
@@ -72,13 +84,15 @@
     @RenderSection("EndHeader", required: false)
     <script src="https://kit.fontawesome.com/7ecf8dac4e.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P3SFNELG1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSJLLS6N99"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-1P3SFNELG1');
+
+        gtag('config', 'G-CSJLLS6N99');
     </script>
+
 
 </head>
 
@@ -98,33 +112,33 @@
                         <div class="main-menu text-right">
                             <nav id="mobile-menu">
                                 <ul class="UlNavBare">
-                                    <li class="active"><a href="/">@Resources.Global.Home</a></li>
-                                    <li>
-                                        <a href="">@Resources.Global.Aboutus</a>
+                                    <li class="active1"><a href="/">@Resources.Global.Home</a></li>
+                                    <li class="active2">
+                                        <a >@Resources.Global.Aboutus</a>
                                         <ul class="sub-menu text-left">
-                                            <li><a href="/Home/WhoWeAre">Who We Are  </a></li>
-                                            <li><a href="/Home/AboutUs"> About EMPC  </a></li>
-                                            <li><a href="/Home/Facilities"> EMPC Facilities </a></li>
+                                            <li><a href="/Home/WhoWeAre">@Resources.Global.WhoWeAre  </a></li>
+                                            <li><a href="/Home/AboutUs"> @Resources.Global.AboutEMPC  </a></li>
+                                            <li><a href="/Home/Facilities"> @Resources.Global.EMPCFacilities </a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="">@Resources.Global.services</a>
+                                    <li class="active3">
+                                        <a >@Resources.Global.services</a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="/Home/Services">Our services </a></li>
                                             <li><a href="/Home/Procedures"> Our Procedures  </a></li>
                                             <li><a href="/Home/Documents"> Our Documents  </a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="">@Resources.Global.Locations</a>
+                                    <li class="active4">
+                                        <a >@Resources.Global.Locations</a>
                                         <ul class="sub-menu text-left">
                                             <li><a href="/Home/EgyptLocations">Egypt Locations   </a></li>
                                             <li><a href="/Home/OutDoorLocations"> EMPC Outdoor </a></li>
 
                                         </ul>
                                     </li>
-                                    <li><a href="/Home/FilmedInEgypt">@Resources.Global.FilmedinEgypt</a></li>
-                                    <li><a href="/Home/ContactUsHome">@Resources.Global.ContactUs</a></li>
+                                    <li class="active5"><a href="/Home/FilmedInEgypt">@Resources.Global.FilmedinEgypt</a></li>
+                                    <li class="active6"><a href="/Home/ContactUsHome">@Resources.Global.ContactUs</a></li>
                                 </ul>
                             </nav>
                         </div>

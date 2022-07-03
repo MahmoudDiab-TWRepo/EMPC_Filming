@@ -112,102 +112,103 @@
                                             @*@Html.ValidationMessageFor(s => s.DescriptionEnglish)*@
                                         </div>
                                     </div>
-
-                                    <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Who We Are Description Arabic</label>
-                                            @Html.TextAreaFor(s => s.WHoWeDescriptionArabic, new
-                                       {
-                                           @class = "form-control FontArabic textarea",
-                                           placeholder = "Who We Description Arabic"
-                                       })-->
-                                            @*@Html.ValidationMessageFor(s => s.HomeTapDescriptionArabic)*@
-                                        <!--</div>
-                                    </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Who We Are Description English</label>
-                                            @Html.TextAreaFor(s => s.WhoWeDescriptionEnglish, new
+                                            <label class="form-label">Title About inner Arabic </label>
+                                            @Html.TextBoxFor(s => s.MessageTapDescriptionArabic, new
                                        {
-                                           @class = "form-control textarea",
-                                           placeholder = "Who We Description English"
-                                       })-->
-                                            @*@Html.ValidationMessageFor(s => s.HomeTapDescriptionEnglish)*@
-                                        <!--</div>
-                                    </div>-->
-
-                                    @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                        <div class="mb-3">
-                                                            <label for="formFile" class="form-label">Who We Are Image <span class="extiniosType">(jpg, png, peg, gif, jpg)</span><span class="extiniosType">(W:512px, H:612px)</span></label>
-                                                            <input class="form-control" name="uploadattachments" type="file" id="uploadattachments">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-md-12">
-                                                        @if (Model != null && Model.ImageWhoWe != null)
-                                                        {
-                                                            <img style="max-width: auto; height: 210px " src="@Model.ImageWhoWe" />
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>*@
-
-
-
-
-
-
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Who We Description Arabic</label>
-                                            @Html.TextAreaFor(s => s.ProfileDescriptionArabic, new
-                                       {
-                                           @class = "form-control FontArabic textarea",
-                                           placeholder = "Profile Description Arabic"
-                                       })
-                                            @*@Html.ValidationMessageFor(s => s.ProfileDescriptionArabic)*@
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Profile Description English</label>
-                                            @Html.TextAreaFor(s => s.ProfileDescriptionEnglish, new
-                                       {
-                                           @class = "form-control textarea",
-                                           placeholder = "Profile Description English"
-                                       })
-                                            @*@Html.ValidationMessageFor(s => s.ProfileDescriptionEnglish)*@
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Message Tap Description Arabic </label>
-                                            @Html.TextAreaFor(s => s.MessageTapDescriptionArabic, new
-                                       {
-                                           @class = "form-control FontArabic textarea",
-                                           placeholder = "Message Tap Description Arabic "
+                                           @class = "form-control FontArabic ",
+                                           placeholder = "Title About inner Arabic "
                                        })
                                             @*@Html.ValidationMessageFor(s => s.MessageTapDescriptionArabic)*@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Message Description English</label>
-                                            @Html.TextAreaFor(s => s.MessageTapDescriptionEnglish, new
+                                            <label class="form-label">Title About inner  English</label>
+                                            @Html.TextBoxFor(s => s.MessageTapDescriptionEnglish, new
                                        {
-                                           @class = "form-control textarea",
-                                           placeholder = "Message Tap Description English"
+                                           @class = "form-control ",
+                                           placeholder = "Title About inner  English"
                                        })
                                             @*@Html.ValidationMessageFor(s => s.MessageTapDescriptionEnglish)*@
                                         </div>
                                     </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">About Inner Description Arabic</label>
+                                            @Html.TextAreaFor(s => s.ProfileDescriptionArabic, new
+                                       {
+                                           @class = "form-control FontArabic textarea",
+                                           placeholder = "About Inner Description Arabic"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.ProfileDescriptionArabic)*@
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">About Inner Description English</label>
+                                            @Html.TextAreaFor(s => s.ProfileDescriptionEnglish, new
+                                       {
+                                           @class = "form-control textarea",
+                                           placeholder = "About Inner Description English"
+                                       })
+                                            @*@Html.ValidationMessageFor(s => s.ProfileDescriptionEnglish)*@
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+     <div class="mb-3">
+         <label class="form-label">Who We Are Description Arabic</label>
+         @Html.TextAreaFor(s => s.WHoWeDescriptionArabic, new
+    {
+        @class = "form-control FontArabic textarea",
+        placeholder = "Who We Description Arabic"
+    })-->
+                                    @*@Html.ValidationMessageFor(s => s.HomeTapDescriptionArabic)*@
+                                    <!--</div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="mb-3">
+            <label class="form-label">Who We Are Description English</label>
+            @Html.TextAreaFor(s => s.WhoWeDescriptionEnglish, new
+       {
+           @class = "form-control textarea",
+           placeholder = "Who We Description English"
+       })-->
+                                    @*@Html.ValidationMessageFor(s => s.HomeTapDescriptionEnglish)*@
+                                    <!--</div>
+    </div>-->
+                                    @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Who We Are Image <span class="extiniosType">(jpg, png, peg, gif, jpg)</span><span class="extiniosType">(W:512px, H:612px)</span></label>
+                                <input class="form-control" name="uploadattachments" type="file" id="uploadattachments">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            @if (Model != null && Model.ImageWhoWe != null)
+                            {
+                                <img style="max-width: auto; height: 210px " src="@Model.ImageWhoWe" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+
+
+
 
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="row">

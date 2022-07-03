@@ -150,6 +150,15 @@ namespace Eagles.LMS.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About EMPC.
+        /// </summary>
+        public static string AboutEMPC {
+            get {
+                return ResourceManager.GetString("AboutEMPC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to easy education.
         /// </summary>
         public static string abouttitel {
@@ -1712,6 +1721,15 @@ namespace Eagles.LMS.App_GlobalResources {
         public static string EmailOrPhone {
             get {
                 return ResourceManager.GetString("EmailOrPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EMPC Facilities.
+        /// </summary>
+        public static string EMPCFacilities {
+            get {
+                return ResourceManager.GetString("EMPCFacilities", resourceCulture);
             }
         }
         

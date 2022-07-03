@@ -49,7 +49,7 @@ $("[data-background]").each(function () {
 		BasicSlider.slick({
 			autoplay: false,
 			autoplaySpeed: 10000,
-			dots: false,
+			dots: true,
 			fade: true,
 			prevArrow: '<button type="button" class="slick-prev"> <i class="far fa-chevron-left"></i> </button>',
 			nextArrow: '<button type="button" class="slick-next"> <i class="far fa-chevron-right"></i> </button>',

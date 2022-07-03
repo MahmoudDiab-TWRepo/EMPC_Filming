@@ -210,37 +210,37 @@ namespace Eagles.LMS.Web_Services
 
 
         [HttpPost]
-        [Route("api/GlobalServices/AddBooking")]
+        [Route("api/GlobalServices/ContactRequist")]
 
-        public async Task<IHttpActionResult> AddBooking([FromBody] Booking booking)
+        public async Task<IHttpActionResult> ContactRequist([FromBody] ConatctRequist contactrequist)
         {
             var ctx = new UnitOfWork();
-            var book = ctx.BookingManager.Add(booking);
-            string ServicesNames = "";
+            var contr = ctx.ContactRequistManager.Add(contactrequist);
+            //string ServicesNames = "";
 
-            if (book.Services != null && book.Services.Any())
-            {
-                foreach (var item in book.Services)
-                {
-                    ServicesNames += ctx.BookingServiceManager.GetAll().FirstOrDefault(s => s.Id == item).Name + "\n";
-                    ctx.BookingInServicesManager.Add(new BookingInServices
-                    {
-                        BookingServiceId = item,
-                        BookingId = book.Id
+            //if (book.Services != null && book.Services.Any())
+            //{
+            //    foreach (var item in book.Services)
+            //    {
+            //        ServicesNames += ctx.BookingServiceManager.GetAll().FirstOrDefault(s => s.Id == item).Name + "\n";
+            //        ctx.BookingInServicesManager.Add(new BookingInServices
+            //        {
+            //            BookingServiceId = item,
+            //            BookingId = book.Id
 
-                    });
-                }
-            }
+            //        });
+            //    }
+            //}
             //try send email
-            try
-            {
-                new SendEmail().SendMail(new EmailDTO { To = book.CompanyEmail, Message = book.Message + "<br />" + "<b style='font-size:12px; line-height:1.5'>Company Name:</b>" + booking.CompanyName + "<br />" + "<b style='font-size:12px; line-height:1.5'>Booking Start time:</b>" + book.SartTime + "<br />" + "<b style='font-size:12px; line-height:1.5'>Booking End Time :</b>" + book.EndTime + "<br />" + "<b style='font-size:12px; line-height:1.5'>Orgin:</b>" + book.Origin + "<br />" + "<b style='font-size:12px; line-height:1.5'>Booking Services:</b>" + ServicesNames, From = "web@empcnews.com", Subject = "New Booking" });
-                //new SendEmail().SendMail(new EmailDTO { To = book.CompanyEmail, Message = book.Message + "\n" + "Company Name:" + booking.CompanyName + "\n" + "Booking Start time:" + book.SartTime + "\n" + "Booking End Time :" + book.EndTime + "\n" + "Orgin:" + book.Origin + "\n" + "Booking Services:" + ServicesNames, From = "web@empcnews.com", Subject = "New Booking" });
-            }
-            catch
-            {
+            //try
+            //{
+            //    new SendEmail().SendMail(new EmailDTO { To = contr.CompanyEmail, Message = contr.Message + "<br />" + "<b style='font-size:12px; line-height:1.5'>Company Name:</b>" + contactrequist.CompanyName + "<br />" + "<b style='font-size:12px; line-height:1.5'>Booking Start time:</b>" + book.SartTime + "<br />" + "<b style='font-size:12px; line-height:1.5'>Booking End Time :</b>" + book.EndTime + "<br />" + "<b style='font-size:12px; line-height:1.5'>Orgin:</b>" + book.Origin + "<br />" + "<b style='font-size:12px; line-height:1.5'>Booking Services:</b>" + ServicesNames, From = "web@empcnews.com", Subject = "New Booking" });
+            //    //new SendEmail().SendMail(new EmailDTO { To = book.CompanyEmail, Message = book.Message + "\n" + "Company Name:" + booking.CompanyName + "\n" + "Booking Start time:" + book.SartTime + "\n" + "Booking End Time :" + book.EndTime + "\n" + "Orgin:" + book.Origin + "\n" + "Booking Services:" + ServicesNames, From = "web@empcnews.com", Subject = "New Booking" });
+            //}
+            //catch
+            //{
 
-            }
+            //}
             return Ok();
         }
 

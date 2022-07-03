@@ -2058,4 +2058,10 @@ We will be proud of your full score.</value>
   <data name="WhyFilminginEgypt" xml:space="preserve">
     <value>Why Filmed in Egypt</value>
   </data>
+  <data name="AboutEMPC" xml:space="preserve">
+    <value>About EMPC</value>
+  </data>
+  <data name="EMPCFacilities" xml:space="preserve">
+    <value>EMPC Facilities</value>
+  </data>
 </root>

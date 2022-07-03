@@ -51,6 +51,8 @@ namespace Eagles.LMS.Data
         public DbSet<Service> Services { get; set; }
 
         public DbSet<ContactUs> ContactUs { get; set; }
+
+        public DbSet<ConatctRequist> ConatctRequist { get; set; }
         public DbSet<RelatedWebSite> RelatedWebSites { get; set; }
 
         public DbSet<Team> Teams { get; set; }

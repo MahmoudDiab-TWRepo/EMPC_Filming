@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class intialProject : DbMigration
+    public partial class intiatsss : DbMigration
     {
         public override void Up()
         {
@@ -169,6 +169,26 @@
                         UserCreateId = c.Int(nullable: false),
                         EditeTime = c.DateTime(nullable: false),
                         UserEditId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ConatctRequist",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Title = c.String(),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        JobTitle = c.String(),
+                        Organisation = c.String(),
+                        Email = c.String(),
+                        Phone = c.String(),
+                        Address = c.String(),
+                        City = c.String(),
+                        Country = c.String(),
+                        Subject = c.String(),
+                        Message = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -706,6 +726,7 @@
             DropTable("dbo.Documents");
             DropTable("dbo.Customer");
             DropTable("dbo.ContactUs");
+            DropTable("dbo.ConatctRequist");
             DropTable("dbo.Clients");
             DropTable("dbo.Citizens");
             DropTable("dbo.BookingServices");

@@ -90,6 +90,11 @@
             border-bottom: 1px solid #fff0;
             font-weight: 500;
         }
+
+
+        .main-menu nav ul .active1 a {
+            color: #e50916 !important;
+        }
     </style>
 }
 
@@ -253,7 +258,9 @@
 }
 <!-- slider-start -->
 
+@*<div class="AddssNewws">
 
+</div>*@
 
 @if (setting.ShowServices)
 {
@@ -262,7 +269,7 @@
 
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 othercool">
                 <div class="LocationTwoTitle ">
-                    <p class="smalltitlt wow fadeInUp">EMPC Filming</p>
+                    @*<p class="smalltitlt wow fadeInUp">EMPC Filming</p>*@
                     <a href="NewServices.html"><h1 class="wow fadeInUp">@Resources.Global.OurServices</h1></a>
                     <p class="Discription wow fadeInUp">@Resources.Global.ServicesParg</p>
                 </div>
@@ -351,7 +358,7 @@
                                         <p class=" wow fadeInUp">@Html.Raw(@aboutUs.DescriptionEnglish) </p>
                                     </div>
 
-                                    <a class="btn  wow fadeInUp" href="/AboutUs">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
+                                    <a class="btn  wow fadeInUp" href="/Home/AboutUs">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
                                 </div>
                             }
                             else
@@ -363,7 +370,7 @@
                                     <div class="extoverflow">
                                         <p class=" wow fadeInUp">@Html.Raw(@aboutUs.DescriptionArabic) </p>
                                     </div>
-                                    <a class="btn  wow fadeInUp" href="/AboutUs">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
+                                    <a class="btn  wow fadeInUp" href="/Home/AboutUs">@Resources.Global.ReadMore <i class="far fa-long-arrow-right"></i></a>
                                 </div>
                             }
                         </div>

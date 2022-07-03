@@ -1,0 +1,102 @@
+﻿@model List<ConatctRequist>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admission/Views/Shared/_Layout.cshtml";
+    var ctx = new Eagles.LMS.BLL.UnitOfWork();
+    //List<BookingInServices> bookingInServices = new List<BookingInServices>();
+}
+
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-sm-0 font-size-18">
+                    Contact requists
+                </h4>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" style="padding-bottom:30px;">
+
+                        <table id="table_Slider" class=" table table-bordered tableOtherdite">
+                            <thead class="DarkThead">
+                                <tr>
+                                    <th> <p>Title</p> </th>
+                                    <th> <p>FirstName</p> </th>
+                                    <th> <p>LastName</p> </th>
+                                    <th> <p>JobTitle</p> </th>
+                                    <th> <p>Organisation</p> </th>
+                                    <th> <p>Email</p> </th>
+                                    <th> <p>Phone</p> </th>
+                                    <th> <p>Address</p> </th>
+                                    <th> <p>City</p> </th>
+                                    <th> <p>Country</p> </th>
+                                    <th> <p>Subject</p> </th>
+                                    <th> <p>Message</p> </th>
+
+
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                
+                                    @foreach (var item in Model)
+                                    {
+                                        
+
+                                <tr>
+                                    <td> <p>@item.Title</p> </td>
+                                    <td> <p>@item.FirstName</p> </td>
+                                    <td> <p>@item.LastName</p> </td>
+                                    <td> <p>@item.JobTitle</p> </td>
+                                    <td> <p>@item.Organisation</p> </td>
+                                    <td> <p>@item.Email</p> </td>
+                                    <td> <p>@item.Phone</p> </td>
+                                    <td> <p>@item.Address</p> </td>
+                                    <td> <p>@item.City</p> </td>
+                                    <td> <p>@item.Country</p> </td>
+                                    <td> <p>@item.Subject</p> </td>
+                                    <td> <p>@item.Message</p> </td>
+
+
+
+
+
+
+                                </tr>
+                                }
+
+
+                                </tbody>
+
+
+
+
+
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div> <!-- end col -->
+
+        </div>
+
+    </div>
+

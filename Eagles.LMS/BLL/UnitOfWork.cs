@@ -44,6 +44,7 @@ namespace Eagles.LMS.BLL
         public GalaryManager GalaryManager { get { return new GalaryManager(ctx); } }
         public ContactUsManager ContactUsManager { get { return new ContactUsManager(ctx); } }
 
+        public ContactRequistManager ContactRequistManager { get { return new ContactRequistManager(ctx); } }
         public RelatedWebSiteManager RelatedWebSiteManager { get { return new RelatedWebSiteManager(ctx); } }
         public TeamManager TeamManager { get { return new TeamManager(ctx); } }
 

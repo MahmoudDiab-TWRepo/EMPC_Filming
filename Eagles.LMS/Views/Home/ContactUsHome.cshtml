@@ -12,6 +12,7 @@
     UnitOfWork ctx = new UnitOfWork();
 
     var _contactUs = ctx.ContactUsManager.GetAll().FirstOrDefault();
+    var _contactUsRequist = ctx.ContactRequistManager.GetAll().FirstOrDefault();
 }
 
 @section metatags{
@@ -23,10 +24,15 @@
 
 
     <style>
+        .main-menu nav ul .active2 a {
+            color: #e50916 !important;
+        }
     </style>
 
     <link href="~/assets_2/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />
 }
+
+
 
 @*<div class="header-bc" style="background-image:url('/assets_NewPublic/images/bg/CONTACT US .jpg')">*@
 
@@ -324,19 +330,19 @@
                                                 </a>
 
                                             }
-                                                  
+
                                         </li>
-                                        
+
                                         <li>
                                             <p>
                                                 <a href="#">@_contactUs.Email</a>
                                             </p>
                                         </li>
-                                       
+
                                         <li class="mt-3">
                                             <span><i class="fas fa-phone"></i> Tel:</span>
                                             <span>
-                                                
+
                                                 <a style="direction:ltr" href="tel:@_contactUs.Phone">
                                                     @_contactUs.Phone
                                                 </a>
@@ -482,7 +488,7 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text"  placeholder='@Resources.Global.FirstName' />
+                    <input type="text" placeholder='@Resources.Global.FirstName' />
                 </div>
                 <div class="col-md-6">
                     <input type="text" id="Text_LastName" placeholder='@Resources.Global.LastName' />
@@ -558,27 +564,25 @@
 
             $("#Text_BTNSubmit").click(s => {
                 s.preventDefault();
-                
+
                 let obj = {};
                 console.log(obj);
                 if (validateForm(obj)) {
-                    //$.ajax({
-                    //    type: "POST",
-                    //    url: "/mob/api/Studnets/Create",
-                    //    contentType: "application/json",
-                    //    data: JSON.stringify(obj.Data),
-                    //    success(resonse) {
-                    //        if (obj.Data.IsParent == true) {
-                    //            window.open("/Account/login", "_self");
+                    var _url = "/api/GlobalServices/ContactRequist";
+                    $.ajax({
+                        type: "POST",
+                        url: _url,
+                        contentType: "application/json",
+                        data: JSON.stringify(obj.Data),
+                        success(resonse) {
+                            alert("sent succesfully");
+                            location.reload();
+                        }, error(error) {
 
-                    //        } else {
-                    //            window.open("/Account/Pending", "_self");
-                    //        }
-                    //    }, error(error) {
-                    //        errorMessage(error.responseJSON.Message);
+                            errorMessage(error.responseJSON.Message);
 
-                    //    }
-                    //})
+                        }
+                    })
                 }
 
 
@@ -593,18 +597,18 @@
             function validateForm(obj) {
 
                 let flag = false,
-                    
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -613,12 +617,12 @@
                     LastName = $("#Text_LastName").val(),
                     JobTitle = $("#Text_JobTitle").val(),
                     Organisation = $("#Text_Organisation").val();
-                    Email = $("#Text_Email").val(),
+                Email = $("#Text_Email").val(),
                     Phone = $("#Text_Phone").val(),
                     Address = $("#Text_Address").val(),
                     City = $("#Text_City").val(),
                     Country = $("#Text_Country").val();
-                    Subject = $("#Text_Subject").val(),
+                Subject = $("#Text_Subject").val(),
                     Message = $("#Text_Message").val();
 
 
@@ -683,7 +687,7 @@
                     Organisation: Organisation,
                     Email: Email,
                     Phone: Phone,
-                    Address: v,
+                    Address: Address,
                     City: City,
                     Country: Country,
                     Subject: Subject,

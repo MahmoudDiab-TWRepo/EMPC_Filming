@@ -1948,4 +1948,10 @@
   <data name="WhyFilminginEgypt" xml:space="preserve">
     <value>لماذا التصوير من مصر</value>
   </data>
+  <data name="AboutEMPC" xml:space="preserve">
+    <value>عن EMPC</value>
+  </data>
+  <data name="EMPCFacilities" xml:space="preserve">
+    <value>فئات EMPC</value>
+  </data>
 </root>

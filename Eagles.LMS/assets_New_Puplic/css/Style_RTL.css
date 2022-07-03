@@ -148,3 +148,24 @@ p {
     margin-left: 70px;
     direction: ltr;
 }
+
+.slider-content h1 {
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: capitalize;
+    max-height: 175px;
+    overflow: hidden;
+}
+.slider-content h1 p {
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #fff;
+    max-height: 175px !important;
+    overflow: unset;
+    text-transform: capitalize;
+}

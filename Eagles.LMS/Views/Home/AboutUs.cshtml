@@ -45,7 +45,11 @@
 }
 
 @section EndHeader{
-
+    <style>
+        .main-menu nav ul .active2 a {
+            color: #e50916 !important;
+        }
+    </style>
 }
 
 <!-- Page Tile -->
@@ -83,43 +87,56 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="WhoWECont">
                             <div class="ForFlex">
-                                <div class="titile">
-                                    <h2> WHAT WE SEE IN THE DARK WHAT WE SEE IN THE DARK WHAT WE SEE IN THE DARK</h2>
-                                </div>
 
-                                <div class="otherdisc">
-                                    <p>Pictures are often taken only to stop some moments, to preserve the memory of events or places where a person has been – we call this genre “Me and the Palm”. But sometimes you want to remove something that will awaken emotions regardless of memories, you want to take a picture that will hang on the wall as if it opens a window to some other world </p>
-                                </div>
-                                <div class="ImgGroup">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="imageItem">
-                                                <img src="~/assets_New_Puplic/img/NewImg/f1c.jpeg">
+                                @if (en)
+                                {
+                                    <div class="titile">
+                                        <h2> @aboutUs.MessageTapDescriptionEnglish</h2>
+                                    </div>
+                                    <div class="innerAboutDesc">
+                                        @Html.Raw(@aboutUs.ProfileDescriptionEnglish)
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="titile">
+                                        <h2> @aboutUs.MessageTapDescriptionArabic</h2>
+                                    </div>
+                                    <div class="innerAboutDesc">
+                                        @Html.Raw(@aboutUs.ProfileDescriptionArabic)
+                                    </div>
+                                }
+
+                                @*<div class="otherdisc">
+                                        <p>Pictures are often taken only to stop some moments, to preserve the memory of events or places where a person has been – we call this genre “Me and the Palm”. But sometimes you want to remove something that will awaken emotions regardless of memories, you want to take a picture that will hang on the wall as if it opens a window to some other world </p>
+                                    </div>
+                                    <div class="ImgGroup">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="imageItem">
+                                                    <img src="~/assets_New_Puplic/img/NewImg/f1c.jpeg">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="imageItem">
-                                                <img src="~/assets_New_Puplic/img/NewImg/f3c.jpeg">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="imageItem">
+                                                    <img src="~/assets_New_Puplic/img/NewImg/f3c.jpeg">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="manDisc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eius mod tempor incididunt ut labore et dolore.</p>
-                                </div>
+                                    <div class="manDisc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eius mod tempor incididunt ut labore et dolore.</p>
+                                    </div>*@
 
-                                <div class="ReadmoreLink" style="display: none">
-                                    <!-- Add When Found Link pls -->
-                                    <a href="#">Read More </a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="images">
                             <div class="img">
-                                <img src="~/assets_New_Puplic/img/NewImg/Mask_Group_18.png">
+                                <img src="@aboutUs.Image">
                             </div>
                         </div>
                     </div>
@@ -157,12 +174,12 @@
                                     <img src="@team.Image" alt="">
                                 </div>
                                 <div class="team-content text-center">
-                                    <div class="team-icon">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                        <a href="#"><i class="fab fa-youtube"></i></a>
-                                    </div>
+                                    @*<div class="team-icon" >
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                        </div>*@
                                     <div class="team-text pos-relative">
                                         @if (en)
                                         {

@@ -363,10 +363,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admission\Controllers\AboutUSController.cs" />
     <Compile Include="Areas\Admission\Controllers\AgendaController.cs" />
-    <Compile Include="Areas\Admission\Controllers\AlaaaaController.cs" />
     <Compile Include="Areas\Admission\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admission\Controllers\CitizensController.cs" />
     <Compile Include="Areas\Admission\Controllers\ClientsController.cs" />
+    <Compile Include="Areas\Admission\Controllers\ContactRequistController.cs" />
     <Compile Include="Areas\Admission\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admission\Controllers\DocumentsController.cs" />
     <Compile Include="Areas\Admission\Controllers\FacilitiesController.cs" />
@@ -382,6 +382,7 @@
     <Compile Include="BLL\BookingServiceManager.cs" />
     <Compile Include="BLL\CitizensManager.cs" />
     <Compile Include="BLL\ClientsManager.cs" />
+    <Compile Include="BLL\ContactRequistManager.cs" />
     <Compile Include="BLL\CustomerManager.cs" />
     <Compile Include="BLL\DocumentsManager.cs" />
     <Compile Include="BLL\FacilitiesManager.cs" />
@@ -392,9 +393,9 @@
     <Compile Include="BLL\SettingsManager.cs" />
     <Compile Include="BLL\WhoWeAreManager.cs" />
     <Compile Include="BLL\WhyFilmedManager.cs" />
-    <Compile Include="Migrations\202207021329181_intialProject.cs" />
-    <Compile Include="Migrations\202207021329181_intialProject.designer.cs">
-      <DependentUpon>202207021329181_intialProject.cs</DependentUpon>
+    <Compile Include="Migrations\202207021741042_intiatsss.cs" />
+    <Compile Include="Migrations\202207021741042_intiatsss.designer.cs">
+      <DependentUpon>202207021741042_intiatsss.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -464,6 +465,7 @@
     <Compile Include="Models\Agenda.cs" />
     <Compile Include="Models\AgendaImages.cs" />
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\ContactRequist.cs" />
     <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Documents.cs" />
@@ -1728,6 +1730,9 @@
     <Content Include="Areas\Admission\Views\WhyFilmed\Index.cshtml" />
     <Content Include="Areas\Admission\Views\WhyFilmed\Create.cshtml" />
     <Content Include="Areas\Admission\Views\WhyFilmed\Edit.cshtml" />
+    <Content Include="Areas\Admission\Views\ContactRequist\Index.cshtml" />
+    <Content Include="Areas\Admission\Views\Users\ChangePassword.cshtml" />
+    <Content Include="Areas\Admission\Views\Users\_Changepass.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <Content Include="Scripts_2\angular-sanitize.js" />
@@ -1860,8 +1865,8 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207021329181_intialProject.resx">
-      <DependentUpon>202207021329181_intialProject.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202207021741042_intiatsss.resx">
+      <DependentUpon>202207021741042_intiatsss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
